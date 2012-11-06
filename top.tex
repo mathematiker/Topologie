@@ -36,7 +36,7 @@ Topologische Begriffe sind beispielsweise \emph{Stetigkeit, offene/abgeschlossen
 \end{center}
 \section{Metrische und topologische Räume}
 \begin{df}
-Ein \emph{metrischer Raum} ist eine Menge $X$k zusammen mit einer Funktion $d: X \times X \rightarrow \R$, genannt Metrik oder \emph{Abstandsfunktion}, so dass folgende Axiome gelten:
+Ein \emph{metrischer Raum} ist eine Menge $X$ zusammen mit einer Funktion $d: X \times X \rightarrow \R$, genannt Metrik oder \emph{Abstandsfunktion}, so dass folgende Axiome gelten:
 \begin{enumerate}[\roman{enumi})]
 \item \emph{Positivität}: $d(x,y)\ge 0 \land d(x,y)=0\equiv x=y$
 \item \emph{Symmetrie}: $d(x,y)=d(y,x)$
@@ -83,7 +83,7 @@ Seien $a$ und $b$ Limiten von $(x_n)_{n\in \N}$ mit $\delta := d(a,b)>0$.
 Da $(x_n)_{n\in \N}$ gegen $a$ konvergiert, gibt es $k\in \N$, sodass $d(x_n,a)<\frac{\delta}{2}$ für alle $n \ge k$.
 Dann gilt nach Dreiecksungleichung:
 \[
-\delta=d(a,b)\le \underbrace{d(x,x_n)}_{<\frac{delta}{2}}+d(x_n,b)
+\delta=d(a,b)\le \underbrace{d(x,x_n)}_{<\frac{\delta}{2}}+d(x_n,b)
 \]
 Also gilt $d(x_n,b)\ge \frac{\delta}{2}$ für alle $n\ge b$, was der Konvergenz gegen $b$ widerspricht.
 \end{proof}
@@ -150,7 +150,7 @@ Seien umgekehrt die Urbilder offener Mengen offen und $ x \in X $. Sei $ \eps>0 
 \end{seg}
 \end{proof}
 
-Wichtige Beobachtung: Um KOnvergenz und Stetigkeit zu beschreiben muss man nicht direkt auf eine Metrik Bezug nehmen, sondern es genügt das System der offenen Mengen zu kennen.  Dieses System von offenen Mengen nennt man \emph{die Topologie} des metrischen Raums .  Verschiedene Metriken können dieselbe Topologie erzeugen.
+Wichtige Beobachtung: Um Konvergenz und Stetigkeit zu beschreiben muss man nicht direkt auf eine Metrik Bezug nehmen, sondern es genügt das System der offenen Mengen zu kennen.  Dieses System von offenen Mengen nennt man \emph{die Topologie} des metrischen Raums .  Verschiedene Metriken können dieselbe Topologie erzeugen.
 
 Alle Eigenschaften von metrischen Räumen, ihren Teilmengen oder Abbildung zwischen metrischen Räumen, die sich durch die Topologie (ohne direkten Bezug auf die metrik) beschreiben lassen, nennen wir \emph{topologische Eigenschaften}.
 
@@ -166,12 +166,12 @@ Eine Menge $ X $ zusammen mit einer Topologie auf $ X $ heißt \emph{topologisch
 \end{df}
 \begin{note*}
 \begin{enumerate}[(\roman{enumi})]
-\item Natürlich ist die Definition so gemacht, dass die in einem Topologie bilden.
+\item Natürlich ist die Definition so gemacht, dass die in einem Topologie bilden. \fixme[nachschauen]
 \item Verschiedene Metriken können diesselbe Topologie erzeugen, vgl. der aus der Analysis bekannter Satz, dass alle Normen auf dem $ \R^n $ äquivalent.  Daraus folgt: die Metrik die Metrik $ d(x,y) :=||x-y|| $ definiert für \emph{alle Normmen auf $ \R^n $} dieselbe Topologie, die sogenannte \emph{Standardtopologie}, zum Beispiel definieren:
 \begin{align*}
 d_1(x,y)&=|x_1-y_1|+...+|x_n-y_n|\\
 d_2(x,y)&=\sqrt{(x_1-y_1)^2+...+(x_n-y_n)^2}\\
-d_\infty(x,y)=\max(|x_1-y_1|, ..., |x_n-y_n|)
+d_\infty(x,y)&=\max(|x_1-y_1|, ..., |x_n-y_n|)
 \end{align*}
 alle die Standardtopologie.
 \end{enumerate}
@@ -181,7 +181,7 @@ Sei $ X $ ein topologischer Raum und  $x \in X $ Eine Teilmenge $ U \subset X $ 
 \end{df}
 
 \begin{ex*}
-Sei $ A=[a,b)\subset \R $ und sei $\R$ mit der Standardtopologie versuchen.  Dann gilt $\mathring A=(a,b), \bar A=[a,b], \delta A={a,b}, B=\Q\subset \R$ gilt $ \mathring B=\emptyset, \bar B=\R, \delta B=\R $ 
+Sei $ A=[a,b)\subset \R $ und sei $\R$ mit der Standardtopologie versuchen.  Dann gilt $\mathring A=(a,b), \bar A=[a,b], \delta A=\{a,b\}, B=\Q\subset \R$ gilt $ \mathring B=\emptyset, \bar B=\R, \delta B=\R $ 
 \end{ex*}
 \begin{ex}[Beispiele für Topologien]\label{thm:1.12}
 \begin{enumerate}[(\roman{enumi})]
@@ -227,7 +227,7 @@ Eine Abbildung, die jede konvergente Folge auf eine gegen das Bild des Limes kon
 \end{enumerate}
 \end{ex*}
 \begin{note}
-Die Axiome eines topologischen Raums sind für sich alleine relativ schwach und lassen sich und lassen sehr viele Beispiele auch mit "pathologischen" Eigenschaften zu. Sie sind eher ein äußerer Begriffsrahmen. Um etwa Räume mit den von metrischen Räumen vertrauten Eigenschaften zu erhalten, muss man Zusatzannahmen machen.
+Die Axiome eines topologischen Raums sind für sich alleine relativ schwach und lassen sehr viele Beispiele auch mit "`pathologischen"' Eigenschaften zu. Sie sind eher ein äußerer Begriffsrahmen. Um etwa Räume mit den von metrischen Räumen vertrauten Eigenschaften zu erhalten, muss man Zusatzannahmen machen.
 \begin{itemize}
   \item "`Hausdorffeigenschaft"' $\implies$ Eindeutigkeit des Limes
   \item "`Abzählbarkeitsaxiome"' $\implies$ Äquivalenz von Stetigkeit und Folgendefinition
@@ -315,7 +315,7 @@ Man erhält den Kegel $CX:=X\times[0,1]/X\times\{1\}$
 \item \fixme figure
 \item \fixme figure
 \end{enumerate}
-bei (b) handelt es sich nicht um Zusammenschlagen eines Teilraums zu einem Punkt, sondern gegenüberliegend Punkte in den beiden senkrecht "`Radintervalle"' werden identifiziert mit den Äquivalenzrelationen:
+bei (b) handelt es sich nicht um Zusammenschlagen eines Teilraums zu einem Punkt, sondern gegenüberliegend Punkte in den beiden senkrecht "`Radintervalle"' werden identifiziert mit den Äquivalenzrelationen: \fixme[nachschauen]
 \[
 (x_1,x_2)\sim (y_1,y_2):\equiv (x_1,x_2)=(y_1,y_2)\lor (x_1,y_1 \in \{0,1\} \land x_2 =y_2)
 \]
