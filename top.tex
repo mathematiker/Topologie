@@ -5,6 +5,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\del}{\delta}
 \newcommand{\homo}{\stackrel = \sim}
+\usepackage{txfonts}
 
 \title{Topologie}
 
@@ -400,9 +401,109 @@ Dies folgt aus der Dreiecksungleichung der Metrik. \\
  \fixme[Bild fehlt] \\
 Seien $x$ und $y$ Punkte im metrischen Raum und sei $d(x,y)>0$.
 Dann sind die beiden $\eps$-Bälle $B_\eps(x)$ und $B_\eps(y)$ mit $\eps:=\frac{1}{2}d(x,y)$ disjunkte Umgebungen von $x$ bzw. $y$. Dann 
-wäre $z\in B_\eps \land B_\eps(y)$,        
+wäre $z\in B_\eps \land B_\eps(y)$, dann wäre die Dreiecksungleichung
+\[
+\underbrace{d(x,z)}_{y<\eps}+\underbrace{d(z,y)}_{<\eps}\ge d(x,y)=2\eps
+\]        
+verletzt.
 \end{proof}
+\begin{st}
+Jeder Teilraum eines Hausdorffraums ist Hausdorffsch. Zwei topologische Räume sind genau dann Hausdorffsch, wenn ihre topologische Summe es ist und zwei nichtleere topologische Räume sind Hausdorffsch, genau dann wenn ihr Produkt es ist. 
+\end{st}
+\begin{proof}[zur Übung]\end{proof}
+\fixme[Figure]\\
+Ein Raum, der nicht Hausdorffsch ist, scheint mit unserer Intuition unvereinbar zu sein.  Ein finales Beispiel ist die Klumpentopologie $\{\emptyset, X\}$ auf jeder Menge. Mit Hilfe der Quotiententopologie erhält man weniger triviale Beispiele von Nicht-Hausdorffräumen.
+\begin{ex*} Für Nicht-Hausdorffraum:\\
+Die Gerade mit einem Dppelpunkt. Sei $ X=\R+\R=\R\times \{0\}\cup \R\times \{1\} $. Definiere man $ (x,n)\sim (y,m)\stackrel{\text{def}}{\iff} x=y\neq 0 $. \\
+\fixme[Figure]\\
+$ \R $ besitzt unter Betrachtung dieser Relation doppelt vorhandene Nullpunkte.
 
+Die beiden Punkte $(0,0)$ und $(0,1)$ in $ X/\sim $ lassen sich nicht durch disjunkte Umgebung trennen.\\
+\fixme[Figure]\\
+Wir wollen noch zwei weitere Eigenschaften von Hausdorffräumen beweisen, die mit der geometrischen Intuition übereinstimmen.
+\end{ex*}
+\begin{st}
+In einem Hausdorffraum ist gilt:
+\begin{enumerate}[(i)]
+\item Der Limes einer konvergenten Folge ist eindeutig bestimmt.
+\item Punkte sind abgeschlossen.
+\end{enumerate}
+\end{st}
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Seien $ a\neq b $ verschiedene Limiten einer konvergenten Folge $ x_n $, dann gibt es disjunkte Umgebungen $ U_a $ und $ U_b $ von $ a $ bzw. $ b $.  Da $ x_n $ gegen $ a $ konvergiert, liegen fast alle Folgenglieder in $ U_a $, im Widerspruch zur Konvergenz von $ x_n $ gegen $ b $.
+\item Das Komplement einer einelementigen Menge ist offen, denn nach der Hausdorffeigenschaft gibt es um jeden ihrer Punkte eine Umgebung, die insbesondere p nicht enthält.
+\end{enumerate}
+\end{proof}
+\fixme[Figur]
+\begin{note*}
+Dies liefert eine notwendige Bedingung dafür, dass eine QUotiententopologie Hausdorffsch ist.  Alle Äquivalenzklassen müssen abgeschlossen sein.
+\end{note*}
+\section{Zusammenhang und Wegzusammenhang}
+\begin{df}
+Ein topologischer Raum heißt \emph{zusammmenhängend}, wenn er sich nicht in zwei nichtleere, offene, disjunkte Teilmengen zerlegen lässt.
+\end{df}
+\fixme[Figur]
+\begin{note*}
+Äquivalent zu "`zusammenhängend"' sind:
+\begin{enumerate}[(i)]
+\item Die leere Menge und der ganze raum sind die einzigen Mengen, die sowohl offen als auch abgeschlossen sind.
+\item Der Raum ist nicht homöomorph zu einer topologischen SUmme zweier nichtleere topologischer Räume.
+\end{enumerate}
+\end{note*}
+\begin{exs*}
+\begin{enumerate}[(i)]
+\item Die leere Menge und der ganze Raum sind die einzigen Mengen, die sowohl offen als auch abgeschlossen sind.
+\item Der Raum ist nicht homöomorph zu einer topologischen Summe zweier nichtleere topologischen Räume.
+\item Ein Intervall $ I $ ist zusammenhängend: 
+\begin{proof}
+Angenommen $I=A\dotcup B$, beide $ A $ und $ B $ offen und abgeschlossen (in der Teilraumtopologie, durch $ I\subset \R $ induziert) Seien $ a\in A, b\in B $, wobei $ a<b $ ohne Einschränkung. Defniere $ s:=\inf\{x\in B|a<x\}$. Dann liegt in jeder Umgebung von $ s $ ein Punkt aus $ B $. (nach Definition des Infinums). Es gilt entweder $ s=a $ oder $ s>a $. Im ersten Fall kann $ s $ kein innerer Punkt von $ A $ sein, im zweiten Fall liegt das Intervall $ (a,s) $ ganz in $ A $ und $ s $ kann weder von $ A $ noch von $ B $ ein innerer Punkt sein. Dies führt letztlich zum Widerspruch.
+\end{proof}
+\end{enumerate}
+\end{exs*}
+Ein stärkerer Begriff ist der des \emph{Wegzusammenhangs} (Ein \emph{Weg} in einem topologischen Raum $ X $ ist eine stetige Abbildung $ [a,b]\to X $
+\begin{df}
+Ein topologischer Raum heißt \emph{wegzusammenhängend}, wenn es zu je zwei Punkte $ p,q\in X $ einen Weg gibt, dass heißt eine stetige Abbildung $ c: [0,1]\to X $ mit $c(0)=p, c(1)=q$.
+\end{df}
+\begin{ex*}
+$ \R^n $ ist wegzusammenhängen, in der Tat, benutze man zum Beispiel $ c(t)=(1-t)p+tq $. \fixme[Figur]
+\end{ex*}
+\begin{st}
+Ein wegzusammenhängender topologischer Raum ist zusammenhängend.
+\end{st}
+\begin{proof}
+Angenommen $ X=A\dotcup B $, wobei $ A $ und $ B $ beide offen und nichtleer.  Sei $ p\in A $ und $ q\in B $ und $ c $ ein Weg zwischen p und q. \\ \fixme[Figur]\\
+Dann wäre $[0,1]=c^{-1}(A)\dotcup c^{-1}(B)$ eine Zerlegung in zwei disjunkte, nichtleere offene Mengen.
+\end{proof}
+Die Umkehrung gilt jedoch im Allgemeinen nicht:
+\begin{ex*}
+Ein Raum, der zusammenhängend, aber nicht \underline{weg}zusammenhängend ist.
+\[
+X=\underbrace{\{0\}\times [-1,1]}_{A}\cup\underbrace{\{(x, \sin(x^{-1})|x>0\}}_{B}
+\] 
+\fixme[Figur]
+\end{ex*}
+Die Relation $ p\sim q \stackrel{\text{def}}{\iff} $ es gibt einen weg von $ p $ nach $ q $ ist (Übung) offensichtlich eine Äquivalenzrelation, die zugehörigen Äquivalenzklassen heißen \emph{Wegzusammenhangskomponenten} des topologischen Raums.
+\begin{st}
+\begin{enumerate}[(i)]
+\item Stetige Bilder von (weg-)zusammenhängenden Räumen sind (weg-)zusammenhängend.
+\item Vereinigungen (weg-)zusammenhängender Räume $ X_i, i\in I, $ mit $ \bigcap X_i\neq \emptyset $ sind wegzusammenhängend.
+\item Ein Produkt $ X\times Y $ von (weg-)zusammenhängenden nichtleeren topologischen Räumen $ X,Y $ ist genau dann (weg-)zusammenhängend, wenn die beiden Faktoren es sind. 
+\end{enumerate}
+\end{st}
+\begin{proof}
+\item Sei $ f:X\to $ stetige Abbildung, so zerfällt $f(X)=Y_1\dotcup Y_2$ mit $Y_1, Y_2$ offen disjunkt, dann auch $ X=f^{-1}(Y_1)\dotcup f^{-1}(Y_2) $. \\
+\fixme[Figur]
+Sei $ p,q \in f(X) $. Es gibt $ a,b\in X $ mit $ f(a)=p $, $ f(b)=q $ und einen Weg $ c:[0,1]\to X $ von $ a $ nach $ b $. Dann ist $ f\circ c:[0,1]\to X $ ein Weg von $ p $ nach $ q $.
+\item Sei $ X=\bigcup_{i\in I}X_i $. Sei $ X=A\dotcup B $ mit $ A,B $ offen. Sei $ p\in \bigcap_{i\in I}X_i $ und ohne Einschränkung $ p\in A $.  Es gilt $ X_i=(X_i\cap A)\dotcup (X_i\cap B) $, da $ p\in X_i\cap A $ folgt $ X_i\cap B=\emptyset $, denn $ X_i $ ist zusammenhängend. Also folgt $ B=\emptyset $.
+Für Wegzusammenhängend:
+\fixme[Bild fehlt]
+Es gilt, falls $ c:[0,1]\to X_I $ estetiger Weg von $ a\in X_i $ nach $ p $ und $ d:[0,1]\to X_j $ stetiger Weg von $ p $ nach $ b\in X_j $, dann ist:
+\[
+e/t(:=\begin{cases}c(2t)\qquad &,t\in[0,\frac 1 2]\\ d(2t-1)\qquad &,t\in[\frac 1 2, 1]\end{cases}
+\]
+eine stetige Abbildung $ [0,1]\to \bigcup_{i\in I}X_i $. (Übung)
+\end{proof}
 \fixme[Teil fehlt]
 \begin{df}
  Eine (\emph{Zusammenhangskomponente} $e$ eines topologischen Raumes $X$ ist ein maximal zusammenhängender Teilraum.
@@ -481,12 +582,12 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \]
 
 \end{seg}
-\begin{note}
+\begin{note*}
  \begin{itemize}
   \item $\mathcal S=(X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen,$A={1,...,n}$
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
-\end{note}
+\end{note*}
 \begin{df}
  Sei $(X,O)$ ein topologischer Raum. Eine Familie $\mathcal U$ von Umgebungen von $p$ heißt \emph{Umgebungsbasis} von $p$, wenn jede Umgebung von $p$ eine Umgebung aus U enthält.
 \fixme[Bild fehlt]
@@ -502,8 +603,8 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
   \item Ein topologischer Raum erfüllt das \emph{erste Abzählbarkeitsaxiome}, wenn es um jeden Punkt eine abzählbare Umgebungsbasis gibt. 
 \item Ein topologischer Raum erfüllt das \emph{zweite Abzählbarkeitsaxiome}, wenn es eine abzählbare Basis der Topologie gibt.
  \end{enumerate}
-
 \end{df}
+
 
 
 \end{exs*}
