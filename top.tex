@@ -366,4 +366,28 @@ Die Produkttopologie auf $ X\times Y $ ist initiale Topologie bezüglich der bei
 \pi_X:X\times Y \to X, (x,y)\to x \text{ und } \pi_Y: X\times Y\to Y, (x,y)\to y 
 \]
 \end{ex*}
+
+\begin{seg}{Erläuterung zu Definition 2.5 (iv)} 
+Ist eine Familie $ S $ von offenen Teilmengen auf einer Menge $ X $ gegeben, so erhalten wir dadurch den \emph{Hüllenoperator} 
+\[ 
+\mathcal T(S):=\bigcap\limits_{ O \text{ Topologie auf } X \text{ mit } S\subset O} O 
+\]
+Die gröbste Topologie auf $ X $, die alle Mengen in $ S $ enthält. Die Topologie $ \mathcal T(S) $ nennt man auch die \emph{von $ S $ erzeugte Topologie} auf $ X $.
+\end{seg}
+Die in (iv) definierte Topologie ist also durch
+\[
+\mathcal T(\bigcup\limits_{i\in I} \{ f^{-1}(U)|U \text{ offen in } Y\} )
+\]
+\begin{ex*} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ ist die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \underline{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, den Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[bild]
+\begin{proof}
+Betrachte $ \phi(t)=(\cos(2\pi\cdot t),\sin(2\pi \cdot t)), \R\to Y $.
+Wegen $ \phi(t+k)=\phi(t) $ für $ k\in \Z $, ist durch $ \bar\phi: X\to Y, [x]\to \phi(x) $ eine wohldefinierte Abbildung gegeben. $\bar \phi$ ist offensichtlich bijektiv. Die Abbildung $ \bar \phi  $ ist stetig nach Definition der Quotientenabbildung, da $ \phi $ stetig ist.
+
+Es bleibt noch zu zeigen: Die Bilder offener Mengen sind offen (man sagt dann: $ \bar \phi $ ist \emph{offen}, dass heißt die Bilder offener nicht offen), dass heißt $ \bar \phi^{-1} $ ist stetig. Wir zeigen: Die Bilder bageschlossenen Mengen sind abgeschlossen: Sei $ A\subset X $ abgeschlossen. Dann ist $ q^{-1}(A)\subset \R $ abgeschlossen (mit $ q: \R\backslash \R/\sim $ die Quotientenabbildung).
+
+Es gilt $ \bar \phi(A)=\phi(q^{-1}(A))=\phi(q^{-1}(A)\cap[0,1]) $. Da $ q^{-1}(A)\cap [0,1] $ kompakte Tielmenge von $C$ $ \R $ ist, ist $ \bar\phi(A)=\phi(\phi-1)(A)\cap[0,1]) $ kompakt, also abgeschlossene Teilmenge des $ \R^2  $ und somit von $ Y $.
+\end{proof}
+\end{ex*}
+\section{Hausdorffräume}
+
 \end{document}
