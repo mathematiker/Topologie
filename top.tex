@@ -366,4 +366,134 @@ Die Produkttopologie auf $ X\times Y $ ist initiale Topologie bezüglich der bei
 \pi_X:X\times Y \to X, (x,y)\to x \text{ und } \pi_Y: X\times Y\to Y, (x,y)\to y 
 \]
 \end{ex*}
+\fixme[Teil fehlt]
+\section{Hausdorffräume}
+\begin{df}[Hausdorffsches Trennungsaxiom]
+ Ein topologischer Raum heißt \emph{Hausdorffraum}, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
+\\ \fixme[Bild fehlt]
+\end{df}
+\begin{st}
+Jeder metrische Raum ist ein Hausdorffraum. 
+\end{st}
+\begin{proof}
+Dies folgt aus der Dreiecksungleichung der Metrik. \\
+ \fixme[Bild fehlt] \\
+Seien $x$ und $y$ Punkte im metrischen Raum und sei $d(x,y)>0$.
+Dann sind die beiden $\eps$-Bälle $B_\eps(x)$ und $B_\eps(y)$ mit $\eps:=\frac{1}{2}d(x,y)$ disjunkte Umgebungen von $x$ bzw. $y$. Dann 
+wäre $z\in B_\eps \land B_\eps(y)$,        
+\end{proof}
+
+\fixme[Teil fehlt]
+\begin{df}
+ Eine (\emph{Zusammenhangskomponente} $e$ eines topologischen Raumes $X$ ist ein maximal zusammenhängender Teilraum.
+($A\subset X$ ist \emph{maximal zusammenhängend}, falls es keine zusammenhängende Teilmenge $B\subset X$ gibt mit $A\subset B, A\neq B$)
+\end{df}
+\begin{st}
+ \begin{enumerate}[(i)]
+  \item Ist $A\subset X$ zusammenhängend und $A\subset B\subset \bar A$, so ist auch $B$ zusammenhängend.
+  \item Jeder Punkt von $X$ liegt in genau einer Zusammenghangskomponente von $X$, mit anderen Worten. $X$ ist die disjunkte Vereinigung seiner Komponenten.
+\item Die Komponenten von $X$ sind abgeschlossene Teilräume.
+ \end{enumerate}
+
+\end{st}
+
+\begin{proof}
+ \begin{enumerate}[(i)]
+  \item Seien $M_1,M_2\subset X$ abgeschlossen mit $B\subset M_1\cup M_2$ und $B\cap M_1\cap M_2=\emptyset$. 
+Sei ohne Einschränkung $A\cap M_1\neq$. Zu zeigen ist, dass $B\cap M_2=\emptyset$. Da $A$ zusammenhängend ist, gilt $A\subset M_1$, also auch $\bar A \subset M_1$, somit gilt $B\cap M_2=\emptyset$.
+\item Die Vereinigung aller zusammenhängenden Teilräume von $X$, die den Punkt $p$ enthalten, ist nach \ref{thm:4.4}(ii)
+ zusammenhängend und offenbar die einzige maximal zusammenhängende Teilmenge, die $p$ enthält. (Immer ist $\{p\}$ zusammenhängend)
+\item folgt aus (i).
+ \end{enumerate}
+\end{proof}
+\section{Abzählbarkeitsaxiome}
+\begin{df}
+ Sei $(X,O)$ ein topologischer Raum. Eine Teilmenge $\mathcal B\subset O$ heißt \emph{Basis}(die Topologie) von $X$, wenn jedes $U\subset O$ eine Vereinigung von Mengen aus $\mathcal B$ ist.
+\end{df}
+\begin{exs*}
+ \begin{enumerate}
+  \item Immer gilt, dass $O$ selbst eine Basis ist.
+  \item Im $\R^n$ ist der Menge der offenen $\eps$-Bälle eine Basis der Topologie, aber auch die Menge der achsenparallelen offenen Würfel.
+  \item Allgemeiner ist in jedem metrischen Raum die Menge der offenen $\eps$-Bälle eine Basis der Topologie.
+  \item Seien $(X_1,O_2)$ und $(X_2,O_2)$ topologische Räume. Dann ist $O_1\times O_2$ eine Basis der Produkttopologie.
+\end{enumerate}
+\end{exs*}
+Kann man beliebige Familien von Teilmengen eines Raumes $X$ vorgeben und fordern, die Topologie solle aus allen Vereinigungen dieser Mengen (und $X$ selbst) bestehen? Nein, man muss auch sicherstellen, dass endliche Schnitte wieder offen sind. Deshalb:
+\begin{df}
+ Sei $(X,O)$ ein topologischer Raum. Eine Teilmenge $\mathcal S\subset O$ heißt \emph{Subbasis}, wenn die Menge der endlichen Schnitte der Mengen in $\mathcal S$ eine Basis bildet.
+\end{df}
+\begin{st}
+ Sei $X$ eine Menge und $\mathcal S\subset \Pot(X)$  eine Familie von Teilmengen von $X$. Dann gibt es genau eine Topologie auf $X$, die dieses $S$ als Subbasis hat.
+\end{st}
+\begin{proof}
+Sei $\mathcal B:=\{\S_1\cap...\cap S_n|n\in \N_0, S_1,...,S_n\in \mathcal S\}$ und setze $O:=\{\bigcup_iB_i|i\in \mathcal B\} \cup\{\emptyset,X\}$.
+ Wir zeigen, dass $O$ eine Topologie auf $X$ ist. Offensichtlich liegen beliebigen Vereinigung von Mengen in $O$ wieder in $O$. 
+Sei $U_1=\bigcup_{i\in I_1}B_i, U_2=\bigcup_{i\in I_2}B_i$, mit $B_i\in \mathcal B$. Dann ist:
+\[
+ U_1\cap U_2=\bigcup\limits_{j\in I_1,k\in I_2}B_j\cap B_k
+\]
+eine Vereinigung von endlichen Schritten von Mengen in $\mathcal S$, also Element von $O$. (Dies zeigt, dass $O$ eine Topologie auf $X$ ist). 
+Jede Topologie auf $X$, die $\mathcal S$ enthält, muss auch $O$ enthalten, anderer seits kam eine Topologie mit $\mathcal S$ als Subbasis auch nicht feiner sei als $O$.
+\end{proof}
+Man sagt auch, $O$ ist die \emph{von $\mathcal S$ erzeugte Topologie}. Dass heißt $O$ entsteht durch Anwenden des früher definierten
+Hüllenoperators auf $\mathcal S$, $\mathcal T(\mathcal S)=\emptyset$.
+
+Als eine Anwendung wollen wir die Produkttopologie von beliebig (auch unendlich) vielen Räumen erklären.
+
+Seien $(X_\alpha,O_\alpha), \alpha A$ topologische Räume und sei
+\[
+ \bigsqcap X_\alpha=\{f:A\to\bigcup X_\alpha|f(\alpha)\in X_\alpha\}
+\]
+Wir verwenden als Subbasis die Menge
+\[
+ \mathcal S:=\{\bigsqcap_\alpha U_\alpha\in O_\alpha, U_\alpha=X_\alpha \text{ für alle bis auf ein $\alpha \in A$}\}
+\]
+Die so (nach Satz \ref{thm:5.3}) defnierte Topologie heißt \emph{Produkttopologie} auf $\bigsqcap_\alpha X_\alpha$ (und 
+$\mathcal S$ ist eine Subbasis). Dann ist:
+\[
+ \mathcal B := \{ \bigsqcap_\alpha U_\alpha|U_\alpha\in O_\alpha, U_\alpha=X_\alpha \text{ für alle bis auf endlich viele } \alpha \in A\}
+\]
+\begin{seg}{Übungsaufgabe}
+ Nach Konstruktion ist die Produkttopologie die initiale Topologie bezüglich der kanonischen Projektionen $\pi_\alpha:\bigsqcap_\alpha X_\alpha\to X_\alpha: f\mapsto f(\alpha)$
+Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbild $\pi_\alpha^{-1}$ einer offenen Menge $U\subset X_\alpha$ ist gerade:
+\[
+ \{\bigsqcap_\beta U_\beta|U_\alpha=U, U_\beta=X_\beta \text{ für } \beta\neq a\}
+\]
+
+\end{seg}
+\begin{note}
+ \begin{itemize}
+  \item $\mathcal S=(X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen,$A={1,...,n}$
+  \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
+ \end{itemize}
+\end{note}
+\begin{df}
+ Sei $(X,O)$ ein topologischer Raum. Eine Familie $\mathcal U$ von Umgebungen von $p$ heißt \emph{Umgebungsbasis} von $p$, wenn jede Umgebung von $p$ eine Umgebung aus U enthält.
+\fixme[Bild fehlt]
+\end{df}
+\begin{exs*}
+ \begin{enumerate}
+\item  Im $\R^n$ ist zum Beispiel ist $
+ \{B_\eps(p)|\eps>0\}$ eine Umgebungsbasis von $p$, aber auch $ \{B_\eps(p)|\eps\in (0,1]\}$ und $\{ B_\eps(p)|\eps>0,\eps\in \Q \}$ die letzte ist abzählbar auch $\{B_{n^{-1}}(p)|n\in \N\}$
+\item Dies lässt sich auf metrische Räume übertragen: In jedem metrischen Raum $X$ mit $p\in X$ ist $\{B_{n^{-1}}(p)|n\in \N\}$ eine abzählbare Umgebungsbasis von p.
+ \end{enumerate}
+\begin{df}
+ \begin{enumerate}[(i)]
+  \item Ein topologischer Raum erfüllt das \emph{erste Abzählbarkeitsaxiome}, wenn es um jeden Punkt eine abzählbare Umgebungsbasis gibt. 
+\item Ein topologischer Raum erfüllt das \emph{zweite Abzählbarkeitsaxiome}, wenn es eine abzählbare Basis der Topologie gibt.
+ \end{enumerate}
+
+\end{df}
+
+
+\end{exs*}
+
+
+
+
+
+
+
+
+
 \end{document}
