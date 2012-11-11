@@ -5,8 +5,8 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\del}{\delta}
 \newcommand{\homo}{\cong}
-\renewcommand{\bigsqcap}{\prod}
 \usepackage{txfonts}
+\renewcommand{\bigsqcap}{\prod}
 
 \title{Topologie}
 
@@ -37,7 +37,7 @@ Topologische Begriffe sind beispielsweise \emph{Stetigkeit, offene/abgeschlossen
 \subsection{Metrische und topologische Räume}
 \begin{df}
 Ein \emph{metrischer Raum} ist eine Menge $X$ zusammen mit einer Funktion $d: X \times X \rightarrow \R$, genannt Metrik oder \emph{Abstandsfunktion}, so dass folgende Axiome gelten:
-\begin{enumerate}[\roman{enumi})]
+\begin{enumerate}[(\roman{enumi})]
 \item \emph{Positivität}: $d(x,y)\ge 0 \land d(x,y)=0\equiv x=y$
 \item \emph{Symmetrie}: $d(x,y)=d(y,x)$
 \item \emph{Dreiecksungleichung}: $d(x,z) \le d(x,y)+d(y,z)$
@@ -253,7 +253,7 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \end{enumerate}
 \end{note*}
 \begin{ex*}
-\begin{enumerate}[i]
+\begin{enumerate}[(i)]
 \item Sei $ X=\{ x\} $ eine einelementige Menge. Dann ist die topologische Summe $ \biguplus_{\alpha\in A}X_\alpha $
 \item Beispiel \ref{thm:1.12}(iv) ist homöomorph zu $ \biguplus_{\alpha\in \R} X_\alpha \R $ (Übung)
 \end{enumerate}
@@ -499,7 +499,7 @@ Für Wegzusammenhängend:
 \fixme[Bild fehlt]
 Es gilt, falls $ c:[0,1]\to X_I $ estetiger Weg von $ a\in X_i $ nach $ p $ und $ d:[0,1]\to X_j $ stetiger Weg von $ p $ nach $ b\in X_j $, dann ist:
 \[
-e/t(:=\begin{cases}c(2t)\qquad &,t\in[0,\frac 1 2]\\ d(2t-1)\qquad &,t\in[\frac 1 2, 1]\end{cases}
+e(t):=\begin{cases}c(2t)\qquad &,t\in[0,\frac 1 2]\\ d(2t-1)\qquad &,t\in[\frac 1 2, 1]\end{cases}
 \]
 eine stetige Abbildung $ [0,1]\to \bigcup_{i\in I}X_i $. (Übung)
 \end{proof}
@@ -545,7 +545,7 @@ Kann man beliebige Familien von Teilmengen eines Raumes $X$ vorgeben und fordern
  Sei $X$ eine Menge und $\mathcal S\subset \Pot(X)$  eine Familie von Teilmengen von $X$. Dann gibt es genau eine Topologie auf $X$, die dieses $S$ als Subbasis hat.
 \end{st}
 \begin{proof}
-Sei $\mathcal B:=\{\S_1\cap...\cap S_n|n\in \N_0, S_1,...,S_n\in \mathcal S\}$ und setze $O:=\{\bigcup_iB_i|i\in \mathcal B\} \cup\{\emptyset,X\}$.
+Sei $\mathcal B:=\{S_1\cap...\cap S_n|n\in \N_0, S_1,...,S_n\in \mathcal S\}$ und setze $O:=\{\bigcup_iB_i|i\in \mathcal B\} \cup\{\emptyset,X\}$.
  Wir zeigen, dass $O$ eine Topologie auf $X$ ist. Offensichtlich liegen beliebigen Vereinigung von Mengen in $O$ wieder in $O$. 
 Sei $U_1=\bigcup_{i\in I_1}B_i, U_2=\bigcup_{i\in I_2}B_i$, mit $B_i\in \mathcal B$. Dann ist:
 \[
@@ -758,11 +758,6 @@ Zum Beweis benötigen wir zwei Lemmata.
  Sei umgekehrt die obige Bedingung erfüllt und $U_1\supset U_2 \supset ...$ eine Umgebungsbasis von $x$. Wir wählen
 $x_{n_1}\in U_1, x_{n_2}\in U_2$ mit $n_1<n_2<...<n_k<...$. Die letzte Bedingung erfüllbar, da im Inneren unendlich viele Indies $n$ mit $x_n\in U_k$ existieren. Damit ist $x_n\to x$ offensichtlich.
 \end{seg}
-
-
-
 \end{proof}
-
-
 
 \end{document}
