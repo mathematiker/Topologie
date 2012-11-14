@@ -5,6 +5,7 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\del}{\delta}
 \newcommand{\homo}{\stackrel = \sim}
+\renewcommand{\bigsqcap}{\prod}
 
 \title{Topologie}
 
@@ -206,7 +207,7 @@ Auf jeder Menge ist die Klumpentopologie die größte mögliche Topologie und di
 \begin{df}
 Sei $ X $ ein topologischer Raum.  Eine Folge $ x_n $ heißt konvergent gegen $ a\in X $, falls jede Umgebung von $ a $ fast alle Folgenglieder enthält.
 \end{df}
-\begin{df}
+\begin{df}\label{thm:1.15}
 Eine Abbildung $ f:X\to Y $ zwischen topologischen Räumen heißt \emph{stetig} in $ x\in X $, falls es zu jeder Umgebung $ V $ von $ f(x) $ eine Umgebung $ U $ von $ x $ gibt, so dass $ f(U)\subset V $ (Äquivalent: Falls das Urbild jeder Umgebung von $ x $ ist.) Die Abbildung heißt \emph{stetig}, wenn die Urbilder offener Mengen offen sind. Eine Abbildung zwischen topologischen Räumen, die bijektiv und stetig ist, heißt \emph{Homöomorphismus} (falls auch ihre Umkehrabbildung stetig ist.  Falls es einen Homöomorphismus $ d: X\to Y $ gibt, sagt man, $ X $ und $ Y $ sind \emph{homöomorph}, man schreibt: $ X\homo Y $.
 Aus der Definition folgt sofort, dass eine Abbildung. $ f: X\to Y $ genau dann stetig ist, falls sie in jedem $ x\in X $ stetig ist. (zur Übung nachvollziehen)
 \end{df}
@@ -402,13 +403,19 @@ Seien $x$ und $y$ Punkte im metrischen Raum und sei $d(x,y)>0$.
 Dann sind die beiden $\eps$-Bälle $B_\eps(x)$ und $B_\eps(y)$ mit $\eps:=\frac{1}{2}d(x,y)$ disjunkte Umgebungen von $x$ bzw. $y$. Dann 
 wäre $z\in B_\eps \land B_\eps(y)$,        
 \end{proof}
+\begin{st}
+ Jeder Teilraum eines Hausdorffraums ist Hausdorffsch, Zwei topologische Räume sind genau dann Hausdorffsch, wenn es ihre topologische Summe ist und zwei nichtleere topologische Räume ist und zwei nichtleere topologische Räume sind Hausdorffsch, genau dann wenn es ihr Produkt ist.
+\end{st}
+\begin{proof}
+ zur Übung
+\end{proof}
+Ein Raum der nicht Hausdorffsch ist, scheint mit unserer Intuition nicht vereinbar zu sein. EIn triviales Beispiel ist die Klumpentopologie $\{\empty, X\}$ auf jeder Menge. Mit Hilfe
 
-\fixme[Teil fehlt]
 \begin{df}
- Eine (\emph{Zusammenhangskomponente} $e$ eines topologischen Raumes $X$ ist ein maximal zusammenhängender Teilraum.
+ Eine \emph{Zusammenhangskomponente} $e$ eines topologischen Raumes $X$ ist ein maximal zusammenhängender Teilraum.
 ($A\subset X$ ist \emph{maximal zusammenhängend}, falls es keine zusammenhängende Teilmenge $B\subset X$ gibt mit $A\subset B, A\neq B$)
 \end{df}
-\begin{st}
+\begin{st}\label{thm:4.4}
  \begin{enumerate}[(i)]
   \item Ist $A\subset X$ zusammenhängend und $A\subset B\subset \bar A$, so ist auch $B$ zusammenhängend.
   \item Jeder Punkt von $X$ liegt in genau einer Zusammenghangskomponente von $X$, mit anderen Worten. $X$ ist die disjunkte Vereinigung seiner Komponenten.
@@ -442,7 +449,7 @@ Kann man beliebige Familien von Teilmengen eines Raumes $X$ vorgeben und fordern
 \begin{df}
  Sei $(X,O)$ ein topologischer Raum. Eine Teilmenge $\mathcal S\subset O$ heißt \emph{Subbasis}, wenn die Menge der endlichen Schnitte der Mengen in $\mathcal S$ eine Basis bildet.
 \end{df}
-\begin{st}
+\begin{st}\label{thm:4.3}
  Sei $X$ eine Menge und $\mathcal S\subset \Pot(X)$  eine Familie von Teilmengen von $X$. Dann gibt es genau eine Topologie auf $X$, die dieses $S$ als Subbasis hat.
 \end{st}
 \begin{proof}
@@ -468,7 +475,7 @@ Wir verwenden als Subbasis die Menge
 \[
  \mathcal S:=\{\bigsqcap_\alpha U_\alpha\in O_\alpha, U_\alpha=X_\alpha \text{ für alle bis auf ein $\alpha \in A$}\}
 \]
-Die so (nach Satz \ref{thm:5.3}) defnierte Topologie heißt \emph{Produkttopologie} auf $\bigsqcap_\alpha X_\alpha$ (und 
+Die so (nach Satz \ref{thm:4.3}) defnierte Topologie heißt \emph{Produkttopologie} auf $\bigsqcap_\alpha X_\alpha$ (und 
 $\mathcal S$ ist eine Subbasis). Dann ist:
 \[
  \mathcal B := \{ \bigsqcap_\alpha U_\alpha|U_\alpha\in O_\alpha, U_\alpha=X_\alpha \text{ für alle bis auf endlich viele } \alpha \in A\}
@@ -481,12 +488,12 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \]
 
 \end{seg}
-\begin{note}
+\begin{note*}
  \begin{itemize}
   \item $\mathcal S=(X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen,$A={1,...,n}$
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
-\end{note}
+\end{note*}
 \begin{df}
  Sei $(X,O)$ ein topologischer Raum. Eine Familie $\mathcal U$ von Umgebungen von $p$ heißt \emph{Umgebungsbasis} von $p$, wenn jede Umgebung von $p$ eine Umgebung aus U enthält.
 \fixme[Bild fehlt]
@@ -502,9 +509,177 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
   \item Ein topologischer Raum erfüllt das \emph{erste Abzählbarkeitsaxiome}, wenn es um jeden Punkt eine abzählbare Umgebungsbasis gibt. 
 \item Ein topologischer Raum erfüllt das \emph{zweite Abzählbarkeitsaxiome}, wenn es eine abzählbare Basis der Topologie gibt.
  \end{enumerate}
-
 \end{df}
-
-
 \end{exs*}
+\begin{seg}{Zusammenfassung}
+\begin{itemize}
+ \item \emph{Basis}, wenn sich jede offene Teilmengen als Vereinigung dieser Menge bilden lässt.
+ \item \emph{Subbasis}, wenn endliche Schnitte eine Basis bilden.
+ \item \emph{Abzählbarkeitsaxiome}
+ \begin{itemize}
+\item \emph{Erstes Abzählbarkeitsaxiom}: Um jeden Punkt gibt es ein abzählbare \emph{Umgebungsbasis}(Umgebungsbasis von $p\in X$: eine Familie von Teilmengen $U$
+, wenn jede Umgebung von p eine Menge aus $U$ enthält.)
+\item \emph{Zweites Abzählbarkeitsaxiom}: Der Raum besitzt eine abzählbare Basis
+\end{itemize}
+\end{itemize}
+\end{seg}
+Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeitsaxiome zusammenhängen und eine Antwort auf die Frage, wozu das erste Abzählbarkeitsaxiom nützlich ist.
+\begin{st}
+ \begin{enumerate}[(i)]
+  \item Das zweite Abzählbarkeitsaxiom impliziert das erste.
+  \item Gilt in einem topologischen Raum $X$ das erste Abzählbarkeitsaxiom, dann sind Stetigkeit und Folgenstetigkeit für Abbildungen $f:X\to X$ äquivalent.
+ \end{enumerate}
+\end{st}
+\begin{proof}
+ \begin{enumerate}[(i)]
+  \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$, dann enthält eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal B$ mit $p\in U$, für diese gilt $U\in \mathcal U$.
+\item \begin{seg}{„$\implies$“} bereits gezeigt in \ref{thm:1.15} \end{seg}
+\begin{seg}{„$\implies$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$.
+ Sei $\mathcal U=\{U_1,U_2,U_3,...\}$ eine abzählbare Umgebungsbasis von $x$. 
+Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,...$ Umgebungen von $x$. 
+Nach Annahme gibt es in jeder dieser Mengen $U_1\cap...\cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb 
+von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
+\end{seg}
+\end{enumerate}
+\end{proof}
+\begin{note}
+ $f: X\to Y$ heißt \emph{folgenstetig}, falls für alle konvergenten Folgen $x_n\to x$ in $X$ gilt $f(x_n)\to f(x)$.von 
+\end{note}
+\section{Kompaktheit}
+\begin{df}
+ Eine \emph{offene Überdeckung} eines topologischen Raumes $X$ ist eine Familie $U_i$, $i\in I$, von offenen Teilmengen von $X$ mit der Eigenschaft $\bigcup_{i\in I} U_i=X$.
+\end{df}
+\begin{df}
+ Ein topologischer Raum $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ eine \emph{endliche Teilüberdeckung} besitzt, dass heißt falls folgendes gilt: ist $U_i, i\in I$, eine offene Überdeckung von $X$, so gibt es endlich viele $i_1, ...,i_n\in I$, so dass $U_{i_1}\cup ...\cup U_{i_n}=X$ gilt.
+\end{df}
+\begin{ex*}
+ $\R^n$ ist \emph{nicht kompakt}, denn die offene Überdeckung durch $B_k(0),k\in \N$ besitzt eine endliche Teilüberdeckung.
+\end{ex*}
+
+\begin{note}
+ Manchmal (nicht in dieser Vorlesung) wird zusätzlich noch die Hausdorffeigenschaft verlangt (in diesem Fall heißt die obige Eigenschaft meist "`präkompakt"').
+\end{note}
+\begin{st}[Heine-Borelscher Überdeckungssatz]
+ Eine Teilmenge des $\R^n$ ist kompakt genau dann, wenn sie abgeschlossen und beschränkt ist.
+\end{st}
+\begin{proof}
+ siehe zum Beispiel Forster O., Analysis II.
+\end{proof}
+\begin{st}
+ Jede kompakte Teilmenge eines metrischen Raumes ist beschränkt und abgeschlossen (Umkehrung gilt im Allgemeinen nicht).
+\end{st}
+\begin{proof}
+ \begin{seg}{Beschränktheit}
+  Für einen beliebigen Punkt $x$ bildet $B_k(x)\cap A, k \in \N$, eine offene Überdeckung von $A$, da es eine endliche Teilüberdeckung gibt, 
+ist der Abstand von x durch eine natürliche Zahl beschränkt.
+ \end{seg}
+\begin{seg}{Abgeschlossen}
+ Sei $A\subset X$ kompakt und sei $x\in X\setminus A$. Es gilt:
+\[
+ U_\eps:=(X\setminus\bar{B_\eps(x)})\cap A, \eps>0 := \{ y\in X|d(x,y)\le \eps\}
+\]
+bilden eine offene Überdeckung von $A$, es gibt eine endliche Teilüberdeckung $U_{\eps_1}\cup... \cup U_{\eps_k}$, und es folgt, dass $B_\eps(x)$ mit $\eps:=\min\{\eps_1,...,\eps_k\}$ ganz in $X\setminus A$ liegt.
+
+\fixme[Bild fehlt]
+\end{seg}
+\end{proof}
+Die Umkehrung gilt in beliebigen metrischen Räumen \emph{nicht}, der Begriff „beschränkt“ lässt sich nicht analog auf metrische Räume übertragen, denn für jede Metrik $d$ auf $X$ ist auch
+\[
+ d'(x,y):=\frac{d(x,y)}{1+d(x,y)}<1
+\]
+eine Metrik (die dieselbe Topologie erzeugt) also ist die Unterscheidung zwischen beschränkten und unbeschränkten Mengen hier nicht sehr hilfreich.
+\begin{note*}
+ Ein metrischer Raum ist kompakt, wenn er \emph{vollständig} und \emph{totalbeschränkt} ist, \emph{totalbeschränkt} bedeutet: zu jedem $\eps>0$ gibt es ein endliches $\eps$-Netz, dass heißt zu jedem $\eps>0$ gibt es endlich viele Punkte $x_1,...,x_k$ mit $\bigcup_{i=1}^kB_\eps(x_i)=X$.
+\end{note*}
+\begin{st}
+ Stetige Bilder kompakter Räume sind kompakt
+\end{st}
+\begin{proof}
+Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann ist $f^{-1}(U_i),i\in I$, eine offene Überdeckung von $X$. Diese besitzt aber eine endliche Teilüberdeckung $f^{-1}(U_i)\cup ...\cup f^{-1}(U_{i_n})=X$. Dann ist $U_{i_1}\cup ...\cup U_{i_n}$ eine offene Überdeckung von $Y$, falls $f$ surjektiv ist.
+\end{proof}
+\begin{st*}
+ Abgeschlossene Teilräume von kompakten Mengen sind kompakt.
+\end{st*}
+\begin{proof}
+ Sei $X$ kompakt, $A\subset X$ abgeschlossen. Sei $U_i, i\in I,$ eine offene Überdeckung von $A$.
+\fixme[Bild fehlt]
+Nach Definition der Teilraumtopologie gibt es offene Mengen $V_i$ von $X$, so dass $U_i=V_i\cap A$. Dann ist 
+\[
+ (X\setminus A) \cup \bigcup_{i\in I} V_i
+\]
+eine offene Überdeckung von $X$, diese hat eine endliche Teilüberdeckung der Form 
+\[
+(X\setminus A)\cup V_{i_1} \cup...\cup V_{i_n}
+\]
+Somit überdecken die Mengen $U_{i_1}=V_{i_1}\cap A, ..., U_{i_n}=V_{i_n}\cap A$ ganz $A$.
+\end{proof}
+\begin{st} \label{thm:6.7}
+In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
+\end{st}
+\begin{proof}
+ Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt, die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine Umgebung $U_a$ von $a$ und eine Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ für \\
+\fixme[Bild fehlt]\\
+alle $a\in A$ Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unedlich vieler Mengen.
+$U_{a_1},..., U_{a_n}$ auswählen, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
+\end{proof}
+Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
+\begin{st}
+ Sei $X$ ein kompakter topologischer Raum und $Y$ ein Hausdorffraum. Sei $f: X\to Y$ eine stetige bijektive Abbildung. Dann ist $f$ ein Homöomorphismus
+\end{st}
+\begin{proof}
+ Es ist nur zu zeigen, dass $f$ die Eigenschaft hat, dass Bilder offener Mengen offen sind (dann sind die Urbilder offenen Mengen unten der Umkehrabbildung $f^{-1}:Y\to X$ offen)
+
+Äquivalent dazu: Die Bilder abgeschlossener Mengen sind abgeschlossen. Sei $A\subset X$ abgeschlossen, da $X$ kompakt, ist A nach 6.6 auch kompakt, also ist $f(A)$ ein kompakter Teilraum von $Y$. Da $Y$ Hausdorffsch folgt aus \ref{thm:6.7}, dass $f(A)$ abgeschlossen ist.
+\end{proof}
+\begin{ex*}
+ \begin{enumerate}[(i)]
+  \item Sei $X=\R/\sim$ wie im Beispiel \ref{thm:2.6}, $x\sim y:\iff x-y\in \Z$ und sei $Y=S^1$ (der Einheitskreis in $\R^2$). Dann ist $X=\R/\sim$ kompakt nach \ref{thm:6.5}, da Bild der kompakten Teilmenge $[0,1]$ von $\R$. Andererseits ist $Y$ offensichtlich als Teilraum des Hausdorffraums $\R^2$ ebenfalls Hausdorffsch.
+Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\to e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \stackrel{\sim}{=}S^1$
+
+ \item $S^1=\{(x,y)^T\in \R^2|x^2+y^2=1\}=\{z\in \C||z|=1\}$\\
+\fixme[Bild fehlt]\\
+ Sei $X:=S^1/\sim$ $z\sim z':\iff z=z'$ oder $z=-z'$ $X$ ist kompakt, da Bild des kompakten EInheitskreises $S^1$ unter der Quotientenabbildung. WIr wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\to z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig i
+ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (bzw. $\R P^1\homo S^1$)
+
+Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Folgen beschreiben
+\end{enumerate}
+\end{ex*}
+\begin{df}
+ Ein topologischer Raum heißt \emph{folgenkompakt}, wenn jede Folge eine konvergente Teilforge besitzt.  
+\end{df}
+\begin{ex*}
+ Folge $x_n, n\in \N$ Teilfolge $x_{n_k}$ mit $k\to n_k$ steigt monoton steigend. zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
+\end{ex*}
+\begin{st}
+ In topologischen Räumen, die das zweite Abzählbarkeitsaxiom erfüllen (dass heißt es gibt eine abzählbare Basis der Topologie) sind Folgenkompaktheit und (\emph{Überdeckungskompaktheit}) (dass heißt Kompaktheit wie in \ref{thm:6.2} defniert) äquivalent.
+\end{st}
+Zum Beweis benötigen wir zwei Lemmata.
+\begin{lem}
+ Sei $x_n, n\in \N$, eine Folge in dem topologischen Raum $X$, der das erste Abzählbarkeitsaxiom erfüllt.  Dann gilt: $x_n$ besitzt genau darin eine konvergente Teilfolge, wenn ein $x\in X$ existiert, so dass in jedem Umgebung $U$ von $x$ unendlich viele Folgenglieder $x_n$ in $U$ liegen.
+\end{lem}
+\begin{proof}
+ \begin{seg}{"`$\implies$"'}
+  Gelt $x_{n_k}\to x$ und sei $U$ Umgebung von $x$, dann gibt es $k_0\in \N$, so dass $X_{n_k}\in U$ für $k\ge k_0$.
+ \end{seg}
+\begin{seg}{"`$\Longleftarrow$"'}
+ Sei umgekehrt die obige Bedingung erfüllt und $U_1\supset U_2 \supset ...$ eine Umgebungsbasis von $x$. Wir wählen
+$x_{n_1}\in U_1, x_{n_2}\in U_2$ mit $n_1<n_2<...<n_k<...$. Die letzte Bedingung erfüllbar, da im Inneren unendlich viele Indies $n$ mit $x_n\in U_k$ existieren. Damit ist $x_n\to x$ offensichtlich.
+\end{seg}
+
+
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
