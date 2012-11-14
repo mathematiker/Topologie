@@ -4,8 +4,9 @@
 \renewcommand{\equiv}{\Longleftrightarrow}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\del}{\delta}
-\newcommand{\homo}{\stackrel = \sim}
+\newcommand{\homo}{\cong}
 \renewcommand{\bigsqcap}{\prod}
+\usepackage{txfonts}
 
 \title{Topologie}
 
@@ -32,10 +33,8 @@ So zum Beispiel für Teilmengen des $\R^2$:
 \begin{ex*} 
 Topologische Begriffe sind beispielsweise \emph{Stetigkeit, offene/abgeschlossene Mengen, Umgebung, Rand, Abschluss, Konvergenz, kompakt, zusammenhängend, Homotopie}.  Die konkreten Definition werden im Verlauf dieser Vorlesung geklärt.
 \end{ex*}
-\begin{center}
-\LARGE\textbf{I Grundbegriffe}
-\end{center}
-\section{Metrische und topologische Räume}
+\section{Grundbegriffe}
+\subsection{Metrische und topologische Räume}
 \begin{df}
 Ein \emph{metrischer Raum} ist eine Menge $X$ zusammen mit einer Funktion $d: X \times X \rightarrow \R$, genannt Metrik oder \emph{Abstandsfunktion}, so dass folgende Axiome gelten:
 \begin{enumerate}[\roman{enumi})]
@@ -234,7 +233,7 @@ Die Axiome eines topologischen Raums sind für sich alleine relativ schwach und 
   \item "`Abzählbarkeitsaxiome"' $\implies$ Äquivalenz von Stetigkeit und Folgendefinition
 \end{itemize}
 \end{note}
-\section{Grundkonstruktionen}
+\subsection{Grundkonstruktionen}
 Grundkonstruktionen sind Methoden, um neue Topologien zu definieren durch:
 \begin{itemize}
 \item Summe, teilräume, Produkte, Quotienten
@@ -388,7 +387,7 @@ Es bleibt noch zu zeigen: Die Bilder offener Mengen sind offen (man sagt dann: $
 Es gilt $ \bar \phi(A)=\phi(q^{-1}(A))=\phi(q^{-1}(A)\cap[0,1]) $. Da $ q^{-1}(A)\cap [0,1] $ kompakte Tielmenge von $C$ $ \R $ ist, ist $ \bar\phi(A)=\phi(\phi-1)(A)\cap[0,1]) $ kompakt, also abgeschlossene Teilmenge des $ \R^2  $ und somit von $ Y $.
 \end{proof}
 \end{ex*}
-\section{Hausdorffräume}
+\subsection{Hausdorffräume}
 \begin{df}[Hausdorffsches Trennungsaxiom]
  Ein topologischer Raum heißt \emph{Hausdorffraum}, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
 \\ \fixme[Bild fehlt]
@@ -401,16 +400,109 @@ Dies folgt aus der Dreiecksungleichung der Metrik. \\
  \fixme[Bild fehlt] \\
 Seien $x$ und $y$ Punkte im metrischen Raum und sei $d(x,y)>0$.
 Dann sind die beiden $\eps$-Bälle $B_\eps(x)$ und $B_\eps(y)$ mit $\eps:=\frac{1}{2}d(x,y)$ disjunkte Umgebungen von $x$ bzw. $y$. Dann 
-wäre $z\in B_\eps \land B_\eps(y)$,        
+wäre $z\in B_\eps \land B_\eps(y)$, dann wäre die Dreiecksungleichung
+\[
+\underbrace{d(x,z)}_{y<\eps}+\underbrace{d(z,y)}_{<\eps}\ge d(x,y)=2\eps
+\]        
+verletzt.
 \end{proof}
 \begin{st}
- Jeder Teilraum eines Hausdorffraums ist Hausdorffsch, Zwei topologische Räume sind genau dann Hausdorffsch, wenn es ihre topologische Summe ist und zwei nichtleere topologische Räume ist und zwei nichtleere topologische Räume sind Hausdorffsch, genau dann wenn es ihr Produkt ist.
+Jeder Teilraum eines Hausdorffraums ist Hausdorffsch. Zwei topologische Räume sind genau dann Hausdorffsch, wenn ihre topologische Summe es ist und zwei nichtleere topologische Räume sind Hausdorffsch, genau dann wenn ihr Produkt es ist. 
+\end{st}
+\begin{proof}[zur Übung]\end{proof}
+\fixme[Figure]\\
+Ein Raum, der nicht Hausdorffsch ist, scheint mit unserer Intuition unvereinbar zu sein.  Ein finales Beispiel ist die Klumpentopologie $\{\emptyset, X\}$ auf jeder Menge. Mit Hilfe der Quotiententopologie erhält man weniger triviale Beispiele von Nicht-Hausdorffräumen.
+\begin{ex*} Für Nicht-Hausdorffraum:\\
+Die Gerade mit einem Dppelpunkt. Sei $ X=\R+\R=\R\times \{0\}\cup \R\times \{1\} $. Definiere man $ (x,n)\sim (y,m)\stackrel{\text{def}}{\iff} x=y\neq 0 $. \\
+\fixme[Figure]\\
+$ \R $ besitzt unter Betrachtung dieser Relation doppelt vorhandene Nullpunkte.
+
+Die beiden Punkte $(0,0)$ und $(0,1)$ in $ X/\sim $ lassen sich nicht durch disjunkte Umgebung trennen.\\
+\fixme[Figure]\\
+Wir wollen noch zwei weitere Eigenschaften von Hausdorffräumen beweisen, die mit der geometrischen Intuition übereinstimmen.
+\end{ex*}
+\begin{st}
+In einem Hausdorffraum ist gilt:
+\begin{enumerate}[(i)]
+\item Der Limes einer konvergenten Folge ist eindeutig bestimmt.
+\item Punkte sind abgeschlossen.
+\end{enumerate}
 \end{st}
 \begin{proof}
- zur Übung
+\begin{enumerate}[(i)]
+\item Seien $ a\neq b $ verschiedene Limiten einer konvergenten Folge $ x_n $, dann gibt es disjunkte Umgebungen $ U_a $ und $ U_b $ von $ a $ bzw. $ b $.  Da $ x_n $ gegen $ a $ konvergiert, liegen fast alle Folgenglieder in $ U_a $, im Widerspruch zur Konvergenz von $ x_n $ gegen $ b $.
+\item Das Komplement einer einelementigen Menge ist offen, denn nach der Hausdorffeigenschaft gibt es um jeden ihrer Punkte eine Umgebung, die insbesondere p nicht enthält.
+\end{enumerate}
 \end{proof}
-Ein Raum der nicht Hausdorffsch ist, scheint mit unserer Intuition nicht vereinbar zu sein. EIn triviales Beispiel ist die Klumpentopologie $\{\empty, X\}$ auf jeder Menge. Mit Hilfe
-
+\fixme[Figur]
+\begin{note*}
+Dies liefert eine notwendige Bedingung dafür, dass eine QUotiententopologie Hausdorffsch ist.  Alle Äquivalenzklassen müssen abgeschlossen sein.
+\end{note*}
+\subsection{Zusammenhang und Wegzusammenhang}
+\begin{df}
+Ein topologischer Raum heißt \emph{zusammmenhängend}, wenn er sich nicht in zwei nichtleere, offene, disjunkte Teilmengen zerlegen lässt.
+\end{df}
+\fixme[Figur]
+\begin{note*}
+Äquivalent zu "`zusammenhängend"' sind:
+\begin{enumerate}[(i)]
+\item Die leere Menge und der ganze raum sind die einzigen Mengen, die sowohl offen als auch abgeschlossen sind.
+\item Der Raum ist nicht homöomorph zu einer topologischen SUmme zweier nichtleere topologischer Räume.
+\end{enumerate}
+\end{note*}
+\begin{exs*}
+\begin{enumerate}[(i)]
+\item Die leere Menge und der ganze Raum sind die einzigen Mengen, die sowohl offen als auch abgeschlossen sind.
+\item Der Raum ist nicht homöomorph zu einer topologischen Summe zweier nichtleere topologischen Räume.
+\item Ein Intervall $ I $ ist zusammenhängend: 
+\begin{proof}
+Angenommen $I=A\dotcup B$, beide $ A $ und $ B $ offen und abgeschlossen (in der Teilraumtopologie, durch $ I\subset \R $ induziert) Seien $ a\in A, b\in B $, wobei $ a<b $ ohne Einschränkung. Defniere $ s:=\inf\{x\in B|a<x\}$. Dann liegt in jeder Umgebung von $ s $ ein Punkt aus $ B $. (nach Definition des Infinums). Es gilt entweder $ s=a $ oder $ s>a $. Im ersten Fall kann $ s $ kein innerer Punkt von $ A $ sein, im zweiten Fall liegt das Intervall $ (a,s) $ ganz in $ A $ und $ s $ kann weder von $ A $ noch von $ B $ ein innerer Punkt sein. Dies führt letztlich zum Widerspruch.
+\end{proof}
+\end{enumerate}
+\end{exs*}
+Ein stärkerer Begriff ist der des \emph{Wegzusammenhangs} (Ein \emph{Weg} in einem topologischen Raum $ X $ ist eine stetige Abbildung $ [a,b]\to X $
+\begin{df}
+Ein topologischer Raum heißt \emph{wegzusammenhängend}, wenn es zu je zwei Punkte $ p,q\in X $ einen Weg gibt, dass heißt eine stetige Abbildung $ c: [0,1]\to X $ mit $c(0)=p, c(1)=q$.
+\end{df}
+\begin{ex*}
+$ \R^n $ ist wegzusammenhängen, in der Tat, benutze man zum Beispiel $ c(t)=(1-t)p+tq $. \fixme[Figur]
+\end{ex*}
+\begin{st}
+Ein wegzusammenhängender topologischer Raum ist zusammenhängend.
+\end{st}
+\begin{proof}
+Angenommen $ X=A\dotcup B $, wobei $ A $ und $ B $ beide offen und nichtleer.  Sei $ p\in A $ und $ q\in B $ und $ c $ ein Weg zwischen p und q. \\ \fixme[Figur]\\
+Dann wäre $[0,1]=c^{-1}(A)\dotcup c^{-1}(B)$ eine Zerlegung in zwei disjunkte, nichtleere offene Mengen.
+\end{proof}
+Die Umkehrung gilt jedoch im Allgemeinen nicht:
+\begin{ex*}
+Ein Raum, der zusammenhängend, aber nicht \underline{weg}zusammenhängend ist.
+\[
+X=\underbrace{\{0\}\times [-1,1]}_{A}\cup\underbrace{\{(x, \sin(x^{-1})|x>0\}}_{B}
+\] 
+\fixme[Figur]
+\end{ex*}
+Die Relation $ p\sim q \stackrel{\text{def}}{\iff} $ es gibt einen weg von $ p $ nach $ q $ ist (Übung) offensichtlich eine Äquivalenzrelation, die zugehörigen Äquivalenzklassen heißen \emph{Wegzusammenhangskomponenten} des topologischen Raums.
+\begin{st}
+\begin{enumerate}[(i)]
+\item Stetige Bilder von (weg-)zusammenhängenden Räumen sind (weg-)zusammenhängend.
+\item Vereinigungen (weg-)zusammenhängender Räume $ X_i, i\in I, $ mit $ \bigcap X_i\neq \emptyset $ sind wegzusammenhängend.
+\item Ein Produkt $ X\times Y $ von (weg-)zusammenhängenden nichtleeren topologischen Räumen $ X,Y $ ist genau dann (weg-)zusammenhängend, wenn die beiden Faktoren es sind. 
+\end{enumerate}
+\end{st}
+\begin{proof}
+\item Sei $ f:X\to $ stetige Abbildung, so zerfällt $f(X)=Y_1\dotcup Y_2$ mit $Y_1, Y_2$ offen disjunkt, dann auch $ X=f^{-1}(Y_1)\dotcup f^{-1}(Y_2) $. \\
+\fixme[Figur]
+Sei $ p,q \in f(X) $. Es gibt $ a,b\in X $ mit $ f(a)=p $, $ f(b)=q $ und einen Weg $ c:[0,1]\to X $ von $ a $ nach $ b $. Dann ist $ f\circ c:[0,1]\to X $ ein Weg von $ p $ nach $ q $.
+\item Sei $ X=\bigcup_{i\in I}X_i $. Sei $ X=A\dotcup B $ mit $ A,B $ offen. Sei $ p\in \bigcap_{i\in I}X_i $ und ohne Einschränkung $ p\in A $.  Es gilt $ X_i=(X_i\cap A)\dotcup (X_i\cap B) $, da $ p\in X_i\cap A $ folgt $ X_i\cap B=\emptyset $, denn $ X_i $ ist zusammenhängend. Also folgt $ B=\emptyset $.
+Für Wegzusammenhängend:
+\fixme[Bild fehlt]
+Es gilt, falls $ c:[0,1]\to X_I $ estetiger Weg von $ a\in X_i $ nach $ p $ und $ d:[0,1]\to X_j $ stetiger Weg von $ p $ nach $ b\in X_j $, dann ist:
+\[
+e/t(:=\begin{cases}c(2t)\qquad &,t\in[0,\frac 1 2]\\ d(2t-1)\qquad &,t\in[\frac 1 2, 1]\end{cases}
+\]
+eine stetige Abbildung $ [0,1]\to \bigcup_{i\in I}X_i $. (Übung)
+\end{proof}
 \begin{df}
  Eine \emph{Zusammenhangskomponente} $e$ eines topologischen Raumes $X$ ist ein maximal zusammenhängender Teilraum.
 ($A\subset X$ ist \emph{maximal zusammenhängend}, falls es keine zusammenhängende Teilmenge $B\subset X$ gibt mit $A\subset B, A\neq B$)
@@ -433,7 +525,7 @@ Sei ohne Einschränkung $A\cap M_1\neq$. Zu zeigen ist, dass $B\cap M_2=\emptyse
 \item folgt aus (i).
  \end{enumerate}
 \end{proof}
-\section{Abzählbarkeitsaxiome}
+\subsection{Abzählbarkeitsaxiome}
 \begin{df}
  Sei $(X,O)$ ein topologischer Raum. Eine Teilmenge $\mathcal B\subset O$ heißt \emph{Basis}(die Topologie) von $X$, wenn jedes $U\subset O$ eine Vereinigung von Mengen aus $\mathcal B$ ist.
 \end{df}
@@ -509,6 +601,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
   \item Ein topologischer Raum erfüllt das \emph{erste Abzählbarkeitsaxiome}, wenn es um jeden Punkt eine abzählbare Umgebungsbasis gibt. 
 \item Ein topologischer Raum erfüllt das \emph{zweite Abzählbarkeitsaxiome}, wenn es eine abzählbare Basis der Topologie gibt.
  \end{enumerate}
+
 \end{df}
 \end{exs*}
 \begin{seg}{Zusammenfassung}
@@ -545,7 +638,7 @@ von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emp
 \begin{note}
  $f: X\to Y$ heißt \emph{folgenstetig}, falls für alle konvergenten Folgen $x_n\to x$ in $X$ gilt $f(x_n)\to f(x)$.von 
 \end{note}
-\section{Kompaktheit}
+\subsection{Kompaktheit}
 \begin{df}
  Eine \emph{offene Überdeckung} eines topologischen Raumes $X$ ist eine Familie $U_i$, $i\in I$, von offenen Teilmengen von $X$ mit der Eigenschaft $\bigcup_{i\in I} U_i=X$.
 \end{df}
@@ -634,7 +727,7 @@ Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kom
 \begin{ex*}
  \begin{enumerate}[(i)]
   \item Sei $X=\R/\sim$ wie im Beispiel \ref{thm:2.6}, $x\sim y:\iff x-y\in \Z$ und sei $Y=S^1$ (der Einheitskreis in $\R^2$). Dann ist $X=\R/\sim$ kompakt nach \ref{thm:6.5}, da Bild der kompakten Teilmenge $[0,1]$ von $\R$. Andererseits ist $Y$ offensichtlich als Teilraum des Hausdorffraums $\R^2$ ebenfalls Hausdorffsch.
-Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\to e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \stackrel{\sim}{=}S^1$
+Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\to e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \homo S^1$
 
  \item $S^1=\{(x,y)^T\in \R^2|x^2+y^2=1\}=\{z\in \C||z|=1\}$\\
 \fixme[Bild fehlt]\\
@@ -669,16 +762,6 @@ $x_{n_1}\in U_1, x_{n_2}\in U_2$ mit $n_1<n_2<...<n_k<...$. Die letzte Bedingung
 
 
 \end{proof}
-
-
-
-
-
-
-
-
-
-
 
 
 
