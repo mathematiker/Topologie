@@ -166,7 +166,7 @@ Eine Menge $ X $ zusammen mit einer Topologie auf $ X $ heißt \emph{topologisch
 \end{df}
 \begin{note*}
 \begin{enumerate}[(\roman{enumi})]
-\item Natürlich ist die Definition so gemacht, dass die in einem Topologie bilden. \fixme[nachschauen]
+\item Natürlich ist die Definition so gemacht, dass die in einem Topologie bilden. \fixme[fig5]
 \item Verschiedene Metriken können diesselbe Topologie erzeugen, vgl. der aus der Analysis bekannter Satz, dass alle Normen auf dem $ \R^n $ äquivalent.  Daraus folgt: die Metrik die Metrik $ d(x,y) :=||x-y|| $ definiert für \emph{alle Normmen auf $ \R^n $} dieselbe Topologie, die sogenannte \emph{Standardtopologie}, zum Beispiel definieren:
 \begin{align*}
 d_1(x,y)&=|x_1-y_1|+...+|x_n-y_n|\\
@@ -262,7 +262,7 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \end{df}
 \begin{ex*}
 $X=\R^2, M=\{x-\text{Achse}\}$
-\fixme{figure}
+\fixme{fig6}
 \end{ex*}
 \begin{att*}
 Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (es sei denn $ M\subset X $ wäre offen). Zum Beispiel:
@@ -272,13 +272,13 @@ Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (e
 \end{att*}
 \begin{df}
 Seien $ X $ und $ Y $ topologische Räume. Eine Teilmenge $ W\subset X\times Y $ heißt offen bezüglich der Produktopologie auf $ X\times Y $ heißt offen bezüglich der Proudukttopologie auf $X\times Y$, falls es zu jedem Punkt $ (x,y)\in W $ eine Umgebung $ U $ von $ x $ und eine Umgebung $ V $ von $ y $ gibt, sodass $ U\times V $ in W enthalten ist.
-\fixme{figure}
+\fixme{fig7}
 \end{df}
 \begin{note*}
 \begin{enumerate}[(i)]
 \item Die Standardtopologie auf $ \R^2 $ stimmt mit der Produkttopologie auf $ \R\times \R $ (beide Faktoren mit der Standardtopologie von $ \R $ versehen) überein.
 \item Produkte offener Mengen in X und Y ("`Kästchen"') sind offen in den Produkttopoligien, aber nicht alle offenen Mengen sind Kästchen, z. B. sind auch die Vereinigung von Kästchen Kästchen.
-\fixme{figure} 
+\fixme{fig8} 
 \end{enumerate}
 \underline{Erinnerung:} Eine \emph{Äquivalenzrelation} auf einer Menge $ X $ ist eine Relation $\sim$ mit folgenden Eigenschaften:
 \begin{enumerate}[(i)]
@@ -307,13 +307,13 @@ Sei $ X $ ein topologischer Raum und $ A\subset X $ ein Teilraum. Dann ist durch
 \end{seg}
 \item \begin{seg}{Beispiel zu (i)}
 Sei X ein topologischer Raum. Betrachte $ X\times [0,1] $
-\fixme figure
+\fixme[fig9]
 Man erhält den Kegel $CX:=X\times[0,1]/X\times\{1\}$
 \end{seg}
 \item Allgemeiner: "`\emph{Zusammenkleben}"'
 \begin{enumerate}[(a)]
-\item \fixme figure
-\item \fixme figure
+\item \fixme[fig10]
+\item \fixme[fig11]
 \end{enumerate}
 bei (b) handelt es sich nicht um Zusammenschlagen eines Teilraums zu einem Punkt, sondern gegenüberliegend Punkte in den beiden senkrecht "`Radintervalle"' werden identifiziert mit den Äquivalenzrelationen: \fixme[nachschauen]
 \[
@@ -377,7 +377,7 @@ Die in (iv) definierte Topologie ist also durch
 \[
 \mathcal T(\bigcup\limits_{i\in I} \{ f^{-1}(U)|U \text{ offen in } Y\} )
 \]
-\begin{ex*} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ ist die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \underline{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, den Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[bild]
+\begin{ex*} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ ist die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \underline{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, den Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[fig12]
 \begin{proof}
 Betrachte $ \phi(t)=(\cos(2\pi\cdot t),\sin(2\pi \cdot t)), \R\to Y $.
 Wegen $ \phi(t+k)=\phi(t) $ für $ k\in \Z $, ist durch $ \bar\phi: X\to Y, [x]\to \phi(x) $ eine wohldefinierte Abbildung gegeben. $\bar \phi$ ist offensichtlich bijektiv. Die Abbildung $ \bar \phi  $ ist stetig nach Definition der Quotientenabbildung, da $ \phi $ stetig ist.
@@ -390,14 +390,14 @@ Es gilt $ \bar \phi(A)=\phi(q^{-1}(A))=\phi(q^{-1}(A)\cap[0,1]) $. Da $ q^{-1}(A
 \subsection{Hausdorffräume}
 \begin{df}[Hausdorffsches Trennungsaxiom]
  Ein topologischer Raum heißt \emph{Hausdorffraum}, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
-\\ \fixme[Bild fehlt]
+\\ \fixme[fig13]
 \end{df}
 \begin{st}
 Jeder metrische Raum ist ein Hausdorffraum. 
 \end{st}
 \begin{proof}
 Dies folgt aus der Dreiecksungleichung der Metrik. \\
- \fixme[Bild fehlt] \\
+ \fixme[fig14] \\
 Seien $x$ und $y$ Punkte im metrischen Raum und sei $d(x,y)>0$.
 Dann sind die beiden $\eps$-Bälle $B_\eps(x)$ und $B_\eps(y)$ mit $\eps:=\frac{1}{2}d(x,y)$ disjunkte Umgebungen von $x$ bzw. $y$. Dann 
 wäre $z\in B_\eps \land B_\eps(y)$, dann wäre die Dreiecksungleichung
@@ -410,15 +410,15 @@ verletzt.
 Jeder Teilraum eines Hausdorffraums ist Hausdorffsch. Zwei topologische Räume sind genau dann Hausdorffsch, wenn ihre topologische Summe es ist und zwei nichtleere topologische Räume sind Hausdorffsch, genau dann wenn ihr Produkt es ist. 
 \end{st}
 \begin{proof}[zur Übung]\end{proof}
-\fixme[Figure]\\
+\fixme[fig15]\\
 Ein Raum, der nicht Hausdorffsch ist, scheint mit unserer Intuition unvereinbar zu sein.  Ein finales Beispiel ist die Klumpentopologie $\{\emptyset, X\}$ auf jeder Menge. Mit Hilfe der Quotiententopologie erhält man weniger triviale Beispiele von Nicht-Hausdorffräumen.
 \begin{ex*} Für Nicht-Hausdorffraum:\\
 Die Gerade mit einem Dppelpunkt. Sei $ X=\R+\R=\R\times \{0\}\cup \R\times \{1\} $. Definiere man $ (x,n)\sim (y,m)\stackrel{\text{def}}{\iff} x=y\neq 0 $. \\
-\fixme[Figure]\\
+\fixme[fig16]\\
 $ \R $ besitzt unter Betrachtung dieser Relation doppelt vorhandene Nullpunkte.
 
 Die beiden Punkte $(0,0)$ und $(0,1)$ in $ X/\sim $ lassen sich nicht durch disjunkte Umgebung trennen.\\
-\fixme[Figure]\\
+\fixme[fig17]\\
 Wir wollen noch zwei weitere Eigenschaften von Hausdorffräumen beweisen, die mit der geometrischen Intuition übereinstimmen.
 \end{ex*}
 \begin{st}
@@ -434,7 +434,7 @@ In einem Hausdorffraum ist gilt:
 \item Das Komplement einer einelementigen Menge ist offen, denn nach der Hausdorffeigenschaft gibt es um jeden ihrer Punkte eine Umgebung, die insbesondere p nicht enthält.
 \end{enumerate}
 \end{proof}
-\fixme[Figur]
+\fixme[fig18]
 \begin{note*}
 Dies liefert eine notwendige Bedingung dafür, dass eine QUotiententopologie Hausdorffsch ist.  Alle Äquivalenzklassen müssen abgeschlossen sein.
 \end{note*}
@@ -442,7 +442,7 @@ Dies liefert eine notwendige Bedingung dafür, dass eine QUotiententopologie Hau
 \begin{df}
 Ein topologischer Raum heißt \emph{zusammmenhängend}, wenn er sich nicht in zwei nichtleere, offene, disjunkte Teilmengen zerlegen lässt.
 \end{df}
-\fixme[Figur]
+\fixme[fig19]
 \begin{note*}
 Äquivalent zu "`zusammenhängend"' sind:
 \begin{enumerate}[(i)]
@@ -465,13 +465,13 @@ Ein stärkerer Begriff ist der des \emph{Wegzusammenhangs} (Ein \emph{Weg} in ei
 Ein topologischer Raum heißt \emph{wegzusammenhängend}, wenn es zu je zwei Punkte $ p,q\in X $ einen Weg gibt, dass heißt eine stetige Abbildung $ c: [0,1]\to X $ mit $c(0)=p, c(1)=q$.
 \end{df}
 \begin{ex*}
-$ \R^n $ ist wegzusammenhängen, in der Tat, benutze man zum Beispiel $ c(t)=(1-t)p+tq $. \fixme[Figur]
+$ \R^n $ ist wegzusammenhängen, in der Tat, benutze man zum Beispiel $ c(t)=(1-t)p+tq $. \fixme[fig20]
 \end{ex*}
 \begin{st}
 Ein wegzusammenhängender topologischer Raum ist zusammenhängend.
 \end{st}
 \begin{proof}
-Angenommen $ X=A\dotcup B $, wobei $ A $ und $ B $ beide offen und nichtleer.  Sei $ p\in A $ und $ q\in B $ und $ c $ ein Weg zwischen p und q. \\ \fixme[Figur]\\
+Angenommen $ X=A\dotcup B $, wobei $ A $ und $ B $ beide offen und nichtleer.  Sei $ p\in A $ und $ q\in B $ und $ c $ ein Weg zwischen p und q. \\ \fixme[fig21]\\
 Dann wäre $[0,1]=c^{-1}(A)\dotcup c^{-1}(B)$ eine Zerlegung in zwei disjunkte, nichtleere offene Mengen.
 \end{proof}
 Die Umkehrung gilt jedoch im Allgemeinen nicht:
@@ -480,7 +480,7 @@ Ein Raum, der zusammenhängend, aber nicht \underline{weg}zusammenhängend ist.
 \[
 X=\underbrace{\{0\}\times [-1,1]}_{A}\cup\underbrace{\{(x, \sin(x^{-1})|x>0\}}_{B}
 \] 
-\fixme[Figur]
+\fixme[fig22]
 \end{ex*}
 Die Relation $ p\sim q \stackrel{\text{def}}{\iff} $ es gibt einen weg von $ p $ nach $ q $ ist (Übung) offensichtlich eine Äquivalenzrelation, die zugehörigen Äquivalenzklassen heißen \emph{Wegzusammenhangskomponenten} des topologischen Raums.
 \begin{st}
@@ -492,11 +492,11 @@ Die Relation $ p\sim q \stackrel{\text{def}}{\iff} $ es gibt einen weg von $ p $
 \end{st}
 \begin{proof}
 \item Sei $ f:X\to $ stetige Abbildung, so zerfällt $f(X)=Y_1\dotcup Y_2$ mit $Y_1, Y_2$ offen disjunkt, dann auch $ X=f^{-1}(Y_1)\dotcup f^{-1}(Y_2) $. \\
-\fixme[Figur]
+\fixme[fig23]
 Sei $ p,q \in f(X) $. Es gibt $ a,b\in X $ mit $ f(a)=p $, $ f(b)=q $ und einen Weg $ c:[0,1]\to X $ von $ a $ nach $ b $. Dann ist $ f\circ c:[0,1]\to X $ ein Weg von $ p $ nach $ q $.
 \item Sei $ X=\bigcup_{i\in I}X_i $. Sei $ X=A\dotcup B $ mit $ A,B $ offen. Sei $ p\in \bigcap_{i\in I}X_i $ und ohne Einschränkung $ p\in A $.  Es gilt $ X_i=(X_i\cap A)\dotcup (X_i\cap B) $, da $ p\in X_i\cap A $ folgt $ X_i\cap B=\emptyset $, denn $ X_i $ ist zusammenhängend. Also folgt $ B=\emptyset $.
 Für Wegzusammenhängend:
-\fixme[Bild fehlt]
+\fixme[fig24]
 Es gilt, falls $ c:[0,1]\to X_I $ estetiger Weg von $ a\in X_i $ nach $ p $ und $ d:[0,1]\to X_j $ stetiger Weg von $ p $ nach $ b\in X_j $, dann ist:
 \[
 e/t(:=\begin{cases}c(2t)\qquad &,t\in[0,\frac 1 2]\\ d(2t-1)\qquad &,t\in[\frac 1 2, 1]\end{cases}
@@ -588,7 +588,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \end{note*}
 \begin{df}
  Sei $(X,O)$ ein topologischer Raum. Eine Familie $\mathcal U$ von Umgebungen von $p$ heißt \emph{Umgebungsbasis} von $p$, wenn jede Umgebung von $p$ eine Umgebung aus U enthält.
-\fixme[Bild fehlt]
+\fixme[fig25]
 \end{df}
 \begin{exs*}
  \begin{enumerate}
@@ -673,7 +673,7 @@ ist der Abstand von x durch eine natürliche Zahl beschränkt.
 \]
 bilden eine offene Überdeckung von $A$, es gibt eine endliche Teilüberdeckung $U_{\eps_1}\cup... \cup U_{\eps_k}$, und es folgt, dass $B_\eps(x)$ mit $\eps:=\min\{\eps_1,...,\eps_k\}$ ganz in $X\setminus A$ liegt.
 
-\fixme[Bild fehlt]
+\fixme[fig26]
 \end{seg}
 \end{proof}
 Die Umkehrung gilt in beliebigen metrischen Räumen \emph{nicht}, der Begriff „beschränkt“ lässt sich nicht analog auf metrische Räume übertragen, denn für jede Metrik $d$ auf $X$ ist auch
@@ -695,7 +695,7 @@ Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann i
 \end{st*}
 \begin{proof}
  Sei $X$ kompakt, $A\subset X$ abgeschlossen. Sei $U_i, i\in I,$ eine offene Überdeckung von $A$.
-\fixme[Bild fehlt]
+\fixme[fig27]
 Nach Definition der Teilraumtopologie gibt es offene Mengen $V_i$ von $X$, so dass $U_i=V_i\cap A$. Dann ist 
 \[
  (X\setminus A) \cup \bigcup_{i\in I} V_i
@@ -711,7 +711,7 @@ In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 \end{st}
 \begin{proof}
  Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt, die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine Umgebung $U_a$ von $a$ und eine Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ für \\
-\fixme[Bild fehlt]\\
+\fixme[fig28]\\
 alle $a\in A$ Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unedlich vieler Mengen.
 $U_{a_1},..., U_{a_n}$ auswählen, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
 \end{proof}
@@ -730,7 +730,7 @@ Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kom
 Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\to e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \homo S^1$
 
  \item $S^1=\{(x,y)^T\in \R^2|x^2+y^2=1\}=\{z\in \C||z|=1\}$\\
-\fixme[Bild fehlt]\\
+\fixme[fig29]\\
  Sei $X:=S^1/\sim$ $z\sim z':\iff z=z'$ oder $z=-z'$ $X$ ist kompakt, da Bild des kompakten EInheitskreises $S^1$ unter der Quotientenabbildung. WIr wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\to z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig i
 ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (bzw. $\R P^1\homo S^1$)
 
