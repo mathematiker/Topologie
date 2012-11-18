@@ -75,7 +75,8 @@ Sei $X$ ein metrischer Raum und $x_N, n\in \N$ eine Folge in $X$. Wir sagen $(x_
 \end{df}
 In diesem Fall sagen wir, $a$ ist der \emph{Limes} (oder Grenzwert) von $(x_n)_{n\in \N}$ (und schreiben $x_n\rightarrow a, \lim\limits_{n\rightarrow \infty} x_n=a$) 
 
-\begin{st} In einem metrischen Raum ist der Limes eine konvergente Folge eindeutig bestimmt.
+\begin{st} 
+In einem metrischen Raum ist der Limes eine konvergente Folge eindeutig bestimmt.
 \end{st}
 \begin{proof}
 Seien $a$ und $b$ Limiten von $(x_n)_{n\in \N}$ mit $\delta := d(a,b)>0$.
@@ -639,26 +640,26 @@ von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emp
  $f: X\to Y$ heißt \emph{folgenstetig}, falls für alle konvergenten Folgen $x_n\to x$ in $X$ gilt $f(x_n)\to f(x)$.von 
 \end{note}
 \subsection{Kompaktheit}
-\begin{df}
+\begin{df}\label{thm:6.1}
  Eine \emph{offene Überdeckung} eines topologischen Raumes $X$ ist eine Familie $U_i$, $i\in I$, von offenen Teilmengen von $X$ mit der Eigenschaft $\bigcup_{i\in I} U_i=X$.
 \end{df}
-\begin{df}
+\begin{df}\label{thm:6.2}
  Ein topologischer Raum $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ eine \emph{endliche Teilüberdeckung} besitzt, dass heißt falls folgendes gilt: ist $U_i, i\in I$, eine offene Überdeckung von $X$, so gibt es endlich viele $i_1, ...,i_n\in I$, so dass $U_{i_1}\cup ...\cup U_{i_n}=X$ gilt.
 \end{df}
 \begin{ex*}
  $\R^n$ ist \emph{nicht kompakt}, denn die offene Überdeckung durch $B_k(0),k\in \N$ besitzt eine endliche Teilüberdeckung.
 \end{ex*}
 
-\begin{note}
+\begin{note}\label{thm:6.3}
  Manchmal (nicht in dieser Vorlesung) wird zusätzlich noch die Hausdorffeigenschaft verlangt (in diesem Fall heißt die obige Eigenschaft meist "`präkompakt"').
 \end{note}
-\begin{st}[Heine-Borelscher Überdeckungssatz]
+\begin{st}[Heine-Borelscher Überdeckungssatz]\label{thm:6.4}
  Eine Teilmenge des $\R^n$ ist kompakt genau dann, wenn sie abgeschlossen und beschränkt ist.
 \end{st}
 \begin{proof}
  siehe zum Beispiel Forster O., Analysis II.
 \end{proof}
-\begin{st}
+\begin{st}\label{thm:6.5}
  Jede kompakte Teilmenge eines metrischen Raumes ist beschränkt und abgeschlossen (Umkehrung gilt im Allgemeinen nicht).
 \end{st}
 \begin{proof}
@@ -684,7 +685,7 @@ eine Metrik (die dieselbe Topologie erzeugt) also ist die Unterscheidung zwische
 \begin{note*}
  Ein metrischer Raum ist kompakt, wenn er \emph{vollständig} und \emph{totalbeschränkt} ist, \emph{totalbeschränkt} bedeutet: zu jedem $\eps>0$ gibt es ein endliches $\eps$-Netz, dass heißt zu jedem $\eps>0$ gibt es endlich viele Punkte $x_1,...,x_k$ mit $\bigcup_{i=1}^kB_\eps(x_i)=X$.
 \end{note*}
-\begin{st}
+\begin{st}\label{thm:6.6}
  Stetige Bilder kompakter Räume sind kompakt
 \end{st}
 \begin{proof}
@@ -720,7 +721,7 @@ alle $a\in A$ Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (d
 $U_{a_1},..., U_{a_n}$ auswählen, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
 \end{proof}
 Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
-\begin{st}
+\begin{st}\label{thm:6.8}
  Sei $X$ ein kompakter topologischer Raum und $Y$ ein Hausdorffraum. Sei $f: X\to Y$ eine stetige bijektive Abbildung. Dann ist $f$ ein Homöomorphismus
 \end{st}
 \begin{proof}
@@ -743,17 +744,17 @@ ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (b
 Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Folgen beschreiben
 \end{enumerate}
 \end{ex*}
-\begin{df}
+\begin{df}\label{thm:6.9}
  Ein topologischer Raum heißt \emph{folgenkompakt}, wenn jede Folge eine konvergente Teilforge besitzt.  
 \end{df}
 \begin{ex*}
  Folge $x_n, n\in \N$ Teilfolge $x_{n_k}$ mit $k\to n_k$ steigt monoton steigend. zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
 \end{ex*}
-\begin{st}
+\begin{st}\label{thm:6.10}
  In topologischen Räumen, die das zweite Abzählbarkeitsaxiom erfüllen (dass heißt es gibt eine abzählbare Basis der Topologie) sind Folgenkompaktheit und \emph{Überdeckungskompaktheit} (dass heißt Kompaktheit wie in \ref{thm:6.2} defniert) äquivalent.
 \end{st}
 Zum Beweis benötigen wir zwei Lemmata.
-\begin{lem}
+\begin{lem}\label{thm:6.11}
  Sei $x_n, n\in \N$, eine Folge in dem topologischen Raum $X$, der das erste Abzählbarkeitsaxiom erfüllt.  Dann gilt: $x_n$ besitzt genau darin eine konvergente Teilfolge, wenn ein $x\in X$ existiert, so dass in jedem Umgebung $U$ von $x$ unendlich viele Folgenglieder $x_n$ in $U$ liegen.
 \end{lem}
 \begin{proof}
@@ -765,5 +766,74 @@ Zum Beweis benötigen wir zwei Lemmata.
 $x_{n_1}\in U_1, x_{n_2}\in U_2$ mit $n_1<n_2<...<n_k<...$. Die letzte Bedingung erfüllbar, da im Inneren unendlich viele Indies $n$ mit $x_n\in U_k$ existieren. Damit ist $x_n\to x$ offensichtlich.
 \end{seg}
 \end{proof}
+ Wir haben bereits gezeigt in Lemma \ref{thm:6.11}. Sei $x_n$ eine Folge in den topologischen Raum  mit abzählbaren Umgebungsbasis. Dann gilt: $x_n$ besitzt genau dann eine onvergente Teilfolge , wenn ein $x\in X$ existiert, so dass 
+in jeder Umgebung $U$ von $x$ unendlich viele Folgenglieder liegen. Wir wollen nun \ref{thm:6.10} beweisen. Dafür benötigen wir noch ein Lemma.
+\begin{lem}\label{thm:6.12}
+ Erfüllt $X$ das zweite Abzählbarkeitsaxiom,  so enthält jede offene Überdeckung eine abzählbare Teilüberdeckung
+\end{lem}
+\begin{proof}
+ Sei $O_1,O_2,...$ eine abzählbare Basis der TOpologie. Sei $X=\bigcup_{\alpha\in A} U_\alpha$, $U_\alpha$ 
+offen (wir wollen zeigen:  es gibt $a_1, a_2,...,$ so dass $X=\bigcup_{\alpha\in A}U_\alpha$). 
+Setze $\N'=\{n\in \N|O_\alpha\in U_\alpha \text{ für ein } A\}$.
+Für $n\in \N'$ wählen wir $\alpha_n\in A$ mit $O_n\subset U_{\alpha_n}$. Dann ist $\{U_{\alpha_n}\}_{n\in \N'}$ eine (abzählbare) Überdeckung von $X$. 
+Denn jedes $x$ liegt in einem $U_\alpha$. Da die $\alpha_n$ eine Basis bilden ist $U_\alpha$ eine Vereinigung von solchen, also existiert ein $n$ mit $x\in O_n\subset U\alpha$, insbesondere $n\in \N'$ und $x\in U_{\alpha_n}$ .
+\end{proof}
+\begin{seg}{\textbf{Beweis von Satz \ref{thm:6.10}}}
+ Sei $X$ ein Raum mit abzählbarer Basis.
+\begin{enumerate}[(i)]
+ \item Sei $X$ kompakt und $x_n$ eine Folge ohne konvergente Teilfolge. Nach \ref{thm:6.11} gibt es zu jedem $p\in X$ eine Umgebung $U_p$ mit $x_n\in U_p$ nur für endlich viele Indizes $n$. Die $U_p$ bilden eine Überdeckung. Wegen der Kompaktheit gibt es ensgesamt ist $x_n\in U_{p_1}\cup... U_{p_k}=X$ nur für endlich viele Indizes. Dies ergibt den Widerspruch.
+ \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, ...$ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für ale $n$, dass heißt es gibt $x_n\in X\setminus(U_1\cup...\cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_n \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
+\end{enumerate}
+\end{seg}
+\begin{note*}
+ \begin{enumerate}[(i)]
+  \item Für die Richtung „kompakt $\implies$ folgenkompakt“ benötigen wir nur das erste Abzählbarkeitsaxiom. 
+Insbesondere gilt die Aussage in metrischen Räume.  
+(Dies impliziert die Beschränktheit kompakter metrischer Räume und ihre Teilmengen Hausdorff, folgt nochmal \ref{thm:6.4})
+\item Auch Satz \ref{thm:6.3} (Heine-Borel) folgt aus dem letzten Satz: Ist $A\subset \R^n$ beschränkt und abgeschlossen, so besitzt jede Folge nach Bolzano eine konvergente Teilfolge.
+Also ist $A$ folgenkompakt. Da $\R^n$ (und damit $A$) eine abzählbare Basis (nämlich zum Beispiel $\{B_{n^{-1}} (q)|n\in \N, q\in \Q^n\}$ besitzt,
+ist $A$ kompakt. Die andere Richtung folgt aus Bemerkung (i).
+\item In einem Banachraum ist die Einheitskugel genau dann kompakt, wenn die Dimension endlich ist,
+\item Andererseits: Satz von Tychonoff: Beliebige Produkte kompakter Räume sind kompakt.
+ \end{enumerate}
+\end{note*}
+\begin{df}[$n-$dimensionale eingebettete Untermannigfaltigkeit des $\R^{n+k}$]
+Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$k$-dimensionale Untermannigfaltigkeit} des $\R^{n+k}$, falls es um jeden Punkt $p\in M$ eine (im $\R^{n+k}$) offene Menge, $U$ gibt und einen Diffeomorphismus $\Phi: U\to V$, wobei $V\subset \R^{n+k}$ offen ist und gilt:
+\fixme[fig30]
+\[
+ \boxed{\Phi(U\cap M)=V\cap(\R^n\times(\underbrace{0,...,0}_{k-\text{mal}}))}
+\]
+\end{df}
+\begin{exs*}
+ \begin{enumerate}[(i)]
+  \item offene Mengen im $\R^n$ sind $n-$dimensionale Untermannigfaltigkeit.
+  \item lineare (affine) Unterräume (Punkte, Geraden, Ebenen,...) sind Untermannigfaltigkeiten
+  \item Die Einheitsphäre $S^n\subset \R^{n+1}$ ist eine $n-$dimensionale Untermannigfaltigkeit
+  \item Dass (iii) gilt, zeigt man zum Beispiel, indem man nachrechnet, dass $S^n$ ein \emph{reguläres Urbild} ist. Zum Beispiel ist $S^n$ das Urbild $f^{-1}(\{1\})$ der Abbildung $\R^{n+1}\to \R, (x_1,...,x_n+1)\mapsto x_1^2+...+x_{n+1}^2$
+ \end{enumerate}
+Mannigfaltigkeiten sind Räume, die im Kleinen den Euklidischen Raum $\R^n$ ähneln, aber nicht notwendig im Großen.
+\end{exs*}
+\begin{df}
+ Ein topologischer Raum heißt \emph{n-dimensionale topologische Mannigfaltigkeit}, wenn $M$ Hausdorffsch ist, eine abzählbare Basis hat und lokal homöomorph zum $\R^n$ ist, dass heißt für alle $p\in M$ existiert ein Homöomorphismus $\phi:U\to V$, wobei $U$ offene Umgebung von $p$ in $M$ ist und $V$ offen im $\R^n$.
+\end{df}orffsch ist, eine abzählbare Basis hat und lokal homöomorph zum $\R^n$ ist, dass heißt für alle $p\in M$ existiert ein Homöomorphismus $\phi:U\to V$, wobei $U$ offene Umgebung von $p$ in $M$ ist und $V$ offen im $\R^n$.
+\fixme[fig31]
+\begin{note*}
+ \begin{enumerate}[(i)]
+  \item $n-$dimensionale Untermannigfaltigkeit der $\R^{n+k}$ sind $n$-dimensionale topologische Mannigfaltigkeit
+  \item Indem wir $\phi$ eventuell einschränken, können wir für $V$ einen offenen Ball nehmen, oder wir können $V$ als $\R^n$ wählen (da offene Bälle im $\R^n$ homöomorph zu $\R^n$ sind, Übungsaufgabe)
+  \item Muss lokal aussehen wie $\R^n$. Keine topologische Mannigfaltigkeit sind.\\
+\fixme[fig32]\\
+\item Im Gegensatz zu Untermannigfaltigkeit hat man keine „Glattheitsbedingung“ so ist zum Beispiel ein Quadrat im $\R^2$ eine topologische Mannigfaltigkeit.
+ \end{enumerate}
+\end{note*}
+Es gilt: Die Summe zweier n-dimensionale topologische Mannigfaltigkeit ist wieder eine $n$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer $n-$dimensionalen und einer $m$-dimensionaler topologischen Mannigfaltigkeit ist eine $(n+m)$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer n-dimensionaler topologischen Mannigfaltigkeit ist eine $(n+m)-$dimensionale topologische Mannigfaltigkeit. Offene Teilmengen von $n-$dimensionale toppologische Mannigfaltigkeit sind $n$-dimensionale topologische Mannigfaltigkeit. Für Quotienten von topologischen Mannigfaltigkeit ist die Frage, ob sie wieder topologische Mannigfaltigkeiten sind, kompliziert.
+Zum Beispiel Gerade mit Doppelpunkt\\
+\fixme[fig33]
+
+
+
+
+
+
 
 \end{document}
