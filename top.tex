@@ -797,6 +797,7 @@ ist $A$ kompakt. Die andere Richtung folgt aus Bemerkung (i).
 \item Andererseits: Satz von Tychonoff: Beliebige Produkte kompakter Räume sind kompakt.
  \end{enumerate}
 \end{note*}
+\subsection{Topologische Mannigfaltigkeiten}
 \begin{df}[$n-$dimensionale eingebettete Untermannigfaltigkeit des $\R^{n+k}$]
 Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$k$-dimensionale Untermannigfaltigkeit} des $\R^{n+k}$, falls es um jeden Punkt $p\in M$ eine (im $\R^{n+k}$) offene Menge, $U$ gibt und einen Diffeomorphismus $\Phi: U\to V$, wobei $V\subset \R^{n+k}$ offen ist und gilt:
 \fixme[fig30]
@@ -828,8 +829,68 @@ Mannigfaltigkeiten sind Räume, die im Kleinen den Euklidischen Raum $\R^n$ ähn
 \end{note*}
 Es gilt: Die Summe zweier n-dimensionale topologische Mannigfaltigkeit ist wieder eine $n$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer $n-$dimensionalen und einer $m$-dimensionaler topologischen Mannigfaltigkeit ist eine $(n+m)$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer n-dimensionaler topologischen Mannigfaltigkeit ist eine $(n+m)-$dimensionale topologische Mannigfaltigkeit. Offene Teilmengen von $n-$dimensionale toppologische Mannigfaltigkeit sind $n$-dimensionale topologische Mannigfaltigkeit. Für Quotienten von topologischen Mannigfaltigkeit ist die Frage, ob sie wieder topologische Mannigfaltigkeiten sind, kompliziert.
 Zum Beispiel Gerade mit Doppelpunkt\\
-\fixme[fig33]
+\fixme[fig33]\\
+Ein Summe in zwei $n$-dimensionale topologischen Mannigfaltigkeiten ist wieder eine $n$-dimensionale topologische Mannigfaltigeit, das Produkt einer $n$-dimensionalen Mannigfaltigkeit mit einer $m$-dimensionalen Mannigfaltigkeit ist eine $(n+ m)$-dimensionale topologische Mannigfaltigkeit und außerdem sind offene Teilmengen von $n$-dimensionale topologische Mannigfaltigkeiten wieder $n$-dimensionale topologische Mannigfaltigkeiten.  
 
+Die Konstruktion vom Quotient dagegen ist delikater. Wir begnügen uns mit einem einfachen Fall.
+
+Die Homöomorphismen eines topologischen Raumes $\{\phi: X\to X|\phi \text{ Homöomorphismus}\}$ bilden eine Gruppe, denn die Hintereinanderschaltung von Homöomorphismen ist wieder einer, die Umkehrabbildung eines Homöomorphismus liefert das Inverse, die Identität das neutrale Element.
+
+Wir betrachten (endliche) Untergruppen $\Gamma$ von Homöomorphismen, zum Beispiel $X=S^n, \Gamma=\{\pm \id\}$ , wobei $\id: S^n\to S^n$ die Antipodenabbildung $x\mapsto -x$ ist. Ist $\Gamma$ eine Gruppe von Homöomorphismen auf $X$, so setzen wir $X/\Gamma:=X/\sim$, wobei die Äquivalenzrelation $\sim$ auf $X$ wie folgt gegeben ist.
+\[
+ x\sim y :\iff \text{ es gibt ein } \gamma\in \Gamma \text{ mit } y=\underbrace{\gamma(x)}_{:=\gamma(x)}
+\]
+\begin{itemize}
+\item \emph{reflexiv}, dass heißt $x\sim x$, da $\id_X\in \Gamma$
+\item \emph{symmetrisch}, dass heißt $x\sim y \implies y\sim x$, denn fals $y=\gamma(x)$, dann folgt $x=\gamma^{-1}(y)$
+\item \emph{transitiv}, dass heißt $x\sim y \land y\sim z \implies x\sim z$, denn $y=\gamma(x), z=\gamma'(y)$, dann folgt $\gamma'\circ \gamma(x)=\gamma'\circ y=z$, also $(\gamma'\circ \gamma)(x=y)$. 
+\end{itemize}
+Dann sind die Äquivalenzklassen die \emph{Bahnen} der Operation der Operation von $\Gamma$ auf $X$, wobei die \emph{Bahn} des Punktes $x$ die Menge $\Gamma x:=\{\gamma(y)$ ist.
+
+Zum Beispiel falls $X=S^n, \Gamma=\{\pm \id\}$, dann ist $\Gamma x=\{\pm x\}$. Wir versehen $X/\Gamma$ mit der Quotiententopologie. Gilt für $\gamma:X\to X$ und einen Punkt $x\in X$, dass $\gamma(x)=x$, dann nennt $\max(x)$ einen \emph{Fixpunkt} von $\gamma$. Die Identität hat natürlich jeden Punkt als Fixpunkt.
+\begin{df}
+ Eine Gruppe $\Gamma$ von Homöomorphismen operiert \emph{fixpunktfrei} auf $X$, wenn nur die Identität Fixpunkte auf $x$ hat, dass heißt falls aus $\gamma x=x$ für ein $\gamma\in \Gamma$ folgt, dass $\gamma=\id_x$.
+\end{df}
+\begin{st}
+ Sei $M$ eine $n$-dimensionale topologische Mannigfaltigkeit und $\Gamma$ eine endliche Gruppe von Homöomorphismen, 
+die fixpunktfrei auf $M$ operiert. Dann ist $M/\Gamma$ eine $n$-dimensionale topologische Mannigfaltigkeit 
+und $\pi:M\to M/\Gamma$ ein lokaler Homöomorphismus. (dass heißt $\forall_{p\in M} \exists$ offene Mengen $U\subset M$ und $V\subset M/\Gamma$ mit $p\in U, V=\pi(U)$ und $\pi\vline_U: U\to V$ Homöomorphismus.)
+\end{st}
+\begin{proof}
+ \begin{enumerate}[(i)]
+  \item Die kanonische Projektion (auch: Quotientenabbildung) $\pi:M\to M/\Gamma, p\mapsto [p]=\Gamma p$ ist nicht nur stetig sondern auch offen, dass heißt bildet offene Mengen auf offene Mengen. Denn ist $U\subset M$ offen. 
+\[
+ \pi^{-1}(\pi(U))=\Gamma U=\bigcup\limits_{\gamma\in \Gamma} \underbrace{\gamma(U)}_{\text{offen}}
+\]
+als Vereinigung von offenen Mengen offen, also ist auch $\pi(U)$ offen.
+\item Zu $p\in M$ gibt es eine Umgebung $U$, die keine verschiedenen äquivalenten Punkte enthält, dass heißt $x,\gamma x\in U$ für ein $\gamma\in \Gamma \implies \gamma=\id_x$)
+Der Punkt $p$ besitzt eine Umgebungsbasis $U_1\supset U_2 \supset U_3 \supset...$, da $M$ lokal homöomorph zu $\R^n$. Gäbe es in jedem $U_k$ äquivalent verschiedene Elemente, etwa $x_k, \gamma_k x_k\in U_k, \gamma_k\neq \id_x$.
+Dann könnten wir wegen der Endlichkeit von $\Gamma$ eine Teilfolge $x_{k_l}, \gamma x_{k_l}$ mit konstantem $\gamma\in \Gamma\setminus\{\id\}$ auswählen. Aus $x_{k_l}\to p, \gamma x_{k_l}\to p$ folgt $x_{k_l} \to \gamma^{-1} p$, also $p=\gamma^{-1} p$, also $\gamma=\id_x$ wegen der Fixpunktfreiheit.
+\item Auf der Umgebung $U$ aus ii) ist $\pi$ injektiv. Indem wir $U$ eventuell weiter enschränken, können wir annehmen, dass $U$ offen ist. Indem wir $U$ weiter verkleinern, können wir annehmen, dass $U$ offen ist. Indem wir $U$ weiter verkleinern, können wir annehmen, dass $U$ homöomorph zu einer offenen Teilmenge des $\R^n$ ist. Wegen (i) ist dann $V:=\pi(U)$ offen und $\pi\vline_U:U\to V$ ein Homöomorphismus.  Insgesamt folgt, dass auch $V\subset M/\Gamma$ homöomorph zu einer offenen Teilmenge das $\R^n$ ist. \\
+Noch zu zeigen sind.
+\item $M/\Gamma$ ist hausdorffsch und (v) $M/\Gamma$ hat abzählbare Basis, beides als schriftliche Übungsaufgabe.  
+\end{enumerate}
+\end{proof}
+\begin{exs*}
+ \begin{enumerate}[(i)]
+  \item $M=S^n, \Gamma=\{\pm \id_{S^n}\}, -\id_{S^n}: S^n\to S^n, x\mapsto -x$, die Antipodenabbildung da $-\id$ keine Fixpunkte 
+auf $S^n/\{\pm \id\}$ ist eine $n$-dimensionale topologische Mannigfaltigkeit,
+ der sogenannte \emph{reell-projekte} Raum der Dimension n. WIr aben bereits gesehen, 
+dass $\R P^1$ homöomorph zu $S^1$ ist aber $\R P^n$ \emph{nicht} homöomorph zu $S^n$ (Beweis später). Es gibt mehrere Möglichkeiten, den $\R P^n$ (auch $P^n \R, P^n(\R)...$) zu definieren:
+\begin{enumerate}[(i)]
+\item $\R P^n=S^n/\{\pm\id\}$ 
+\item Als Menge der Geraden in $\R^{n+1}$ durch den Ursprung.
+\item Als $\R^{n+1}\setminus \{0\}/\sim$, mit $x\sim y \iff \exists \lambda\in \R\setminus\{0\}: x=\lambda y$. Die Äquivalenzklassen schreibt man als 
+\[
+[(x_1,...,x_{n+1})]=[x_1:x_2:...: x_{n+1}] 
+\]
+mit $[x_1:...:x_{n+1}]=[y_1:...:y_{n+1}]\iff \exists \lambda\in \R\setminus\{0\}$, mit $y_i=\lambda\cdot x_i, \forall_i$.
+Gilt zu $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$\\
+\fixme[Bild fehlt]
+\end{enumerate}  
+ \end{enumerate}
+
+\end{exs*}
 
 
 
