@@ -888,9 +888,70 @@ mit $[x_1:...:x_{n+1}]=[y_1:...:y_{n+1}]\iff \exists \lambda\in \R\setminus\{0\}
 Gilt zu $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$\\
 \fixme[Bild fehlt]
 \end{enumerate}  
- \end{enumerate}
-
+\end{enumerate}
 \end{exs*}
+\begin{st}
+ Für topologische Mannigfaltigkeiten bzw. Abbildungen zwischen diesen sind die folgenden Begriffspaare äquivalent:
+\begin{enumerate}[(i)]
+ \item Kompaktheit und Folgenkompaktheit
+ \item Zusammenhang und Wegzusammenhang
+ \item Stetigkeit und Folgenstetigkeit.
+\end{enumerate}
+\end{st}
+\fixme[fig34]
+\begin{proof}
+ (i) und (iii) folgen daraus in topologischen Mannigfaltigkeiten das zweite Abzählbarkeitsaxiom gilt (aus Satz \ref{thm:6.10} bzw. \ref{thm:5.6}(ii))
+
+Bei (ii) gilt $"`\Leftarrow"'$ stets für alle topologischen Räume. Wir zeigen: Wegzusammenhangskomponenten sind in topologischen Mannigfaltigkeiten offen. Dies gilt wegen der lokalten Homöomorphie zu $\R^n$:
+Jeder $\eps$-Ball in $\R^n$ ist wegzusammenhängend, also gibt es um jeden Punkt $p$ in $M$ eine wegzusammenhängende Umgebung.
+\end{proof}
+\begin{st}[Schwache Version des Whitneyschen Einbettungssatzes]
+ Sei Sei $M$ eine kompakte $n$-dimensionale topologische Mannigfaltigkeit. Dann ist $M$ homöomorph zu einer Teilmenge des $\R^N$ für ein $N\in \N$.
+\end{st}
+\fixme[fig35]
+\begin{proof}
+ Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0)))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup ... \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.\\
+\fixme[fig36]\\
+Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
+\fixme[fig37]\\
+\[
+ \tilde \lambda_i(x)=\tilde\lambda \circ \phi_i(x): U_i\to \R
+\]
+\fixme[fig38]\\
+Sei nun 
+\[
+ \lambda_i: M \to \R, \lambda_i(x):=\begin{cases} \tilde \lambda_i(x)&, x\in U_i\\ 0, x\notin U_i \end{cases}
+\]
+(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ und $X\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$stetig.  Nun können wir den gezweiten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} \psi(x)=(\psi_1(x),..., \psi_r(x), \lambda_1(x),..., \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, dann wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,..., r\}$ mit $x\in V \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies \lambda_i(y)=1\implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)=\psi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bejektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
+\end{proof}
+\subsection{Homotopie}
+Homotopie ist die Präzisierung der geometrische Idee von der stetigen Deformation einer Abbildung in eine andere.
+\begin{df}[Homotopie]
+ Seien $X,Y$ topologische Räume und $f_0, f_1: X\to Y$ stetige Abbildungen. Eine \emph{Homotopie} $f$ von $f_0$ nach $f_1$ ist eine parametrisierte Schar von Abbildungen.
+$f_t$ mit Anfang $f_0$ und Ende $f_1$, genauer: eine stetige Abbildung $f: X\times[0,1] \to Y$ mit der Eigenschaft, das $f(x,0)=f_0(x)$ und $f(x,1)=f_1(x)$ für alle $x\in X$. (Man schreibt auch $f_t(x)$ für $f(x,t)$)
+
+Wenn es eine Homotopie zwischen $f_0$ und $f_1$ (von $f_0$ nach $f_1$) gibt, dann sagt man $f_0$ und $f_2$ sin \emph{homotop}, Notation: $f_0 \simeq f_1$.
+\end{df}
+Diese Relation ist eine \emph{Äquivalenzrelation} auf der Menge $C(X,Y)$ der stetigen Abbildung $X\to Y$, denn:
+\begin{itemize}
+ \item offensichtlich ist jede Abbildung zu sich selbst homotop. setze $f_t(x):= f(x)$. (\emph{reflexiv})
+ \item aus einer Homotopie $f$ von $f_0$ nach $f_1$ erhält man die \emph{Inverse Homotopie} $f(\cdot, 1-t)$ von $f$ nach $f_0$ (\emph{symmetrisch})
+ \item und man kann $m$ offnsichtlicher Weise eine Homotopie $f$ von $f_0$ nach $f_1$ mit einer $g$ von $f_1$ nach $f_2$ zu einer Homotopie $h$ von $f_0$ nach $f_2$ verknüpfen:
+\[
+ h(x,t):=\begin{cases}f(x,2t), \text{ falls } t\le 0.5\\ g(x,2t-1), \text{ falls } t>0.5  \end{cases}
+\]
+dies nennt man das \emph{Produkt} $f*g$ der beiden Homotopien.\\
+Die \emph{Äquivalenklasse} $[f]$ einer stetigen Abbildung heißt \emph{Homotopieklasse} von $f$, die Menge der Homotopieklassen stetige Abbildungen von $X$ nach $Y$ bezeichnen wir mit $[X,Y]$, in Zeichen:
+\[
+ [X,Y]=C(X,Y)/\simeq
+\]
+  
+
+\end{itemize}
+
+
+
+
 
 
 
