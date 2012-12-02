@@ -263,7 +263,7 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \end{df}
 \begin{ex*}
 $X=\R^2, M=\{x-\text{Achse}\}$
-\fixme{fig6}
+\fixme[fig6]
 \end{ex*}
 \begin{att*}
 Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (es sei denn $ M\subset X $ wäre offen). Zum Beispiel:
@@ -273,13 +273,13 @@ Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (e
 \end{att*}
 \begin{df}
 Seien $ X $ und $ Y $ topologische Räume. Eine Teilmenge $ W\subset X\times Y $ heißt offen bezüglich der Produktopologie auf $ X\times Y $ heißt offen bezüglich der Proudukttopologie auf $X\times Y$, falls es zu jedem Punkt $ (x,y)\in W $ eine Umgebung $ U $ von $ x $ und eine Umgebung $ V $ von $ y $ gibt, sodass $ U\times V $ in W enthalten ist.
-\fixme{fig7}
+\fixme[fig7]
 \end{df}
 \begin{note*}
 \begin{enumerate}[(i)]
 \item Die Standardtopologie auf $ \R^2 $ stimmt mit der Produkttopologie auf $ \R\times \R $ (beide Faktoren mit der Standardtopologie von $ \R $ versehen) überein.
 \item Produkte offener Mengen in X und Y ("`Kästchen"') sind offen in den Produkttopoligien, aber nicht alle offenen Mengen sind Kästchen, z. B. sind auch die Vereinigung von Kästchen Kästchen.
-\fixme{fig8} 
+\fixme[fig8] 
 \end{enumerate}
 \underline{Erinnerung:} Eine \emph{Äquivalenzrelation} auf einer Menge $ X $ ist eine Relation $\sim$ mit folgenden Eigenschaften:
 \begin{enumerate}[(i)]
@@ -378,7 +378,7 @@ Die in (iv) definierte Topologie ist also durch
 \[
 \mathcal T(\bigcup\limits_{i\in I} \{ f^{-1}(U)|U \text{ offen in } Y\} )
 \]
-\begin{ex*} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ ist die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \underline{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, den Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[fig12]
+\begin{ex}\label{thm:2.6} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ ist die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \emph{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, den Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[fig12]
 \begin{proof}
 Betrachte $ \phi(t)=(\cos(2\pi\cdot t),\sin(2\pi \cdot t)), \R\to Y $.
 Wegen $ \phi(t+k)=\phi(t) $ für $ k\in \Z $, ist durch $ \bar\phi: X\to Y, [x]\to \phi(x) $ eine wohldefinierte Abbildung gegeben. $\bar \phi$ ist offensichtlich bijektiv. Die Abbildung $ \bar \phi  $ ist stetig nach Definition der Quotientenabbildung, da $ \phi $ stetig ist.
@@ -387,7 +387,7 @@ Es bleibt noch zu zeigen: Die Bilder offener Mengen sind offen (man sagt dann: $
 
 Es gilt $ \bar \phi(A)=\phi(q^{-1}(A))=\phi(q^{-1}(A)\cap[0,1]) $. Da $ q^{-1}(A)\cap [0,1] $ kompakte Tielmenge von $C$ $ \R $ ist, ist $ \bar\phi(A)=\phi(\phi-1)(A)\cap[0,1]) $ kompakt, also abgeschlossene Teilmenge des $ \R^2  $ und somit von $ Y $.
 \end{proof}
-\end{ex*}
+\end{ex}
 \subsection{Hausdorffräume}
 \begin{df}[Hausdorffsches Trennungsaxiom]
  Ein topologischer Raum heißt \emph{Hausdorffraum}, wenn man zu je zwei verschiedenen Punkten disjunkte Umgebungen finden kann.
@@ -618,7 +618,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \end{itemize}
 \end{seg}
 Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeitsaxiome zusammenhängen und eine Antwort auf die Frage, wozu das erste Abzählbarkeitsaxiom nützlich ist.
-\begin{st}
+\begin{st}\label{thm:5.6}
  \begin{enumerate}[(i)]
   \item Das zweite Abzählbarkeitsaxiom impliziert das erste.
   \item Gilt in einem topologischen Raum $X$ das erste Abzählbarkeitsaxiom, dann sind Stetigkeit und Folgenstetigkeit für Abbildungen $f:X\to X$ äquivalent.
@@ -886,7 +886,7 @@ dass $\R P^1$ homöomorph zu $S^1$ ist aber $\R P^n$ \emph{nicht} homöomorph zu
 \]
 mit $[x_1:...:x_{n+1}]=[y_1:...:y_{n+1}]\iff \exists \lambda\in \R\setminus\{0\}$, mit $y_i=\lambda\cdot x_i, \forall_i$.
 Gilt zu $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$\\
-\fixme[Bild fehlt]
+\fixme[fig34]
 \end{enumerate}  
 \end{enumerate}
 \end{exs*}
@@ -898,26 +898,26 @@ Gilt zu $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$
  \item Stetigkeit und Folgenstetigkeit.
 \end{enumerate}
 \end{st}
-\fixme[fig34]
+\fixme[fig35]
 \begin{proof}
  (i) und (iii) folgen daraus in topologischen Mannigfaltigkeiten das zweite Abzählbarkeitsaxiom gilt (aus Satz \ref{thm:6.10} bzw. \ref{thm:5.6}(ii))
 
-Bei (ii) gilt $"`\Leftarrow"'$ stets für alle topologischen Räume. Wir zeigen: Wegzusammenhangskomponenten sind in topologischen Mannigfaltigkeiten offen. Dies gilt wegen der lokalten Homöomorphie zu $\R^n$:
+Bei (ii) gilt $"`\Longleftarrow"'$ stets für alle topologischen Räume. Wir zeigen: Wegzusammenhangskomponenten sind in topologischen Mannigfaltigkeiten offen. Dies gilt wegen der lokalten Homöomorphie zu $\R^n$:
 Jeder $\eps$-Ball in $\R^n$ ist wegzusammenhängend, also gibt es um jeden Punkt $p$ in $M$ eine wegzusammenhängende Umgebung.
 \end{proof}
 \begin{st}[Schwache Version des Whitneyschen Einbettungssatzes]
  Sei Sei $M$ eine kompakte $n$-dimensionale topologische Mannigfaltigkeit. Dann ist $M$ homöomorph zu einer Teilmenge des $\R^N$ für ein $N\in \N$.
 \end{st}
-\fixme[fig35]
+\fixme[fig36]
 \begin{proof}
  Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0)))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup ... \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.\\
-\fixme[fig36]\\
-Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
 \fixme[fig37]\\
+Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
+\fixme[fig38]\\
 \[
  \tilde \lambda_i(x)=\tilde\lambda \circ \phi_i(x): U_i\to \R
 \]
-\fixme[fig38]\\
+\fixme[fig39]\\
 Sei nun 
 \[
  \lambda_i: M \to \R, \lambda_i(x):=\begin{cases} \tilde \lambda_i(x)&, x\in U_i\\ 0, x\notin U_i \end{cases}
@@ -945,9 +945,68 @@ Die \emph{Äquivalenklasse} $[f]$ einer stetigen Abbildung heißt \emph{Homotopi
 \[
  [X,Y]=C(X,Y)/\simeq
 \]
-  
-
 \end{itemize}
+\begin{seg}{Zusammenfassung}
+ $f_0, f_1: X\to Y$ heißen \emph{homotop}, Notation: $f_0 \simeq f_1,$ falls es ein $f: X\times [0,1] \to  Y$ stetig gibt mit $f(\cdot, 0)=f_0, f(\cdot, 1)=f_1$
+\end{seg}
+
+$\simeq$ iste eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \emph{Homotopieklassen}.  
+\begin{exs*}
+ \begin{enumerate}
+  \item Sei der topologische Raum $X=\{p\}$ einelementig und $Y$ ein beliebiger topoplogische Raum.  Dann ist eine Homötopie zwischen $f_0: p\mapsto y_1, f_1: p\mapsto y_2$ nichts anderes als ein stetiger Weg von $y_1$ und $y_2$ und $[X,Y]$ steht in 1:1 Relation zu den Wegzusammenhangskomponenten.
+  \item Sei $X=S^1, Y=\R^2\setminus \{0\}$. Dann sind nicht alle stetigen Abbildungen $X\to Y$ homotop, denn es lassen sich nicht alle Schleifen in $\R^2$ auf einem Punkt zusammenziehen in $\R^2\setminus\{0\}$. (=geschlossene stetige Wege) (Beweis später)
+\fixme[fig40]\\Bild fehltnn sie zu einer konstanten Abbildung homotop ist.  
+\end{enumerate}
+\end{exs*}
+\begin{df}
+ Eine stetige ABbildung zwischen topologischen Räume heißt \emph{nullhomotop}, wenn sie zu einer konstanten Abbildung homotop ist. 
+\end{df}
+\fixme[fig41]\\
+\begin{ex*}
+ Jede stetige Abbildung nach $\R^n$ ist nullhomotop. Sei $f: X\to Y$ stetig, dann ist $f_t(x):= (1-t)\cdot f(x)$ eine Homotopie zur Nullabbildung. 
+\end{ex*}
+\begin{st}
+ Sei $X$ ein topologischer Raum.  Eine stetige Abbildung $S^n\to X$ ist genau dann nullhomotop, wenn sie sich zu einer stetigen Abbildung $\overline{B_1^{n+1}}(0)\to X$ fortsetzen lässt.
+\end{st}
+\begin{proof}
+ \begin{seg}{"`$\Longleftarrow$"'}
+  Sei $f: \overline{B_1(0)}\to X$ stetig. Definiere die gesuchte Abbildung durch $h(x,t)=f((1-t)x)$.
+ \end{seg}
+\begin{seg}{"`$\implies$"'}
+ Sei $h$ eine Homotopie mit $h(\cdot, 0)=f(\cdot)$, mit $f:S^n \to X$ und $h(\cdot, 1)=\const.$
+\fixme[fig42]
+Wir betrachten $S^n\times[0,1]$ mit den Äquivalenzklasserelation $(p,t)\sim (q,s) :\iff (p=q \land t=s) \lor t=s=1$. Dann ist $S^n\times[0,1]/\sim$ homöomorph zu $\overline{B_1^{n+1}(0)}:$ Sei $S^n\times[0,1]\to \overline{B_1^{n+1}(0)}$ mit $(p,t)\mapsto (1-t)\cdot p$, dann ist $\bar \phi: S^n \times[0,1]/\sim \to \overline{B_1^{n+1}(0)}, \bar \phi([(p,t)])=\phi(p,t)$ wohldefiniert, bijektiv und stetig. (Denn $\phi$ ist stetig, $S^n\times [0,1]/\sim$ trägt die Quotiententopologie, $\phi=\bar \phi \circ q $, $q$ die Quotientenabbildung\\
+\fixme[fig43, mach ich!]\\
+Nach Korollar \ref{thm:6.8} ist $\bar \phi$ ein Homöomorphismus, denn $S^n\times [0,1]/\sim$ ist kompakt und $\overline{B_1^{n+1}(0)}$ ist hausdorffsch. Nun lässt sich $f$ zu der Abbildung $\tilde f: \overline{B_1^{n+1}(0)}\to X, v\mapsto \tilde f(v)$ mit $\tilde f(v):= h(x,t)$,
+wobei $(x,t)$ ein Vertreter von $\bar \phi^{-1}(v)$ ist. Mit dem selben Argument wie oben lässt sich zeigen, dass $\tilde f$ stetig ist.
+\end{seg}
+\end{proof}
+\begin{df}
+ Eine stetige Abbildung $f: X\to Y$ heißt \emph{Homotopieäquivalenz}, wenn es eine stetige Abbildung $g: Y\to X$ gibt $f\circ g \simeq \id_Y, g\circ f \simeq \id_X$ gilt. Zwei
+Räume heißen \emph{homotopieäquivalent} oder vom gleichen \emph{Homotopietyp}, wenn es eine Homotopieäquivalenz gibt. Ein Raum heißt \emph{zusammenziehbar}, wenn er zu einem einpunktigen Raum homotopieäquivalent ist.
+\end{df}
+\begin{exs*}
+ \begin{enumerate}
+  \item $\R^n$ ist zusammenziehbar: Sei $f: \R^n\to \{0\}$ und $g:\{0\}\to \R^n, 0 \mapsto 0$. Dann ist $f\circ g=\id_{\{0\}}$ und es gilt $g\circ f(x)=0$ für alle $x\in \R^n$, diese Abbildung ist homotop zu $\id_{\R^^n}$, nämlich ist durch $f(x,t):= t\cdot x$ eine Homotopie gegeben.
+  \item Eine Teilmenge $K\subset \R^n$ heißt \emph{sternförmig bezüglich} $x_0 \in K$, wenn die Verbindungsstrecke von $x_0$ zu jedem beliebigen Punkt $x\in K$ enthalten ist.\\
+\fixme[fig44]\\
+Sternförmige Mengen sind nullhomotop, denn durch $h: K\times I \to K, (x,t) \mapsto (1-t)x+tx_0$ ist $\id_K$ zu einer konstnenten Abbildung homotop. (Allgemin gilt: Ein Raum $X$ ist zusammenziehbar, wenn $\id_X$ nullhomotop ist vgl. 1. )
+\item $S^n$ ist homotopieäquivalent zu $\R^{n+1}\setminus\{0\}$ die Inklusionsabbildung $i: S^n\to \R^{n+1}\setminus\{0\}$ ist eine Homotopieäquivalenz:
+\fixme[fig45]\\
+Denn $n: \R^{n+1}\setminus\{0\} \to S^n, n(x)=\frac{x}{||x||}$ ist das Homotopieinverse zu $i$, durch $h(x,t):=(1-t)n(x)+tx$ ist eine Homotopie von $i\circ n$ zu $\id_{R^{n+1}\setminus \{0\}}$ gegeben.
+(In der anderen Richtung gilt ohnehin $n\circ i= \id_{S^n}$)
+\end{enumerate}
+\end{exs*}
+\begin{df}
+ Sei $X$ ein topologischer Raum, $A\subset X$ ein Teilraum, $A$ heißt \emph{Retrakt} von $X$, wenn es eine \emph{Retraktion} gibt, das heißt eine stetige Abbildung  $\rho: X\to A$ mit $\rho\vline_A=\id_A$. Ist darüber hinaus $\rho$, aufgefasst als Abbildung $X\to X$, homotop zur Identität auf $X$, so heißt $\rho$ \emph{Deformationsretraktion} und  $A$ \emph{Deformationsretrakt} von $X$.
+
+Eine Deformationsretraktion, so dass die Homotopie $h$ von $\rho$ nach $\id_X$ mit $h(a,t)=a$ für alle $t\in[0,1]$ gewählt werden, heißt \emph{starke Deformationsretraktion}. entsprechend $A$ \emph{starke Deformationsretraktion}, entsprechend $A$ \emph{starker Deformationsretrakt}.
+\end{df}
+\begin{note*}
+ Alle Beispiele oben sind starke Deformationsretrakte.
+\end{note*}
+
+
 
 
 
