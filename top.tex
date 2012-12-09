@@ -699,6 +699,7 @@ Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann i
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fig27.png}
 \end{figure}
+\fixme[passt nicht]\\
 Nach Definition der Teilraumtopologie gibt es offene Mengen $V_i$ von $X$, so dass $U_i=V_i\cap A$. Dann ist 
 \[
  (X\setminus A) \cup \bigcup_{i\in I} V_i
@@ -717,6 +718,7 @@ In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fig28.png}
 \end{figure}
+\fixme[passt nicht]
 alle $a\in A$ Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unedlich vieler Mengen.
 $U_{a_1},..., U_{a_n}$ auswählen, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
 \end{proof}
@@ -738,6 +740,7 @@ Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fig29.png}
 \end{figure}
+\fixme[passt nicht]
  Sei $X:=S^1/\sim$ $z\sim z':\iff z=z'$ oder $z=-z'$ $X$ ist kompakt, da Bild des kompakten EInheitskreises $S^1$ unter der Quotientenabbildung. WIr wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\to z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig i
 ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (bzw. $\R P^1\homo S^1$)
 
@@ -1005,15 +1008,192 @@ Eine Deformationsretraktion, so dass die Homotopie $h$ von $\rho$ nach $\id_X$ m
 \begin{note*}
  Alle Beispiele oben sind starke Deformationsretrakte.
 \end{note*}
+\begin{seg}{Zusammenfassung:}
+\begin{itemize}
+ \item \emph{Homotopieäquivalenz} $X\simeq Y: \exists f: X\to Y, g: Y\to X, f\circ g \simeq \id_Y, g\circ f \simeq \id_X$
+ \item \emph{(Deformations-)Retrakt}:\\
+$A\subset X$ heißt \emph{Retrakt}: $\exists f: X\to A$ stetig.
+\begin{itemize}
+\item \emph{Deformationsretrakt}: $\exists f: X\to A$ homotop zu $\id_X$
+\item \emph{starker Deformationsretrakt}: die Homotopie kann so gewählt werden, dass alle Punkte in $A$ während der Reformation fix bleiben.\\
+\fixme[fig46]
+$A$ und $A'$ sind starke Reformationsretrakte von $X$:
+\[
+ \implies A \simeq A'
+\]
+\end{itemize}
+\end{itemize}
+\end{seg}
+\begin{exs*}
+\begin{enumerate}[(i)]
+ \item 
+\begin{seg}{Morsetheorie} 
+$M$ differenzierbare Mannigfaltigkeit, $f$ eine differenzierbare Funktion auf $M$. Betrachte Subniveaus $M_a=\{x\in M|f(x)\le a\}$ für $a\in \R$.
+Betrachte Subniveaus $M_a=\{x\in M|f(x)\le a\}$ für $a\in \R$.
+ \fixme[fig47]
+Es gilt: falls für $a<b$ die Funktion $f$ auf $M_b\setminus M_a$ keine kritischen Punkte hat, dann ist $M_a$ ein starker Deformationsretrakt von $M_{b'}$
+\end{seg}
+\begin{proof}[Beweisidee]
+ Aus den Gradienten von $f$ kann eine Schar von Diffeomorphismus gewonnen werden, die $M_n$ in $M_a$ deformiert.
+\end{proof}
+\item $O(n)\subset GL(n, \R)$ ist ein starker Deformationsrektrakt
+\begin{proof}
+ Durch das Gram-Schmidt-Orthonormalisierungsverfahren ist eine stetige Abbildung:
+\[
+ f: GL(n,\R)\to O(n)\times D(n): x\mapsto (f_1(x), f_2(x))
+\]
+wobei $D(n)$ die Menge der reellen oberen Dreiecksmatrizen mit positiven Diagonalelementen ist. (Es gilt $x=f_1(x)\cdot f_2(x)$)
 
+Die Abbildung $x\mapsto f_1(x)$ ist ein starker Reformationsretrakt denn durch $h: GL(n,\R)\times [0,1]\to GL(n,\R): (x,t)\mapsto f_1(x)(t\cdot I+(1-t)f_2(x))$, wobei $(1-t)f_2(x)$, die Form:
+ \[
+  \begin{pmatrix}
+   \alpha 1 & * & ...& *\\
+ & \ddots & \ddots & \vdots\\
+ & & \ddots & *\\
+ & & & \alpha_n
+  \end{pmatrix}
+ \]
+ist eine Homotopie von $\id_{GL(n, \R)}$ nach $f_1$ gegeben (bedeute, dass der zweite Faktor in der Definition oben stets invertierbar ist.)
+\end{proof}
+\end{enumerate}
+\end{exs*}
+\section{Algebraische Topologie}
+\subsection{Die Fundamentalgruppe}
+\begin{df}
+ Sei $X$ ein topologischer Raum und $x_0, x_1$. Wir bezeichnen mit
+\[
+ \Omega(X; x_0,x_2)=\{\omega: [0,1]\to X|\omega \text{ stetig }, \omega(0)=x_0, \omega(1)=x_1
+\]
+die Menge aller stetigen Wege in $X$ von $x_0$ nach $x_1$. \fixme[fig48]
+Die Menge $\Omega(X; x_0):=\Omega(X; x_0, x_0)$ bezeichnen wir als die Menge aller \emph{Schleifen} mit \emph{Basispunkt} $x_0$.
+\end{df}
+\begin{df} Für $\omega\in \Omega(X; x_0, x_1)$ und $\nu\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega*\nu$ definiert durch:
+ \[
+  \omega*\nu(t):=\begin{cases} \omega(2t) &\text{ falls } t\in[0,\frac{1}{2})\\ \nu(2t-1) &\text{ falls } t\in[\frac{1}{2}, 1] \end{cases}
+ \]
+\fixme[fig49]
+\end{df}
+\begin{df}
+ Für $\omega \in \Omega(X; x_0, x_1)$ und $\nu\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega * \nu$ definiert durch:
+\[
+ \omega * \nu (t):= \begin{cases} \omega(2t) \text{ falls } t\in[0, \frac{1}{2})\\ \nu(2t-1) \text{ falls } t\in[\frac{1}{2},1] \end{cases}
+\]
+\end{df}
+Wir wollen auf dem Raum der Schleifen $\Omega(X, x_0)$ eine Äquivalenzrelation einführen. Dazu benutzen wir eine modifizierte Homotopierelation:
+\begin{df}
+\fixme[fig50]\\
+ Seien $\omega, \nu \in \Omega(X; x_0, x_1)$. Eine \emph{Homotopie mit festen Endpunkten} von $\omega$ nach $\nu$ ist eine stetige Abbildung
+\[
+ H: [0,1]\times [0,1] \to X,
+\]
+so dass gilt: 
+\begin{align*}
+ H(t,0)=\omega(t)&, H(0,s)=x_0\\
+ H(t,1)=\nu(t)&, H(1,s)=x_1
+\end{align*}
+\end{df}
+\begin{lem}
+ Die Relation $\omega\sim \nu:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\nu$) ist eine Äquivalenzrelation.
+\end{lem}
+\begin{proof}
+ ist derselbe wie für Homotopie von stetigen Abbildung.
+\end{proof}
+\begin{lem}
+ Es gilt in $\Omega(X;x_0,x_1),$ wobei wir mit $\epsilon$ die \emph{konstante Schleife} 
+$\epsilon(t)=x_0 \forall_{t\in [0,1]}$ bezeichnen.
+\begin{enumerate}[(i)]
+ \item $\omega \sim \omega' \land \nu \sim \nu' \implies \omega *n \sim \omega'\times \nu'$
+  \item $\epsilon * \omega \sim \omega \sim \omega* \epsilon$ 
+\item $\omega * \omega^{-1} \sim \epsilon \sim \omega^{-1}*\omega$
+ \item $(\omega * \nu)*\xi \sim \omega*(\nu * \xi)$
+\end{enumerate}
+und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichnen.
+\end{lem}
+\begin{proof}\fixme[fig51]
+\begin{enumerate}[(i)]
+\item \fixme[fig52]
+\item \fixme[fig53]
+\item \fixme[fig54]
+\item \fixme[fig55]
+\end{enumerate}
+\end{proof}
+\begin{note*}[Explizit für (i)]
+Sei $f$ die Homotopie zwischen $\nu$ und $ \nu'$. Definiere:
+\[
+ H:[0,1]\times[0,1]\to X
+\]
+\[
+ H(t,s)=\begin{cases} f(2t, s) &\text{ falls } t\in [0, \frac{1}{2}) \\ g(2t-1,s) &\text{ falls } t\in [\frac{1}{2}, 1] \end{cases}
+\]
+\end{note*}
 
+\begin{df}
+ Die Menge der Äquivalenzklassen von Schleifen in $\Omega(X;x_0)$ bezüglichd er Relation $\sim$ wird \emph{Fundamentalgruppe} $\pi_1(X; x_0)$ von $(X;x_0)$ genannt, Notation: $\pi_1(x;x_0):= \Omega(X;x_0)/\sim$
+\end{df}
+Sei:
+\[
+ \pi_1(X;x_0):= \Omega(X;X_0)/\sim 
+\]
+wobei $\Omega(X;x_0)$ Schleifen mit Basispunkt $x_0$ und $\sim$ die Homotopie mit festen Endpunkten darstellt.\\
+\fixme[fig56]\\
+Es ist $[\omega]=[\omega']$, $[\omega]\neq [\epsilon]$, $[\alpha]\neq [\beta]\neq [\omega]$, sei $\epsilon$ konstante Schleife $[0,1]\to \{x_0\}$ und $[\alpha]=[\epsilon]$
+\begin{st}
+ Das Produkt von Schleifen $(\omega, \nu) \mapsto \omega * \nu$ induziert ein Produkt auf $\pi_1(X;x_0)$ für 
+eine Schleife $\omega \in \Omega(X;x_0)$ bezeichne $[\omega] \in \pi_1(X; x_0)$ ihre Homotopieklasse mit festen Endpunkten. Mit diesem Produkt ist $\pi_1(X;x_0)$ eine Gruppe
+\end{st}
+\begin{proof}
+ Seien $\omega, \nu \in \Omega(X; x_0)$. Setze 
+\[
+ [\omega] \cdot [\nu]:=[\omega*\nu]
+\]
+Dies ist wohldefiniert, denn nach Lemma \ref{thm2:1.5} (i) gilt $\omega \sim \omega' \land \nu \sim \nu' \implies \omega * \nu \sim \omega' * \nu'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich, denn $\omega \sim \omega' \implies \omega^{-1}\sim \omega'{-1}$, wohldefiniert.
+die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm2:1.5} (ii) (iii): $\omega*\omega'\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm2:1.5} liefert die Assoziativität der Verknüpfung. 
+\end{proof}
+Die so definierte Gruppe $\pi_1(X;x_0)$ ist im Allgemeinen nicht abelsch, wie wir später sehen werden. Die Menge $\Omega(X;x_0)$ bildet \emph{keine} Gruppe mit der Verknüpfung $*$, denn zum Beispiel $\omega*\omega^{-1}\neq \epsilon$, wenn $\omega$ nicht konstant ist.
+\begin{exs*}
+ \begin{enumerate}[(1)]
+  \item Es gilt $\pi_1(\R^n;0)\homo \{1\}$, denn jede Schleife in $\R^n$ mit Basispunkt kaum auf die konstante Schleife $\epsilon: t \mapsto 0$ zusammengezogen werden:
 
+Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega(t)$ eine Homotopie zwischen $\omega$ und $\epsilon$. Allgemeiner gilt für jede bezüglich $x_0$ sternförmige Menge $X$, dass $\pi_1(X;x_0)$ trivial ist.\\
+\fixme[fig57]\\
+\item Es gilt $\pi_1(S^n, p) \homo \{1\}$ für $n\ge 2$ und $p\in S^n$ beliebig.\\
+\fixme[fig58]
+\begin{proof}[Beweisskizze]
+\fixme[fig59]
+ Sei $\omega \in \Omega(S^n,p)$ und sei $q\in S^n\setminus \omega([0,1])$. Dann ist $S^n\setminus\{q\}$ via stereographischer Projektion homöomorph zu $\R^n$ und in $\R^n$ lässt sich jede Schleife zusammenziehen.
+\end{proof}
+\begin{seg}{Problem bei diesem Beweis}
+ Möglicherweise ist $S^n \setminus \omega([0,1])$ \emph{leer}, in der Tat gibt es flächen-/raumfüllende stetige Wege.
+\end{seg}
+\begin{seg}{Exkurs: flächenfüllende "`Kurve"' (=Weg)}
+ Definiere $[0,1] \to A $, wobei $A$ Dreiecksfläche ist, surjektiv wie folgt:
 
+Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101...$ in Binärdarstellung unterteile das Dreieck in sukzessive in kleinere Dreiecke:\\
+\fixme[fig60]\\
+Die so entstehende Folge konvergiert gegen einen Limes $f(x)$ und die Abbildung $[0,1]\to A$ ist \emph{surjektiv} und \emph{stetig}.
+\end{seg}
+\item Es gilt: $\pi_1(S^1; 1)\homo \Z$
+\begin{proof}[Beweisskizze]
+Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlagerungstheorie. Der Kreis $S^1=\{ z\in \C| |z|=1\}$ und $S_1=\{z\in \C||z|=1\}$ und von der reellen Geraden $\R$ "`überlagert"': Die Abbildung $p:  \R\to S^1, t\mapsto e^{2\pi i t}$\\
+\fixme[fig61]
+\end{proof}
+Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^2$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<...<t_k=1$ von $[0,1]$, so dass sich die Argumentfunktion auf jeden $\omega([t_1,t_{i+1}])$ stetig die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunkte.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
+\[
+ f(\omega*\eta)=f(\omega)+f(\eta)
+\]
+\item Es gilt $\pi_1(\R P^n, p)\homo \Z_2, n\ge 2$
+% \begin{table}[h]
+%  \fixme[Daten hinzufügen]
+% \end{table}
+\item Für die Linsenräume $L_p$ gilt $\pi_1(L_p,*)\homo \Z_p$ (Beweis später)
+\begin{seg}{Challenge}
+\fixme[fig62]
+$\pi_1("'\infty"', p) \homo ?$
+\end{seg}
+ \end{enumerate}
+\end{exs*}
 
-
-
-
-
+ 
 
 
 
