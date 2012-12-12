@@ -699,11 +699,9 @@ Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann i
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fig27.png}
 \end{figure}
-<<<<<<< HEAD
-\fixme[passt nicht]\\
-=======
+
 \fixme[Grafik stimmt nicht überein]\\
->>>>>>> 0b3fb6935622bc43c6a1dffd8416eaad76deee9e
+
 Nach Definition der Teilraumtopologie gibt es offene Mengen $V_i$ von $X$, so dass $U_i=V_i\cap A$. Dann ist 
 \[
  (X\setminus A) \cup \bigcup_{i\in I} V_i
@@ -1104,7 +1102,7 @@ so dass gilt:
  H(t,1)=\nu(t)&, H(1,s)=x_1
 \end{align*}
 \end{df}
-\begin{lem}
+\begin{lem} \label{thm2:1.5}
  Die Relation $\omega\sim \nu:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\nu$) ist eine Äquivalenzrelation.
 \end{lem}
 \begin{proof}
@@ -1204,7 +1202,105 @@ $\pi_1("'\infty"', p) \homo ?$
 \end{seg}
  \end{enumerate}
 \end{exs*}
+\begin{seg}{Zusammenfassung}
+ Fundamentalgruppe einer "`Acht"':
+\fixme[fig63]
+\end{seg}
+Die \emph{Einpunktvereinigung} oder das \emph{Wedge-Produkt} von zwei Räumen $X$ und $Y$, in denen je ein Punkt $x_0 \in X$ und $y_0\in X$ ausgezeichnet ist, sei definiert durch 
+$$X\lor Y:= (X,x_0) \lor (Y,y_0):=X+Y/{\{x_0,y_0\}} $$
+Die "`Acht"' ist also das Wedge-Produkt zweier Kreise $S^1\lor S^1$ Die Fundamentalgruppe von $S^1 \lor S^1$ ist isomorph zu $\Z*\Z$, dem \emph{freien Produkt} der beiden Grupppen. Die Elemente von $\Z*\Z$ sind Worte der Form:
+\[
+ a^{e_1}\cdot b^{e_2} \cdot a^{e_3} \cdot b^{e_3}\cdot ... \cdot a^{e_{2k-1}}\cdot b^{e_{2k}},
+\]
+wobei $a$ und jeweils die Erzeuger einen "`Körper"' von $\Z$ sind und wobei $e_2, ..., e_{2k-1}\in \Z\setminus\{0\}, e_1, e_{2k} \in \Z$ mit der offensichtlichen Multiplikation (Hintereinanderschreiben und "`Kürzen"'). (Andere Bezeichnung: freie Gruppe in $2$ Erzeugern)
 
+\begin{seg}{Allgemeiner gilt}
+ für die Fundamentalgruppe eines Wedge-Produkts:
+\[
+ \pi_1((X,x_0) \lor (y,y_0), [x_0])\homo \pi_1(X,x_0)* \pi_1(Y,y_0)
+\]
+(Beweis später; Satz von Seifert und von Kampen für Fundamentalgruppen von Vereinigungen)
+\end{seg}
+
+Wenn wir eine stetige Abbildung zwischen topologischen Räumen haben, können wir die Fundamentagruppen in Beziehung setzen.
+\begin{df}
+ Seien $X$ und $Y$ topologische Räume und $x_0\in X, y_0 \in Y$. Eine stetige Abbildung $f: X\to Y$ mit $f(x_0)=y_0$ bezeichnen wir auch als \emph{stetige Abbildung} $(X,x_0)\to (Y,y_0)$. (stetige Abbildungen zwischen "`punktierten"' Räumen) Sei $f: (X,x_0) \to (Y,y_0)$ stetig.  Dann induziert $f$ eine Abbildung:
+\[
+ \pi_1(X,x_0)\to \pi_1(Y,y_0): [\omega] \to [f \circ \omega]
+\]
+\fixme[fig64]\\
+der Fundamentalgruppen. (Wohldefiniertheit ist klar, durch für eine Homotopie $(t,s)\mapsto \omega_s(t)$ liefert $(t,s) \mapsto f(\omega_s(t))$ eine entsprechende Homotopie für $f\circ \omega$.)
+\end{df}
+\begin{st}
+ Sei $f: (X,x_0)\to (Y,y_0)$ stetig.
+\begin{enumerate}[(i)]
+ \item Die Abbildung $\pi_1(f): \pi_1(X,x_0) \to \pi_1(Y,y_0)$ ist ein Homomorphismus von Gruppen.
+ \item Das gilt $\pi_1(\id_X)=\id_{\pi_1(X; x_0)}$
+ \item Falls $f:(X;x_0) \to (Y, y_0)$ und $g: (Y, y_0) \to (Z, z_0)$ stetig sind, dann gilt $\pi_1(g\circ f)=\pi_1(g)\circ \pi_1(f)$
+\end{enumerate}
+\end{st}
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Es ist zu zeigen, dass
+\[
+ \pi_1(f)([\omega]\cdot [\eta])=\pi_1(f)([\omega])\cdot \pi_1(f([\eta]))
+\]
+Dies gilt weil: 
+$$
+\pi_1(f)([\omega]\cdot [\eta])=\pi_1(f)([\omega*\eta])= [f\circ (\omega*\eta)] \stackrel ! = [(f\circ \omega)*(f\circ \eta)]=[f\circ \omega] \cdot [f\circ \eta]=\pi_1(f)(\omega)\cdot \pi_1(f)(\eta)
+$$
+\item $\pi_1(\id_X)[\omega]=[\id_X\circ \omega]=[\omega]$
+\item Sei $\omega\in \pi_1(X;x_0)$. Dann gilt:
+\[
+ \pi_1(g)\circ \pi_1(f)([\omega])=\pi_1(g)([f\circ \omega])=[g\circ f \circ \omega]=\pi_1(g\circ f) [\omega].
+\]
+\end{enumerate}
+\end{proof}
+\begin{note*}
+ Der Satz sagt, $\pi_1$ ist ein \emph{"`Funktor"'} zwischen der Kategorie der punktierten topologischen Räume und den stetigen Abbildung zwischen diesen in die Kategorie der Gruppen und Gruppenhomomorphismen. Dies ist ein \emph{Übersetzungsmechanismus}, siehe Jänich 5.4.
+
+\[
+ f\circ(\omega*\eta)(t)=\begin{cases} f\circ \omega (2t) &, \text{für} t\in[0,\frac{1}{2}]\\  \end{cases}
+\]
+\fixme[JochannesZZZZZ Shuuuuuld]
+\end{note*}
+\begin{kor}
+ Ist $f:(X, x_0)\to (Y, y_0)$ ein Homöomorphismus, so ist $\pi_1(f):\pi_1(X,x_0) \to \pi_1(Y,y_0)$ ein Isomorphismus
+\end{kor}
+\begin{proof}
+ Es gilt 
+\[
+\id_{\pi_1(X; x_0)}= \pi_1(\id_X)=\pi_1(f^{-1}\circ f)=\pi_1(f^{-1} \circ f)=\pi_1(f^{-1})\circ \pi_1(f)
+\]
+\[
+ \id_{\pi_2(Y;y_0)}=\pi_1(\id_Y)=\pi_1(f\circ f^{-1})=\pi_1(f) \circ \pi_1(f^{-1}),
+\]
+dies zeigt, dass $\pi_1(f)$ und $\pi_1(f^{-1})$ zueinander inverse Gruppenhomomorphismen.
+\end{proof}
+\begin{st}
+ Seien $X,Y$ topologische Räume und $x_0\in X, y_0\in Y$. Die kanonischen Projektionen induzieren ein Isomorphismus.
+\[
+ \pi_1(X\times Y, (x_0, y_0)) \homo \pi_1(X;x_0) \times \pi_1(Y, y_0)
+\]
+\end{st}
+\begin{proof}
+ Seien $p_X: X\times Y \to X, (x,y) \mapsto x, p_y: X\times Y \to Y, (x,y) \mapsto y$ die kanonischen Projektion. Definiere den Gruppenhomomorphismus.
+\[
+ \Phi: \pi_1(X\times Y, (x_0, y_0)) \to \pi_1(X;x_0)\times \pi_1(Y,y_0): [\omega] \to ([P_X\circ \omega], [P_Y \circ \omega]).
+\]
+Dies ist ein Isomorphismus, denn $([\omega],[\eta])\mapsto [t\mapsto (\omega(t), \eta(t))]$ ist die Inverse (wie man sich \emph{leicht} überlegt ist $\Psi$ wohldefiniert.)
+\end{proof}
+\begin{kor}
+ Für die Fundamentalgruppe eines $2-$dimensionale Torus $T^2 \homo S^1 \times S^1$ ist isomorph zu $\Z\times \Z$
+
+
+%$\pi_1(f)$ und $\pi_1(f^{-1})$ zueinander inverse Gruppenhomomorphismen.
+\end{kor}
+
+
+
+
+ 
  
 
 
