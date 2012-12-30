@@ -601,7 +601,8 @@ Wenn dann müßte hier sowas wie
  $\mathcal S = \{X_1 \times X_2 \times \dotsb \times X_{k-1} \times U \times X_{k+1}, \dotsb \times X_n | U\subset X_k \texttt { offen }, k \in \{1, \dotsc n \}\}$,
  dies wäre aber erstens nur für endliche Produkte so, zweitens steht oben bereits dasselbe, nur viel besser aufgeschrieben da, und ich habe diese Bemerkung in meinem eigenen handschriftlichen Aufschrieb überhaupt nicht, ich würde das aus der Bemerkung einfach entfernen. 
 melde dich mal bei mir abdelaar@studi.informatik.uni-stuttgart.de, das problem ist ich habe versucht dir eine nachricht über github zu schicken bin aber zu doof dazu und möchte auch nicht genauer recherchieren wie das genau funktioniert]
-  \item $\mathcal S=\{X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen$ \} $, wobei $A=\{1,...,n\}$
+\fixme[jetzt hat sichs geklärt, dass habe ich eigentlich mit der Notation gemeint... Du hast natürlich recht... Tatsächlich soll dies exemplarisch für endliche Produkte sein... Sonst ist mir der Rest was du bemängelst unklar]
+  \item $\mathcal S=\{X_1\times X_2\times ... \times X_{k-1} \times U \times X_{k+1} \times...\times X_n$ mit $U\subset X_k$ offen $, k \in \{1, \dotsc n \} \} $
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
 \end{note*}
@@ -773,8 +774,8 @@ Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Fol
  Ein topologischer Raum heißt \emph{folgenkompakt}, wenn jede Folge eine konvergente Teilforge besitzt.  
 \end{df}
 \begin{ex*}
- \fixme [from GnuLinux: Sorry, dass ich das noch mal reinbringe, aber das kann so immer noch nicht sein, was soll ``$k\to n_k$ monoton`` bedeuten. die Indizes konvergieren gegeneinander ? und der eine Indize hängt noch vom anderen zusätzlich ab ? Wenn man das jedoch rausstreichen würde wäre es Bolzano-Weierstraß und damit wieder in Ordnung. In der Version davor hatte ich jedoch gar nicht verstanden, was der erste Satz aussagen sollte.  Leider habe ich das auch nicht in meinem Aufschrieb weswegen ich nicht wußte worauf du hinaus wolltest. Wenn das so passt einfach fixme wieder entfernen]
- Folge $x_n, n\in \N$ sei beschränkte Folge (in $ \R $), dann können wir eine Teilfolge $x_{n_k}$ mit $k\to n_k$ monoton auswählen, die konvergiert. Zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
+\fixme[from mathematiker : Ich hoffe es passt so jetzt... Also er muss es in der Vorlesung erwähnt haben, sonst hätte ich das nicht aufgeschrieben...  Also jetzt mal ganz informell:  Wenn du ne Menge über die Folgenglieder einer Folge definierst (also auch für beliebig , so genügt die Beschränktheit als Kriterium für die Kompaktheit... Überleg dir ne gescheite Formulierung und dann hamma glaub ich das Problem aus der Welt]
+ Folge $x_n, n\in \N$ sei beschränkte Folge (in $ \R $), dann können wir eine Teilfolge $x_{n_k}$ mit $k \in \N$ auswählen, die monoton ist (also monoton steigend oder monoton fallend). Damit konvergiert diese Teilfolge und die Menge der Folgenglieder ist \emph{kompakt}. Zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
 \end{ex*}
 \begin{st}\label{thm:6.10}
  In topologischen Räumen, die das zweite Abzählbarkeitsaxiom erfüllen (dass heißt es gibt eine abzählbare Basis der Topologie) sind Folgenkompaktheit und \emph{Überdeckungskompaktheit} (dass heißt Kompaktheit wie in \ref{thm:6.2} defniert) äquivalent.
