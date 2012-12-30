@@ -422,8 +422,6 @@ Jeder Teilraum eines Hausdorffraums ist Hausdorffsch. Zwei topologische Räume s
 die Quotiententopologie von Hausdorffräumen sind nicht notwendigerweise hausdorffsch, siehe dafür das folgendende Beispiel. \\
 \end{note*}
 \fixme[fig15]\\
-\fixme[from GnuLinux: Das Beispiel waren ursprünglich vor Satz 1.3.2. Liegen hier didaktische Überlegungen bei der Umstellung zu Grunde ?????] \\
-\fixme[from mathematiker: Vermutlich ja... Wenn ich mich richtig erinnere, habe ich das Ding hier verschoben, weil es darum ging, dass du nun, bei der Quotiententopologie, nicht notwendigerweise hausdorffräume hast, der hat auch irgendwie erwähnt, dass es vielleicht geschickter gewesen wäre, die hierhin zu bringen]
 Ein Raum, der nicht Hausdorffsch ist, scheint mit unserer Intuition unvereinbar zu sein.  Ein typisches Beispiel ist die Klumpentopologie $\{\emptyset, X\}$ auf jeder Menge. Mit Hilfe der Quotiententopologie erhält man weniger triviale Beispiele von Nicht-Hausdorffräumen.
 \begin{ex*} Für Nicht-Hausdorffraum:\\
 Die Gerade mit einem Doppelpunkt. Sei $ X=\R+\R=\R\times \{0\}\cup \R\times \{1\} $. Definiere man $ (x,n)\sim (y,m)\stackrel{\text{def}}{\iff} x=y\neq 0 $. \\
@@ -598,7 +596,12 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
   \fixme[from GnuLinux : S kann so nicht stimmen ????? ]
   \fixme[from mathematiker : Ich konnte das nicht ganz überblicken?]
   \fixme[from mathematiker : wofür ist die Bemerkung gut?]
-  \item $\mathcal S=\{X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen$ \} $, wobei $A={1,...,n}$
+  \fixme[from GnuLinux: dass $\R^3$ in der Bemerkung ist finde ich gut, es ist zwar nicht notwendig ist aber eine interessante Betrachtungsweise, die Bemerkung zu $\mathcal S$ ist leider formal immer noch falsch, z.B. ist im allgemeinen ja $X_k \notin \mathcal S$, sondern $ \dotsb \times X_k \times \dotsb \in \mathcal S$. Auch kann man das nicht so einfach mit Tupelschreibweise oder ähnlichem retten, da die Komponenten der Tupel ja Elemente !!! aus $X_k$ und nicht die Räume $X_k$ oder offenen Mengen $U_k \subset X_k$ sind.
+Wenn dann müßte hier sowas wie
+ $\mathcal S = \{X_1 \times X_2 \times \dotsb \times X_{k-1} \times U \times X_{k+1}, \dotsb \times X_n | U\subset X_k \texttt { offen }, k \in \{1, \dotsc n \}\}$,
+ dies wäre aber erstens nur für endliche Produkte so, zweitens steht oben bereits dasselbe, nur viel besser aufgeschrieben da, und ich habe diese Bemerkung in meinem eigenen handschriftlichen Aufschrieb überhaupt nicht, ich würde das aus der Bemerkung einfach entfernen. 
+melde dich mal bei mir abdelaar@studi.informatik.uni-stuttgart.de, das problem ist ich habe versucht dir eine nachricht über github zu schicken bin aber zu doof dazu und möchte auch nicht genauer recherchieren wie das genau funktioniert]
+  \item $\mathcal S=\{X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen$ \} $, wobei $A=\{1,...,n\}$
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
 \end{note*}
@@ -770,6 +773,7 @@ Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Fol
  Ein topologischer Raum heißt \emph{folgenkompakt}, wenn jede Folge eine konvergente Teilforge besitzt.  
 \end{df}
 \begin{ex*}
+ \fixme [from GnuLinux: Sorry, dass ich das noch mal reinbringe, aber das kann so immer noch nicht sein, was soll ``$k\to n_k$ monoton`` bedeuten. die Indizes konvergieren gegeneinander ? und der eine Indize hängt noch vom anderen zusätzlich ab ? Wenn man das jedoch rausstreichen würde wäre es Bolzano-Weierstraß und damit wieder in Ordnung. In der Version davor hatte ich jedoch gar nicht verstanden, was der erste Satz aussagen sollte.  Leider habe ich das auch nicht in meinem Aufschrieb weswegen ich nicht wußte worauf du hinaus wolltest. Wenn das so passt einfach fixme wieder entfernen]
  Folge $x_n, n\in \N$ sei beschränkte Folge (in $ \R $), dann können wir eine Teilfolge $x_{n_k}$ mit $k\to n_k$ monoton auswählen, die konvergiert. Zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
 \end{ex*}
 \begin{st}\label{thm:6.10}
