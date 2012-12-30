@@ -21,7 +21,7 @@
 \end{center}
 \begin{seg}{Was ist Topologie?}
 \begin{itemize}
-\item "` Untersuchung geometrischer Objekte bis auf stetige Dekorationen. "'
+\item "` Untersuchung geometrischer Objekte bis auf stetige Deformationen. "'
 \item "` Stetigkeitsgeometrie"', "` qualitative Geometrie "', "`Gummi-Geometrie"'
 \end{itemize}
 Objekte werden in der Topologie als gleich angesehen, wenn sie durch eine in beiden Richtungen stetige bijektive Abbildung aufeinander abgebildet werden kann ("` Homöomorphismus"').
@@ -115,9 +115,7 @@ B_\eps(x)=\{x'\in X|d(x',x)<\eps\}
 von $X$ der (\emph{offene}) \emph{Ball mit Radius $\eps$ um x} (kurz: \emph{$\eps$-Ball}).
 \end{df}
 \begin{df}\label{def:1.1.7}
-In einem metrischen Raum heißt eine Teilmenge $U\subset X$ \emph{offen}, wenn es um jeden ihrer Punkte einen offenen $\eps$-Ball gibt, der ganz in U enthalten.
- Eine Teilmenge A heißt \emph{abgeschlossen}, wenn ihr Komplement $X\setminus A$ offen ist.  Eine Teilmenge $U \subset Y$ heißt \emph{Umgebung} eines Punktes $ x\in X$, 
-falls es eine offene Teilmenge $V \subset X$ gibt mit $x\in V$ und $V \subset U$.  (Äquivalent: falls es ein $\eps$ mit $B_\eps(x)\subset U$ gibt.  
+In einem metrischen Raum heißt eine Teilmenge $U\subset X$ \emph{offen}, wenn es um jeden ihrer Punkte einen offenen $\eps$-Ball gibt, der ganz in U enthalten. Eine Teilmenge A heißt \emph{abgeschlossen}, wenn ihr Komplement $X\setminus A$ offen ist.  Eine Teilmenge $U \subset Y$ heißt \emph{Umgebung} eines Punktes $ x\in X$, falls es eine offene Teilmenge $V \subset X$ gibt mit $x\in V$ und $V \subset U$.  (Äquivalent: falls es ein $\eps$ mit $B_\eps(x)\subset U$ gibt.  
 \end{df}
 
 \begin{figure}[h]
@@ -182,10 +180,7 @@ alle die Standardtopologie.
 \end{enumerate}
 \end{note*}
 \begin{df}
-Sei $ X $ ein topologischer Raum und  $x \in X $. Eine Teilmenge $ U \subset X $ heißt \emph{Umgebung} von x, wenn es eine offene Menge $ T\subset U $ gibt, die $ x $ enthält.
-  $ x $ heißt \emph{innerer Punkt} von A, wenn $ A $ eine Umgebung von $ x $ ist. $ x $ heißt \emph{äußerer Punkt}, falls $ X\setminus A $ eine Umgebung von x ist.
- Der Punkt $ x $ heißt Randpunkt von $ A $, falls keines von beiden gilt.  Die Menge $ \mathring{A} $ der inneren Punkte von $ A $ bezeichnet man als das \emph{Innere} von $ A $ 
-oder als \emph{offener Kern} von $ A $. Die Menge $ \bar A $, der nicht äußeren Punkte von $ A $ heißt \emph{Abschluss} oder \emph{abgeschlossene Hülle} von $ A $.  Die Menge der Randpunkte von $  A $  heißt auch der Rand von A und wird mit $ \delta A $ bezeichnet. 
+Sei $ X $ ein topologischer Raum und  $x \in X $. Eine Teilmenge $ U \subset X $ heißt \emph{Umgebung} von x, wenn es eine offene Menge $ T\subset U $ gibt, die $ x $ enthält. $ x $ heißt \emph{innerer Punkt} von A, wenn $ A $ eine Umgebung von $ x $ ist. $ x $ heißt \emph{äußerer Punkt}, falls $ X\setminus A $ eine Umgebung von x ist. Der Punkt $ x $ heißt Randpunkt von $ A $, falls keines von beiden gilt.  Die Menge $ \mathring{A} $ der inneren Punkte von $ A $ bezeichnet man als das \emph{Innere} von $ A $ oder als \emph{offener Kern} von $ A $. Die Menge $ \bar A $, der nicht äußeren Punkte von $ A $ heißt \emph{Abschluss} oder \emph{abgeschlossene Hülle} von $ A $.  Die Menge der Randpunkte von $  A $  heißt auch der Rand von A und wird mit $ \delta A $ bezeichnet. 
 \end{df}
 
 \begin{ex*}
@@ -375,7 +370,7 @@ $(T1) U_1, U_2\in O$ zeige: $U_1\cup U_2\in O$
 \begin{ex*}
 Die Produkttopologie auf $ X\times Y $ ist initiale Topologie bezüglich der bei den kanonischen Projektionen
 \[
-\pi_X:X\times Y \to X, (x,y)\to x \text{ und } \pi_Y: X\times Y\to Y, (x,y)\to y 
+\pi_X:X\times Y \to X, (x,y)\mapsto x \text{ und } \pi_Y: X\times Y\to Y, (x,y)\mapsto y 
 \]
 \end{ex*}
 \begin{seg}{Erläuterung zu Definition \ref{thm:2.5} (iv)} 
@@ -390,14 +385,14 @@ Die in (iv) definierte Topologie ist also durch
 \mathcal T(\bigcup\limits_{i\in I} \{ {f_i}^{-1}(U)|U \text{ offen in } Y_i\} )
 \]
 gegeben.
-\begin{ex}\label{thm:2.6} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ ist die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \emph{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, den Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[fig12]
+\begin{ex}\label{thm:2.6} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ als die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \emph{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, dem Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. \fixme[fig12]
 \begin{proof}
 Betrachte $ \phi(t)=(\cos(2\pi\cdot t),\sin(2\pi \cdot t)), \R\to Y $.
-Wegen $ \phi(t+k)=\phi(t) $ für $ k\in \Z $, ist durch $ \bar\phi: X\to Y, [x]\to \phi(x) $ eine wohldefinierte Abbildung gegeben. $\bar \phi$ ist offensichtlich bijektiv. Die Abbildung $ \bar \phi  $ ist stetig nach Definition der Quotientenabbildung, da $ \phi $ stetig ist.
+Wegen $ \phi(t+k)=\phi(t) $ für $ k\in \Z $, ist durch $ \bar\phi: X\to Y, [x]\mapsto \phi(x) $ eine wohldefinierte Abbildung gegeben. $\bar \phi$ ist offensichtlich bijektiv. Die Abbildung $ \bar \phi  $ ist stetig nach Definition der Quotientenabbildung, da $ \phi $ stetig ist.
 
 Es bleibt noch zu zeigen: Die Bilder offener Mengen sind offen (man sagt dann: $ \bar \phi $ ist \emph{offen}, dass heißt die Bilder offener Mengen sind offen), dass heißt $ \bar \phi^{-1} $ ist stetig. Wir zeigen: Die Bilder abgeschlossener Mengen sind abgeschlossen: Sei $ A\subset X $ abgeschlossen. Dann ist $ q^{-1}(A)\subset \R $ abgeschlossen (mit $ q: \R \to \R/\sim $ die Quotientenabbildung).
 
-Es gilt $ \bar \phi(A)=\phi(q^{-1}(A))=\phi(q^{-1}(A)\cap[0,1]) $. Da $ q^{-1}(A)\cap [0,1] $ kompakte Teilmenge von $ \R $ ist, ist $ \bar\phi(A)=\phi(\phi^{-1}(A)\cap[0,1]) $ kompakt, also abgeschlossene Teilmenge des $ \R^2  $ und somit von $ Y $.
+Es gilt $ \bar \phi(A)=\phi(q^{-1}(A))=\phi(q^{-1}(A)\cap[0,1]) $. Da $ q^{-1}(A)\cap [0,1] $ kompakte Teilmenge von $ \R $ ist, ist $ \bar\phi(A)=\phi(q^{-1}(A)\cap[0,1]) $ kompakt, also abgeschlossene Teilmenge des $ \R^2  $ und somit von $ Y $.
 \end{proof}
 \end{ex}
 \subsection{Hausdorffräume}
@@ -424,6 +419,7 @@ Jeder Teilraum eines Hausdorffraums ist Hausdorffsch. Zwei topologische Räume s
 \end{st}
 \begin{proof}[zur Übung]\end{proof}
 \fixme[fig15]\\
+\fixme[from GnuLinux: Das Beispiel waren ursprünglich vor Satz 1.3.2. Liegen hier didaktische Überlegungen bei der Umstellung zu Grunde ?????] \\
 Ein Raum, der nicht Hausdorffsch ist, scheint mit unserer Intuition unvereinbar zu sein.  Ein typisches Beispiel ist die Klumpentopologie $\{\emptyset, X\}$ auf jeder Menge. Mit Hilfe der Quotiententopologie erhält man weniger triviale Beispiele von Nicht-Hausdorffräumen.
 \begin{ex*} Für Nicht-Hausdorffraum:\\
 Die Gerade mit einem Doppelpunkt. Sei $ X=\R+\R=\R\times \{0\}\cup \R\times \{1\} $. Definiere man $ (x,n)\sim (y,m)\stackrel{\text{def}}{\iff} x=y\neq 0 $. \\
@@ -432,8 +428,8 @@ $ \R $ besitzt unter Betrachtung dieser Relation doppelt vorhandene Nullpunkte.
 
 Die beiden Punkte $[(0,0)]$ und $[(0,1)]$ in $ X/\sim $ lassen sich nicht durch disjunkte Umgebung trennen.\\
 \fixme[fig17]\\
-Wir wollen noch zwei weitere Eigenschaften von Hausdorffräumen beweisen, die mit der geometrischen Intuition übereinstimmen.
 \end{ex*}
+Wir wollen noch zwei weitere Eigenschaften von Hausdorffräumen beweisen, die mit der geometrischen Intuition übereinstimmen.
 \begin{st}
 In einem Hausdorffraum gilt:
 \begin{enumerate}[(i)]
@@ -595,6 +591,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \end{seg}
 \begin{note*}
  \begin{itemize}
+  \fixme[from GnuLinux : S kann so nicht stimmen ????? ]
   \item $\mathcal S=(X_1,X_2,...,X_{k-1}, U, X_{k+1},...,X_n$ mit $U\subset X_k$ offen,$A={1,...,n}$
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
@@ -608,14 +605,13 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \item  Im $\R^n$ ist zum Beispiel jede der Mengen $\{B_\eps(p)|\eps>0\}$ , $ \{B_\eps(p)|\eps\in (0,1]\}$, $\{ B_\eps(p)|\eps>0,\eps\in \Q \}$ und $\{B_{n^{-1}}(p)|n\in \N\}$ eine Umgebungsbasis von $p$. Die letzten beiden sind abzählbar.
 \item Dies lässt sich auf metrische Räume übertragen: In jedem metrischen Raum $X$ mit $p\in X$ ist $\{B_{n^{-1}}(p)|n\in \N\}$ eine abzählbare Umgebungsbasis von p.
  \end{enumerate}
+\end{exs*}
 \begin{df}
  \begin{enumerate}[(i)]
   \item Ein topologischer Raum erfüllt das \emph{erste Abzählbarkeitsaxiome}, wenn es um jeden Punkt eine abzählbare Umgebungsbasis gibt. 
 \item Ein topologischer Raum erfüllt das \emph{zweite Abzählbarkeitsaxiome}, wenn es eine abzählbare Basis der Topologie gibt.
  \end{enumerate}
-
 \end{df}
-\end{exs*}
 \begin{seg}{Zusammenfassung}
 Eine Familie von Teilmengen heißt
 \begin{itemize}
@@ -638,15 +634,9 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
 \end{st}
 \begin{proof}
  \begin{enumerate}[(i)]
-  \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$,
- dann enthält $V$ eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal U$ mit  $U \subset V$.
-Damit ist $ \mathcal U $ eine abzählbare Umgebungsbasis von $p$.
+  \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$, dann enthält $V$ eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal U$ mit  $U \subset V$. Damit ist $ \mathcal U $ eine abzählbare Umgebungsbasis von $p$.
 \item \begin{seg}{„$\implies$“} bereits gezeigt in \ref{thm:1.17} \end{seg}
-\begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$.
- Sei $\mathcal U=\{U_1,U_2,U_3,...\}$ eine abzählbare Umgebungsbasis von $x$. 
-Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,...$ Umgebungen von $x$. 
-Nach Annahme gibt es in jeder dieser Mengen $U_1\cap...\cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb 
-von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
+\begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$. Sei $\mathcal U=\{U_1,U_2,U_3,...\}$ eine abzählbare Umgebungsbasis von $x$. Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,...$ Umgebungen von $x$. Nach Annahme gibt es in jeder dieser Mengen $U_1\cap...\cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
 \end{seg}
 \end{enumerate}
 \end{proof}
@@ -661,7 +651,7 @@ von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emp
  Ein topologischer Raum $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ eine \emph{endliche Teilüberdeckung} besitzt, dass heißt falls folgendes gilt: ist $U_i, i\in I$, eine offene Überdeckung von $X$, so gibt es endlich viele $i_1, ...,i_n\in I$, so dass $U_{i_1}\cup ...\cup U_{i_n}=X$ gilt.
 \end{df}
 \begin{ex*}
- $\R^n$ ist \emph{nicht kompakt}, denn die offene Überdeckung durch $B_k(0),k\in \N$ besitzt eine endliche Teilüberdeckung.
+ $\R^n$ ist \emph{nicht kompakt}, denn die offene Überdeckung durch $B_k(0),k\in \N$ besitzt k          eine endliche Teilüberdeckung.
 \end{ex*}
 
 \begin{note}\label{thm:6.3}
@@ -678,13 +668,12 @@ von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emp
 \end{st}
 \begin{proof}
  \begin{seg}{Beschränktheit}
-  Für einen beliebigen Punkt $x$ bildet $B_k(x)\cap A, k \in \N$, eine offene Überdeckung von $A$, da es eine endliche Teilüberdeckung gibt, 
-ist der Abstand von x durch eine natürliche Zahl beschränkt.
+  Für einen beliebigen Punkt $x$ bildet $B_k(x)\cap A, k \in \N$, eine offene Überdeckung von $A$, da es eine endliche Teilüberdeckung gibt, ist der Abstand von x durch eine natürliche Zahl beschränkt.
  \end{seg}
 \begin{seg}{Abgeschlossen}
  Sei $A\subset X$ kompakt und sei $x\in X\setminus A$. Es gilt:
 \[
- U_\eps:=(X\setminus\bar{B_\eps(x)})\cap A, \eps>0 := \{ y\in X|d(x,y)\le \eps\}
+ U_\eps:=(X\setminus\bar{B_\eps(x)})\cap A, \eps>0 := \{ y\in A|d(x,y) > \eps\}
 \]
 bilden eine offene Überdeckung von $A$, es gibt eine endliche Teilüberdeckung $U_{\eps_1}\cup... \cup U_{\eps_k}$, und es folgt, dass $B_\eps(x)$ mit $\eps:=\min\{\eps_1,...,\eps_k\}$ ganz in $X\setminus A$ liegt.
 
@@ -699,19 +688,19 @@ eine Metrik (die dieselbe Topologie erzeugt) also ist die Unterscheidung zwische
 \begin{note*}
  Ein metrischer Raum ist kompakt, wenn er \emph{vollständig} und \emph{totalbeschränkt} ist, \emph{totalbeschränkt} bedeutet: zu jedem $\eps>0$ gibt es ein endliches $\eps$-Netz, dass heißt zu jedem $\eps>0$ gibt es endlich viele Punkte $x_1,...,x_k$ mit $\bigcup_{i=1}^kB_\eps(x_i)=X$.
 \end{note*}
-\begin{st}\label{thm:6.6}
- Stetige Bilder kompakter Räume sind kompakt
+\begin{st}\label{thm:6.5}
+ Stetige Bilder kompakter Räume sind kompakt.
 \end{st}
 \begin{proof}
-Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann ist $f^{-1}(U_i),i\in I$, eine offene Überdeckung von $X$. Diese besitzt aber eine endliche Teilüberdeckung $f^{-1}(U_i)\cup ...\cup f^{-1}(U_{i_n})=X$. Dann ist $U_{i_1}\cup ...\cup U_{i_n}$ eine offene Überdeckung von $Y$, falls $f$ surjektiv ist.
+Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann ist $f^{-1}(U_i),i\in I$, eine offene Überdeckung von $X$. Diese besitzt aber eine endliche Teilüberdeckung $f^{-1}(U_{i_1})\cup ...\cup f^{-1}(U_{i_n})=X$. Dann ist $U_{i_1}\cup ...\cup U_{i_n}$ eine offene Überdeckung von $Y$, falls $f$ surjektiv ist.
 \end{proof}
-\begin{st*}
+\begin{st}\label{thm:6.6}
  Abgeschlossene Teilräume von kompakten Mengen sind kompakt.
-\end{st*}
+\end{st}
 \begin{proof}
  Sei $X$ kompakt, $A\subset X$ abgeschlossen. Sei $U_i, i\in I,$ eine offene Überdeckung von $A$.
 \begin{figure}[h]
-\includegraphics[scale=0.5]{fig27.png}
+\includegraphics[scale=0.5]{fig28.png}
 \end{figure}
 
 \fixme[Grafik stimmt nicht überein]\\
@@ -730,33 +719,17 @@ Somit überdecken die Mengen $U_{i_1}=V_{i_1}\cap A, ..., U_{i_n}=V_{i_n}\cap A$
 In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 \end{st}
 \begin{proof}
- Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt, die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine Umgebung $U_a$ von $a$ und eine Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ für \\
+ Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt,
+ die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine offene Umgebung $U_a$ von $a$ und eine 
+offene Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ gilt. \\
 \begin{figure}[h]
-\includegraphics[scale=0.5]{fig28.png}
+\includegraphics[scale=0.5]{fig27.png}
 \end{figure}
 <<<<<<< HEAD
 \fixme[passt nicht]
 =======
 \fixme[Grafik stimmt nicht überein]\\
->>>>>>> 0b3fb6935622bc43c6a1dffd8416eaad76deee9e
-alle $a\in A$ Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unedlich vieler Mengen.
-$U_{a_1},..., U_{a_n}$ auswählen, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
-\end{proof}
-Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
-\begin{st}\label{thm:6.8}
- Sei $X$ ein kompakter topologischer Raum und $Y$ ein Hausdorffraum. Sei $f: X\to Y$ eine stetige bijektive Abbildung. Dann ist $f$ ein Homöomorphismus
-\end{st}
-\begin{proof}
- Es ist nur zu zeigen, dass $f$ die Eigenschaft hat, dass Bilder offener Mengen offen sind (dann sind die Urbilder offenen Mengen unten der Umkehrabbildung $f^{-1}:Y\to X$ offen)
 
-Äquivalent dazu: Die Bilder abgeschlossener Mengen sind abgeschlossen. Sei $A\subset X$ abgeschlossen, da $X$ kompakt, ist A nach 6.6 auch kompakt, also ist $f(A)$ ein kompakter Teilraum von $Y$. Da $Y$ Hausdorffsch folgt aus \ref{thm:6.7}, dass $f(A)$ abgeschlossen ist.
-\end{proof}
-\begin{ex*}
- \begin{enumerate}[(i)]
-  \item Sei $X=\R/\sim$ wie im Beispiel \ref{thm:2.6}, $x\sim y:\iff x-y\in \Z$ und sei $Y=S^1$ (der Einheitskreis in $\R^2$). Dann ist $X=\R/\sim$ kompakt nach \ref{thm:6.5}, da Bild der kompakten Teilmenge $[0,1]$ von $\R$. Andererseits ist $Y$ offensichtlich als Teilraum des Hausdorffraums $\R^2$ ebenfalls Hausdorffsch.
-Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\to e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \homo S^1$
-
- \item $S^1=\{(x,y)^T\in \R^2|x^2+y^2=1\}=\{z\in \C||z|=1\}$\\
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fig29.png}
 \end{figure}
@@ -764,25 +737,42 @@ Die Abbildung $\phi: \R\to Y, t\to e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi 
 \fixme[passt nicht]
 =======
 \fixme[Grafik stimmt nicht überein]
->>>>>>> 0b3fb6935622bc43c6a1dffd8416eaad76deee9e
- Sei $X:=S^1/\sim$ $z\sim z':\iff z=z'$ oder $z=-z'$ $X$ ist kompakt, da Bild des kompakten EInheitskreises $S^1$ unter der Quotientenabbildung. WIr wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\to z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig i
-ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (bzw. $\R P^1\homo S^1$)
 
-Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Folgen beschreiben
+Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unendlich vieler Mengen), aber da wir wegen der Kompaktheit von $A$ endlich viele Mengen $U_{a_1},..., U_{a_n}$ auswählen können, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
+\end{proof}
+Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
+\begin{st}\label{thm:6.8}
+ Sei $X$ ein kompakter topologischer Raum und $Y$ ein Hausdorffraum. Sei $f: X\to Y$ eine stetige bijektive Abbildung. Dann ist $f$ ein Homöomorphismus.
+\end{st}
+\begin{proof}
+ Es ist nur zu zeigen, dass $f$ die Eigenschaft hat, dass Bilder offener Mengen offen sind (dann sind die Urbilder offener Mengen unter der Umkehrabbildung $f^{-1}:Y\to X$ offen).
+
+Äquivalent dazu: Die Bilder abgeschlossener Mengen sind abgeschlossen. Sei $A\subset X$ abgeschlossen, da $X$ kompakt, ist A nach \ref{thm:6.6} auch kompakt, also ist $f(A)$ nach  \ref{thm:6.5}  ein kompakter Teilraum von $Y$. Da $Y$ Hausdorffsch ist, folgt aus \ref{thm:6.7}, dass $f(A)$ abgeschlossen ist.
+\end{proof}
+\begin{ex*}
+ \begin{enumerate}[(i)]
+  \item Sei $X=\R/\sim$ wie im Beispiel \ref{thm:2.6}, $x\sim y:\iff x-y\in \Z$ und sei $Y=S^1$ (der Einheitskreis in $\R^2$). Dann ist $X=\R/\sim$ kompakt nach \ref{thm:6.5}, da Bild der kompakten Teilmenge $[0,1]$ von $\R$. Andererseits ist $Y$ offensichtlich als Teilraum des Hausdorffraums $\R^2$ ebenfalls Hausdorffsch. Die Abbildung $\phi: \R\to Y, t\mapsto e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\mapsto e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \homo S^1$
+
+ \item $S^1=\{(x,y)^T\in \R^2|x^2+y^2=1\}=\{z\in \C||z|=1\}$\\
+
+ Sei $X:=S^1/\sim$ mit $z\sim z':\iff z=z'$ oder $z=-z'$. $X$ ist kompakt, da Bild des kompakten Einheitskreises $S^1$ unter der Quotientenabbildung. Wir wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\to z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig, da die Abbildung $ f \circ q : S^1 \to S^1, z \mapsto z^2 $ stetig
+ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (bzw. $\R P^1\homo S^1$)
 \end{enumerate}
+Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Folgen beschreiben.
 \end{ex*}
 \begin{df}\label{thm:6.9}
  Ein topologischer Raum heißt \emph{folgenkompakt}, wenn jede Folge eine konvergente Teilforge besitzt.  
 \end{df}
 \begin{ex*}
- Folge $x_n, n\in \N$ Teilfolge $x_{n_k}$ mit $k\to n_k$ steigt monoton steigend. zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
+\fixme[from GnuLinux : Erstes Beispiel ergibt keinen Sinn ????? ]\\
+ Folge $x_n, n\in \N$ Teilfolge $x_{n_k}$ mit $k\to n_k$ steigt monoton steigend. Zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
 \end{ex*}
 \begin{st}\label{thm:6.10}
  In topologischen Räumen, die das zweite Abzählbarkeitsaxiom erfüllen (dass heißt es gibt eine abzählbare Basis der Topologie) sind Folgenkompaktheit und \emph{Überdeckungskompaktheit} (dass heißt Kompaktheit wie in \ref{thm:6.2} defniert) äquivalent.
 \end{st}
 Zum Beweis benötigen wir zwei Lemmata.
 \begin{lem}\label{thm:6.11}
- Sei $x_n, n\in \N$, eine Folge in dem topologischen Raum $X$, der das erste Abzählbarkeitsaxiom erfüllt.  Dann gilt: $x_n$ besitzt genau darin eine konvergente Teilfolge, wenn ein $x\in X$ existiert, so dass in jedem Umgebung $U$ von $x$ unendlich viele Folgenglieder $x_n$ in $U$ liegen.
+ Sei $x_n, n\in \N$, eine Folge in dem topologischen Raum $X$, der das erste Abzählbarkeitsaxiom erfüllt.  Dann gilt: $x_n$ besitzt genau dann eine konvergente Teilfolge, wenn ein $x\in X$ existiert, so dass in jeder Umgebung $U$ von $x$ unendlich viele Folgenglieder $x_n$ liegen.
 \end{lem}
 \begin{proof}
  \begin{seg}{"`$\implies$"'}
