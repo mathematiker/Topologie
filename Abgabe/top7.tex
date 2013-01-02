@@ -1,0 +1,117 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\homo}{\cong}
+
+\begin{document}
+\setcounter{section}{7}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item z.z. Jedes offene Interval $ (a,b) $ homöomorph zu $ \R $.\\
+Hierfür konstruieren wir einen Homöomorphismus:
+\[
+\gamma_1: (a,b) \to \R, x \mapsto \cot\left(\frac{x-a}{b-a}\pi\right)
+\]
+\item z.z. Jeder offener Ball $ B_\epsilon (x) $ in $ \R^n $ ist homöomorph zu $ \R^n $ ist.\\
+\[
+\gamma_2: U_\epsilon (x) \to \R^n, \{x=|x|x_0\} \mapsto \tan\left(\frac{|x|\pi}{2\epsilon}\right)x_0
+\]
+ist unser Homöomorphismus.
+\item
+\begin{enumerate}
+\item $ X \times Y $ hausdorffsch $ \iff $ $ X $ und $ Y $ hausdorffsch
+\item Existenz einer abzählbaren Base\\
+\[
+X=\bigcup_{i\in \N} A_i, Y=\bigcup_{i\in \N} B_i \implies X\times Y = \bigcup_{(i,y)\in \N^2} A_i \times B_j
+\]
+\item lokal homöomorph:\\
+Da $ X $ und $ Y $ homöomorph zu $ \R^m $ bzw. $ \R^n $  sind, gibt es lokale Homöomorphismen $ \phi_x, \phi_y $ für $ x\in X $ und $ y\in Y $. Dann können wir aber auch einen Homöomorphismus über die Produkte bilden und damit ergibt sich der lokale Homöomorphismus $ (\phi_x,\phi_y) $ für $ x\in X, y\in Y $.  
+\end{enumerate}
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+\begin{enumerate}
+\item hausdorffsch:\\
+Man betrachte zwei Punkte $ [p],[q] \in M/\Gamma $ mit $ [p]\neq [q] $, insbessondere gilt mit $ \id \in \Gamma $, $ p\neq q \in M $.  Dann besitzen  $ p,q $ disjunkte Umgebungen (da $ M $ hausdorffsch) $ U_p, U_q $, so können wir disjunkte Umgebungen von $ [p], [q] $ konstruieren. Nach (ii) können wir Umgebungen $ \tilde U_p, \tilde U_q $ von $ [p] $ und $ [q] $ wählen, sodass es keine verschiedenen äquivalente Punkte gibt. Unsere Disjunkten Mengen ergeben sich nun schließlich zu $ V_p:= \tilde U_p \cap \pi(U_p)  $ und $ V_q:= \tilde U_q \cap \pi(U_q) $. 
+\item abzählbare Basis:\\
+Wir beweisen folgende allgemeinere Aussage:
+\begin{lem*}
+Sei $ X $ ein topologischer Raum mit einer abzählbaren Basis  und $ \sim $ eine Äquivalenzrelation auf diesem Raum, dann besitzt $ X/\sim $ eine abzählbare Basis. 
+\end{lem*} 
+\begin{proof}
+Es sei $ X=\{U_i\}_{i\in \N} $.  Wir wollen zeigen, dass $ X/\sim = \{\pi(U_i)\}_{i\in \N} $, wobei $ \pi $ die kanonische Projektion bezeichnet. Sei also $ V\subset X/\sim  $ offen.  Mit der Stetigkeit ergibt sich $ \pi^{-1}(V) \subset X $ offen und damit gibt es eine Vereinigung aus der Basis von $ X $: $ \pi^{-1}(V)=\bigcup_\alpha U_\alpha $ und mit der Surjektivität der kanonischen Projektion folgt schließlich:
+\[
+V=\pi\left(\bigcup_\alpha U_\alpha\right)=\bigcup \underbrace{\pi(U_\alpha)}_{\text{offen}}
+\]
+\end{proof}
+Und damit folgt auch die Behauptung, es gibt eine abzählbare Basis von $ M/\Gamma $, da $ M $ als Mannigfaltigkeit eine abzählbare Basis besitzt.
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item Wir zeigen, dass $ S^n $ eine Untermannigfaltigkeit.  Dies folgt aus dem Satz aus dem regulären Wert 1. $ S^n= \{ x\in \R^{n+1}| \langle x , x \rangle=1 \} $. Sei $ F(x)=\langle x, x \rangle $, so bleibt zu zeigen, dass $ D\,F(x)=2x\neq 0, \forall x\in S^n $(insbesondere ist $ x\neq 0 $) und damit folgt das $ D\, F $ vollen Rang hat, also surjektiv ist und damit ist $ S^n $ eine $ n $-dimensionale-Untermannigfaltigkeit.  Als Teilraum des $ \R^{n+1} $ ist $ S^n $ mit der Teilraumtopologie hausdorffsch, besitzt als solche damit auch eine abzählbare Basis und ist als Untermannigfaltigkeit des $ \R^{n+1} $ lokal homöomorph zum $ \R^{n+1} $ (es gibt sogar einen lokalen Diffeomorphismus) und damit auch eine topologische Mannigfaltigkeit. 
+Anmerkung: Ein Beispiel für eine abzählbare Basis des $ \R^{n+1} $ ist $ \{U_r(x)\}_{(r,x)\in\Q\times \Q^r} $.
+\item das $ S^n $ eine topologische Mannigfaltigkeit ist haben wir bereits in (i) bewiesen, es bleibt zu zeigen, dass $ \Gamma=\{\id, -\id\} $ fixpunktfrei operiert und eine endliche Gruppe ist. Tatsächlich ist $ \Gamma $ endlich (besitzt zwei Elemente) und ist Gruppe bezüglich $ \circ $, die Operation ist wohldefiniert, denn:
+\[
+\id\circ \id=\id, \id \circ -\id=-\id, -\id \circ \id = - \id, -\id \circ -\id = \id 
+\]
+sind alle in der Menge enthalten, insbesondere ist $ \id $ das Einselement und $ -\id $ besitzt die Inverse $ -\id $. $ \Gamma $ operiert fixpunktfrei, da  $ -x\neq x $ mit $ x\in S^n $ und damit auch $ x\neq 0 $ und damit erfüllt es die Voraussetzungen des Satzes. 
+\[
+\implies \R P^n=S^n/\{\pm \id\} \text{ ist eine n-dimensionale Mannigfaltigkeit}
+\]
+\item an $ \Gamma $ ändert sich wenig, es bleibt unter anderem endliche Gruppe, doch ist dieses nun nicht fixpunktfrei, da $ -\id(0)=0\subset \mathbb D^2 $.  $ D^2 $ ist im übrigen auch topologische Mannigfaltigkeit, mit der Teilraumtopologie erfüllt sie tatsächlich alle Eigenschaft .
+
+% Die entstehende Halbkreis ist jedoch keine topologische Mannigfaltigkeit.  Tatsächlich handelt es sich um einen Halbkreis in der Teilraumtopologie des $ D^2 $, dies lässt sich mit dem Homöomorphismus erkennen, dass wir die Äquivalenzklassen, auf ihr jeweiliges Element mit nichtnegativen y-Wert abbilden. 
+
+% Angenommen es gebe nun eine Umgebung $ U $ von $ 0 $, sowie einen lokalen Homöomorphismus $ \psi $ auf eine offene Menge des $ \R^n $, dann enthält insbesondere $ U $ einen Rand $ \delta'U $ im Sinne der Standardtopologie (in jedem Fall der Teil der x-Achse die U schneidet) . Nun können wir diesen Rand aus dieser offenen Menge nehmen, es ergibt sich für das Halbkreisstück (das im Verständnis der Quotiententopologie offen ist):
+% \[
+% \psi(U)=\psi(U\setminus \delta' U)\,\dot\cup\, \delta' U)=\underbrace{\psi(U\setminus \delta' U)}_{\text{offen}} \,\dot\cup\, \underbrace{\psi(\delta' U)}_{\text{abgeschlossen}}
+% \]  
+% Und da $ \R^n $ eine abzählbare Basis besitzt mit $ i\in \N $ und $ j\in J\subset \N $:
+% \[
+% \psi(U)\setminus \psi(U\setminus \delta' U = \bigcup_i A_i \bigcup_{j} A_{j}=\underbrace{\bigcup_{i\in\N\setminus J} A_i}_{\text{offen}} 
+% \]
+% Mit der Hausdorffeigenschaft des $ \R^n $ ergibt sich der Widerspruch, da  $ \R \times 0 \cap U $ sowohl abgeschlossen und offen ist, müsste, die Menge leer oder den ganzen Raum umfassen, beide Aussagen erweisen sich jedoch als falsch und damit ist $ D^2/\sim $ keine Mannigfaltigket.  Die Fixpunktfreiheit ist also ein notwendiges Kriterium. 
+
+Betrachten wir die Umgebungen von $ D^2/\sim $, so stellen wir fest, dass es stets äquivalente Elemente gibt. Betrachten wir die $ \epsilon $-Bälle um den Punkt 0 (für genügend kleine $ \epsilon $), so entsprechen sie in der Quotiententopologie einem offenen Halbkreis, dessen Rand zur Hälfte auf der x-Achse vorhanden ist,  der Homöomorphismus ergibt sich sehr einfach, indem man bei den Äquivalenzklassen, seine y-Koordinate positiv wählt oder wenn y=0, die x-Koordinate positiv wählt.  Dann stellen wir also fest, dass wenn wir den Teil auf der x-Achse $ \delta' U $ weglassen, die Menge tatsächlich offen bleibt, wohingegen der Teil  der x-Achse abgeschlossen ist. Dann ergibt sich aber:
+\[
+\psi(U)=\psi(U\setminus \delta' U)\,\dot\cup\, \delta' U)=\underbrace{\psi(U\setminus \delta' U)}_{\text{offen}} \,\dot\cup\, \underbrace{\psi(\delta' U)}_{\text{abgeschlossen}}
+\]   
+Und da $ \R^n $ eine abzählbare Basis besitzt. Sei $ i\in \N $ und $ j\in J \subset \N $
+\[
+\psi(U)\setminus \psi(U\setminus \delta' U = \bigcup_i A_i \bigcup_{j} A_{j}=\underbrace{\bigcup_{i\in\N\setminus J} A_i}_{\text{offen}} 
+\]
+ Mit der Hausdorffeigenschaft des $ \R^n $ ergibt sich der Widerspruch, da  $ \delta' U $ sowohl abgeschlossen und offen ist, müsste, die Menge leer oder den ganzen Raum umfassen, beide Aussagen erweisen sich jedoch als falsch und damit ist $ D^2/\sim $ keine Mannigfaltigket.  Die Fixpunktfreiheit ist also ein notwendiges Kriterium. 
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+Wir wollen die Homöomorphie folgender Mengen zeigen. Wir werden nicht die Wohldefiniertheit und die Homöomorpheigenschaft zeigen. Überzeugen Sie sich selbst:
+\begin{enumerate}
+\item $\R P^2=S^2/\{\pm \id\}$
+\item $ D^2/\sim $
+\item $ M/\delta M $, $ M=[-1,1]\times[-1,1]/\sim $
+\footnote{Der Rand des Möbiusbandes ergibt sich gerade über das normale Verständnis tatsächlich ist 
+$ \mathring {\overline{(1,-1)(1,1)}}$ 
+offen denn sie besitzen nun Halbkreise auf beiden Rechtecksseiten, die sich durch Verkleben zu einem Kreis zusammensetzen lassen}
+\item $ C_f:=CS^1+S^1/\sim $
+\end{enumerate}
+\begin{seg}{$1. \homo 2. $}
+Beweisidee: Wir projizieren, die Äquivalenzklassen auf den geschlossenen Einheitskreis $ D^2 $.\\
+Tatsächlich ist (wobei sich $ z<0 $ jeweils in den Äquivalenzklassen verbirgt.
+\[
+ \pi:D^2/\sim \to S^1/\sim: \begin{cases}[x,y,z]\mapsto [x,y](\in D^2/\sim\setminus S^1)&, z> 0\\ [x,y, z]\to [x,y](\in S^1)&, z =0  \end{cases} 
+\]
+\end{seg}
+\begin{seg}{$3. \homo 2. $}
+Beweisidee: Wir konstruieren einen Homöomorphismus $ f $:
+\[
+f: M/\delta M \to D^2/\sim: \begin{cases} \left[\frac{[x\cdot x,y\cdot y]}{||[x,y]||}\right]&, [x,y]\in [-1,1]\times]-1,1[\setminus\{0\}]\\ 0&, [x,y]=0\\ [0,1]&, [x,y]\in \delta M  \end{cases}
+\]
+\end{seg}
+\begin{seg}{$ 4. \homo 1. $}
+Textbeweis: Die Kegelfläche ist homöomorph zur Halbkugelfläche (Betrachte hierfür die jeweiligen Projektionen auf die y-Achse),  betrachte die Grundlinien. $ f(z)=z^2 $ besitzt zwei Nullstellen $ \pm z_0 $, fassen wir diese als Äquivalenzklassen zusammen, so können wir jedem $ z $ auf der Grundline des Kreises, einer Wurzel auf der Grundlinie der Halbkugel zuordnen. (die Äquivalenzklasse ist gerade so, dass beide Lösungen  gerade in der Äquivalenzklasse enthalten sind.) So erhalten wir unseren Homöomorphismus.  
+\end{seg}
+\end{aufgabe}
+\end{document}

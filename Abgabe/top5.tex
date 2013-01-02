@@ -1,0 +1,92 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+
+\begin{document}
+\setcounter{section}{5}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item \begin{seg}{z.z. $ \forall_{U\in Y} f^{-1}(U) $ offen}
+Wir definieren uns zunächst $ c=\tilde f|_A $, dies ist nach Definition konstant.  Nun gibt es zwei Fälle die wir betrachten müssen
+\begin{enumerate}
+\item $c\notin U \implies f^{-1}=\tilde f^{-1}(U)$. Diese Menge ist offen, aufgrund der Stetigkeit von $ \tilde f $.
+\item $ c\in U \implies f^{-1}(U)=\tilde f^{-1}(U)/A $ Diese ist nach Definition der Quotiententopologie offen.
+\end{enumerate}
+\end{seg}
+\item Wir lösen diese Aufgabe in Schritte
+\begin{enumerate}[1.]
+\item Schritt: z.z $ f $ stetig\\
+Sei $ \tilde U $ offen in $ [0,1]+[0,1] $, dann gibt es nach Definition der Summentopologie $ U,V $ offen mit $ \tilde U=U+V $:
+\[
+f^{-1}(\tilde U)=f^{-1}(U)+f^{-1}(V)=c^{-1}(U)\cup {c'}^{-1}(V)
+\]
+Und mit der Stetigkeit von $ c $ und $ c' $ sowie der Offenheit der Mengen $ U,V $ sind auch die jeweiligen Urbilder und damit auch deren Vereinigung offen, also $ f^{-1}(\tilde U) $ offen
+\item Schritt: $ f $ erfüllt die Voraussetzungen von (i), da $f((1,0))=c(1)=q=c'(0)=f((0,1))$
+\item Schritt: $ f: X/A\to Y: f([x])=\tilde f(x) $ mit $ X=[0,1]+[0,1], A=\{(1,0),(0,1)\}  $ ist damit stetige Abbildung...
+\end{enumerate}
+\item Wir zeigen nacheinander die Eigenschaften einer Äquivalenzrelation:
+\begin{enumerate}
+\item reflexiv "`$ p $ nach $ p $ besitzt Weg"':  Tatsächlich ist $ c(x)=p $ ein Weg von $ p $ nach $ p $.
+\item symmetrisch "`$p\sim q\implies q\sim p$"': Sei $c:[0,1]\to Y $ ein Weg von $ p\sim q\in Y $, dann ist aber auch $ \tilde c:[0,1]\to Y $ gegeben durch $ \tilde c(x)=c(1-x) $ stetig. (in der Standardtopologie von $[0,1]$).
+\item transitiv "`$ p\sim q\land q\sim r\implies p\sim r $"': Wir nutzen den Hömoomorphismus: $ h: [0,1]\to ([0,1]+[0,1])/\{(1,0),(0,1)\} $ gegeben durch: 
+\[
+h(x)=\begin{cases} (2x, 0)&, x\in[0,\frac{1}{2}[ \\ [(0,1)]&, x=\frac 1 2\\ (2x-1, 1)&, x\in]\frac{1}{2}, 1] \end{cases}  
+\]    
+Dann ist nach (ii) $ f\circ h $ ein Weg von $ p $ nach $ r $, mit $ f $ definiert wie in (ii)
+\end{enumerate}
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item z.z. $ \Gamma (f):=\{(x,f(y))|x\in X\} $ ist abgeschlossen in $ X\times Y $ $\iff A:=\Gamma(f)^c \text{ offen}$ \\
+\[
+A=\Gamma(f)^c =\{ (x,y)\in X\times Y|y\neq f(x)\} 
+\]
+Sei $ (x_0, y_0)\in A $ Aufgrund der Hausdorffeigenschaft findenden wir zunächst eine offene Menge $ U_1 $, mit $ y_0\in U $ disjunkt zu einer offenen Menge $ U_2 $ von $ f(x_0) $. Mit der Stetigkeit ergibt sich außerdem $ x_0\in f^{-1}(U_2) $ offen.  Insgesamt ist also $ f^{-1}(U_2)\times U_1\subset A $ (aufgrund der Disjunktheit von $ U_1 $ und $ U_2 $) eine Umgebung zu $ (x_0,y_0)\in \Gamma(f)^c $ und damit ist $ \Gamma(f) $ abgeschlossen.
+\item z.z. $ F(f,g) $ ist abgeschlossen $ \iff B:=F(f,g)^c \text{ offen} $\\
+\[
+B=\{x\in X|f(x)\neq g(x)\}
+\]
+Da $ Y $ hausdorffsch ist, folgt die Existenz von disjunkten offenen Mengen $ U_1, U_2 $, sodass $ f(x)\in U_1 \land g(x)\in U_2 $. Angenommen es existiere $ x'\in F(f,g)^c $ für ein $ x'' \in F(f,g) $, sodass für alle offenen Mengen $ V_1, V_2 $ mit $ x'\in V_1 $ und $ x'\in V_2 $  $ V_1\cap V_2\neq \emptyset $ Dann können wir aber $ x_0 $ aus dem nichtleeren Schnitt wählen.  Wir unterscheiden nun zwei Fälle:
+\begin{enumerate}
+\item Angenommen $ x_0\in F(f,g)\implies f(x_0)=g(x_0):=y $:\\
+Wählen wir $ V_1=f^{-1}(U_1) $ und $ V_2=g^{-1}(U_2) $ (disjunkt da $ Y $ hausdorffsch), dann würde gelten mit $ x_0\in U_1 $ und $ x_0\in U_2 $ wie oben:
+\[
+y=f(x_0)\in U_1 \land y=g(x_0)\in U_2
+\]
+Dies stellt letztlich einen Widerspruch zu $ U_1\cap U_2=\emptyset $ dar, da $ y\in U_1\cap U_2 $.
+\item Angenommen $ x_0\in F(f,g)^c\implies f(x_0)\neq g(x_0) $:\\
+Es gilt $ f(x_0)\neq f(x'')=:y \lor g(x_0)\neq g(x'')=y $ (nach Voraussetzung für $ x'' $).  und aufgrund der Hausdorffeigenschaften könnte man disjunkte Umgebungen bezüglich dem Funktionswert von $ x_0 $ und $ y $ finden. Setzen wir aber für $ V_2 $ das Urbild der offenen Menge $ U_2 $ der Funktion, die die obige Bedingung erfüllt. aufgrund von Stetigkeit bzw. für $ V_1 $ das Urbild der offenen Menge $ U_1 $ der Funktion, die die obige Bedingung erfüllt, so ergibt sich der Widerspruch bei der Disjunktheit, da $ x_0\in V_2 $ nach Annahme.  
+\end{enumerate}
+$ \implies $ $ F(f,g)^c $ offen $ \implies F(f,g) $ abgeschlossen.
+\item z.z. $ \forall_{x^*\in D^c} f(x^*)=g(x^*) $\\
+Wir betrachten $ (f,g):X\to Y\times Y: x\mapsto (f(x),g(x)) $.  So ist das Urbild von $ Y\times Y $ gerade die Inzidenzmenge $ I(f,g) $.  Wir wissen, dass $ D\subset I(f,g) $ ist nach Voraussetzung. Aus (ii) wissen wir weiterhin, dass diese abgeschlossen ist und demnach:  $X=\bar D\subset I(f,g)\subset X$ also: $ I(f,g)=X $ und damit $ f=g $.
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+Wir haben die Existen einer abzählbaren Basis $ \mathcal A $ nach dem zweiten Abzählbarkeitsaxiom und wir wissen $ \forall_{B_\jota\in \mathcal B} \exists {A_{i_j}}_{j\in \N} \bigcup_{j\in \N} A_{i_j}=B_\jota $.
+
+Gegenannahme: $ \exists C \bigcup_\alpha B_\alpha=C $, wobei die Vereinigung überabzählbar ist und maximal (man kann keine Glieder entfernen, sonst würde die Gleichung nicht mehr stimmen)
+
+So gilt aber:
+\[
+\bigcup_\alpha \bigcup_{i\in \N} A_{i,\alpha}=C=\bigcup_{j\in \N}A_{i,j}
+\]
+Da die Vereinigung maximal gewählt worden ist, muss die Menge der verwendeten $ A_i $ in jedem Schritt um 1 erhöht werden. Nach abzählbaren Schritten, sind alle $ A_{i,\alpha} $ in der Menge enthalten.  Es ergibt sich der Widerspruch zur Maximalität.
+\end{aufgabe}
+\begin{aufgabe}
+z.z. $ \gamma([0,1])\cap \delta{A} \neq \emptyset $\\
+Gegenannahme: $ \gamma([0,1]\cap \delta A=\emptyset $\\
+Wir betrachten $ \mathring{A} $:
+\[
+\gamma^{-1}(\mathring{A})\neq \emptyset \land \gamma^{-1}(A^{ext})\neq \emptyset
+\]
+da $ \gamma^{-1}(0)\in \text{int}(A) \land \gamma^{-1}(1) \in \text{ext}(A) $. Es ergibt sich schließlich:
+\[
+[0,1]=
+\gamma^{-1}(\mathring A\cup A^{ext}\cup \delta A)=\gamma^{-1}(\mathring A)\cup \gamma^{-1}(A^{ext})\cup \underbrace{ \gamma^{-1}(\delta A)}_{=\emptyset}
+\]
+wäre damit offen, widerspricht der Stetigkeit von $ \gamma $
+\end{aufgabe}
+\end{document}
