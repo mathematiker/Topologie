@@ -964,23 +964,23 @@ Die \emph{Äquivalenklasse} $[f]$ einer stetigen Abbildung heißt \emph{Homotopi
  $f_0, f_1: X\to Y$ heißen \emph{homotop}, Notation: $f_0 \simeq f_1,$ falls es ein $f: X\times [0,1] \to  Y$ stetig gibt mit $f(\cdot, 0)=f_0, f(\cdot, 1)=f_1$
 \end{seg}
 
-$\simeq$ iste eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \emph{Homotopieklassen}.  
+$\simeq$ ist eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \emph{Homotopieklassen}.  
 \begin{exs*}
  \begin{enumerate}
-  \item Sei der topologische Raum $X=\{p\}$ einelementig und $Y$ ein beliebiger topoplogische Raum.  Dann ist eine Homötopie zwischen $f_0: p\mapsto y_1, f_1: p\mapsto y_2$ nichts anderes als ein stetiger Weg von $y_1$ und $y_2$ und $[X,Y]$ steht in 1:1 Relation zu den Wegzusammenhangskomponenten.
-  \item Sei $X=S^1, Y=\R^2\setminus \{0\}$. Dann sind nicht alle stetigen Abbildungen $X\to Y$ homotop, denn es lassen sich nicht alle Schleifen in $\R^2$ auf einem Punkt zusammenziehen in $\R^2\setminus\{0\}$. (=geschlossene stetige Wege) (Beweis später)
+  \item Sei der topologische Raum $X=\{p\}$ einelementig und $Y$ ein beliebiger topoplogischer Raum.  Dann ist eine Homotopie zwischen $f_0: p\mapsto y_0, f_1: p\mapsto y_1$ nichts anderes als ein stetiger Weg von $y_0$ und $y_1$ und $[X,Y]$ steht in 1:1 Relation zu den Wegzusammenhangskomponenten.
+  \item Sei $X=S^1, Y=\R^2\setminus \{0\}$. Dann sind nicht alle stetigen Abbildungen $X\to Y$ homotop, denn es lassen sich nicht alle Schleifen (=geschlossene stetige Wege) in $\R^2\setminus\{0\}$   auf einem Punkt zusammenziehen. (Beweis später)
 \fixme[fig40]\\Bild fehltnn sie zu einer konstanten Abbildung homotop ist.  
 \end{enumerate}
 \end{exs*}
 \begin{df}
- Eine stetige ABbildung zwischen topologischen Räume heißt \emph{nullhomotop}, wenn sie zu einer konstanten Abbildung homotop ist. 
+ Eine stetige Abbildung zwischen topologischen Räume heißt \emph{nullhomotop}, wenn sie zu einer konstanten Abbildung homotop ist. 
 \end{df}
 \fixme[fig41]\\
 \begin{ex*}
- Jede stetige Abbildung nach $\R^n$ ist nullhomotop. Sei $f: X\to Y$ stetig, dann ist $f_t(x):= (1-t)\cdot f(x)$ eine Homotopie zur Nullabbildung. 
+ Jede stetige Abbildung nach $\R^n$ ist nullhomotop. Sei $f: X\to \R^n$ stetig, dann ist $f_t(x):= (1-t)\cdot f(x)$ eine Homotopie zur Nullabbildung. 
 \end{ex*}
 \begin{st}
- Sei $X$ ein topologischer Raum.  Eine stetige Abbildung $S^n\to X$ ist genau dann nullhomotop, wenn sie sich zu einer stetigen Abbildung $\overline{B_1^{n+1}}(0)\to X$ fortsetzen lässt.
+ Sei $X$ ein topologischer Raum.  Eine stetige Abbildung $S^n\to X$ ist genau dann nullhomotop, wenn sie sich zu einer stetigen Abbildung $\overline{B_1^{n+1}(0)}\to X$ fortsetzen lässt.
 \end{st}
 \begin{proof}
  \begin{seg}{"`$\Longleftarrow$"'}
@@ -989,7 +989,7 @@ $\simeq$ iste eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \
 \begin{seg}{"`$\implies$"'}
  Sei $h$ eine Homotopie mit $h(\cdot, 0)=f(\cdot)$, mit $f:S^n \to X$ und $h(\cdot, 1)=\const.$
 \fixme[fig42]
-Wir betrachten $S^n\times[0,1]$ mit den Äquivalenzklasserelation $(p,t)\sim (q,s) :\iff (p=q \land t=s) \lor t=s=1$. Dann ist $S^n\times[0,1]/\sim$ homöomorph zu $\overline{B_1^{n+1}(0)}:$ Sei $S^n\times[0,1]\to \overline{B_1^{n+1}(0)}$ mit $(p,t)\mapsto (1-t)\cdot p$, dann ist $\bar \phi: S^n \times[0,1]/\sim \to \overline{B_1^{n+1}(0)}, \bar \phi([(p,t)])=\phi(p,t)$ wohldefiniert, bijektiv und stetig. (Denn $\phi$ ist stetig, $S^n\times [0,1]/\sim$ trägt die Quotiententopologie, $\phi=\bar \phi \circ q $, $q$ die Quotientenabbildung\\
+Wir betrachten $S^n\times[0,1]$ mit der Äquivalenzrelation $(p,t)\sim (q,s) :\iff (p=q \land t=s) \lor t=s=1$. Dann ist $S^n\times[0,1]/\sim$ homöomorph zu $\overline{B_1^{n+1}(0)}$. Sei $\phi ((p,t)):S^n\times[0,1]\to \overline{B_1^{n+1}(0)}$ mit $(p,t)\mapsto (1-t)\cdot p$, dann ist $\bar \phi: S^n \times[0,1]/\sim \to \overline{B_1^{n+1}(0)}, \bar \phi([(p,t)])=\phi((p,t))$ wohldefiniert, bijektiv und stetig. (Denn $\phi$ ist stetig, $S^n\times [0,1]/\sim$ trägt die Quotiententopologie, $\phi=\bar \phi \circ q $, $q$ die Quotientenabbildung\\
 \fixme[fig43, mach ich!]\\
 Nach Korollar \ref{thm:6.8} ist $\bar \phi$ ein Homöomorphismus, denn $S^n\times [0,1]/\sim$ ist kompakt und $\overline{B_1^{n+1}(0)}$ ist hausdorffsch. Nun lässt sich $f$ zu der Abbildung $\tilde f: \overline{B_1^{n+1}(0)}\to X, v\mapsto \tilde f(v)$ mit $\tilde f(v):= h(x,t)$,
 wobei $(x,t)$ ein Vertreter von $\bar \phi^{-1}(v)$ ist. Mit dem selben Argument wie oben lässt sich zeigen, dass $\tilde f$ stetig ist.
@@ -1001,10 +1001,10 @@ Räume heißen \emph{homotopieäquivalent} oder vom gleichen \emph{Homotopietyp}
 \end{df}
 \begin{exs*}
  \begin{enumerate}
-  \item $\R^n$ ist zusammenziehbar: Sei $f: \R^n\to \{0\}$ und $g:\{0\}\to \R^n, 0 \mapsto 0$. Dann ist $f\circ g=\id_{\{0\}}$ und es gilt $g\circ f(x)=0$ für alle $x\in \R^n$, diese Abbildung ist homotop zu $\id_{\R^^n}$, nämlich ist durch $f(x,t):= t\cdot x$ eine Homotopie gegeben.
+  \item $\R^n$ ist zusammenziehbar: Sei $f: \R^n\to \{0\}$ und $g:\{0\}\to \R^n, 0 \mapsto 0$. Dann ist $f\circ g=\id_{\{0\}}$ und es gilt $g\circ f(x)=0$ für alle $x\in \R^n$, diese Abbildung ist homotop zu $\id_{\R^n}$, nämlich ist durch $f(x,t):= t\cdot x$ eine Homotopie gegeben.
   \item Eine Teilmenge $K\subset \R^n$ heißt \emph{sternförmig bezüglich} $x_0 \in K$, wenn die Verbindungsstrecke von $x_0$ zu jedem beliebigen Punkt $x\in K$ enthalten ist.\\
 \fixme[fig44]\\
-Sternförmige Mengen sind nullhomotop, denn durch $h: K\times I \to K, (x,t) \mapsto (1-t)x+tx_0$ ist $\id_K$ zu einer konstnenten Abbildung homotop. (Allgemin gilt: Ein Raum $X$ ist zusammenziehbar, wenn $\id_X$ nullhomotop ist vgl. 1. )
+Sternförmige Mengen sind nullhomotop, denn durch $h: K\times I \to K, (x,t) \mapsto (1-t)x+tx_0$ ist $\id_K$ zu einer konstanten Abbildung homotop. (Allgemein gilt: Ein Raum $X$ ist zusammenziehbar, wenn $\id_X$ nullhomotop ist vgl. 1. )
 \item $S^n$ ist homotopieäquivalent zu $\R^{n+1}\setminus\{0\}$ die Inklusionsabbildung $i: S^n\to \R^{n+1}\setminus\{0\}$ ist eine Homotopieäquivalenz:
 \fixme[fig45]\\
 Denn $n: \R^{n+1}\setminus\{0\} \to S^n, n(x)=\frac{x}{||x||}$ ist das Homotopieinverse zu $i$, durch $h(x,t):=(1-t)n(x)+tx$ ist eine Homotopie von $i\circ n$ zu $\id_{R^{n+1}\setminus \{0\}}$ gegeben.
@@ -1014,7 +1014,7 @@ Denn $n: \R^{n+1}\setminus\{0\} \to S^n, n(x)=\frac{x}{||x||}$ ist das Homotopie
 \begin{df}
  Sei $X$ ein topologischer Raum, $A\subset X$ ein Teilraum, $A$ heißt \emph{Retrakt} von $X$, wenn es eine \emph{Retraktion} gibt, das heißt eine stetige Abbildung  $\rho: X\to A$ mit $\rho\vline_A=\id_A$. Ist darüber hinaus $\rho$, aufgefasst als Abbildung $X\to X$, homotop zur Identität auf $X$, so heißt $\rho$ \emph{Deformationsretraktion} und  $A$ \emph{Deformationsretrakt} von $X$.
 
-Eine Deformationsretraktion, so dass die Homotopie $h$ von $\rho$ nach $\id_X$ mit $h(a,t)=a$ für alle $t\in[0,1]$ gewählt werden, heißt \emph{starke Deformationsretraktion}. entsprechend $A$ \emph{starke Deformationsretraktion}, entsprechend $A$ \emph{starker Deformationsretrakt}.
+Eine Deformationsretraktion, so dass die Homotopie $h$ von $\rho$ nach $\id_X$ mit $h(a,t)=a$ für alle $t\in[0,1]$ gewählt werden, heißt \emph{starke Deformationsretraktion}, entsprechend $A$ \emph{starker Deformationsretrakt}.
 \end{df}
 \begin{note*}
  Alle Beispiele oben sind starke Deformationsretrakte.
@@ -1026,7 +1026,7 @@ Eine Deformationsretraktion, so dass die Homotopie $h$ von $\rho$ nach $\id_X$ m
 $A\subset X$ heißt \emph{Retrakt}: $\exists f: X\to A$ stetig.
 \begin{itemize}
 \item \emph{Deformationsretrakt}: $\exists f: X\to A$ homotop zu $\id_X$
-\item \emph{starker Deformationsretrakt}: die Homotopie kann so gewählt werden, dass alle Punkte in $A$ während der Reformation fix bleiben.\\
+\item \emph{starker Deformationsretrakt}: die Homotopie kann so gewählt werden, dass alle Punkte in $A$ während der Deformation fix bleiben.\\
 \fixme[fig46]
 $A$ und $A'$ sind starke Reformationsretrakte von $X$:
 \[
@@ -1042,23 +1042,23 @@ $A$ und $A'$ sind starke Reformationsretrakte von $X$:
 $M$ differenzierbare Mannigfaltigkeit, $f$ eine differenzierbare Funktion auf $M$. Betrachte Subniveaus $M_a=\{x\in M|f(x)\le a\}$ für $a\in \R$.
 Betrachte Subniveaus $M_a=\{x\in M|f(x)\le a\}$ für $a\in \R$.
  \fixme[fig47]
-Es gilt: falls für $a<b$ die Funktion $f$ auf $M_b\setminus M_a$ keine kritischen Punkte hat, dann ist $M_a$ ein starker Deformationsretrakt von $M_{b'}$
+Es gilt: falls für $a<b$ die Funktion $f$ auf $M_b\setminus M_a$ keine kritischen Punkte hat, dann ist $M_a$ ein starker Deformationsretrakt von $M_{b}$
 \end{seg}
 \begin{proof}[Beweisidee]
- Aus den Gradienten von $f$ kann eine Schar von Diffeomorphismus gewonnen werden, die $M_n$ in $M_a$ deformiert.
+ Aus den Gradienten von $f$ kann eine Schar von Diffeomorphismen gewonnen werden, die $M_b$ in $M_a$ deformiert.
 \end{proof}
 \item $O(n)\subset GL(n, \R)$ ist ein starker Deformationsrektrakt
 \begin{proof}
- Durch das Gram-Schmidt-Orthonormalisierungsverfahren ist eine stetige Abbildung:
+ Durch das Gram-Schmidtsche Orthonormalisierungsverfahren ist eine stetige Abbildung:
 \[
  f: GL(n,\R)\to O(n)\times D(n): x\mapsto (f_1(x), f_2(x))
 \]
 wobei $D(n)$ die Menge der reellen oberen Dreiecksmatrizen mit positiven Diagonalelementen ist. (Es gilt $x=f_1(x)\cdot f_2(x)$)
 
-Die Abbildung $x\mapsto f_1(x)$ ist ein starker Reformationsretrakt denn durch $h: GL(n,\R)\times [0,1]\to GL(n,\R): (x,t)\mapsto f_1(x)(t\cdot I+(1-t)f_2(x))$, wobei $(1-t)f_2(x)$, die Form:
+Die Abbildung $x\mapsto f_1(x)$ ist ein starker Deformationsretrakt, denn durch $h: GL(n,\R)\times [0,1]\to GL(n,\R): (x,t)\mapsto f_1(x)(t\cdot I+(1-t)f_2(x))$, wobei $(1-t)f_2(x)$, die Form:
  \[
   \begin{pmatrix}
-   \alpha 1 & * & ...& *\\
+   \alpha_1 & * & ...& *\\
  & \ddots & \ddots & \vdots\\
  & & \ddots & *\\
  & & & \alpha_n
@@ -1071,9 +1071,9 @@ ist eine Homotopie von $\id_{GL(n, \R)}$ nach $f_1$ gegeben (bedeute, dass der z
 \section{Algebraische Topologie}
 \subsection{Die Fundamentalgruppe}
 \begin{df}
- Sei $X$ ein topologischer Raum und $x_0, x_1$. Wir bezeichnen mit
+ Sei $X$ ein topologischer Raum und $x_0, x_1 \in X$. Wir bezeichnen mit
 \[
- \Omega(X; x_0,x_2)=\{\omega: [0,1]\to X|\omega \text{ stetig }, \omega(0)=x_0, \omega(1)=x_1
+ \Omega(X; x_0,x_1)=\{\omega: [0,1]\to X|\omega \text{ stetig }, \omega(0)=x_0, \omega(1)=x_1 \}
 \]
 die Menge aller stetigen Wege in $X$ von $x_0$ nach $x_1$. \fixme[fig48]
 Die Menge $\Omega(X; x_0):=\Omega(X; x_0, x_0)$ bezeichnen wir als die Menge aller \emph{Schleifen} mit \emph{Basispunkt} $x_0$.
