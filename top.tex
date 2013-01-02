@@ -593,16 +593,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \end{seg}
 \begin{note*}
  \begin{itemize}
-  \fixme[from GnuLinux : S kann so nicht stimmen ????? ]
-  \fixme[from mathematiker : Ich konnte das nicht ganz überblicken?]
-  \fixme[from mathematiker : wofür ist die Bemerkung gut?]
-  \fixme[from GnuLinux: dass $\R^3$ in der Bemerkung ist finde ich gut, es ist zwar nicht notwendig ist aber eine interessante Betrachtungsweise, die Bemerkung zu $\mathcal S$ ist leider formal immer noch falsch, z.B. ist im allgemeinen ja $X_k \notin \mathcal S$, sondern $ \dotsb \times X_k \times \dotsb \in \mathcal S$. Auch kann man das nicht so einfach mit Tupelschreibweise oder ähnlichem retten, da die Komponenten der Tupel ja Elemente !!! aus $X_k$ und nicht die Räume $X_k$ oder offenen Mengen $U_k \subset X_k$ sind.
-Wenn dann müßte hier sowas wie
- $\mathcal S = \{X_1 \times X_2 \times \dotsb \times X_{k-1} \times U \times X_{k+1}, \dotsb \times X_n | U\subset X_k \texttt { offen }, k \in \{1, \dotsc n \}\}$,
- dies wäre aber erstens nur für endliche Produkte so, zweitens steht oben bereits dasselbe, nur viel besser aufgeschrieben da, und ich habe diese Bemerkung in meinem eigenen handschriftlichen Aufschrieb überhaupt nicht, ich würde das aus der Bemerkung einfach entfernen. 
-melde dich mal bei mir abdelaar@studi.informatik.uni-stuttgart.de, das problem ist ich habe versucht dir eine nachricht über github zu schicken bin aber zu doof dazu und möchte auch nicht genauer recherchieren wie das genau funktioniert]
-\fixme[jetzt hat sichs geklärt, dass habe ich eigentlich mit der Notation gemeint... Du hast natürlich recht... Tatsächlich soll dies exemplarisch für endliche Produkte sein... Sonst ist mir der Rest was du bemängelst unklar]
-  \item $\mathcal S=\{X_1\times X_2\times ... \times X_{k-1} \times U \times X_{k+1} \times...\times X_n$ mit $U\subset X_k$ offen $, k \in \{1, \dotsc n \} \} $
+  \item $\mathcal S=\{X_1\times X_2\times ... \times X_{k-1} \times U \times X_{k+1} \times...\times X_n |U\subset X_k$ offen $, k \in \{1, \dotsc n \} \} $
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
 \end{note*}
@@ -643,6 +634,7 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
  \end{enumerate}
 \end{st}
 \begin{proof}
+%Gnu Linux : Skript argumentativ abgeändertW
  \begin{enumerate}[(i)]
   \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$, dann enthält $V$ eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal U$ mit  $U \subset V$. Damit ist $ \mathcal U $ eine abzählbare Umgebungsbasis von $p$.
 \item \begin{seg}{„$\implies$“} bereits gezeigt in \ref{thm:1.17} \end{seg}
@@ -667,13 +659,13 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
 \begin{note}\label{thm:6.3}
  Manchmal (nicht in dieser Vorlesung) wird zusätzlich noch die Hausdorffeigenschaft verlangt (in diesem Fall heißt die obige Eigenschaft meist "`präkompakt"').
 \end{note}
-\begin{st}[Heine-Borelscher Überdeckungssatz]\label{thm:6.4}
+\begin{st}[Heine-Borelscher Überdeckungssatz]\label{thm:1.6.4}
  Eine Teilmenge des $\R^n$ ist kompakt genau dann, wenn sie abgeschlossen und beschränkt ist.
 \end{st}
 \begin{proof}
  siehe zum Beispiel Forster O., Analysis II.
 \end{proof}
-\begin{st}\label{thm:6.5}
+\begin{st}\label{thm:1.6.5}
  Jede kompakte Teilmenge eines metrischen Raumes ist beschränkt und abgeschlossen (Umkehrung gilt im Allgemeinen nicht).
 \end{st}
 \begin{proof}
@@ -698,13 +690,13 @@ eine Metrik (die dieselbe Topologie erzeugt) also ist die Unterscheidung zwische
 \begin{note*}
  Ein metrischer Raum ist kompakt, wenn er \emph{vollständig} und \emph{totalbeschränkt} ist, \emph{totalbeschränkt} bedeutet: zu jedem $\eps>0$ gibt es ein endliches $\eps$-Netz, dass heißt zu jedem $\eps>0$ gibt es endlich viele Punkte $x_1,...,x_k$ mit $\bigcup_{i=1}^kB_\eps(x_i)=X$.
 \end{note*}
-\begin{st}\label{thm:6.6}
+\begin{st}\label{thm:1.6.6}
  Stetige Bilder kompakter Räume sind kompakt.
 \end{st}
 \begin{proof}
 Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann ist $f^{-1}(U_i),i\in I$, eine offene Überdeckung von $X$. Diese besitzt aber eine endliche Teilüberdeckung $f^{-1}(U_{i_1})\cup ...\cup f^{-1}(U_{i_n})=X$. Dann ist $U_{i_1}\cup ...\cup U_{i_n}$ eine offene Überdeckung von $Y$, falls $f$ surjektiv ist.
 \end{proof}
-\begin{st}
+\begin{st}\label{thm:1.6.7}
  Abgeschlossene Teilräume von kompakten Mengen sind kompakt.
 \end{st}
 \begin{proof}
@@ -725,13 +717,11 @@ eine offene Überdeckung von $X$, diese hat eine endliche Teilüberdeckung der F
 \]
 Somit überdecken die Mengen $U_{i_1}=V_{i_1}\cap A, ..., U_{i_n}=V_{i_n}\cap A$ ganz $A$.
 \end{proof}
-\begin{st} \label{thm:6.7}
+\begin{st} \label{thm:1.6.8}
 In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 \end{st}
 \begin{proof}
- Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt,
- die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine offene Umgebung $U_a$ von $a$ und eine 
-offene Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ gilt. \\
+ Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt, die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine offene Umgebung $U_a$ von $a$ und eine offene Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ gilt. \\
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fig27.png}
 \end{figure}
@@ -750,74 +740,72 @@ offene Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ gilt. \\
 
 Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unendlich vieler Mengen), aber da wir wegen der Kompaktheit von $A$ endlich viele Mengen $U_{a_1},..., U_{a_n}$ auswählen können, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
 \end{proof}
-Insgesamt folgt aus Satz \ref{thm:6.6} und Satz \ref{thm:6.7}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
+Insgesamt folgt aus Satz \ref{thm:1.6.7} und Satz \ref{thm:1.6.8}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
 \begin{st}\label{thm:6.8}
  Sei $X$ ein kompakter topologischer Raum und $Y$ ein Hausdorffraum. Sei $f: X\to Y$ eine stetige bijektive Abbildung. Dann ist $f$ ein Homöomorphismus.
 \end{st}
 \begin{proof}
  Es ist nur zu zeigen, dass $f$ die Eigenschaft hat, dass Bilder offener Mengen offen sind (dann sind die Urbilder offener Mengen unter der Umkehrabbildung $f^{-1}:Y\to X$ offen).
 
-Äquivalent dazu: Die Bilder abgeschlossener Mengen sind abgeschlossen. Sei $A\subset X$ abgeschlossen, da $X$ kompakt, ist A nach \ref{thm:6.6} auch kompakt, also ist $f(A)$ nach  \ref{thm:6.5}  ein kompakter Teilraum von $Y$. Da $Y$ Hausdorffsch ist, folgt aus \ref{thm:6.7}, dass $f(A)$ abgeschlossen ist.
+Äquivalent dazu: Die Bilder abgeschlossener Mengen sind abgeschlossen. Sei $A\subset X$ abgeschlossen, da $X$ kompakt, ist A nach \ref{thm:1.6.7} auch kompakt, also ist $f(A)$ nach  \ref{thm:1.6.6}  ein kompakter Teilraum von $Y$. Da $Y$ Hausdorffsch ist, folgt aus \ref{thm:1.6.8}, dass $f(A)$ abgeschlossen ist.
 \end{proof}
 \begin{ex*}
  \begin{enumerate}[(i)]
-  \item Sei $X=\R/\sim$ wie im Beispiel \ref{thm:2.6}, $x\sim y:\iff x-y\in \Z$ und sei $Y=S^1$ (der Einheitskreis in $\R^2$). Dann ist $X=\R/\sim$ kompakt nach \ref{thm:6.5}, da Bild der kompakten Teilmenge $[0,1]$ von $\R$. Andererseits ist $Y$ offensichtlich als Teilraum des Hausdorffraums $\R^2$ ebenfalls Hausdorffsch. Die Abbildung $\phi: \R\to Y, t\mapsto e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\mapsto e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \homo S^1$
+  \item Sei $X=\R/\sim$ wie im Beispiel \ref{thm:2.6}, $x\sim y:\iff x-y\in \Z$ und sei $Y=S^1$ (der Einheitskreis in $\R^2$). Dann ist $X=\R/\sim$ kompakt nach \ref{thm:1.6.6}, da Bild der kompakten Teilmenge $[0,1]$ von $\R$. Andererseits ist $Y$ offensichtlich als Teilraum des Hausdorffraums $\R^2$ ebenfalls Hausdorffsch. Die Abbildung $\phi: \R\to Y, t\mapsto e^{i2\pi t}$ (bzw. $(\cos(2\pi t), \sin(2\pi t))^T$) ist stetig, also auch $\bar \phi: \R/\sim \to Y, [t]\mapsto e^{i2\pi t}$, da $\bar \phi$ bijektiv ist, folgt, daraus $\bar \phi$ ein Homöomorphismus ist, insbesondere gilt $\R/\sim \homo S^1$
 
  \item $S^1=\{(x,y)^T\in \R^2|x^2+y^2=1\}=\{z\in \C||z|=1\}$\\
 
- Sei $X:=S^1/\sim$ mit $z\sim z':\iff z=z'$ oder $z=-z'$. $X$ ist kompakt, da Bild des kompakten Einheitskreises $S^1$ unter der Quotientenabbildung. Wir wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\to z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig, da die Abbildung $ f \circ q : S^1 \to S^1, z \mapsto z^2 $ stetig
+ Sei $X:=S^1/\sim$ mit $z\sim z':\iff z=z'$ oder $z=-z'$. $X$ ist kompakt, da Bild des kompakten Einheitskreises $S^1$ unter der Quotientenabbildung. Wir wollen zeigen, dass $X\homo S^{1}$ gilt. Definiere $f:X\to S^1$ durch $[z]\mapsto z^2$. Dann ist $f$ wohldefiniert, bijektiv und stetig, da die Abbildung $ f \circ q : S^1 \to S^1, z \mapsto z^2 $ stetig
 ist, ($q$ ist die Quotientenabbildung). Nach \ref{thm:6.8} folgt $X\homo S^1$ (bzw. $\R P^1\homo S^1$)
 \end{enumerate}
-Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Folgen beschreiben.
 \end{ex*}
+Wie bei der Stetigkeit kann man Kompaktheit auch (in gewissen Räumen) durch Folgen beschreiben.
 \begin{df}\label{thm:6.9}
  Ein topologischer Raum heißt \emph{folgenkompakt}, wenn jede Folge eine konvergente Teilforge besitzt.  
 \end{df}
 \begin{ex*}
-\fixme[from mathematiker : Ich hoffe es passt so jetzt... Also er muss es in der Vorlesung erwähnt haben, sonst hätte ich das nicht aufgeschrieben...  Also jetzt mal ganz informell:  Wenn du ne Menge über die Folgenglieder einer Folge definierst (also auch für beliebig , so genügt die Beschränktheit als Kriterium für die Kompaktheit... Überleg dir ne gescheite Formulierung und dann hamma glaub ich das Problem aus der Welt]
  Folge $x_n, n\in \N$ sei beschränkte Folge (in $ \R $), dann können wir eine Teilfolge $x_{n_k}$ mit $k \in \N$ auswählen, die monoton ist (also monoton steigend oder monoton fallend). Damit konvergiert diese Teilfolge und die Menge der Folgenglieder ist \emph{kompakt}. Zum Beispiel hat $a_n=(-1)^n+\frac 1 n$ die konvergente Teilfolgen $a_{2n}$ und $a_{2n+1}$
 \end{ex*}
 \begin{st}\label{thm:6.10}
  In topologischen Räumen, die das zweite Abzählbarkeitsaxiom erfüllen (dass heißt es gibt eine abzählbare Basis der Topologie) sind Folgenkompaktheit und \emph{Überdeckungskompaktheit} (dass heißt Kompaktheit wie in \ref{thm:6.2} defniert) äquivalent.
 \end{st}
 Zum Beweis benötigen wir zwei Lemmata.
-\begin{lem}\label{thm:6.11}
+\begin{lem}\label{thm:1.6.12}
  Sei $x_n, n\in \N$, eine Folge in dem topologischen Raum $X$, der das erste Abzählbarkeitsaxiom erfüllt.  Dann gilt: $x_n$ besitzt genau dann eine konvergente Teilfolge, wenn ein $x\in X$ existiert, so dass in jeder Umgebung $U$ von $x$ unendlich viele Folgenglieder $x_n$ liegen.
 \end{lem}
 \begin{proof}
  \begin{seg}{"`$\implies$"'}
-  Gelt $x_{n_k}\to x$ und sei $U$ Umgebung von $x$, dann gibt es $k_0\in \N$, so dass $X_{n_k}\in U$ für $k\ge k_0$.
+  Gelte $x_{n_k}\to x$ und sei $U$ Umgebung von $x$, dann gibt es $k_0\in \N$, so dass $x_{n_k}\in U$ für $k\ge k_0$.
  \end{seg}
 \begin{seg}{"`$\Longleftarrow$"'}
- Sei umgekehrt die obige Bedingung erfüllt und $U_1\supset U_2 \supset ...$ eine Umgebungsbasis von $x$. Wir wählen
-$x_{n_1}\in U_1, x_{n_2}\in U_2$ mit $n_1<n_2<...<n_k<...$. Die letzte Bedingung erfüllbar, da im Inneren unendlich viele Indies $n$ mit $x_n\in U_k$ existieren. Damit ist $x_n\to x$ offensichtlich.
+ Sei umgekehrt die obige Bedingung erfüllt und $U_1\supset U_2 \supset \dotsb$ eine Umgebungsbasis von $x$. Wir wählen
+$x_{n_1}\in U_1, x_{n_2}\in U_2, \dotsc$ mit $n_1<n_2<\dotsb$. Die letzte Bedingung ist erfüllbar, da im immer unendlich viele Indies $n$ mit $x_n\in U_k, k \in \N$ existieren. Damit ist $x_{n_k}\to x$ offensichtlich.
 \end{seg}
 \end{proof}
- Wir haben bereits gezeigt in Lemma \ref{thm:6.11}. Sei $x_n$ eine Folge in den topologischen Raum  mit abzählbaren Umgebungsbasis. Dann gilt: $x_n$ besitzt genau dann eine onvergente Teilfolge , wenn ein $x\in X$ existiert, so dass 
-in jeder Umgebung $U$ von $x$ unendlich viele Folgenglieder liegen. Wir wollen nun \ref{thm:6.10} beweisen. Dafür benötigen wir noch ein Lemma.
+ Wir haben bereits in Lemma \ref{thm:1.6.12} gezeigt. Sei $x_n$ eine Folge in einem topologischen Raum  mit abzählbarer Umgebungsbasis. Dann gilt: $x_n$ besitzt genau dann eine konvergente Teilfolge , wenn ein $x\in X$ existiert, so dass in jeder Umgebung $U$ von $x$ unendlich viele Folgenglieder liegen. Wir wollen nun \ref{thm:6.10} beweisen. Dafür benötigen wir noch ein Lemma.
 \begin{lem}\label{thm:6.12}
  Erfüllt $X$ das zweite Abzählbarkeitsaxiom,  so enthält jede offene Überdeckung eine abzählbare Teilüberdeckung
 \end{lem}
 \begin{proof}
- Sei $O_1,O_2,...$ eine abzählbare Basis der TOpologie. Sei $X=\bigcup_{\alpha\in A} U_\alpha$, $U_\alpha$ 
-offen (wir wollen zeigen:  es gibt $a_1, a_2,...,$ so dass $X=\bigcup_{\alpha\in A}U_\alpha$). 
-Setze $\N'=\{n\in \N|O_\alpha\in U_\alpha \text{ für ein } A\}$.
+ Sei $O_1,O_2,\dotsc$ eine abzählbare Basis der Topologie. Sei $X=\bigcup_{\alpha\in A} U_\alpha$, $U_\alpha$ 
+offen (wir wollen zeigen:  es gibt $\alpha_1, \alpha_2,\dotsc$, so dass $X=\bigcup_{i \in \N} U_{\alpha_i}$). 
+Setze $\N'=\{n\in \N|O_n \subset U_\alpha \text{ für ein } \alpha \in A\}$.
 Für $n\in \N'$ wählen wir $\alpha_n\in A$ mit $O_n\subset U_{\alpha_n}$. Dann ist $\{U_{\alpha_n}\}_{n\in \N'}$ eine (abzählbare) Überdeckung von $X$. 
-Denn jedes $x$ liegt in einem $U_\alpha$. Da die $\alpha_n$ eine Basis bilden ist $U_\alpha$ eine Vereinigung von solchen, also existiert ein $n$ mit $x\in O_n\subset U\alpha$, insbesondere $n\in \N'$ und $x\in U_{\alpha_n}$ .
+Denn jedes $x$ liegt in einem $U_\alpha$. Da die $O_n$ eine Basis bilden ist $U_\alpha$ eine Vereinigung von solchen, also existiert ein $n$ mit $x\in O_n\subset U_{\alpha_n}$, insbesondere $n\in \N'$ und $x\in U_{\alpha_n}$ .
 \end{proof}
 \begin{seg}{\textbf{Beweis von Satz \ref{thm:6.10}}}
  Sei $X$ ein Raum mit abzählbarer Basis.
 \begin{enumerate}[(i)]
- \item Sei $X$ kompakt und $x_n$ eine Folge ohne konvergente Teilfolge. Nach \ref{thm:6.11} gibt es zu jedem $p\in X$ eine Umgebung $U_p$ mit $x_n\in U_p$ nur für endlich viele Indizes $n$. Die $U_p$ bilden eine Überdeckung. Wegen der Kompaktheit gibt es ensgesamt ist $x_n\in U_{p_1}\cup... U_{p_k}=X$ nur für endlich viele Indizes. Dies ergibt den Widerspruch.
- \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, ...$ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für ale $n$, dass heißt es gibt $x_n\in X\setminus(U_1\cup...\cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_n \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
+ \item Sei $X$ kompakt und $x_n$ eine Folge ohne konvergente Teilfolge. Nach \ref{thm:1.6.12} gibt es zu jedem $p\in X$ eine Umgebung $U_p$ mit $x_n\in U_p$ nur für endlich viele Indizes $n$. Die $U_p$ bilden eine Überdeckung. Wegen der Kompaktheit gibt es endlich viele Mengen $U_{p_1}, \dotsc, U_{p_k}$ die $X$ überdecken. Insgesamt ist $x_n\in U_{p_1}\cup \dotsb \cup U_{p_k}=X$ nur für endlich viele Indizes. Dies ergibt den Widerspruch.
+ \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, ...$ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für alle $n \in \N$, dass heißt es gibt $x_n\in X\setminus(U_1\cup...\cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_n \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
 \end{enumerate}
 \end{seg}
 \begin{note*}
  \begin{enumerate}[(i)]
   \item Für die Richtung „kompakt $\implies$ folgenkompakt“ benötigen wir nur das erste Abzählbarkeitsaxiom. 
 Insbesondere gilt die Aussage in metrischen Räume.  
-(Dies impliziert die Beschränktheit kompakter metrischer Räume und ihre Teilmengen Hausdorff, folgt nochmal \ref{thm:6.4})
-\item Auch Satz \ref{thm:6.3} (Heine-Borel) folgt aus dem letzten Satz: Ist $A\subset \R^n$ beschränkt und abgeschlossen, so besitzt jede Folge nach Bolzano eine konvergente Teilfolge.
+(Dies impliziert die Beschränktheit kompakter metrischer Räume). Da metrische Räume und ihre Teilmengen Hausdorff sind, folgt nochmal \ref{thm:1.6.5})
+\item Auch Satz \ref{thm:1.6.4} (Heine-Borel) folgt aus dem letzten Satz: Ist $A\subset \R^n$ beschränkt und abgeschlossen, so besitzt jede Folge nach Bolzano eine konvergente Teilfolge.
 Also ist $A$ folgenkompakt. Da $\R^n$ (und damit $A$) eine abzählbare Basis (nämlich zum Beispiel $\{B_{n^{-1}} (q)|n\in \N, q\in \Q^n\}$ besitzt,
 ist $A$ kompakt. Die andere Richtung folgt aus Bemerkung (i).
 \item In einem Banachraum ist die Einheitskugel genau dann kompakt, wenn die Dimension endlich ist,
@@ -826,7 +814,7 @@ ist $A$ kompakt. Die andere Richtung folgt aus Bemerkung (i).
 \end{note*}
 \subsection{Topologische Mannigfaltigkeiten}
 \begin{df}[$n-$dimensionale eingebettete Untermannigfaltigkeit des $\R^{n+k}$]
-Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$k$-dimensionale Untermannigfaltigkeit} des $\R^{n+k}$, falls es um jeden Punkt $p\in M$ eine (im $\R^{n+k}$) offene Menge, $U$ gibt und einen Diffeomorphismus $\Phi: U\to V$, wobei $V\subset \R^{n+k}$ offen ist und gilt:
+Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$n$-dimensionale Untermannigfaltigkeit} des $\R^{n+k}$, falls es um jeden Punkt $p\in M$ eine (im $\R^{n+k}$) offene Menge, $U$ gibt und einen Diffeomorphismus $\Phi: U\to V$, wobei $V\subset \R^{n+k}$ offen ist und gilt:
 \fixme[fig30]
 \[
  \boxed{\Phi(U\cap M)=V\cap(\R^n\times(\underbrace{0,...,0}_{k-\text{mal}}))}
@@ -837,13 +825,13 @@ Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$k$-dimensionale Untermannigfalt
   \item offene Mengen im $\R^n$ sind $n-$dimensionale Untermannigfaltigkeit.
   \item lineare (affine) Unterräume (Punkte, Geraden, Ebenen,...) sind Untermannigfaltigkeiten
   \item Die Einheitsphäre $S^n\subset \R^{n+1}$ ist eine $n-$dimensionale Untermannigfaltigkeit
-  \item Dass (iii) gilt, zeigt man zum Beispiel, indem man nachrechnet, dass $S^n$ ein \emph{reguläres Urbild} ist. Zum Beispiel ist $S^n$ das Urbild $f^{-1}(\{1\})$ der Abbildung $\R^{n+1}\to \R, (x_1,...,x_n+1)\mapsto x_1^2+...+x_{n+1}^2$
+  \item Dass (iii) gilt, zeigt man zum Beispiel, indem man nachrechnet, dass $S^n$ ein \emph{reguläres Urbild} ist. Zum Beispiel ist $S^n$ das Urbild $f^{-1}(\{1\})$ der Abbildung $\R^{n+1}\to \R, (x_1,...,x_{n+1})\mapsto x_1^2+...+x_{n+1}^2$
  \end{enumerate}
-Mannigfaltigkeiten sind Räume, die im Kleinen den Euklidischen Raum $\R^n$ ähneln, aber nicht notwendig im Großen.
+Mannigfaltigkeiten sind Räume, die im Kleinen dem Euklidischen Raum $\R^n$ ähneln, aber nicht notwendig im Großen.
 \end{exs*}
 \begin{df}
- Ein topologischer Raum heißt \emph{n-dimensionale topologische Mannigfaltigkeit}, wenn $M$ Hausdorffsch ist, eine abzählbare Basis hat und lokal homöomorph zum $\R^n$ ist, dass heißt für alle $p\in M$ existiert ein Homöomorphismus $\phi:U\to V$, wobei $U$ offene Umgebung von $p$ in $M$ ist und $V$ offen im $\R^n$.
-\end{df}orffsch ist, eine abzählbare Basis hat und lokal homöomorph zum $\R^n$ ist, dass heißt für alle $p\in M$ existiert ein Homöomorphismus $\phi:U\to V$, wobei $U$ offene Umgebung von $p$ in $M$ ist und $V$ offen im $\R^n$.
+ Ein topologischer Raum M heißt \emph{n-dimensionale topologische Mannigfaltigkeit}, wenn $M$ Hausdorffsch ist, eine abzählbare Basis hat und lokal homöomorph zum $\R^n$ ist, dass heißt für alle $p\in M$ existiert ein Homöomorphismus $\phi:U\to V$, wobei $U$ offene Umgebung von $p$ in $M$ ist und $V$ offen im $\R^n$.
+\end{df}
 \fixme[fig31]
 \begin{note*}
  \begin{enumerate}[(i)]
@@ -854,29 +842,29 @@ Mannigfaltigkeiten sind Räume, die im Kleinen den Euklidischen Raum $\R^n$ ähn
 \item Im Gegensatz zu Untermannigfaltigkeit hat man keine „Glattheitsbedingung“ so ist zum Beispiel ein Quadrat im $\R^2$ eine topologische Mannigfaltigkeit.
  \end{enumerate}
 \end{note*}
-Es gilt: Die Summe zweier n-dimensionale topologische Mannigfaltigkeit ist wieder eine $n$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer $n-$dimensionalen und einer $m$-dimensionaler topologischen Mannigfaltigkeit ist eine $(n+m)$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer n-dimensionaler topologischen Mannigfaltigkeit ist eine $(n+m)-$dimensionale topologische Mannigfaltigkeit. Offene Teilmengen von $n-$dimensionale toppologische Mannigfaltigkeit sind $n$-dimensionale topologische Mannigfaltigkeit. Für Quotienten von topologischen Mannigfaltigkeit ist die Frage, ob sie wieder topologische Mannigfaltigkeiten sind, kompliziert.
+Es gilt: Die Summe zweier n-dimensionaler topologische Mannigfaltigkeiten ist wieder eine $n$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer $n-$dimensionalen und einer $m$-dimensionalen topologischen Mannigfaltigkeit ist eine $(n+m)$-dimensionale topologische Mannigfaltigkeit.  Offene Teilmengen von $n-$dimensionalen topologischen Mannigfaltigkeiten sind $n$-dimensionale topologische Mannigfaltigkeiten. Für Quotienten von topologischen Mannigfaltigkeit ist die Frage, ob sie wieder topologische Mannigfaltigkeiten sind, kompliziert.
 Zum Beispiel Gerade mit Doppelpunkt\\
 \fixme[fig33]\\
-Ein Summe in zwei $n$-dimensionale topologischen Mannigfaltigkeiten ist wieder eine $n$-dimensionale topologische Mannigfaltigeit, das Produkt einer $n$-dimensionalen Mannigfaltigkeit mit einer $m$-dimensionalen Mannigfaltigkeit ist eine $(n+ m)$-dimensionale topologische Mannigfaltigkeit und außerdem sind offene Teilmengen von $n$-dimensionale topologische Mannigfaltigkeiten wieder $n$-dimensionale topologische Mannigfaltigkeiten.  
+Ein Summe von zwei $n$-dimensionalen topologischen Mannigfaltigkeiten ist wieder eine $n$-dimensionale topologische Mannigfaltigeit, das Produkt einer $n$-dimensionalen Mannigfaltigkeit mit einer $m$-dimensionalen Mannigfaltigkeit ist eine $(n+ m)$-dimensionale topologische Mannigfaltigkeit und außerdem sind offene Teilmengen von $n$-dimensionalen topologische Mannigfaltigkeiten wieder $n$-dimensionale topologische Mannigfaltigkeiten.  
 
 Die Konstruktion vom Quotient dagegen ist delikater. Wir begnügen uns mit einem einfachen Fall.
 
 Die Homöomorphismen eines topologischen Raumes $\{\phi: X\to X|\phi \text{ Homöomorphismus}\}$ bilden eine Gruppe, denn die Hintereinanderschaltung von Homöomorphismen ist wieder einer, die Umkehrabbildung eines Homöomorphismus liefert das Inverse, die Identität das neutrale Element.
 
-Wir betrachten (endliche) Untergruppen $\Gamma$ von Homöomorphismen, zum Beispiel $X=S^n, \Gamma=\{\pm \id\}$ , wobei $\id: S^n\to S^n$ die Antipodenabbildung $x\mapsto -x$ ist. Ist $\Gamma$ eine Gruppe von Homöomorphismen auf $X$, so setzen wir $X/\Gamma:=X/\sim$, wobei die Äquivalenzrelation $\sim$ auf $X$ wie folgt gegeben ist.
+Wir betrachten (endliche) Untergruppen $\Gamma$ von Homöomorphismen, zum Beispiel $X=S^n, \Gamma=\{\pm \id\}$ , wobei $- \id: S^n\to S^n$ die Antipodenabbildung $x\mapsto -x$ ist. Ist $\Gamma$ eine Gruppe von Homöomorphismen auf $X$, so setzen wir $X/\Gamma:=X/\sim$, wobei die Äquivalenzrelation $\sim$ auf $X$ wie folgt gegeben ist.
 \[
- x\sim y :\iff \text{ es gibt ein } \gamma\in \Gamma \text{ mit } y=\underbrace{\gamma(x)}_{:=\gamma(x)}
+ x\sim y :\iff \text{ es gibt ein } \gamma\in \Gamma \text{ mit } y=\underbrace{\gamma(x)}_{:=\gamma x}
 \]
 \begin{itemize}
 \item \emph{reflexiv}, dass heißt $x\sim x$, da $\id_X\in \Gamma$
-\item \emph{symmetrisch}, dass heißt $x\sim y \implies y\sim x$, denn fals $y=\gamma(x)$, dann folgt $x=\gamma^{-1}(y)$
-\item \emph{transitiv}, dass heißt $x\sim y \land y\sim z \implies x\sim z$, denn $y=\gamma(x), z=\gamma'(y)$, dann folgt $\gamma'\circ \gamma(x)=\gamma'\circ y=z$, also $(\gamma'\circ \gamma)(x=y)$. 
+\item \emph{symmetrisch}, dass heißt $x\sim y \implies y\sim x$, denn falls $y=\gamma(x)$, dann folgt $x=\gamma^{-1}(y)$
+\item \emph{transitiv}, dass heißt $x\sim y \land y\sim z \implies x\sim z$, denn $y=\gamma(x), z=\gamma'(y)$, dann folgt $\gamma'\circ \gamma(x)=\gamma' (y)=z$, also $(\gamma'\circ \gamma)(x)=y$. 
 \end{itemize}
-Dann sind die Äquivalenzklassen die \emph{Bahnen} der Operation der Operation von $\Gamma$ auf $X$, wobei die \emph{Bahn} des Punktes $x$ die Menge $\Gamma x:=\{\gamma(y)$ ist.
+Dann sind die Äquivalenzklassen die \emph{Bahnen} der Operation von $\Gamma$ auf $X$, wobei die \emph{Bahn} des Punktes $x$ die Menge $\Gamma x:=\{\gamma(x) | \gamma \in \Gamma\}$ ist.
 
-Zum Beispiel falls $X=S^n, \Gamma=\{\pm \id\}$, dann ist $\Gamma x=\{\pm x\}$. Wir versehen $X/\Gamma$ mit der Quotiententopologie. Gilt für $\gamma:X\to X$ und einen Punkt $x\in X$, dass $\gamma(x)=x$, dann nennt $\max(x)$ einen \emph{Fixpunkt} von $\gamma$. Die Identität hat natürlich jeden Punkt als Fixpunkt.
+Zum Beispiel falls $X=S^n, \Gamma=\{\pm \id\}$, dann ist $\Gamma x=\{\pm x\}$. Wir versehen $X/\Gamma$ mit der Quotiententopologie. Gilt für $\gamma:X\to X$ und einen Punkt $x\in X$, dass $\gamma(x)=x$, dann nennt man $x$ einen \emph{Fixpunkt} von $\gamma$. Die Identität hat natürlich jeden Punkt als Fixpunkt.
 \begin{df}
- Eine Gruppe $\Gamma$ von Homöomorphismen operiert \emph{fixpunktfrei} auf $X$, wenn nur die Identität Fixpunkte auf $x$ hat, dass heißt falls aus $\gamma x=x$ für ein $\gamma\in \Gamma$ folgt, dass $\gamma=\id_x$.
+ Eine Gruppe $\Gamma$ von Homöomorphismen operiert \emph{fixpunktfrei} auf $X$, wenn nur die Identität Fixpunkte auf $X$ hat, dass heißt falls aus $\gamma (x)=x$ für ein $\gamma\in \Gamma$ folgt, dass $\gamma=\id_X$.
 \end{df}
 \begin{st}
  Sei $M$ eine $n$-dimensionale topologische Mannigfaltigkeit und $\Gamma$ eine endliche Gruppe von Homöomorphismen, 
@@ -885,34 +873,33 @@ und $\pi:M\to M/\Gamma$ ein lokaler Homöomorphismus. (dass heißt $\forall_{p\i
 \end{st}
 \begin{proof}
  \begin{enumerate}[(i)]
-  \item Die kanonische Projektion (auch: Quotientenabbildung) $\pi:M\to M/\Gamma, p\mapsto [p]=\Gamma p$ ist nicht nur stetig sondern auch offen, dass heißt bildet offene Mengen auf offene Mengen. Denn ist $U\subset M$ offen. 
+  \item Die kanonische Projektion (auch: Quotientenabbildung) $\pi:M\to M/\Gamma, p\mapsto [p]=\Gamma p$ ist nicht nur stetig sondern auch offen, dass heißt sie bildet offene Mengen auf offene Mengen ab. Denn ist $U\subset M$ offen, dann ist 
 \[
  \pi^{-1}(\pi(U))=\Gamma U=\bigcup\limits_{\gamma\in \Gamma} \underbrace{\gamma(U)}_{\text{offen}}
 \]
 als Vereinigung von offenen Mengen offen, also ist auch $\pi(U)$ offen.
-\item Zu $p\in M$ gibt es eine Umgebung $U$, die keine verschiedenen äquivalenten Punkte enthält, dass heißt $x,\gamma x\in U$ für ein $\gamma\in \Gamma \implies \gamma=\id_x$)
-Der Punkt $p$ besitzt eine Umgebungsbasis $U_1\supset U_2 \supset U_3 \supset...$, da $M$ lokal homöomorph zu $\R^n$. Gäbe es in jedem $U_k$ äquivalent verschiedene Elemente, etwa $x_k, \gamma_k x_k\in U_k, \gamma_k\neq \id_x$.
-Dann könnten wir wegen der Endlichkeit von $\Gamma$ eine Teilfolge $x_{k_l}, \gamma x_{k_l}$ mit konstantem $\gamma\in \Gamma\setminus\{\id\}$ auswählen. Aus $x_{k_l}\to p, \gamma x_{k_l}\to p$ folgt $x_{k_l} \to \gamma^{-1} p$, also $p=\gamma^{-1} p$, also $\gamma=\id_x$ wegen der Fixpunktfreiheit.
-\item Auf der Umgebung $U$ aus ii) ist $\pi$ injektiv. Indem wir $U$ eventuell weiter enschränken, können wir annehmen, dass $U$ offen ist. Indem wir $U$ weiter verkleinern, können wir annehmen, dass $U$ offen ist. Indem wir $U$ weiter verkleinern, können wir annehmen, dass $U$ homöomorph zu einer offenen Teilmenge des $\R^n$ ist. Wegen (i) ist dann $V:=\pi(U)$ offen und $\pi\vline_U:U\to V$ ein Homöomorphismus.  Insgesamt folgt, dass auch $V\subset M/\Gamma$ homöomorph zu einer offenen Teilmenge das $\R^n$ ist. \\
+\item Zu $p\in M$ gibt es eine Umgebung $U$, die keine verschiedenen äquivalenten Punkte enthält, dass heißt $x,\gamma x\in U$ für ein $\gamma\in \Gamma \implies \gamma=\id_x$.
+Der Punkt $p$ besitzt eine abzählbare Umgebungsbasis $U_1\supset U_2 \supset U_3 \supset...$, da $M$ lokal homöomorph zu $\R^n$. Gäbe es in jedem $U_k$ äquivalent verschiedene Elemente, etwa $x_k, \gamma_k x_k\in U_k, \gamma_k\neq \id_X$,
+dann könnten wir wegen der Endlichkeit von $\Gamma$ eine Teilfolge $x_{k_l}, \gamma x_{k_l}$ mit konstantem $\gamma\in \Gamma\setminus\{\id\}$ auswählen. Aus $x_{k_l}\to p, \gamma x_{k_l}\to p$ folgt $x_{k_l} \to \gamma^{-1} p$, also $p=\gamma^{-1} p$, also $\gamma=\id_X$ wegen der Fixpunktfreiheit.
+\item Auf der Umgebung $U$ aus ii) ist $\pi$ injektiv. Indem wir $U$ eventuell weiter enschränken, können wir annehmen, dass $U$ auch offen ist.  Indem wir $U$ weiter verkleinern, können wir annehmen, dass $U$ homöomorph zu einer offenen Teilmenge des $\R^n$ ist. Wegen (i) ist dann $V:=\pi(U)$ offen und $\pi\vline_U:U\to V$ ein Homöomorphismus.  Insgesamt folgt, dass auch $V\subset M/\Gamma$ homöomorph zu einer offenen Teilmenge das $\R^n$ ist. \\
 Noch zu zeigen sind.
 \item $M/\Gamma$ ist hausdorffsch und (v) $M/\Gamma$ hat abzählbare Basis, beides als schriftliche Übungsaufgabe.  
 \end{enumerate}
 \end{proof}
 \begin{exs*}
  \begin{enumerate}[(i)]
-  \item $M=S^n, \Gamma=\{\pm \id_{S^n}\}, -\id_{S^n}: S^n\to S^n, x\mapsto -x$, die Antipodenabbildung da $-\id$ keine Fixpunkte 
-auf $S^n/\{\pm \id\}$ ist eine $n$-dimensionale topologische Mannigfaltigkeit,
- der sogenannte \emph{reell-projekte} Raum der Dimension n. WIr aben bereits gesehen, 
-dass $\R P^1$ homöomorph zu $S^1$ ist aber $\R P^n$ \emph{nicht} homöomorph zu $S^n$ (Beweis später). Es gibt mehrere Möglichkeiten, den $\R P^n$ (auch $P^n \R, P^n(\R)...$) zu definieren:
+  \item $M=S^n, \Gamma=\{\pm \id_{S^n}\}, -\id_{S^n}: S^n\to S^n, x\mapsto -x$, die Antipodenabbildung. Da $-\id$ keine Fixpunkte 
+auf $S^n$ hat, operiert $\Gamma$ fixpunktfrei auf $S^n$ und $\R P^n := S^n/\{\pm \id\}$ ist eine $n$-dimensionale topologische Mannigfaltigkeit,
+ der sogenannte \emph{reell-projektive} Raum der Dimension n. Wir aben bereits gesehen, dass $\R P^1$ homöomorph zu $S^1$ ist, aber für $n \geq 2$ ist $\R P^n$ \emph{nicht} homöomorph zu $S^n$ (Beweis später). Es gibt mehrere Möglichkeiten, den $\R P^n$ (auch $P^n \R, P^n(\R), \dotsc$) zu definieren:
 \begin{enumerate}[(i)]
 \item $\R P^n=S^n/\{\pm\id\}$ 
 \item Als Menge der Geraden in $\R^{n+1}$ durch den Ursprung.
 \item Als $\R^{n+1}\setminus \{0\}/\sim$, mit $x\sim y \iff \exists \lambda\in \R\setminus\{0\}: x=\lambda y$. Die Äquivalenzklassen schreibt man als 
 \[
-[(x_1,...,x_{n+1})]=[x_1:x_2:...: x_{n+1}] 
+[(x_1,\dotsc,x_{n+1})]=[x_1:x_2:\dotsc: x_{n+1}] 
 \]
-mit $[x_1:...:x_{n+1}]=[y_1:...:y_{n+1}]\iff \exists \lambda\in \R\setminus\{0\}$, mit $y_i=\lambda\cdot x_i, \forall_i$.
-Gilt zu $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$\\
+mit $[x_1:\dotsc:x_{n+1}]=[y_1:\dotsc:y_{n+1}]\iff \exists \lambda\in \R\setminus\{0\}$, mit $y_i=\lambda\cdot x_i, \forall_i$.
+Gilt $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$\\
 \fixme[fig34]
 \end{enumerate}  
 \end{enumerate}
@@ -927,17 +914,17 @@ Gilt zu $x_3\neq 0$, so gilt $[x_1:x_2:x_3]=[\frac{x_1}{x_3}:\frac{x_2}{x_3}:1]$
 \end{st}
 \fixme[fig35]
 \begin{proof}
- (i) und (iii) folgen daraus in topologischen Mannigfaltigkeiten das zweite Abzählbarkeitsaxiom gilt (aus Satz \ref{thm:6.10} bzw. \ref{thm:5.6}(ii))
+ (i) und (iii) folgen daraus, dass in topologischen Mannigfaltigkeiten das zweite Abzählbarkeitsaxiom gilt (aus Satz \ref{thm:6.10} bzw. \ref{thm:5.6}(ii))
 
-Bei (ii) gilt $"`\Longleftarrow"'$ stets für alle topologischen Räume. Wir zeigen: Wegzusammenhangskomponenten sind in topologischen Mannigfaltigkeiten offen. Dies gilt wegen der lokalten Homöomorphie zu $\R^n$:
+Bei (ii) gilt $"`\Longleftarrow"'$ stets für alle topologischen Räume. Wir zeigen: Wegzusammenhangskomponenten sind in topologischen Mannigfaltigkeiten offen. Dies gilt wegen der lokalen Homöomorphie zu $\R^n$:
 Jeder $\eps$-Ball in $\R^n$ ist wegzusammenhängend, also gibt es um jeden Punkt $p$ in $M$ eine wegzusammenhängende Umgebung.
 \end{proof}
 \begin{st}[Schwache Version des Whitneyschen Einbettungssatzes]
- Sei Sei $M$ eine kompakte $n$-dimensionale topologische Mannigfaltigkeit. Dann ist $M$ homöomorph zu einer Teilmenge des $\R^N$ für ein $N\in \N$.
+ Sei $M$ eine kompakte $n$-dimensionale topologische Mannigfaltigkeit. Dann ist $M$ homöomorph zu einer Teilmenge des $\R^N$ für ein $N\in \N$.
 \end{st}
 \fixme[fig36]
 \begin{proof}
- Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0)))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup ... \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.\\
+ Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0)))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup \dotsb \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.\\
 \fixme[fig37]\\
 Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
 \fixme[fig38]\\
@@ -947,9 +934,9 @@ Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
 \fixme[fig39]\\
 Sei nun 
 \[
- \lambda_i: M \to \R, \lambda_i(x):=\begin{cases} \tilde \lambda_i(x)&, x\in U_i\\ 0, x\notin U_i \end{cases}
+ \lambda_i: M \to \R, \lambda_i(x):=\begin{cases} \tilde \lambda_i(x)&, x\in U_i\\ 0 &,x \notin U_i \end{cases}
 \]
-(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ und $X\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$stetig.  Nun können wir den gezweiten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} \psi(x)=(\psi_1(x),..., \psi_r(x), \lambda_1(x),..., \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, dann wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,..., r\}$ mit $x\in V \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies \lambda_i(y)=1\implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)=\psi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bejektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
+(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ stetig ist und $M\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$ offen ist. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$ stetig.  Nun können wir den gesuchten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} , \psi(x)=(\psi_1(x),..., \psi_r(x), \lambda_1(x),..., \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, dann wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,..., r\}$ mit $x\in V_i \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)= \phi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bijektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
 \end{proof}
 \subsection{Homotopie}
 Homotopie ist die Präzisierung der geometrische Idee von der stetigen Deformation einer Abbildung in eine andere.
@@ -957,18 +944,18 @@ Homotopie ist die Präzisierung der geometrische Idee von der stetigen Deformati
  Seien $X,Y$ topologische Räume und $f_0, f_1: X\to Y$ stetige Abbildungen. Eine \emph{Homotopie} $f$ von $f_0$ nach $f_1$ ist eine parametrisierte Schar von Abbildungen.
 $f_t$ mit Anfang $f_0$ und Ende $f_1$, genauer: eine stetige Abbildung $f: X\times[0,1] \to Y$ mit der Eigenschaft, das $f(x,0)=f_0(x)$ und $f(x,1)=f_1(x)$ für alle $x\in X$. (Man schreibt auch $f_t(x)$ für $f(x,t)$)
 
-Wenn es eine Homotopie zwischen $f_0$ und $f_1$ (von $f_0$ nach $f_1$) gibt, dann sagt man $f_0$ und $f_2$ sin \emph{homotop}, Notation: $f_0 \simeq f_1$.
+Wenn es eine Homotopie zwischen $f_0$ und $f_1$ (von $f_0$ nach $f_1$) gibt, dann sagt man $f_0$ und $f_1$ sind \emph{homotop}, Notation: $f_0 \simeq f_1$.
 \end{df}
 Diese Relation ist eine \emph{Äquivalenzrelation} auf der Menge $C(X,Y)$ der stetigen Abbildung $X\to Y$, denn:
 \begin{itemize}
- \item offensichtlich ist jede Abbildung zu sich selbst homotop. setze $f_t(x):= f(x)$. (\emph{reflexiv})
- \item aus einer Homotopie $f$ von $f_0$ nach $f_1$ erhält man die \emph{Inverse Homotopie} $f(\cdot, 1-t)$ von $f$ nach $f_0$ (\emph{symmetrisch})
- \item und man kann $m$ offnsichtlicher Weise eine Homotopie $f$ von $f_0$ nach $f_1$ mit einer $g$ von $f_1$ nach $f_2$ zu einer Homotopie $h$ von $f_0$ nach $f_2$ verknüpfen:
+ \item offensichtlich ist jede Abbildung zu sich selbst homotop. Setze $f_t(x):= f(x), \forall_{t \in [0,1]}$. (\emph{reflexiv})
+ \item aus einer Homotopie $f$ von $f_0$ nach $f_1$ erhält man die \emph{Inverse Homotopie} $f(\cdot, 1-t)$ von $f_1$ nach $f_0$ (\emph{symmetrisch})
+ \item und man kann in offensichtlicher Weise eine Homotopie $f$ von $f_0$ nach $f_1$ mit einer Homotopie $g$ von $f_1$ nach $f_2$ zu einer Homotopie $h$ von $f_0$ nach $f_2$ verknüpfen:
 \[
  h(x,t):=\begin{cases}f(x,2t), \text{ falls } t\le 0.5\\ g(x,2t-1), \text{ falls } t>0.5  \end{cases}
 \]
 dies nennt man das \emph{Produkt} $f*g$ der beiden Homotopien.\\
-Die \emph{Äquivalenklasse} $[f]$ einer stetigen Abbildung heißt \emph{Homotopieklasse} von $f$, die Menge der Homotopieklassen stetige Abbildungen von $X$ nach $Y$ bezeichnen wir mit $[X,Y]$, in Zeichen:
+Die \emph{Äquivalenklasse} $[f]$ einer stetigen Abbildung heißt \emph{Homotopieklasse} von $f$, die Menge der Homotopieklassen stetiger Abbildungen von $X$ nach $Y$ bezeichnen wir mit $[X,Y]$, in Zeichen:
 \[
  [X,Y]=C(X,Y)/\simeq
 \]
