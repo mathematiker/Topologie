@@ -1,0 +1,45 @@
+\ProvidesPackage{mathe-blatt}
+
+\usepackage{mathe-vorlesung}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{titling}
+\usepackage{enumerate}
+\usepackage{Sweave}
+
+\author{Matthias Hofmann}
+\date{\today}
+
+%\theoremstyle{break}
+%\theorembodyfont{\normalfont}
+%\theorempreskipamount 1.5em
+%\theoremindent 1em
+%\theoremheaderfont{\kern-1em\normalfont\bfseries}
+%\newtheorem*{seg}{}
+
+\newcounter{aufgabe} 
+\newenvironment{aufgabe}{\refstepcounter{aufgabe}\par\medskip\noindent%
+	\textbf{Aufgabe \theaufgabe}\rmfamily}
+{\medskip}
+
+
+\newcommand{\blatttheorie}{
+\addtolength{\headheight}{\baselineskip}
+\lhead{Wahrscheinlichkeitstheorie \\ \thedate}
+\chead{Gruppe 5}
+\rhead{\theauthor \\ 2762919}}
+
+\newcommand{\blatttop}{
+\addtolength{\headheight}{\baselineskip}
+\lhead{Topologie\\ \thedate}
+\chead{Donnerstag-Gruppe}
+\rhead{\theauthor \\ 2762919}}
+
+\renewenvironment{aufgabe}{\refstepcounter{aufgabe}\par\medskip\noindent%
+	\textbf{Aufgabe \thesection.\theaufgabe}\rmfamily}
+{\medskip}
+
+
+
+

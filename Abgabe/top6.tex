@@ -1,0 +1,107 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+
+\begin{document}
+\setcounter{section}{6}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+Seien $ d_1 $ die Metrik auf $ X $ und $ d_2 $ die Metrik auf $ Y $.\\
+ Anmerkung: \emph{(Überdeckungs-)Kompaktheit} und \emph{Folgenkompaktheit} sind äquivalent in metrischen Räumen.\\
+z.z. Ist $ X $ kompakt, so ist jede stetige Abbildung sogar gleichmäßig stetig.\\
+Gegenannahme: $ \exists_{\epsilon>0} \forall_{\delta>0} \exists {x'}_{\delta},{x''}_{\delta} (d_1(x'_{\delta},x''_{\delta})<\delta \land (d_2(f(x'_{\delta}, f(x''_\delta)\ge \epsilon $\\
+Sei $ \delta_k =\frac{1}{k} \implies  \exists {x'}_{\delta},{x''}_{\delta} (d_1(x'_{\delta},x''_{\delta})<k^{-1} \land (d_2(f(x'_{\delta}, f(x''_\delta)\ge \epsilon  $.  
+Wir können nun eine \emph{Teilfolge}, aufgrund der \emph{Folgenkompaktheit} auswählen, sodass $ x'_{\delta_{k_j}}\stackrel{j\to \infty}\to x^* $ und mit der Ungleichung $ d_1(x'_{\delta_k}, x''_{\delta_k})<k^{-1} $ auch $ x''_{\delta_{k_j}} \stackrel{j\to \infty}\to x^* $. Mit der \emph{Stetigkeit} folgt:
+\[
+\lim_{j\to \infty} f(x'_{\delta_{k_j}})= f(x^*), 
+\lim_{j\to \infty} f(x''_{\delta_{k_j}})= f(x^*) 
+\]
+\[
+\implies d_2(f(x'_{\delta_{k_j}}), f(x''{\delta_{k_j}}))\le d_2(f(x'_{\delta_{k_j}}), 
+f(x^*))+d_2(f(x''_{\delta_{k_j}}), f(x^*)))<\epsilon
+\]
+Es ergibt sich der Widerspruch!
+\end{aufgabe}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item Wir zeigen die Voraussetzungen für eine Topologie:
+\begin{enumerate}[(T1)]
+\item $\bigcup_{i\in I} U_i \in \mathcal O_\infty$. Wir betrachten zunächst seperat $ \mathcal O $ und $ \mathcal O^c:=\mathcal O_\infty \setminus \mathcal O $. 
+\begin{enumerate}
+\item wenn alle offenen Mengen aus $ \mathcal O $ sind, ist klar, dass auch eine beliebige Vereinigung in $ \mathcal O$ liegt.
+\item wenn alle offenen Mengen aus $ \mathcal O^c $ sind so ergibt sich mit der deMorganschen Regel:
+\[
+ \bigcup_\alpha U_\alpha=\{\infty\} \cup (\bigcup_\alpha X\setminus K_\alpha)= \{\infty\} \cup X\setminus (\bigcap_\alpha K_\alpha) 
+\]
+Als abgeschlossene Menge ist der Schnitt beliebig vieler abgeschlossener Mengen wieder abgeschlossen und als abgeschlossene Teilmenge einer kompakten Menge betrachte hierzu beliebiges $ K_\alpha $, ist auch der beliebige Schnitt abgeschlossen und damit ist die Vereinigung beliebiger Mengen aus $ \mathcal O^c $ wieder in $ \mathcal O^c $
+\item Im letzten Schritt ist nun zu zeigen, dass auch beliebige Vereinigungen aus diesen beiden Mengen in der Topologie enthalten sind.  Zunächst können wir durch umsortieren die Vereinigung auf ein Element aus $ \mathcal O $ und $ \mathcal O^c $ einschränken. Es bleibt zu zeigen:
+\[
+O\cup (\{\infty\} \cup (X\setminus K)=\{\infty\}\cup (O\cup(X\setminus K))=\{\infty\}\cup (X\setminus (K\cap O^c))
+\]
+Der Schnitt abgeschlossener Mengen ist abgeschlossen und als Teilmenge der beschränkten Menge $ K $ ist demnach auch $ K\cap O^c $ kompakt und damit ist die Vereinigung in $ \mathcal O^c $
+\end{enumerate}
+\item Analog: 
+\begin{enumerate}
+\item wenn alle offenen Mengen aus $ \mathcal O $ sind, ist klar, dass auch endliche Schnitte in $ \mathcal O$ liegen.
+\item wenn alle offenen Mengen aus $ \mathcal O^c $ sind so ergibt sich mit der deMorganschen Regel:
+\[
+ \bigcap_{i\in \{0,...,n\}} U_{i}=\{\infty\} \cup (\bigcap_i X\setminus K_i)= \{\infty\} \cup X\setminus (\bigcup_i K_i) 
+\]
+Als abgeschlossene Menge ist die Vereinigung endlich vieler abgeschlossener Mengen wieder abgeschlossen und außerdem findet man für jede offene Überdeckung von $ \bigcup_i K_i $ endliche Überdeckung durch die Vereinigung der endlichen Überdeckungen der $ K_i $ (diese ist wiederum endlich, da die Vereinigung endlich ist), also ist diese kompakt und damit ist die Vereinigung endlich vieler Mengen aus $ \mathcal O^c $ wieder in $ \mathcal O^c $
+\item Im letzten Schritt ist nun zu zeigen, dass auch beliebige Vereinigungen aus diesen beiden Mengen in der Topologie enthalten sind.  Zunächst können wir durch umsortieren die Vereinigung auf ein Element aus $ \mathcal O $ und $ \mathcal O^c $ einschränken. Es bleibt zu zeigen:
+\[
+O\cap (\{\infty\} \cup (X\setminus K)=O\cap(X\setminus K))=O\cap K^c
+\]
+Der Schnitt offener Mengen ist offen und damit ist die Vereinigung in $ \mathcal O $.
+\end{enumerate}
+\item z.z. $ \emptyset, X_\infty \in \mathcal O_\infty $
+\begin{itemize}
+\item $ \emptyset \in \mathcal O\subset \mathcal O_\infty $
+\item $ X_\infty=(X\setminus \emptyset) \cup \{\infty\}$, $ \emptyset $ ist kompakt, da für jede offene Teilüberdeckung die endliche Teilüberdeckung $ \{\emptyset\} $ gibt.
+\end{itemize}
+Außerdem ist $ \{\infty\} $ abgeschlossen, da $ \{\infty\}^c=X\in \mathcal O $ offen ist.
+\end{enumerate}
+\item Sei $ X_\infty=\bigcup_{i\in I} U_i$ so findet man nach umsortieren in Elementen aus $ \mathcal O $ und $ \mathcal O^c$ mit$ U_1, U_2 $, sodass $ X_\infty = U_1 \cup U_2 $ endliche Teilüberdeckung ist.
+\item z.z. $ X_\infty $ \emph{hausdorffsch} $ \iff  $ $ X $ \emph{hausdorffsch} und \emph{lokalkompakt}.\\
+\begin{seg}{"`$ \implies $"'}
+\begin{enumerate}
+\item z.z. $ X $ hausdorffsch:\\
+Aus der Hausdorffeigenschaft von $ O_\infty $ folgt die Existenz von $ U_{x_1}\cap U_{x_2}=\emptyset $ mit $ x_1\in U_{x_1} $ und $ x_2\in U_{x_2} $.  Dann können wir aber disjunkte offene Mengen $ \tilde U_{x_1}=\mathcal O \cap U_{x_1} $ und $ \tilde U_{x_2}=\mathcal O \cap U_{x_2} $ aus $ \mathcal O $ konstruieren, die auch $ x_1 $ bzw. $ x_2 $ enthalten.
+\item z.z. $ X $ lokalkompakt:\\
+Aus der Hausdorffeigeschaft von $ O_\infty $ folgt die Existenz von $ U_{x_1}\cap U_{x_2}=\emptyset $ mit $ x_1\in U_{x_1} $ und $ x_2\in U_{x_2} $. Dann ist aber $ x_1\in U_{x_1}\subset U_{x_2}^c $ ist eine kompakte Umgebung, da abgeschlossene Teilmenge im kompakten topologischen Raum.
+\end{enumerate}
+\end{seg}
+\begin{seg}{"`$ \leftarrow $ "'}
+z.z. $ X_\infty $ hausdorffsch.\\
+ Für $ x_1, x_2\in X $ ist die Aussage klar (wir wählen einfach die entsprechenden offenen Mengen aus der Hausdorffeigenschaft).  Es bleibt nur der Fall zu betrachten, dass eins der Elemente $ \infty $ ist. Sei nun o. B. d. A. $ x_1=\infty $ und $ x_2\neq \infty $. Wir finden nun aufgrund der Lokalkompaktheit eine kompakte Umgebung $ K\subset X $. $ \infty $ besitzt die dazu offene disjunkte Menge $ \{\infty\}\cup {X\setminus K}  $ und damit ist auch diese Richtung gezeigt.  
+\end{seg}
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe} Sei $ X $ kompakter metrischer Raum mit $ \mathcal V=\{V_i|i\in I\} $ offene Überdeckung. $ \implies V_{i_1}\cup...\cup v_{i_n}=X $\\
+z.z. $ \exists\lambda\forall_{B|\sup_{p,q\in B}d(p,q)<\lambda}\exists_{j\in I} B\subset V_j $\\
+Gegenannahme: $ \forall_\lambda \exists_{B|\sup_{p,q\in B}}\forall_{j\in I}\exists_{b_j\in B} b_j\notin V_j $. Da $ \mathcal V $ offene
+ Überdeckung ist, wobei $ I $, die Menge der Indizes der endlichen Teilüberdeckung sind. Nun finden wir aber stets für $ b_j $ ein $ V_j' $, das samt einem $ B_{\epsilon_j}(b_j) $ in der offenen Menge enthalten ist. Nun gibt es aber nur endlich viele $ B_{\epsilon_j}(b_j) $ Nimmt $ \lambda $ nun den Wert $ \min_j \epsilon_j  $, so findet man mit $ b_j\in V_{j'} $ die Umgebung $ B\subset U_\lambda(b_j)\in V_j' $ und es ergibt sich der Widerspruch zur Annahme.
+\end{aufgabe}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item $\text{id}_X^{-1}{K}=K$ kompakt, damit ist $ \text{id} $ eigentliche Funktion.
+\item Wir nehmen im folgenden an, dass $ X,Y $ lokalkompakte Räume sind, die zudem die Hausdorffeigenschaft erfüllen (zu mindestens werde ich beide Eigenschaften verwenden).\\
+z.z. $ f $ abgeschlossen und $ f^{-1}(\{y\}) $ kompakt, $ \forall_{y\in Y} \implies f^{-1}(K) $ kompakt für kompakte Teilmengen $ K $\\
+Gegenannahme: (f uneigentlich) $ \land $ ($ f(A) $ abgeschlossen $ \lor $ $ f^{-1}(\{y\})  $ kompakt für alle $ y\in Y $.
+\begin{enumerate}
+\item Angenommen $ f(A) $ abgeschlossen!  Formal $ \lnot  (f $ eigentlich) $ \land f(A)  $ abgeschlossen $ \iff \lnot( $ f eigentlich $ \implies  f(A)$ abgeschlossen).  Sei $ K $ die kompakte Umgebung zu $ f(A) $:
+\[
+\underbrace{f^{-1}(K)\cap A}_{\text{abgeschlossen}} \stackrel{f(\cdot)}\implies K\cap f(A)=f(A)
+\] 
+und damit ist $ f(A) $ als Bild einer abgeschlossenen (kompakten) Menge wieder unter einer stetigen Funktion kompakt und damit abgeschlossen. Und es ergibt sich der Widerspruch.
+\item Angenommen $ f^{-1}(Y) $ ist kompakt. $ \lnot (f \text{ eigentlich} \implies f^{-1}(\{y\}) \text{ kompakt}) $.\\
+Punkte $ y $ sind kompakt und mit der Eigentlicheigenschaft, sind damit auch $ f^{-1}(\{y\}) $ kompakt.   
+\end{enumerate} 
+\item z.z. $ g\circ f $ eigentlich und $ f $ surjektiv $ \implies g $ eigentlich.\\
+\[
+g^{-1}(K)=\underbrace{f((g\circ f)^{-1}(K))}_{\text{kompakt}}
+\]
+Da $ f $ eine surjektive, stetige Abbildung ist, besitzt jedes Element aus $ K $ ein nichtleeres Urbild, und damit folgt die Kompaktheit, als Bild einer kompakten Menge unter der Stetigen Abbildung $ f $. 
+\end{enumerate}
+\end{aufgabe}
+\end{document}

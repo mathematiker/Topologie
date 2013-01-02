@@ -1,0 +1,75 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\homo}{\cong}
+
+\begin{document}
+\setcounter{section}{8}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+Wir definieren die offenen Mengen $ U_i $ als:
+\[
+U_i=\{(x_0:...:x_n)\in \R P^n: x_i \neq 0\}
+\]
+Tatsächlich liegt jeder Punkt der Menge in einer dieser offenen Mengen.  Dass diese Mengen tatsächlich offen sind,  folgt daraus, dass die Menge $ \{(x_0, ..., x_n) \in \R\setminus \{0\}: x_i\neq 0\} $ offen ist und im Sinne der Quotiententopologie ist auch $ U_i $ offen. Nun definieren wir die Abbildung, wobei wir wie im Hinweis das i-te Glied weglassen:
+\[
+\phi: U_i \to \R: \phi_i(x_0:...:x_n)=\left (\frac{x_0}{x_i},..., \frac{x_n}{x_i}\right ) 
+\]  
+offensichtlich ist die Funktion wohldefiniert und sie ist bijektiv mit
+\[
+\phi_i^{-1}(u_1,..., u_n)=(u_1:...:u_i: 1: u_{i+1}:u_n)
+\]
+Warum ist $ \phi $ nun Homöomorphismus?  Das Bild von $\phi$ ist nunmal tatsächlich offen, setzen wir nämlich  $ x_i=1 $ fest, in der Äquivalenzklasse. so ist ersichtlich dass Urbild und  Bild offen von beliebigen offenen Mengen offen sind.
+\end{aufgabe}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item $ \Gamma_{p,q} $ ist eine Gruppe. Hierfür müssen wir zeigen:
+\begin{enumerate}[1)]
+\item Einselement: $ A^0=\id $
+\item Inverse: $ A^k A^{p-k}=A^0=\id $
+\item Assoziativität: $ (A^iA^j)A^k=A^{(i+j)+k}=A^{i+(j+k)}=A^i(A^jA^k) $
+\end{enumerate}
+\item Wir konstruieren einen Isomorphismus $ \phi: \Gamma \to \Z_p: \phi(A^i)=i $.  Tatsächlich ist $ \phi $ wohldefiniert und bijektiv, da $ p $ und $ q $ teilerfremd sind $ e^{\frac{2\pi i (j+k)}{p}}\neq e^{\frac{2\pi j}{p}} $ für $ j+k<p $.  $ \phi $ erhält die algebraische Struktur:
+\begin{enumerate}[1)]
+\item $ \phi(0)=A^0 $ Einselement 
+\item $ \phi(A^iA^j)=i+j=\phi(A^i)+\phi(A^i) $
+\end{enumerate}
+und damit auch sämtliche andere Strukturen.  Damit folgt dass $ \phi $ ein Isomorphismus ist und $ \Gamma $ und $ \Z_p $ isomorph zueinander sind.
+\item Wir zeigen nun, dass $ \Gamma_{p,q} $ eine endliche Gruppe von Homöomorphismus sind. Tatsächlich ist $ A $ bijektiv und offensichtlich stetig.  Die Umkehrabbildung ergibt sich zu:
+\[
+A^{-1}(z_1, z_2)=(e^{-\frac{2\pi i}{p}} z_1, e^{-\frac{2\pi i q}{p}} z_1)
+\]
+und damit ist nach 7.4 der Linsenraum $S^3/\Gamma$ eine topologische Mannigfaltigkeit da auch $ S^3 $ topologische Mannigfaltigkeit ist. 
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+z.z. $ \exists {h': X\times [0,1] \to Z}: h'(x,0)=g_0 f_0(x) \land h'(x,1)=g_1 f_1(1) $\\
+\[
+f_0 \simeq f_1 \implies \exists f: X\times [0,1] \to Y, f(x,0)=f_0(x) \land f(x,1)=f_1(x)
+\]
+\[
+g_0 \simeq g_1 \implies \exists g: Y\times [0,1] \to Z, g(y,0)=g_0(y) \land g(y,1)=g_1(y)
+\]
+Zunächst können wir also die Komposition der stetigen Abbildungen betrachten, die auch stetig ist:
+\[
+h: X\times [0,1]^2\to Z: h(x,t_1, t_2)=g(f(x,t_1),t_2)
+\]
+Letzlich müssen wir nur einschränken auf $ t_1=t_2 $, wobei die Stetigkeit erhalten bleibt:
+\[
+h': X\times [0,1] \to Z: h(x, t)=g(f(x,t),t)
+\]
+Tatsächlich ist $ h' $ Homotopie:
+\[
+h'(x,0)=g(f(x,0),0)=g_0f_0(x)  \land h'(x,1)=g(f(x,1),1)
+\]
+\end{aufgabe}
+\begin{aufgabe}
+Wir wollen also eine Homotopie konstruieren.  Wir wählen unsere Homotopie durch:
+\[
+h(z,t)=g(z)^t\cdot f(z)^{1-t}
+\]
+Das die Homotopie wohldefiniert ist  ergibt sich unter
+Offensichtlich gilt $ h(z,0)=f(z) $ und $ h(z,1)=g(z) $ und die Stetigkeitsaussage ergibt sich durch Betrachtung vom Grenzwert und Stetigkeit von $ f,g $ (zu mindestens haben wir den Homotopiebegriff nur für stetige Funktionen kennengelernt) folgt aus der Verknüpfung von stetigen Funktionen.
+\end{aufgabe}
+\end{document}
