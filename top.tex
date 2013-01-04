@@ -1084,13 +1084,7 @@ Die Menge $\Omega(X; x_0):=\Omega(X; x_0, x_0)$ bezeichnen wir als die Menge all
  \]
 \fixme[fig49]
 \end{df}
-\begin{df}
- Für $\omega \in \Omega(X; x_0, x_1)$ und $\nu\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega * \nu$ definiert durch:
-\[
- \omega * \nu (t):= \begin{cases} \omega(2t) \text{ falls } t\in[0, \frac{1}{2})\\ \nu(2t-1) \text{ falls } t\in[\frac{1}{2},1] \end{cases}
-\]
-\end{df}
-Wir wollen auf dem Raum der Schleifen $\Omega(X, x_0)$ eine Äquivalenzrelation einführen. Dazu benutzen wir eine modifizierte Homotopierelation:
+Wir wollen auf dem Raum der Schleifen $\Omega(X; x_0)$ eine Äquivalenzrelation einführen. Dazu benutzen wir eine modifizierte Homotopierelation:
 \begin{df}
 \fixme[fig50]\\
  Seien $\omega, \nu \in \Omega(X; x_0, x_1)$. Eine \emph{Homotopie mit festen Endpunkten} von $\omega$ nach $\nu$ ist eine stetige Abbildung
@@ -1103,17 +1097,17 @@ so dass gilt:
  H(t,1)=\nu(t)&, H(1,s)=x_1
 \end{align*}
 \end{df}
-\begin{lem} \label{thm2:1.5}
+\begin{lem}
  Die Relation $\omega\sim \nu:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\nu$) ist eine Äquivalenzrelation.
 \end{lem}
 \begin{proof}
- ist derselbe wie für Homotopie von stetigen Abbildung.
+ Ist derselbe wie für Homotopie von stetigen Abbildung.
 \end{proof}
-\begin{lem}
- Es gilt in $\Omega(X;x_0,x_1),$ wobei wir mit $\epsilon$ die \emph{konstante Schleife} 
+\begin{lem}  \label{thm:2.1.5}
+ Es gilt in $\Omega(X;x_0),$ wobei wir mit $\epsilon$ die \emph{konstante Schleife} 
 $\epsilon(t)=x_0 \forall_{t\in [0,1]}$ bezeichnen.
 \begin{enumerate}[(i)]
- \item $\omega \sim \omega' \land \nu \sim \nu' \implies \omega *n \sim \omega'\times \nu'$
+ \item $\omega \sim \omega' \land \nu \sim \nu' \implies \omega *\nu \sim \omega'\times \nu'$
   \item $\epsilon * \omega \sim \omega \sim \omega* \epsilon$ 
 \item $\omega * \omega^{-1} \sim \epsilon \sim \omega^{-1}*\omega$
  \item $(\omega * \nu)*\xi \sim \omega*(\nu * \xi)$
@@ -1129,7 +1123,7 @@ und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichn
 \end{enumerate}
 \end{proof}
 \begin{note*}[Explizit für (i)]
-Sei $f$ die Homotopie zwischen $\nu$ und $ \nu'$. Definiere:
+Sei $f$ die Homotopie zwischen $\omega$ und $\omega'$ und $g$ die Homotopie zwischen $\nu$ und $ \nu'$. Definiere:
 \[
  H:[0,1]\times[0,1]\to X
 \]
@@ -1139,7 +1133,7 @@ Sei $f$ die Homotopie zwischen $\nu$ und $ \nu'$. Definiere:
 \end{note*}
 
 \begin{df}
- Die Menge der Äquivalenzklassen von Schleifen in $\Omega(X;x_0)$ bezüglichd er Relation $\sim$ wird \emph{Fundamentalgruppe} $\pi_1(X; x_0)$ von $(X;x_0)$ genannt, Notation: $\pi_1(x;x_0):= \Omega(X;x_0)/\sim$
+ Die Menge der Äquivalenzklassen von Schleifen in $\Omega(X;x_0)$ bezüglich der Relation $\sim$ wird \emph{Fundamentalgruppe} $\pi_1(X; x_0)$ von $(X;x_0)$ genannt, Notation: $\pi_1(X;x_0):= \Omega(X;x_0)/\sim$
 \end{df}
 Sei:
 \[
@@ -1147,9 +1141,10 @@ Sei:
 \]
 wobei $\Omega(X;x_0)$ Schleifen mit Basispunkt $x_0$ und $\sim$ die Homotopie mit festen Endpunkten darstellt.\\
 \fixme[fig56]\\
-Es ist $[\omega]=[\omega']$, $[\omega]\neq [\epsilon]$, $[\alpha]\neq [\beta]\neq [\omega]$, sei $\epsilon$ konstante Schleife $[0,1]\to \{x_0\}$ und $[\alpha]=[\epsilon]$
+Sei $\epsilon$ konstante Schleife $[0,1]\to \{x_0\}$.
+Es gilt: $[\omega]=[\omega']$, $[\omega]\neq [\epsilon]$, $[\alpha]\neq [\beta]\neq [\omega], [\alpha]=[\epsilon]$
 \begin{st}
- Das Produkt von Schleifen $(\omega, \nu) \mapsto \omega * \nu$ induziert ein Produkt auf $\pi_1(X;x_0)$ für 
+ Das Produkt von Schleifen $(\omega, \nu) \mapsto \omega * \nu$ induziert ein Produkt auf $\pi_1(X;x_0)$. Für 
 eine Schleife $\omega \in \Omega(X;x_0)$ bezeichne $[\omega] \in \pi_1(X; x_0)$ ihre Homotopieklasse mit festen Endpunkten. Mit diesem Produkt ist $\pi_1(X;x_0)$ eine Gruppe
 \end{st}
 \begin{proof}
@@ -1157,21 +1152,20 @@ eine Schleife $\omega \in \Omega(X;x_0)$ bezeichne $[\omega] \in \pi_1(X; x_0)$ 
 \[
  [\omega] \cdot [\nu]:=[\omega*\nu]
 \]
-Dies ist wohldefiniert, denn nach Lemma \ref{thm2:1.5} (i) gilt $\omega \sim \omega' \land \nu \sim \nu' \implies \omega * \nu \sim \omega' * \nu'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich, denn $\omega \sim \omega' \implies \omega^{-1}\sim \omega'{-1}$, wohldefiniert.
-die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm2:1.5} (ii) (iii): $\omega*\omega'\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm2:1.5} liefert die Assoziativität der Verknüpfung. 
+Dies ist wohldefiniert, denn nach Lemma \ref{thm:2.1.5} (i) gilt $\omega \sim \omega' \land \nu \sim \nu' \implies \omega * \nu \sim \omega' * \nu'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich wohldefiniert, denn $\omega \sim \omega' \implies \omega^{-1}\sim (\omega')^{-1}$. Die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm:2.1.5} (ii) (iii): $\omega*\omega^{-1}\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm:2.1.5} liefert die Assoziativität der Verknüpfung. 
 \end{proof}
 Die so definierte Gruppe $\pi_1(X;x_0)$ ist im Allgemeinen nicht abelsch, wie wir später sehen werden. Die Menge $\Omega(X;x_0)$ bildet \emph{keine} Gruppe mit der Verknüpfung $*$, denn zum Beispiel $\omega*\omega^{-1}\neq \epsilon$, wenn $\omega$ nicht konstant ist.
 \begin{exs*}
  \begin{enumerate}[(1)]
-  \item Es gilt $\pi_1(\R^n;0)\homo \{1\}$, denn jede Schleife in $\R^n$ mit Basispunkt kaum auf die konstante Schleife $\epsilon: t \mapsto 0$ zusammengezogen werden:
+  \item Es gilt $\pi_1(\R^n;0)\homo \{1\}$, denn jede Schleife in $\R^n$ mit Basispunkt $0$ kann auf die konstante Schleife $\epsilon: t \mapsto 0$ zusammengezogen werden:
 
 Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega(t)$ eine Homotopie zwischen $\omega$ und $\epsilon$. Allgemeiner gilt für jede bezüglich $x_0$ sternförmige Menge $X$, dass $\pi_1(X;x_0)$ trivial ist.\\
 \fixme[fig57]\\
-\item Es gilt $\pi_1(S^n, p) \homo \{1\}$ für $n\ge 2$ und $p\in S^n$ beliebig.\\
+\item Es gilt $\pi_1(S^n; p) \homo \{1\}$ für $n\ge 2$ und $p\in S^n$ beliebig.\\
 \fixme[fig58]
 \begin{proof}[Beweisskizze]
 \fixme[fig59]
- Sei $\omega \in \Omega(S^n,p)$ und sei $q\in S^n\setminus \omega([0,1])$. Dann ist $S^n\setminus\{q\}$ via stereographischer Projektion homöomorph zu $\R^n$ und in $\R^n$ lässt sich jede Schleife zusammenziehen.
+ Sei $\omega \in \Omega(S^n;p)$ und sei $q\in S^n\setminus \omega([0,1])$. Dann ist $S^n\setminus\{q\}$ via stereographischer Projektion homöomorph zu $\R^n$ und in $\R^n$ lässt sich jede Schleife zusammenziehen.
 \end{proof}
 \begin{seg}{Problem bei diesem Beweis}
  Möglicherweise ist $S^n \setminus \omega([0,1])$ \emph{leer}, in der Tat gibt es flächen-/raumfüllende stetige Wege.
@@ -1179,27 +1173,31 @@ Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega
 \begin{seg}{Exkurs: flächenfüllende "`Kurve"' (=Weg)}
  Definiere $[0,1] \to A $, wobei $A$ Dreiecksfläche ist, surjektiv wie folgt:
 
-Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101...$ in Binärdarstellung unterteile das Dreieck in sukzessive in kleinere Dreiecke:\\
+Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101...$ in Binärdarstellung unterteile das Dreieck rekursiv in kleinere Dreiecke:\\
 \fixme[fig60]\\
 Die so entstehende Folge konvergiert gegen einen Limes $f(x)$ und die Abbildung $[0,1]\to A$ ist \emph{surjektiv} und \emph{stetig}.
 \end{seg}
+\begin{seg}{Lösung}
+Ersetze $\omega$ durch einen homotopen nicht surjektiven Weg (Die Konstruktion dieses Weges wird an dieser Stelle nicht gezeigt).
+\end{seg}
+
 \item Es gilt: $\pi_1(S^1; 1)\homo \Z$
 \begin{proof}[Beweisskizze]
-Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlagerungstheorie. Der Kreis $S^1=\{ z\in \C| |z|=1\}$ und $S_1=\{z\in \C||z|=1\}$ und von der reellen Geraden $\R$ "`überlagert"': Die Abbildung $p:  \R\to S^1, t\mapsto e^{2\pi i t}$\\
+Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlagerungstheorie führen. Der Kreis $S^1=\{ z\in \C| |z|=1\}$ wird von der reellen Geraden $\R$ "`überlagert"': Die Abbildung $p:  \R\to S^1, t\mapsto e^{2\pi i t}$ ist stetig und surjektiv aber \emph{nicht} injektiv.\\
 \fixme[fig61]
 \end{proof}
-Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^2$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<...<t_k=1$ von $[0,1]$, so dass sich die Argumentfunktion auf jeden $\omega([t_1,t_{i+1}])$ stetig die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunkte.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
+Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<...<t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
 \[
  f(\omega*\eta)=f(\omega)+f(\eta)
 \]
-\item Es gilt $\pi_1(\R P^n, p)\homo \Z_2, n\ge 2$
+\item Es gilt $\pi_1(\R P^n; p)\homo \Z_2, n\ge 2$
 % \begin{table}[h]
 %  \fixme[Daten hinzufügen]
 % \end{table}
-\item Für die Linsenräume $L_p$ gilt $\pi_1(L_p,*)\homo \Z_p$ (Beweis später)
+\item Für die Linsenräume $L_p$ gilt $\pi_1(L_p;*)\homo \Z_p$ (Beweis später)
 \begin{seg}{Challenge}
 \fixme[fig62]
-$\pi_1("'\infty"', p) \homo ?$
+$\pi_1("'\infty"'; p) \homo ?$
 \end{seg}
  \end{enumerate}
 \end{exs*}
@@ -1207,37 +1205,37 @@ $\pi_1("'\infty"', p) \homo ?$
  Fundamentalgruppe einer "`Acht"':
 \fixme[fig63]
 \end{seg}
-Die \emph{Einpunktvereinigung} oder das \emph{Wedge-Produkt} von zwei Räumen $X$ und $Y$, in denen je ein Punkt $x_0 \in X$ und $y_0\in X$ ausgezeichnet ist, sei definiert durch 
-$$X\lor Y:= (X,x_0) \lor (Y,y_0):=X+Y/{\{x_0,y_0\}} $$
-Die "`Acht"' ist also das Wedge-Produkt zweier Kreise $S^1\lor S^1$ Die Fundamentalgruppe von $S^1 \lor S^1$ ist isomorph zu $\Z*\Z$, dem \emph{freien Produkt} der beiden Grupppen. Die Elemente von $\Z*\Z$ sind Worte der Form:
+Die \emph{Einpunktvereinigung} oder das \emph{Wedge-Produkt} von zwei Räumen $X$ und $Y$, in denen je ein Punkt $x_0 \in X$ und $y_0\in Y$ ausgezeichnet ist, sei definiert durch 
+$$X\lor Y:= (X;x_0) \lor (Y;y_0):=X+Y/{\{x_0,y_0\}} $$
+Die "`Acht"' ist also das Wedge-Produkt zweier Kreise $S^1\lor S^1$. Die Fundamentalgruppe von $S^1 \lor S^1$ ist isomorph zu $\Z*\Z$, dem \emph{freien Produkt} der beiden Grupppen. Die Elemente von $\Z*\Z$ sind Worte der Form:
 \[
- a^{e_1}\cdot b^{e_2} \cdot a^{e_3} \cdot b^{e_3}\cdot ... \cdot a^{e_{2k-1}}\cdot b^{e_{2k}},
+ a^{e_1}\cdot b^{e_2} \cdot a^{e_3} \cdot b^{e_4}\cdot \dotsc \cdot a^{e_{2k-1}}\cdot b^{e_{2k}},
 \]
-wobei $a$ und jeweils die Erzeuger einen "`Körper"' von $\Z$ sind und wobei $e_2, ..., e_{2k-1}\in \Z\setminus\{0\}, e_1, e_{2k} \in \Z$ mit der offensichtlichen Multiplikation (Hintereinanderschreiben und "`Kürzen"'). (Andere Bezeichnung: freie Gruppe in $2$ Erzeugern)
+wobei $a$ und $b$ jeweils die Erzeuger einer "`Kopie"' von $\Z$ sind und wobei $e_2, \dotsc, e_{2k-1}\in \Z\setminus\{0\}, e_1, e_{2k} \in \Z$ mit der offensichtlichen Multiplikation (Hintereinanderschreiben und "`Kürzen"'). (Andere Bezeichnung: freie Gruppe in $2$ Erzeugern)
 
 \begin{seg}{Allgemeiner gilt}
  für die Fundamentalgruppe eines Wedge-Produkts:
 \[
- \pi_1((X,x_0) \lor (y,y_0), [x_0])\homo \pi_1(X,x_0)* \pi_1(Y,y_0)
+ \pi_1((X;x_0) \lor (Y;y_0), [x_0])\homo \pi_1(X,x_0)* \pi_1(Y,y_0)
 \]
-(Beweis später; Satz von Seifert und von Kampen für Fundamentalgruppen von Vereinigungen)
+(Beweis später; Satz von Seifert und van Kampen für Fundamentalgruppen von Vereinigungen)
 \end{seg}
 
-Wenn wir eine stetige Abbildung zwischen topologischen Räumen haben, können wir die Fundamentagruppen in Beziehung setzen.
+Wenn wir eine stetige Abbildung zwischen topologischen Räumen haben, können wir die Fundamentalgruppen in Beziehung setzen.
 \begin{df}
- Seien $X$ und $Y$ topologische Räume und $x_0\in X, y_0 \in Y$. Eine stetige Abbildung $f: X\to Y$ mit $f(x_0)=y_0$ bezeichnen wir auch als \emph{stetige Abbildung} $(X,x_0)\to (Y,y_0)$. (stetige Abbildungen zwischen "`punktierten"' Räumen) Sei $f: (X,x_0) \to (Y,y_0)$ stetig.  Dann induziert $f$ eine Abbildung:
+ Seien $X$ und $Y$ topologische Räume und $x_0\in X, y_0 \in Y$. Eine stetige Abbildung $f: X\to Y$ mit $f(x_0)=y_0$ bezeichnen wir auch als \emph{stetige Abbildung} $(X;x_0)\to (Y;y_0)$. (stetige Abbildungen zwischen "`punktierten"' Räumen) Sei $f: (X;x_0) \to (Y;y_0)$ stetig.  Dann induziert $f$ eine Abbildung:
 \[
- \pi_1(X,x_0)\to \pi_1(Y,y_0): [\omega] \to [f \circ \omega]
+ \pi_1 (f) : \pi_1(X;x_0)\to \pi_1(Y;y_0), [\omega] \to [f \circ \omega]
 \]
 \fixme[fig64]\\
 der Fundamentalgruppen. (Wohldefiniertheit ist klar, durch für eine Homotopie $(t,s)\mapsto \omega_s(t)$ liefert $(t,s) \mapsto f(\omega_s(t))$ eine entsprechende Homotopie für $f\circ \omega$.)
 \end{df}
 \begin{st}
- Sei $f: (X,x_0)\to (Y,y_0)$ stetig.
+ Sei $f: (X;x_0)\to (Y;y_0)$ stetig.
 \begin{enumerate}[(i)]
- \item Die Abbildung $\pi_1(f): \pi_1(X,x_0) \to \pi_1(Y,y_0)$ ist ein Homomorphismus von Gruppen.
- \item Das gilt $\pi_1(\id_X)=\id_{\pi_1(X; x_0)}$
- \item Falls $f:(X;x_0) \to (Y, y_0)$ und $g: (Y, y_0) \to (Z, z_0)$ stetig sind, dann gilt $\pi_1(g\circ f)=\pi_1(g)\circ \pi_1(f)$
+ \item Die Abbildung $\pi_1(f): \pi_1(X;x_0) \to \pi_1(Y;y_0)$ ist ein Homomorphismus von Gruppen.
+ \item Es gilt $\pi_1(\id_X)=\id_{\pi_1(X; x_0)}$
+ \item Falls $f:(X;x_0) \to (Y;y_0)$ und $g: (Y; y_0) \to (Z; z_0)$ stetig sind, dann gilt $\pi_1(g\circ f)=\pi_1(g)\circ \pi_1(f)$
 \end{enumerate}
 \end{st}
 \begin{proof}
@@ -1250,6 +1248,10 @@ Dies gilt weil:
 $$
 \pi_1(f)([\omega]\cdot [\eta])=\pi_1(f)([\omega*\eta])= [f\circ (\omega*\eta)] \stackrel ! = [(f\circ \omega)*(f\circ \eta)]=[f\circ \omega] \cdot [f\circ \eta]=\pi_1(f)(\omega)\cdot \pi_1(f)(\eta)
 $$
+
+\[
+ f\circ(\omega*\eta)(t)=\begin{cases} f\circ \omega (2t) &, \text{für } t\in[0,\frac{1}{2}]\\  f\circ \eta (2t - 1) &, \text{für } t\in(\frac{1}{2},1]\end{cases} = (f \circ \omega) * (f \circ \eta)
+\]
 \item $\pi_1(\id_X)[\omega]=[\id_X\circ \omega]=[\omega]$
 \item Sei $\omega\in \pi_1(X;x_0)$. Dann gilt:
 \[
@@ -1258,36 +1260,31 @@ $$
 \end{enumerate}
 \end{proof}
 \begin{note*}
- Der Satz sagt, $\pi_1$ ist ein \emph{"`Funktor"'} zwischen der Kategorie der punktierten topologischen Räume und den stetigen Abbildung zwischen diesen in die Kategorie der Gruppen und Gruppenhomomorphismen. Dies ist ein \emph{Übersetzungsmechanismus}, siehe Jänich 5.4.
-
-\[
- f\circ(\omega*\eta)(t)=\begin{cases} f\circ \omega (2t) &, \text{für} t\in[0,\frac{1}{2}]\\  \end{cases}
-\]
-\fixme[JochannesZZZZZ Shuuuuuld]
+ Der Satz sagt, $\pi_1$ ist ein \emph{"`Funktor"'} zwischen der Kategorie der punktierten topologischen Räume und den stetigen Abbildung zwischen diesen, in die Kategorie der Gruppen und Gruppenhomomorphismen. Dies ist ein \emph{Übersetzungsmechanismus}, siehe Jänich 5.4.
 \end{note*}
 \begin{kor}
- Ist $f:(X, x_0)\to (Y, y_0)$ ein Homöomorphismus, so ist $\pi_1(f):\pi_1(X,x_0) \to \pi_1(Y,y_0)$ ein Isomorphismus
+ Ist $f:(X; x_0)\to (Y; y_0)$ ein Homöomorphismus, so ist $\pi_1(f):\pi_1(X;x_0) \to \pi_1(Y;y_0)$ ein Isomorphismus
 \end{kor}
 \begin{proof}
  Es gilt 
 \[
-\id_{\pi_1(X; x_0)}= \pi_1(\id_X)=\pi_1(f^{-1}\circ f)=\pi_1(f^{-1} \circ f)=\pi_1(f^{-1})\circ \pi_1(f)
+\id_{\pi_1(X; x_0)}= \pi_1(\id_X)=\pi_1(f^{-1}\circ f)=\pi_1(f^{-1})\circ \pi_1(f)
 \]
 \[
- \id_{\pi_2(Y;y_0)}=\pi_1(\id_Y)=\pi_1(f\circ f^{-1})=\pi_1(f) \circ \pi_1(f^{-1}),
+ \id_{\pi_1(Y;y_0)}=\pi_1(\id_Y)=\pi_1(f\circ f^{-1})=\pi_1(f) \circ \pi_1(f^{-1}),
 \]
-dies zeigt, dass $\pi_1(f)$ und $\pi_1(f^{-1})$ zueinander inverse Gruppenhomomorphismen.
+dies zeigt, dass $\pi_1(f)$ und $\pi_1(f^{-1})$ zueinander inverse Gruppenhomomorphismen sind.
 \end{proof}
 \begin{st}
  Seien $X,Y$ topologische Räume und $x_0\in X, y_0\in Y$. Die kanonischen Projektionen induzieren ein Isomorphismus.
 \[
- \pi_1(X\times Y, (x_0, y_0)) \homo \pi_1(X;x_0) \times \pi_1(Y, y_0)
+ \pi_1(X\times Y; (x_0, y_0)) \homo \pi_1(X;x_0) \times \pi_1(Y; y_0)
 \]
 \end{st}
 \begin{proof}
- Seien $p_X: X\times Y \to X, (x,y) \mapsto x, p_y: X\times Y \to Y, (x,y) \mapsto y$ die kanonischen Projektion. Definiere den Gruppenhomomorphismus.
+ Seien $p_X: X\times Y \to X, (x,y) \mapsto x, p_y: X\times Y \to Y, (x,y) \mapsto y$ die kanonischen Projektionen. Definiere den Gruppenhomomorphismus.
 \[
- \Phi: \pi_1(X\times Y, (x_0, y_0)) \to \pi_1(X;x_0)\times \pi_1(Y,y_0): [\omega] \to ([P_X\circ \omega], [P_Y \circ \omega]).
+ \Phi: \pi_1(X\times Y, (x_0, y_0)) \to \pi_1(X;x_0)\times \pi_1(Y,y_0): [\omega] \to ([p_X\circ \omega], [p_Y \circ \omega]).
 \]
 Dies ist ein Isomorphismus, denn $([\omega],[\eta])\mapsto [t\mapsto (\omega(t), \eta(t))]$ ist die Inverse (wie man sich \emph{leicht} überlegt ist $\Psi$ wohldefiniert.)
 \end{proof}
