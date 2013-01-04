@@ -864,7 +864,7 @@ Zum Beispiel falls $X=S^n, \Gamma=\{\pm \id\}$, dann ist $\Gamma x=\{\pm x\}$. W
 \begin{df}
  Eine Gruppe $\Gamma$ von Homöomorphismen operiert \emph{fixpunktfrei} auf $X$, wenn nur die Identität Fixpunkte auf $x$ hat, dass heißt falls aus $\gamma x=x$ für ein $\gamma\in \Gamma$ folgt, dass $\gamma=\id_x$.
 \end{df}
-\begin{st}
+\begin{st}\label{thm:7.4}
  Sei $M$ eine $n$-dimensionale topologische Mannigfaltigkeit und $\Gamma$ eine endliche Gruppe von Homöomorphismen, 
 die fixpunktfrei auf $M$ operiert. Dann ist $M/\Gamma$ eine $n$-dimensionale topologische Mannigfaltigkeit 
 und $\pi:M\to M/\Gamma$ ein lokaler Homöomorphismus. (dass heißt $\forall_{p\in M} \exists$ offene Mengen $U\subset M$ und $V\subset M/\Gamma$ mit $p\in U, V=\pi(U)$ und $\pi\vline_U: U\to V$ Homöomorphismus.)
@@ -1294,8 +1294,234 @@ Dies ist ein Isomorphismus, denn $([\omega],[\eta])\mapsto [t\mapsto (\omega(t),
  Für die Fundamentalgruppe eines $2-$dimensionale Torus $T^2 \homo S^1 \times S^1$ ist isomorph zu $\Z\times \Z$
 
 
-%$\pi_1(f)$ und $\pi_1(f^{-1})$ zueinander inverse Gruppenhomomorphismen.
+%$\pi_1(f)$ und $\pi_1(f^{-1})$ sind zueinander inverse Gruppenhomomorphismen.
 \end{kor}
+
+Wir wollen zunächst die Abhängigkeit der Fundamentalgruppe $\pi_1(X;x_0)$ von der Wahl des Basispunktes untersuchen.\\
+\fixme[fig65]\\
+Seien nun $x_0,x_1 \in X$ und sei $\gamma$ ein Weg zwischen $x_0$ und $x_1$. \\
+\fixme[fig66]\\
+Wir definieren eine Abbildung $\tilde \Gamma_\gamma: \Omega(X;x_0)\to \Omega(X;x_1): \omega\mapsto (\gamma*\omega)*\gamma^{-1}$
+
+\begin{st}\label{thm2:1.15}
+ $\tilde \Gamma$ induziert einen Isomorphismus:
+\[
+ \Gamma_\gamma: \pi_1(X;x_0)\to \pi_1(X;x_1): [\omega] \mapsto [\tilde \Gamma_{\gamma}(\omega)]
+\]
+\end{st}
+\begin{proof}
+ Zunächst ist die Wohldefiniertheit der Abbildung $\Gamma_\gamma$ zu zeigen, dass heißt zu zeigen ist, dass $[\Gamma_{\gamma} (\omega)]$ tatsächlich nur von der Äquivalenzklasse $[\omega]$ und nicht von den Wahl von selbst abhängt, aber es ist klar, dass, wenn $H(t,s)=\omega_S(t)$ eine Homotopie zwischen $\omega$ und $\omega'$ ist, dann auch:
+\[
+ (t,s)\mapsto (\gamma*\omega_S)*\gamma^{-1}(x)
+\]
+eine Homotopie zwischen $\tilde \Gamma_{\gamma}(\omega)$ und $\tilde \Gamma_{\gamma}(\omega')$ ist. 
+
+Um die Homomorphieeigenschaft von $\Gamma_{\gamma}$ nachzuweisen, berechnen wir: 
+\begin{align*}
+ \Gamma_{\gamma}([\omega])\cdot \Gamma_{\gamma} ([\eta])&=[\tilde \Gamma_{\gamma}(\omega)]\cdot [ \tilde \Gamma_{\gamma}(\eta)]\\
+&=[(\gamma*\omega)*\gamma^{-1}]\cdot [(\gamma*\eta)*\gamma^{-1}]=[((\gamma*\omega)*\gamma^{-1})*((\gamma*\eta)*\gamma^{-1})]\\
+&=[(\gamma*\omega(*\gamma^{-1})*((\gamma*\eta)*\gamma^{-1})]\\
+&\stackrel{(*)}=[(\gamma*(\omega*\eta)*\gamma^{-1}]=[\tilde \Gamma_\gamma (\omega*\eta)]=\Gamma_\gamma(\omega*\eta),
+\end{align*}
+wobei wir bei $(*)$ benutzt haben, dass Lemma \ref{thm2:1.5} sinngemäß auch für Wege gilt. Es gilt, dass $\Gamma_{\gamma^{-1}}$ die Umkehrabbildung von $\Gamma_\gamma$ ist, dem:\\
+\fixme[fig67]\\
+\begin{align*}
+ \Gamma_{\gamma^{-1}}\circ \Gamma_\gamma ([\omega])&=[(\gamma^{-1}*((\gamma*\omega)*\gamma^{-1}))*\gamma]\\
+ &\stackrel{(*)}=[\gamma^{-1}*\gamma]\cdot [\omega]\cdot [\gamma^{-1} * \gamma]=[\omega]
+\end{align*}
+\end{proof}
+\begin{kor}\label{thm2:1.16}
+ Für einen wegzusammenhängenden Raum $X$ hängt die Fundamentalgruppe bis auf Isomorphie nicht von der Wahl des Basispunktes ab.
+
+Deshalb schreibt bei wegzusammenhängenden $X$ auch oft einfach $\pi_1(X)$ für die Homorphieklasse der Fundamentalgruppe, zum Beispiel $\pi_1(\R P^n)=\Z_2$ für $n\ge 2$ oder $\pi_1(\R^n)=\{1\}$
+\end{kor}
+\begin{df}
+ Ein topologischer Raum heißt \emph{einfach zusammenhängend}, wenn es wegzusammenhängend ist und triviale Fundamentalgruppe hat.
+
+Dann gilt: Jede Schleife ist nullhomotop. Zum Beispiel $\R^n, S^n, n\ge 2$ nicht einfach zusammenhängend.  
+\end{df}
+
+Um das Verhalten der Fundamentalgruppe und der induzierten Homomorphismen $\pi_1(f)$ unten Homotopie zu untersuchen, führen wir folgende Sprechweise ein; Zwei stetige Abbildungen $f,g: (X;x_0)\to (Y,y_0)$ heißen \emph{punktiert homotop}, wenn es eine Homotopie $H$ von $f$ nach $g$ gibt, so dass für alle $s\in [0,1]$ gilt: $H(x_0, s)=y_0$. Wenn wir ausdrücklich zulassen wollen, dass Homotopien von Abbildungen zwischen punktierte Räumen auchd der Basispunktbewegen dürfen, so sprechen wir von \emph{freier Homotopie}.
+
+\begin{st}
+ Sind $f,g: (X;x_0)\to (Y;y_0)$ punktiert homotop, so stimmen die induzierten Homomorphismen
+\[
+ \pi_1(f), \pi_1(g): \pi_1(X;x_0)\to \pi_1(Y;y_0)
+\]
+überein
+\end{st}
+\begin{proof}
+ Ist $H$ eine Homotopie wie oben, so ist $(t,s)\mapsto H(\omega(t), s)$ eine zwischen $f\circ \omega$ und $g\circ \omega$ mit festen Endpunkte.
+\end{proof}
+
+\begin{st}
+ Sei $H$ eine \emph{freie Homotopie} zwischen den stetigen Abbildungen $f,g: (X;x_0)\to (Y,y_0)$ und sei die Schleife $\delta\in \Omega(Y;y_0)$ durch $\delta(s):=H(x_0, s)$. Dann gilt:
+\[
+ \pi_1(f)([\omega])=[\delta]\pi_1(g)([\omega]){[\delta]}^{-1}
+\]
+für jedes $[\omega]\in \pi_1(X;x_0)$.
+\end{st}
+
+\begin{proof}
+ Dies folgt nach Satz \ref{thm2:1.15}. Man überlegt sich, dass $f\circ \omega$ und $(\delta*g*\omega)*\delta^{-1}$ zueinander mit festen Endpunkten homotop sind. (Übung)
+\end{proof}
+\begin{kor}
+ Sind $f,g$ zueinander inverse Homotopieäquivalenzen, so sind
+\[
+\pi_1(f):\pi_1(X;x_0)\to \pi_1(Y,y_0)
+\]
+und
+\[
+ \pi_1(g):\pi_1(Y,x_0)\to \pi_1(X;x_0)
+\]
+Homomorphismen der Fundamentalgruppen, die bis auf Konjugation invers zueinander sind. 
+\end{kor}
+\begin{proof}
+ Wende \ref{thm2:1.16} auf $f\circ g \simeq \id_Y, g\circ f \simeq \id_X$ an.  Wobei $\simeq$ die freie Homotopie kennzeichnet.
+\end{proof}
+\subsection{Überlagerungen}
+\begin{df}
+ Eine surjektive stetige Abbildung $p: E\to B$ heißt \emph{Überlagerung}, wenn es zu jedem PUnkt $x\in B$ eine Umgebung $U$ von $x$ gibt, so dass $p^{-1}(U)$ eine disjunkte Vereinigung von offenen Mengen $V_\alpha$, ist und $p|_{V_\alpha}: V_\alpha\to U_\alpha$ für alle $\alpha\in A$ ein Homöomorphismus ist. In diesem Fall heißt $U\subset B$ \emph{trivial überlagert}, $E_x:=p^{-1}(\{x\})$ heißt \emph{Faser} über $x$.
+\fixme[fig68]\\
+\fixme[fig69]
+\end{df}
+
+\begin{exs*}
+ \begin{enumerate}[(i)]
+  \item $P: \R\to S^1, t\mapsto e^{2\pi it}$ ist eine Überlagerung. Jeder Punkt $z\in S^1$ besitzt zum Beispiel die trivial überlagerte offene Umgebung $S^1\setminus\{-z\}$, 
+auf dieser lässt sich die Funktion $z\mapsto \frac{\arg{z}}{2\pi}$ stetig definieren. \\
+\fixme[fig70]
+  \item $p:\C\setminus\{0\}\to \C \setminus\{0\}, z \mapsto z^n, n\in \N$ ist eine Überlagerung.
+  \item Die Quotientenabbildung \fixme[Rest fehlt]
+  \item $z\mapsto z^k: \C \setminus \{0\} \to \C \setminus\{0\}$ ist eine Überlagerung für $k\in \N$
+  \item Jeder Homöomorphismus ist eine Überlagerung $f: E\to B$.
+  \item Sei $M$ eine topologische Mannigfaltigkeit und $\Gamma$ eine endliche Gruppe von Homöomorphismen, 
+die fixpunktfrei auf $M$ operiert. Nach Satz I.\ref{thm:7.4} ist $q$ ein lokaler Homöomorphismus und im Beweis von Satz I.\ref{thm:7.4} wurde gezeigt, dass es um jeden Punkt $x\in M$ eine Umgebung $U$ gibt, die keine zu $x$ äquivalenten Punkte enthält. Dies zeigt, dass $q(U)$ trivial überlagert wird (von $\Gamma U$).
+  \item Spezialfälle von $4$: zum Beispiel $q: S^n\to \R P^n, x \mapsto \{x, -x\}$ ist eine Überlagerung.\\
+\fixme[fig71]
+ \end{enumerate}
+\end{exs*}
+\fixme[Nummerierung und Ordnung überdenken]\\
+\begin{df}
+ Sei $p: E\to B$ eine Überlagerung und $f:X\to B$ eine stetige Abbildung.  Eine \emph{Hochhebung} (oder \emph{Lift}) von $f$ eine stetige Abbildung $F: X \to E,$ so dass $p\circ F=f$. Mit anderen Worten, eine Hochhebung ist eine Abbildung die\\
+\fixme[fig72, mach ich selbst]
+\end{df}
+zum Beispiel ist die Abbildung $F:[0,1]\to \R, t\mapsto  5 \cdot t$ eine Hochhebung von $f: [0,1]\to S^1, t \in e^{10\pi t i}$\\
+\fixme[fig73]\\
+denn $p\circ F(t)=e^{2\pi i F(t)}=e^{2\pi i 5 t}=f(t)$ ist \emph{nicht} eindeutig, zum Beispiel 
+$t\mapsto 5t+k, k\in \Z$ ist ebenfalls Hochhebung
+\begin{st}[Eindeutigkeit des Lifts]\label{thm2:2.3}
+Sei $p: E \to B$ eine Überlagerung und seien $F,G: X\to E$ zwei Hochhebungen von $f:X\to B$. Sei $X$ zusammenhängend. Wenn es ein $x_0 \in X$ gibt mit $F(x_0)=G(x_0),$ so gilt $F=G$. 
+\end{st}
+\begin{proof}
+ Wir betrachten die beiden Teilmengen
+\[
+ V:=\{v\in F(x)=G(x)\} \text{ und } W:=\{x\in X|F(x)\neq G(x)\}
+\]
+von $X$ und zeigen, dass beide offen sind, denn dann folgt Behauptung aus der Zusammenhang von $X$ und der Tatsache, dass $V$ nicht leer ist (wegen $x_0\in V$) Sei nun $x\in X$ und $U$ eine offene, triviale überlagerte Umgebung von $f(x)\in B$, also
+\[
+ p^{-1}(U)=\dotcup_{\alpha\in A} V_\alpha
+\]
+mit $V_\alpha$ offen und homöomorph zu $U$. Sei $F(x)\in V_{\alpha_1}$ und $G(x)\in V_{\alpha_2}$. Dass ist:
+\[
+ D:=F^{-1}(V_{\alpha_1})\cap G^{-1}(V_{\alpha_2})
+\]
+eine offene Umgebung von $x$. Es gilt $D\le V$, falls $\alpha_1=\alpha_2$ und $D\subset W$ falls $\alpha_1\neq \alpha_2$.
+\end{proof}
+\begin{st}[Homotopie-Hochhebungssatz] \label{thm:2.4}
+ Sei $p: E\to B$ eine Überlagerung und seien $F: X \to E$ sowie $H: X\times [0,1] \to B$ stetige Abbildungen mit $H(x,0)=p(F(x))$ für alle $x\in X$. Dann gibt es genau eine Hochhebung $\tilde H$ von $H$ mit $\tilde H(\cdot, 0)=F(\cdot)$.
+\end{st}
+\begin{proof}
+ \begin{enumerate}[(i)]
+  \item Die Eindeutigkeit folgt aus Satz \ref{thm2:2.3} (wende den Satz auf $H|_{\{x\}\times[0,1]}$ an)
+  \item Zum Beweis der Existenz genügt es, die Hochhebbarkeit lokal zu beweisen, dass heißt es genügt, folgendes zu zeigen:
+\fixme[fig73]
+Zu jedem $x\in X$ gibt es eine Umgebung $U_x$ und eine Hochhebung $H^x$ von $H|_{U_x\times[0,1]}$. Denn stimmen wegen der Eindeutigkeit verschiedene solchen Abbildungen $H^x, H^y$ auf der Schnittmenge ihrer Definitionsbereiche überein und wir erhalten auf ganz $X$ wohldefinierte Hochhebung $\tilde H$
+\item Wir beweisen also die lokale Hochhebbarkeit: 
+
+Sei $x\in X$. ZU jedem $t\in[0,1]$ gibt es ein $\epsilon_t>0$ und eine Umgebung $U_{X,t}$ von $x$ in $X$, so dass $H(U_{X,t}, (t-\epsilon_t, t+ \epsilon_t)$ in einer trivial überlagerten Umgebung von $H(x,t)$ enthalten ist.
+
+Wegen der Kompaktheit von $[0,1]$ überdecken endlich viele der $(t-\epsilon_t, t+\epsilon_t)$ bereits $[0,1]$ und es gibt eine Umgebung $U_x$ und eine Zerlegung
+\[
+ 0=t_0<t_1<...<t_m=1,
+\]
+so dass $H(U_x\times (t_k, t_{k+1}))$ ganz in eine trivial überlagerten Menge $U(k)$ enthalten ist. Nun können wir induktiv $H^x: U_{x}\times [0,t_k] \to E$ definieren: Ist $H^x$ auf $U_x\times [0,t_k]$ bereits definiert, so definieren wir $H^x$ auf $U\times[t_k,t_{k+1}]$ durch $U_x\times [t_k, t_{k+1}]\stackrel{H}{\to} U(k) \stackrel{(p|V_{\alpha_k})^{-1}}\to V_{\alpha_k}\hookrightarrow E$, wobei $H^x(x,0)=F(x)$ gesetzt wird.
+ \end{enumerate}
+
+\end{proof}
+
+Im folgenden wollen wir Zusammenhangen zwischen Fundamentalgruppe und Überlagerung.
+\begin{kor}[Wege-Hochhebungssatz] \label{thm2:2.5}
+ Sei $p:E\to B$ eine Überlagerung und $\omega:[0,1]\to B$ ein Weg mit Anfangspunkt $b=\omega(0)$. Dann gibt es zu $e\in E_b=p^{-1}(\{b\})$ genau einen Weg $\tilde \omega: [0,1] \to E$ mit Anfangspunkt $\tilde \omega(0)=e$, da eine Hochhebung von $\omega$ ist.
+\end{kor}
+Für den Zusammenhang zwischen Fundamentalgruppe und Überlagerungen ist es auch eine wichtige Beobachtung, dass die Endpunkte hochgehobener Wege invariant unter Homotopien (mit festen Endpunkten sind.) 
+\begin{kor}[Monodromie Lemma]
+ Ist $p: E\to B$ eine Überlagerung und sind $ \omega_1, \omega_2: [0,1]\to B$ zwei Wege in $B$ mit Anfangspunkt $b=\omega_1(0)=\omega_2(0)$, 
+die zueinander homotop mit festen Endpunkten sind.  Dann haben zwei Lifts $\tilde \omega_1, \tilde \omega_2$ von $\omega_1$ bzw.  $\omega_2$ mit demselben Anfangspunkt $e=\omega_1(0)=\omega_2(0)$ auch den selben Endpunkt $\tilde \omega_1(1)=\tilde \omega_2(1)$.
+\end{kor}
+\begin{proof}
+ Sei $H: [0,1] \to B$ eine Homotopie mit festen Endpunkten und $H(\cdot, 0)=\omega_1, H(\cdot, 1)=\omega_2 $. Nach Satz \ref{thm2:2.4} gibt es genau eine Hochhebung, $\tilde H$ von $H$ mit $\tilde H(\cdot, 0)=\tilde \omega(1)$, wenn $\tilde \omega_1$ eine Hochhebung von $\omega_1$ ist. 
+Nach Korollar \ref{thm2:2.5} ist $\tilde \omega_1$ aber durch $\tilde \omega_1(0)=e$ eindeutig festgelegt.
+
+Sei $U\subset B$ eine trivial Überlagerte offene Umgebung von $\omega_2(1)=H(1,t), \forall_[0,1]$. Dann ist $c:= \tilde H(1, \cdot): [0,1]\to E$ eine Abbildungen, deren Bild ganz in der disjunkten Vereinigung $\dotcup_{\alpha\in A}=p^{-1}(U)$. 
+Falls $\tilde H(1,0)\in V_\alpha$, dann folgt auch $\tilde H(1,t) \in V_a$ (für dasselbe $\alpha$), denn sonst erhält man einen Widerspruch zum Zusammenhang von $[0,1]=\dotcup_{\tilde H(1,[0,1])\cap V_\alpha=\emptyset} c^{-1}(V_\alpha)$.
+\end{proof}
+Anschaulich sagt der Satz aus, dass der Endpunkt der Hochebung kann nicht springen.
+
+Damit können wir einen genaueren Beweis für $\pi_1(S^1)\homo \Z$ geben:
+\begin{st}
+ $\pi_1(S^1)\homo \Z$
+\end{st}
+\begin{proof}
+ Die Abbildung $p:R\to S^1, t\mapsto e^{2\pi i t}$ ist eine Überlagerung. Wir betrachten:
+\[
+ f:\pi_1(S^1; 1)\to \Z: [\omega] \mapsto \tilde \omega (1)
+\]
+\fixme[fig74]
+wobei $\tilde \omega$ die nach Korrolar \ref{thm2:2.5} eindeutige festgelegte Hochebung der Schleife $\omega$ mit $\tilde \omega(0)=0$ ist. Nach dem Monodromielemma Korrolar \ref{thm2:2.6} hängt $\tilde \omega(1)$ zum von der Homotopieklasse von $\omega$ (mit festen Endpunkten) ab, also ist $f$ wohldefiniert.
+Wir definieren "'Standard-Schleifen"' im $S^1$ wie folt: Sei $\tilde \omega_k:=p\circ \tilde \omega_k$. Offensichtlich ist $\tilde \omega_k$ eine Hochebung von $\omega_k$ und $f([\omega_k])=k$. Dies zeigt die Surjektivität und die Injektivität folgt daraus, dass je zwei Wege mit denselben Anfangs- und Endpunkten in $\R$ (mit festen Endpunkten) zueinander homotop sind. Um die Homomorphieeigenschaften nachzuweisen überlegt man sich:
+\[
+ f([\omega_k][\omega_l])=f([\omega_k * \omega_l])=f([\omega_{k+l}])
+\]
+\end{proof}
+\subsection{Gruppenwirkungen und Klassifikation von Überlagerung}
+\begin{df}
+ Eine Gruppe $G$ zusammen mit einer Topologie heißt \emph{topologische Gruppe}, wenn die \emph{Gruppenoperationen} \emph{Multiplikation} $G\times G \to (a,b)\mapsto ab$ und \emph{Inversenbildung}
+$G\to G, g\mapsto g^{-1}$ stetig sind.
+\end{df}
+\begin{exs*}
+ \begin{enumerate}[1)]
+  \item Jede abstrakte Gruppe mit der diskreten Topologie ist eine topologische Gruppe.
+  \item Untergruppen der $GL(n, \R)$ mit der von $\R^{n^2}$ induzierten Teilraumtopologie.  
+  \item Liegruppen und topologischen Gruppen.
+ \end{enumerate}
+\end{exs*}
+\begin{df}
+ Sei $G$ eine topologische Gruppe und $X$ ein topologischer Raum. Eine(\emph{Gruppen-})\emph{Wirkung} (auch: \emph{Operation}) von $G$ auf $X$ ist eine stetige Abbildung:
+\[
+ G\times X\to X: (g,x) \mapsto g\cdot x
+\]
+mit den Eigenschaften $1\cdot x^{-} = x^{-}, (ab)\cdot x^{-}=a\cdot (b\cdot x^{-})$
+\end{df}
+\begin{note*}
+ Stets gilt, dass $x\mapsto g\cdot x^{-}$ für ein festes Gruppenelement $g$ ein Homöomorphismus von $X$ ist. denn $g^{-1}(g\cdot x^{-})=(g^{-1}g)\cdot x=1\cdot x=x.$
+\end{note*}
+\begin{exs*}
+ \begin{enumerate}[1)]
+  \item Linkstranslation von $G$ auf sich $g\cdot x^{-}:=gx$ für $g,x\in G$.
+  \item Rechtstranslation von $G$ auf sich $g\cdot x^{-}=$
+ \end{enumerate}
+
+\end{exs*}
+
+
+
+
+
+
+
+
+
 
 
 
