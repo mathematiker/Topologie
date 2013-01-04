@@ -1205,6 +1205,7 @@ Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). 
 %  \fixme[Daten hinzufügen]
 % \end{table}
 \item Für die Linsenräume $L_p$ gilt $\pi_1(L_p;*)\homo \Z_p$ (Beweis später)
+
 \begin{seg}{Challenge}
 \fixme[fig62]
 $\pi_1("'\infty"'; p) \homo ?$
@@ -1412,7 +1413,16 @@ die fixpunktfrei auf $M$ operiert. Nach Satz I.\ref{thm:7.4} ist $q$ ein lokaler
 \fixme[Nummerierung und Ordnung überdenken]\\
 \begin{df}
  Sei $p: E\to B$ eine Überlagerung und $f:X\to B$ eine stetige Abbildung.  Eine \emph{Hochhebung} (oder \emph{Lift}) von $f$ eine stetige Abbildung $F: X \to E,$ so dass $p\circ F=f$. Mit anderen Worten, eine Hochhebung ist eine Abbildung die\\
-\fixme[fig72, mach ich selbst]
+\begin{center}
+\makebox{
+\begin{xy}
+ (0,0)*+{X}; (40,0)*+{B}; (40, 20)*+{E};
+{\ar (2,2)*+{}; (38,20)*+{}}?*!/_2mm/{F};
+{\ar (40,2)*+{}; (40,18)*+{} }?*!/_2mm/{\bar \phi};
+{\ar (2,0)*+{}; (38,0)*+{}}?*!/^2mm/{ q};
+\end{xy} }
+\end{center}
+
 \end{df}
 zum Beispiel ist die Abbildung $F:[0,1]\to \R, t\mapsto  5 \cdot t$ eine Hochhebung von $f: [0,1]\to S^1, t \in e^{10\pi t i}$\\
 \fixme[fig73]\\
