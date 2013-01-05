@@ -1,0 +1,122 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\homo}{\cong}
+
+\begin{document}
+\setcounter{section}{9}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+Wir definieren die Verknüpfung stetiger Funktionen $ f_1: X_1\to Y, f_2: X_2 \to Y $:
+\[
+f_1*f_2(x)=\begin{cases} f_1(x)&, x\in X_1\\ f_2(x), x\in X_2 \end{cases}
+\]
+Beweisskizze:  Es genügt den Fall für $ |I|=1 $ und $ |I|=2 $ zu zeigen, der Rest folgt induktiv.
+
+Der Fall $ |I|=1 $ ist klar!  Die Identität ist ein Homöomorphismus. Betrachten wir $ |I|=2 $:
+
+Wir definieren die Abbildung:
+\[
+\Psi: [X_1, Y]\times[X_2,Y]\to [X_1+X_2, Y]: \Psi([f_1]\times[f_2])=[f_1*f_2]
+\]
+und zeigen, dass dies tatsächlich ein Homöomorphismus darstellt:
+\begin{enumerate}
+\item $ \Psi $ wohldefiniert:\\
+Sei $ [f_1]\times[f_2]=[g_1]\times[g_2]$. Nun ist:
+\[
+\Psi([f_1]\times[f_2])=\Psi([g_1]\times[g_2]) \iff [f_1*f_2]=[g_1*g_2]\iff f_1*f_2 \simeq g_1* g_2
+\]
+Tatsächlich können wir eine Homotopie $ h_* $ konstruieren, wobei $ h_1 $ die Homotopie von $ f_1 $ zu $ g_1 $ und $ h_2 $ die Homotopie von $ f_2 $ zu $ g_2 $ darstellt:
+\[
+h_*(x,t)=\begin{cases} h_1(x,t)&, x\in X_1 \\ h_2(x,t) &, x\in X_2 \end{cases}
+\]
+das die Abbildung tatsächlich von der Grundmenge ist, ist klar, da für jedes Element aus der Grundmenge ja per Definition ein $ f_1 $ und $ f_2 $ existiert.
+\item  $ \Psi  $ bijektiv:
+\begin{itemize}
+\item $ \Psi $ injektiv:
+Tatsächlich gilt auch $ [f_1*f_2]=[g_1*g_2] \iff f_1 \simeq g_1 \land g_2 \simeq g_2 $, denn die Homotopien sind gerade die Einschränkungen auf $ X_1 $ bzw. $ X_2 $ der Homotopie von $ f_1*f_2 $ nach $ g_1*g_2 $.
+\item $ \Psi $ surjektiv:
+Tatsächlich gibt es nach Definition $ f_1, f_2 $, sodass $ [f_1*f_2]\in [X_1+X_2, Y] $ und damit ist $ \Psi([f_1]\times[f_2])=[f_1*f_2] $ und damit $ \Psi $ surjektiv.
+\end{itemize}
+\item $ \Psi $ und $ \Psi^{-1} $ stetig:\\
+Hierzu zeigen, wir dass offene Mengen genau, dann offen sind, wenn ihr Bild bezüglich $ \Psi $ offen ist. Sei also $ O_1 \times O_2 $ offen.  Dies ist genau dann der Fall, wenn $ \pi^{-1}(O_1 \times O_2)=: \tilde O_1\times \tilde O_2 $.  Also besitzt die offenen Menge entweder alle Elemente einer Homotopieklasse oder gar keine. Betrachten wir nun $ [X_1+X_2,Y]=C(X_1+X_2,Y)/\sim $, so stellen wir fest, dass die Homotopieklasse gerade aus den Homotopien von $ C(X_1,Y) $ und $ C(X_2, Y) $ bestehen.
+Damit ist eine Menge genau dann offen, wenn sowohl alle oder keine Elemente aus der Äquivalenzklasse in $\tilde O_1'\in C(X_1,Y)$ und $\tilde O_2'\in C(X_2,Y) $ enthalten sind. Im Sinne der Produkttopologie ist dies genau dann der Fall, $ \tilde O_1\times \tilde O_2 $ offen ist. Und mit der Bijektivität folgt, dass sowohl  $ \Psi $ als auch $ \Psi^{-1} $ stetig sind.
+\end{enumerate}
+Und damit ist gezeigt, dass es sich um einen Homöomorphismus handelt.
+
+Nun zur Induktion.  Wir wollen zeigen, dass für $ |I|=n $ die Aussage folgt. Die Induktionsvoraussetzung wurde bereits für den Fall $ n=1 $ bzw. $ n=2 $ gezeigt. Nun kommen wir zum Induktionsschritt $ n\to n+1 $, wobei $ i_0 \in I $ das erste Element aus der Indexmenge beschreibt:
+\[
+\prod_{i\in I}[X_i, Y]=[X_{i_0},y]\times \prod_{i\in I\setminus\{i_0\}}[X_i,Y]\cong [X_{i_0},y] \times [\sum_{i\in I\setminus\{i_0\}}X_i,Y]\cong [\sum_{i\in I} X_i, Y]
+\]
+\end{aufgabe}
+\newpage
+\begin{aufgabe}
+$ X,Y $ homotopieäquivlanet $ \implies \exists_{f: X\to Y \land g: Y\to X} f\circ g \simeq \id \land g\circ f \simeq \id $.  Seien $ \{[p_j]_{j\in I}\} $ die Wegzusammehangskomponenten von $ X $ mit $ |I|=n $ endlich.  Dann folgt zunächst mit $ f(p_j)\in Y $, dass $ |\{[f(p_j)]_{j\in I}| $ kleiner oder gleich der Anzahl der Wegzusammenhangskomponenten von $ Y $ ist.  Wenden wir nun noch $ g $ an, so ergibt sich mit der Homotopie zwischen $ g\circ f $ und $ \id $, dann $|\{[p_j]_{j\in I}|\}|=|\{[g\circ f(p_j)]_{j\in I}\}|$ kleiner gleich der Anzahl der Wegzusammenheitskomponenten von Y ist. Also ergibt sich, dass die Anzahl der Wegzusammenheitskomponenten von $ X $ kleiner als die Anzahl der Wegzusammenheitskomponenten von $ Y $ sind... Analog ergibt sich auch die umgekehrte Ordnungsrelation und mit der Symmetrie, dass $ X $ und $ Y $ gleich viele Wegzusammenhkeitskomponenten besitzen.
+\end{aufgabe}
+\begin{aufgabe}
+Im folgenden möchten wir einen Deformationsretrakt und damit eine Homotopie konstruieren.  Zunächst stellen wir jedoch fest:
+\[
+\R^3\setminus\{x_0, x_1\}\cong \R^3\setminus\{(\pm 1, 0, 0)\}:=A
+\]
+\[
+(S^2+S^2)/\{(1,0,0)\times\{0\}\cup (1,0,0)\times \{1\}\} \cong S^2+(\pm1,0,0):=B 
+\]
+Unser Deformationsrektrakt $ g $ ergibt sich zu $ g: A \to B: $
+\[
+ (x_1, x_2, x_3) \mapsto \begin{cases} (-2,0,0) &, x_1 \le -2\\ (x_1, x_2\cdot \frac{\sqrt{1-(x_1+1)^2}}{|(x_2,x_3)|}, x_3 \cdot \frac{\sqrt{1-(x_1+1)^2}}{ |(x_2,x_3)|}) &,  -2 < x_1\le 0 \land (x_1,x_2,x_3)\notin (D^2+(-1,0,0)) \\(x_1, x_2\cdot \frac{\sqrt{1-(x_1-1)^2}}{|(x_2,x_3)|}, x_3 \cdot \frac{\sqrt{1-(x_1-1)^2}}{ |(x_2,x_3)|}) &, 0 < x_1 \le 2 \land (x_1, x_2, x_3) \notin (D^2+(1,0,0)) \\(2,0,0) &, x_1>2 \\ \frac{(x_1+1,x_2,x_3)}{||(x_1+1,x_2,x_3)||} &, x\in (D^2+(-1,0,0)) \\ \frac{(x_1-1, x_2, x_3)}{||(x_1-1,x_2,x_3)||} &, x\in (D^2+(1,0,0))    \end{cases}
+\]
+Die Stetigkeit der Abbildung ist klar, als Verknüpfung bzw. Produkte von Stetigen Funktionen. Es bleibt aber zu zeigen, dass diese Abbildung homotop zur Identität ist.
+
+Als Homotopie wählen wir $ h: A \times [0,1] \to A $:
+\[
+ h((x_1,x_2,x_3), t)=
+ \]
+ \[ \begin{cases} (-2+t(x_1+2),tx_2,tx_3) &, x_1 \le -2\\ (x_1, x_2\cdot \left (\frac{\sqrt{1-(x_1+1)^2}}{||(x_2,x_3)||}\right )^{1-t}, x_3 \cdot \left (\frac{\sqrt{1-(x_1+1)^2}}{ ||(x_2,x_3)||}\right )^{1-t}) &,  -2 < x_1\le 0 \land (x_1,x_2,x_3)\notin (D^2+(-1,0,0)) \\(x_1, x_2\cdot \left (\frac{\sqrt{1-(x_1-1)^2}}{|(x_2,x_3)|}\right )^{1-t}, x_3 \cdot \left (\frac{\sqrt{1-(x_1-1)^2}}{ |(x_2,x_3)|}\right )^{1-t}) &, 0 < x_1 \le 2 \land (x_1, x_2, x_3) \notin (D^2+(1,0,0)) \\(2+t(x_1-2),tx_2,tx_3) &, x_1>2 \\ \frac{(x_1+1-t,x_2,x_3)}{||(x_1+1,x_2,x_3)||^{1-t}} &, x\in (D^2+(-1,0,0)) \\ \frac{(x_1-1+t, x_2, x_3)}{||(x_1-1,x_2,x_3)||^{1-t}} &, x\in (D^2+(1,0,0))    \end{cases}
+\]
+Die Stetigkeit gilt, da es sich um eine Komposition und Produkte von stetigen Funktionen handelt. Man überzeuge sich selbst desweiteren, dass $h(x,0)=g$ und $h(x,1)=\id$.
+\end{aufgabe}
+\newpage
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item Eine Vektorfunktion ist genau dann stetig, wenn ihre Einträge stetig sind. Für die Matrizenmultiplikation $ (c_{ij})=(a_{ij})(b_{ij}) $ ergibt sich die Formel:
+\[
+c_{ij}=\sum_{k=0}^n a_{ik} b_{kj}
+\]
+Die Multiplikation ist damit offensichtlich als Produkt und Summe von stetigen Funktionen stetig.
+  
+Mit der Cramerschen Regel lässt sich auf der anderen Seite auch explizit die Einträge von $(c'_{ij})=(a_{ij})^{-1}=:A$ darstellen als:
+\[
+c'_{ij}=(-1)^{i+j} \frac{\det(A_{ij})}{\det(A_{ij})}
+\]
+Und mit der Formel von Leibniz für die Determinante ergibt sich mit dem selben Argument wie vorher auch, dass die Determinantenfunktion stetig ist. Damit ist also auch die Inverse stetig. Also ist $ GL(n, \R) $ eine topologische Gruppe.  Es ist $ SO(n, \R)=\ker(\det)=\det^{-1}(1) $ und da ein Punkt in $ \R $ abgeschlossen ist, gilt dies auch für die Untergruppe $ SO(n, \R) $. 
+
+\item Ich beziehe mich im Folgenden auf den Wikipedia-Artikel zu Normalteiler, da dieser nicht in LAAG2 behandelt worden ist. 
+
+Es ist $ \pi: G\to G/N: g\mapsto gN $ der kanonische Epimorphismus. Wir wollen zeigen, dass $ \pi $ offene Abbildung ist.  Also für offene $ O $ gilt $ \pi(O)=ON $ ist offen. Nun ist:
+\[
+ON=\bigcup_{n\in N} On
+\]
+Es bleibt also zu zeigen, dass $ \forall_n: On $ offen.  Dies folgt aus der Stetigkeit des Produkts, denn schränken wir auf $p: G\times\{n^{-1}\} \to G $ ein, so ergibt sich $ p^{-1}(O)=On\times \{n^{-1}\} $ und damit auch die Offenheit von $ On $.
+\item Sei $ O $ offen in $ G/N $, dann folgt, dass $ G/N $ topologische Gruppe ist durch Betrachtung der Projektion $ \pi $, die sowohl offen als auch stetig ist.
+\[
+\text{prod}_*: G/N \times G/N \to G/N: prod((aN,bN))=abN
+\]
+Es ist:
+\[
+prod_*(O\times O')=\pi\circ prod \circ \pi^{-1} (O\times O')
+\]
+denn:
+\[
+prod_*(O \times O')=\{oo'N| o\in \tilde O, o' \in \tilde O'\} \land \pi\circ prod \circ \pi^{-1} (O\times O')=\{oo'N| o \in \tilde O, o' \in \tilde O'\}
+\]
+Als offene Menge in $ G/N $ besitzt die Menge $ O $ entweder alle ($ \tilde O $) oder keine Punkte der jeweiligen Äquivalenzklassen.
+Und damit unter Berücksichtigung des vorigen Aufgabensteil und Verwendung der Stetigkeit der Abbildunge, dass das Urbild offener Mengen offen ist und damit ist das Produkt stetig. Analog ergibt sich die Aussage für das Inverse.
+\item Hierfür konstruieren wir uns eine Homotopie von $ \id $ nach $ g\id $.  Aufgrund des Wegzusammenhangs finden wir stets zwischen zwei Punkten $(x,y)$ einen Weg $c_{x,y}$. Dann ergibt sich für die Homotopie:
+\[
+H(h,t)=c_{e, g}(t) \, h
+\]
+wobei $ e $ das Neutrale Element der Gruppe beschreibt, tatsächlich ist diese Abbildung als Verknüpfung und Produkt stetiger Abbildungen stetig.
+\end{enumerate}
+\end{aufgabe}
+\end{document}
