@@ -11,6 +11,7 @@
 \renewcommand{\bigsqcap}{\prod}
 \usepackage{tikz}
 \usetikzlibrary{arrows,patterns}
+\usepackage{float}
 
 \title{Topologie}
 
@@ -32,6 +33,7 @@ Objekte werden in der Topologie als gleich angesehen, wenn sie durch eine in bei
 \end{seg}
 So zum Beispiel für Teilmengen des $\R^2$:
 \begin{figure}[h]
+\centering
 \includegraphics[scale=0.7]{fig1.png}
 \end{figure}
 \begin{ex*} 
@@ -123,6 +125,7 @@ In einem metrischen Raum heißt eine Teilmenge $U\subset X$ \emph{offen}, wenn e
 \end{df}
 
 \begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{fig3.png}
 \end{figure}
 
@@ -140,7 +143,7 @@ Eine Abbildung zwischen metrischen Räumen $f: X\rightarrow \tilde X$ ist genau 
 \begin{proof}
 Dies folgt direkt aus der $ \eps $-$ \delta $-Definition der Stetigkeit und der Definition der Umgebung.
 \begin{figure}[h]
-
+\centering
 \includegraphics[scale=0.5]{fig4.png}
 \end{figure}
 \end{proof}
@@ -274,6 +277,7 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \begin{ex*}
 $X=\R^2, M=\{x-\text{Achse}\}$
 \begin{figure}[ht]
+\centering
 \include{fig6}
 \end{figure}
 \end{ex*}
@@ -286,6 +290,7 @@ Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (e
 \begin{df}
 Seien $ X $ und $ Y $ topologische Räume. Eine Teilmenge $ W\subset X\times Y $ heißt offen bezüglich der Produkttopologie auf $ X\times Y $ , falls es zu jedem Punkt $ (x,y)\in W $ eine Umgebung $ U $ von $ x $ und eine Umgebung $ V $ von $ y $ gibt, sodass $ U\times V $ in W enthalten ist.
 \begin{figure}[ht]
+\centering
 \input{fig7}
 \end{figure}
 \end{df}
@@ -294,6 +299,7 @@ Seien $ X $ und $ Y $ topologische Räume. Eine Teilmenge $ W\subset X\times Y $
 \item Die Standardtopologie auf $ \R^2 $ stimmt mit der Produkttopologie auf $ \R\times \R $ (beide Faktoren mit der Standardtopologie von $ \R $ versehen) überein.
 \item Produkte offener Mengen in X und Y ("`Kästchen"') sind offen in den Produkttopologien, aber nicht alle offenen Mengen sind Kästchen, z. B. sind auch die Vereinigung von Kästchen offen.\\
 \begin{figure}[ht]
+\centering
 \input{fig8}
 \end{figure}
 \end{enumerate}
@@ -711,7 +717,8 @@ Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann i
 \end{st}
 \begin{proof}
  Sei $X$ kompakt, $A\subset X$ abgeschlossen. Sei $U_i, i\in I,$ eine offene Überdeckung von $A$.
-\begin{figure}[h]
+\begin{figure}[ht]
+\centering
 \includegraphics[scale=0.5]{fig28.png}
 \end{figure}
 
@@ -733,6 +740,7 @@ In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 \begin{proof}
  Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt, die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine offene Umgebung $U_a$ von $a$ und eine offene Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ gilt. \\
 \begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{fig27.png}
 \end{figure}
 <<<<<<< HEAD
@@ -741,6 +749,7 @@ In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 \fixme[Grafik stimmt nicht überein]\\
 
 \begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{fig29.png}
 \end{figure}
 <<<<<<< HEAD
@@ -1138,18 +1147,22 @@ und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichn
 \begin{enumerate}[(i)]
 \item 
 \begin{figure}[ht]
+\centering
 \input{fig51}
 \end{figure}
 \item 
 \begin{figure}[ht]
+\centering
 \input{fig52}
 \end{figure}
 \item 
-\begin{figure}[ht]
+\begin{figure}[H]
+\centering
 \input{fig53}
 \end{figure}
 \item 
-\begin{figure}[ht]
+\begin{figure}[H]
+\centering
 \input{fig54}
 \end{figure}
 \end{enumerate}
@@ -1172,7 +1185,10 @@ Sei:
  \pi_1(X;x_0):= \Omega(X;X_0)/\sim 
 \]
 wobei $\Omega(X;x_0)$ Schleifen mit Basispunkt $x_0$ und $\sim$ die Homotopie mit festen Endpunkten darstellt.\\
-\fixme[fig56]\\
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{fig56.png}
+\end{figure}
 Sei $\epsilon$ konstante Schleife $[0,1]\to \{x_0\}$.
 Es gilt: $[\omega]=[\omega']$, $[\omega]\neq [\epsilon]$, $[\alpha]\neq [\beta]\neq [\omega], [\alpha]=[\epsilon]$
 \begin{st}
@@ -1191,12 +1207,21 @@ Die so definierte Gruppe $\pi_1(X;x_0)$ ist im Allgemeinen nicht abelsch, wie wi
  \begin{enumerate}[(1)]
   \item Es gilt $\pi_1(\R^n;0)\homo \{1\}$, denn jede Schleife in $\R^n$ mit Basispunkt $0$ kann auf die konstante Schleife $\epsilon: t \mapsto 0$ zusammengezogen werden:
 
-Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega(t)$ eine Homotopie zwischen $\omega$ und $\epsilon$. Allgemeiner gilt für jede bezüglich $x_0$ sternförmige Menge $X$, dass $\pi_1(X;x_0)$ trivial ist.\\
-\fixme[fig57]\\
-\item Es gilt $\pi_1(S^n; p) \homo \{1\}$ für $n\ge 2$ und $p\in S^n$ beliebig.\\
-\fixme[fig58]
+Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega(t)$ eine Homotopie zwischen $\omega$ und $\epsilon$. Allgemeiner gilt für jede bezüglich $x_0$ sternförmige Menge $X$, dass $\pi_1(X;x_0)$ trivial ist.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{fig57.png}
+\end{figure}
+\item Es gilt $\pi_1(S^n; p) \homo \{1\}$ für $n\ge 2$ und $p\in S^n$ beliebig.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{fig58.png}
+\end{figure}
 \begin{proof}[Beweisskizze]
-\fixme[fig59]
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{fig59.png}
+\end{figure}
  Sei $\omega \in \Omega(S^n;p)$ und sei $q\in S^n\setminus \omega([0,1])$. Dann ist $S^n\setminus\{q\}$ via stereographischer Projektion homöomorph zu $\R^n$ und in $\R^n$ lässt sich jede Schleife zusammenziehen.
 \end{proof}
 \begin{seg}{Problem bei diesem Beweis}
@@ -1205,8 +1230,11 @@ Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega
 \begin{seg}{Exkurs: flächenfüllende "`Kurve"' (=Weg)}
  Definiere $[0,1] \to A $, wobei $A$ Dreiecksfläche ist, surjektiv wie folgt:
 
-Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101...$ in Binärdarstellung unterteile das Dreieck rekursiv in kleinere Dreiecke:\\
-\fixme[fig60]\\
+Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101...$ in Binärdarstellung unterteile das Dreieck rekursiv in kleinere Dreiecke:
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{fig60.png}
+\end{figure}
 Die so entstehende Folge konvergiert gegen einen Limes $f(x)$ und die Abbildung $[0,1]\to A$ ist \emph{surjektiv} und \emph{stetig}.
 \end{seg}
 \begin{seg}{Lösung}
@@ -1217,6 +1245,7 @@ Ersetze $\omega$ durch einen homotopen nicht surjektiven Weg (Die Konstruktion d
 \begin{proof}[Beweisskizze]
 Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlagerungstheorie führen. Der Kreis $S^1=\{ z\in \C| |z|=1\}$ wird von der reellen Geraden $\R$ "`überlagert"': Die Abbildung $p:  \R\to S^1, t\mapsto e^{2\pi i t}$ ist stetig und surjektiv aber \emph{nicht} injektiv.\\
 \begin{figure}[ht]
+\centering
 \input{fig61}
 \end{figure}
 \end{proof}
@@ -1225,19 +1254,22 @@ Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). 
  f(\omega*\eta)=f(\omega)+f(\eta)
 \]
 \item Es gilt $\pi_1(\R P^n; p)\homo \Z_2, n\ge 2$
-% \begin{table}[h]
-%  \fixme[Daten hinzufügen]
-% \end{table}
+ \begin{table}[h]
+  \fixme[Daten hinzufügen]
+ \end{table}
 \item Für die Linsenräume $L_p$ gilt $\pi_1(L_p;*)\homo \Z_p$ (Beweis später)
 
 \begin{seg}{Challenge}
-\fixme[fig62]
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{fig62.png}
+\end{figure}
 $\pi_1("'\infty"'; p) \homo ?$
 \end{seg}
  \end{enumerate}
 \end{exs*}
 \begin{seg}{Zusammenfassung}
- Fundamentalgruppe einer "`Acht"':
+ Fundamentalgruppe einer "`Acht"':\\
 \fixme[fig63]
 \end{seg}
 Die \emph{Einpunktvereinigung} oder das \emph{Wedge-Produkt} von zwei Räumen $X$ und $Y$, in denen je ein Punkt $x_0 \in X$ und $y_0\in Y$ ausgezeichnet ist, sei definiert durch 
@@ -1263,6 +1295,7 @@ Wenn wir eine stetige Abbildung zwischen topologischen Räumen haben, können wi
  \pi_1 (f) : \pi_1(X;x_0)\to \pi_1(Y;y_0), [\omega] \to [f \circ \omega]
 \]
 \begin{figure}[ht]
+\centering
 \input{fig64}
 \end{figure}
 der Fundamentalgruppen. (Wohldefiniertheit ist klar, durch für eine Homotopie $(t,s)\mapsto \omega_s(t)$ liefert $(t,s) \mapsto f(\omega_s(t))$ eine entsprechende Homotopie für $f\circ \omega$.)
@@ -1333,9 +1366,16 @@ Dies ist ein Isomorphismus, denn $([\omega],[\eta])\mapsto [t\mapsto (\omega(t),
 \end{kor}
 
 Wir wollen zunächst die Abhängigkeit der Fundamentalgruppe $\pi_1(X;x_0)$ von der Wahl des Basispunktes untersuchen.\\
-\fixme[fig65]\\
-Seien nun $x_0,x_1 \in X$ und sei $\gamma$ ein Weg zwischen $x_0$ und $x_1$. \\
-\fixme[fig66]\\
+\begin{figure}[ht]
+\centering
+\makebox{\includegraphics[scale=0.3]{fig65_1.png}} \makebox{\includegraphics[scale=0.3]{fig65_2.png}}
+\end{figure}
+
+Seien nun $x_0,x_1 \in X$ und sei $\gamma$ ein Weg zwischen $x_0$ und $x_1$.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{fig66.png}
+\end{figure}
 Wir definieren eine Abbildung $\tilde \Gamma_\gamma: \Omega(X;x_0)\to \Omega(X;x_1): \omega\mapsto (\gamma*\omega)*\gamma^{-1}$
 
 \begin{st}\label{thm2:1.15}
@@ -1358,8 +1398,14 @@ Um die Homomorphieeigenschaft von $\Gamma_{\gamma}$ nachzuweisen, berechnen wir:
 &=[(\gamma*\omega(*\gamma^{-1})*((\gamma*\eta)*\gamma^{-1})]\\
 &\stackrel{(*)}=[(\gamma*(\omega*\eta)*\gamma^{-1}]=[\tilde \Gamma_\gamma (\omega*\eta)]=\Gamma_\gamma(\omega*\eta),
 \end{align*}
-wobei wir bei $(*)$ benutzt haben, dass Lemma \ref{thm2:1.5} sinngemäß auch für Wege gilt. Es gilt, dass $\Gamma_{\gamma^{-1}}$ die Umkehrabbildung von $\Gamma_\gamma$ ist, dem:\\
-\fixme[fig67]\\
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{fig67.png}
+\end{figure}
+
+wobei wir bei $(*)$ benutzt haben, dass Lemma \ref{thm2:1.5} sinngemäß auch für Wege gilt. Es gilt, dass $\Gamma_{\gamma^{-1}}$ die Umkehrabbildung von $\Gamma_\gamma$ ist, dem:
+
 \begin{align*}
  \Gamma_{\gamma^{-1}}\circ \Gamma_\gamma ([\omega])&=[(\gamma^{-1}*((\gamma*\omega)*\gamma^{-1}))*\gamma]\\
  &\stackrel{(*)}=[\gamma^{-1}*\gamma]\cdot [\omega]\cdot [\gamma^{-1} * \gamma]=[\omega]
@@ -1417,8 +1463,14 @@ Homomorphismen der Fundamentalgruppen, die bis auf Konjugation invers zueinander
 \subsection{Überlagerungen}
 \begin{df}
  Eine surjektive stetige Abbildung $p: E\to B$ heißt \emph{Überlagerung}, wenn es zu jedem PUnkt $x\in B$ eine Umgebung $U$ von $x$ gibt, so dass $p^{-1}(U)$ eine disjunkte Vereinigung von offenen Mengen $V_\alpha$, ist und $p|_{V_\alpha}: V_\alpha\to U_\alpha$ für alle $\alpha\in A$ ein Homöomorphismus ist. In diesem Fall heißt $U\subset B$ \emph{trivial überlagert}, $E_x:=p^{-1}(\{x\})$ heißt \emph{Faser} über $x$.
-\fixme[fig68]\\
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{fig68.png}
 \fixme[fig69]
+\end{figure}
+
+
 \end{df}
 
 \begin{exs*}
