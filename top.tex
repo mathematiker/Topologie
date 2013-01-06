@@ -1,4 +1,5 @@
 \documentclass[a4paper,10pt]{scrartcl}
+\usepackage{etex}
 \usepackage{mathe-vorlesung}
 \usepackage{graphicx}
 \usepackage[all]{xy}
@@ -8,8 +9,8 @@
 \newcommand{\homo}{\cong}
 \usepackage{txfonts}
 \renewcommand{\bigsqcap}{\prod}
-%\usepackage{tikz}
-%\usetikzlibrary{arrows,patterns}
+\usepackage{tikz}
+\usetikzlibrary{arrows,patterns}
 
 \title{Topologie}
 
@@ -268,11 +269,13 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \item Beispiel \ref{thm:1.13}(iv) ist homöomorph zu $ \biguplus_{\alpha\in \R}  \R $ (Übung)
 \end{enumerate}
 \end{ex*}
-\begin{df} Sei $ X $ ein topologischer Raum und $ M \subset X $. Die durch $ \{ U\cap M| U \text{ offen in } X \}$ auf $M$ defnierte Topologie heißt $ Teilraumtopologie $ (auch \emph{induzierte}, \emph{Relativ-} oder \emph{Spurtopologie}). 
+\begin{df} Sei $ X $ ein topologischer Raum und $ M \subset X $. Die durch $ \{ U\cap M| U \text{ offen in } X \}$ auf $M$ definierte Topologie heißt \emph{Teilraumtopologie} (auch \emph{induzierte}, \emph{Relativ-} oder \emph{Spurtopologie}). 
 \end{df}
 \begin{ex*}
 $X=\R^2, M=\{x-\text{Achse}\}$
-%\input{fig6.tex}
+\begin{figure}[ht]
+\include{fig6}
+\end{figure}
 \end{ex*}
 \begin{att*}
 Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (es sei denn $ M\subset X $ wäre offen). Zum Beispiel:
@@ -282,13 +285,17 @@ Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (e
 \end{att*}
 \begin{df}
 Seien $ X $ und $ Y $ topologische Räume. Eine Teilmenge $ W\subset X\times Y $ heißt offen bezüglich der Produkttopologie auf $ X\times Y $ , falls es zu jedem Punkt $ (x,y)\in W $ eine Umgebung $ U $ von $ x $ und eine Umgebung $ V $ von $ y $ gibt, sodass $ U\times V $ in W enthalten ist.
-%\input{fig7.tex}
+\begin{figure}[ht]
+\input{fig7}
+\end{figure}
 \end{df}
 \begin{note*}
 \begin{enumerate}[(i)]
 \item Die Standardtopologie auf $ \R^2 $ stimmt mit der Produkttopologie auf $ \R\times \R $ (beide Faktoren mit der Standardtopologie von $ \R $ versehen) überein.
 \item Produkte offener Mengen in X und Y ("`Kästchen"') sind offen in den Produkttopologien, aber nicht alle offenen Mengen sind Kästchen, z. B. sind auch die Vereinigung von Kästchen offen.\\
-%\input{fig8.tex}
+\begin{figure}[ht]
+\input{fig8}
+\end{figure}
 \end{enumerate}
 \underline{Erinnerung:} Eine \emph{Äquivalenzrelation} auf einer Menge $ X $ ist eine Relation $\sim$ mit folgenden Eigenschaften:
 \begin{enumerate}[(i)]
@@ -1127,13 +1134,24 @@ $\epsilon(t)=x_0 \forall_{t\in [0,1]}$ bezeichnen.
 und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichnen.
 \end{lem}
 \begin{proof}
+\fixme[from mathematiker : Nummerierung und Formatierung bitte Überprüfen]
 \begin{enumerate}[(i)]
-\item %\input{fig51.tex}
-
-\item %\input{fig52.tex}
-\item %\input{fig53.tex}
-\item %\input{fig54.tex}
-
+\item 
+\begin{figure}[ht]
+\input{fig51}
+\end{figure}
+\item 
+\begin{figure}[ht]
+\input{fig52}
+\end{figure}
+\item 
+\begin{figure}[ht]
+\input{fig53}
+\end{figure}
+\item 
+\begin{figure}[ht]
+\input{fig54}
+\end{figure}
 \end{enumerate}
 \end{proof}
 \begin{note*}[Explizit für (i)]
@@ -1198,7 +1216,9 @@ Ersetze $\omega$ durch einen homotopen nicht surjektiven Weg (Die Konstruktion d
 \item Es gilt: $\pi_1(S^1; 1)\homo \Z$
 \begin{proof}[Beweisskizze]
 Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlagerungstheorie führen. Der Kreis $S^1=\{ z\in \C| |z|=1\}$ wird von der reellen Geraden $\R$ "`überlagert"': Die Abbildung $p:  \R\to S^1, t\mapsto e^{2\pi i t}$ ist stetig und surjektiv aber \emph{nicht} injektiv.\\
-%\input{fig61.tex}
+\begin{figure}[ht]
+\input{fig61}
+\end{figure}
 \end{proof}
 Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<...<t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
 \[
@@ -1242,7 +1262,9 @@ Wenn wir eine stetige Abbildung zwischen topologischen Räumen haben, können wi
 \[
  \pi_1 (f) : \pi_1(X;x_0)\to \pi_1(Y;y_0), [\omega] \to [f \circ \omega]
 \]
-%\input{fig64.tex}\\
+\begin{figure}[ht]
+\input{fig64}
+\end{figure}
 der Fundamentalgruppen. (Wohldefiniertheit ist klar, durch für eine Homotopie $(t,s)\mapsto \omega_s(t)$ liefert $(t,s) \mapsto f(\omega_s(t))$ eine entsprechende Homotopie für $f\circ \omega$.)
 \end{df}
 \begin{st}
