@@ -1,0 +1,19 @@
+\begin{tikzpicture} [scale =3]
+ \draw (0,0) -- (0,1);
+ \draw[color=blue] (0,1) -- (0.5,1);
+ \draw[color=red] (0.5,1) -- (1,1);
+ \draw (1,0) -- (1,1);
+ \draw [color=blue] (0,0) -- (0.5,0);
+ \draw [color=red] (0.5,0) -- (1,0);
+ \draw [dashed] (0.5,0) -- (0.5,1);
+ \draw [blue] (0.25,0.5) node {$f$};
+ \draw  [red] (0.75,0.5) node {$g$};
+ \draw (0,0) node [anchor=north east] {$0$};
+ \draw (0.5,0) node [anchor=north] {$\frac {1}{2}$};
+ \draw (1,0) node [anchor=north west] {$1$};
+ \draw (0,1) node [anchor=south east] {$1$};
+ \draw [blue] (0.25,0) node [anchor=north] {$\omega$};
+ \draw [red] (0.75,0) node [anchor=north] {$\nu$};
+ \draw [blue] (0.25,1) node [anchor=south] {$\omega'$};
+ \draw [red] (0.75,1) node [anchor=south] {$\nu'$};
+\end{tikzpicture}

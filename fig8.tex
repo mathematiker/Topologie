@@ -1,0 +1,9 @@
+\begin{tikzpicture}[scale=2]
+\draw[step=.5cm,gray,very thin] (-0.2,-0.2) grid (2.2,1.7);
+\draw [-triangle 90] (-0.4,0) -- (2.4,0);
+\draw [-triangle 90] (0,-0.4) -- (0,1.9); 
+\draw (-0.2,1.9) node [anchor=east] {$Y$};
+\draw (2.4,-0.2) node [anchor=north west] {$X$};
+\filldraw [pattern=north east lines,pattern color = green,draw=red]  (0.8,1.5) -- (1.75,1.5) -- (1.75,0.8) -- (1.2,0.8) -- (1.2,0.5) -- (0.25,0.5) -- (0.25,1.2) -- (0.8,1.2) --cycle;
+\draw [dashed,red] (1.2,0.8) rectangle (0.8,1.2);
+\end{tikzpicture} 
