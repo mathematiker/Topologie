@@ -272,7 +272,7 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \end{df}
 \begin{ex*}
 $X=\R^2, M=\{x-\text{Achse}\}$
-\input{fig6.tex}
+%\input{fig6.tex}
 \end{ex*}
 \begin{att*}
 Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (es sei denn $ M\subset X $ wäre offen). Zum Beispiel:
@@ -282,13 +282,13 @@ Die offene Mengen $U\cap M$ in $ M $ sind im Allgemeinen nicht offen in $ X $ (e
 \end{att*}
 \begin{df}
 Seien $ X $ und $ Y $ topologische Räume. Eine Teilmenge $ W\subset X\times Y $ heißt offen bezüglich der Produkttopologie auf $ X\times Y $ , falls es zu jedem Punkt $ (x,y)\in W $ eine Umgebung $ U $ von $ x $ und eine Umgebung $ V $ von $ y $ gibt, sodass $ U\times V $ in W enthalten ist.
-\input{fig7.tex}
+%\input{fig7.tex}
 \end{df}
 \begin{note*}
 \begin{enumerate}[(i)]
 \item Die Standardtopologie auf $ \R^2 $ stimmt mit der Produkttopologie auf $ \R\times \R $ (beide Faktoren mit der Standardtopologie von $ \R $ versehen) überein.
 \item Produkte offener Mengen in X und Y ("`Kästchen"') sind offen in den Produkttopologien, aber nicht alle offenen Mengen sind Kästchen, z. B. sind auch die Vereinigung von Kästchen offen.\\
-\input{fig8.tex}
+%\input{fig8.tex}
 \end{enumerate}
 \underline{Erinnerung:} Eine \emph{Äquivalenzrelation} auf einer Menge $ X $ ist eine Relation $\sim$ mit folgenden Eigenschaften:
 \begin{enumerate}[(i)]
@@ -1128,11 +1128,11 @@ und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichn
 \end{lem}
 \begin{proof}
 \begin{enumerate}[(i)]
-\item \input{fig51.tex}
+\item %\input{fig51.tex}
 
-\item \input{fig52.tex}
-\item \input{fig53.tex}
-\item \input{fig54.tex}
+\item %\input{fig52.tex}
+\item %\input{fig53.tex}
+\item %\input{fig54.tex}
 
 \end{enumerate}
 \end{proof}
@@ -1198,7 +1198,7 @@ Ersetze $\omega$ durch einen homotopen nicht surjektiven Weg (Die Konstruktion d
 \item Es gilt: $\pi_1(S^1; 1)\homo \Z$
 \begin{proof}[Beweisskizze]
 Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlagerungstheorie führen. Der Kreis $S^1=\{ z\in \C| |z|=1\}$ wird von der reellen Geraden $\R$ "`überlagert"': Die Abbildung $p:  \R\to S^1, t\mapsto e^{2\pi i t}$ ist stetig und surjektiv aber \emph{nicht} injektiv.\\
-\input{fig61.tex}
+%\input{fig61.tex}
 \end{proof}
 Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<...<t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
 \[
@@ -1242,7 +1242,7 @@ Wenn wir eine stetige Abbildung zwischen topologischen Räumen haben, können wi
 \[
  \pi_1 (f) : \pi_1(X;x_0)\to \pi_1(Y;y_0), [\omega] \to [f \circ \omega]
 \]
-\input{fig64.tex}\\
+%\input{fig64.tex}\\
 der Fundamentalgruppen. (Wohldefiniertheit ist klar, durch für eine Homotopie $(t,s)\mapsto \omega_s(t)$ liefert $(t,s) \mapsto f(\omega_s(t))$ eine entsprechende Homotopie für $f\circ \omega$.)
 \end{df}
 \begin{st}
