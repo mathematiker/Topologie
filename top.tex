@@ -1610,6 +1610,214 @@ mit den Eigenschaften $1\cdot x^{-} = x^{-}, (ab)\cdot x^{-}=a\cdot (b\cdot x^{-
 
 \end{exs*}
 
+\begin{seg}{Zusammenfassung}
+ \begin{description}
+  \item[topologische Gruppe:] $(a,b)\mapsto a\cdot b$ und $a\mapsto a^{-1}$ stetig.
+  \item[Gruppenwirkung:] einer topologische Gruppe
+\[
+ G\times X\to X, (g,x) \mapsto g\cdot x=g(x) 
+\]
+\begin{itemize}
+ \item stetig
+ \item es gilt $g\cdot (h\cdot x)=(g\cdot h)\cdot x$ und $1\cdot x = x$
+
+automatisch folgt, dass die Abbildung $x\mapsto g\cdot x$ ein Homöomorphismus ist, denn zum Beispiel eine Menge von Homöomorphismen von $X$, die abgeschlossen unter der Verkettung ist, zu jedem Homöomorphismus auch das Inverse und die Identität enthält, bildet eine Gruppe zusammen mit einer Wirkung auf $X$ ($g\cdot x:=g(x)$
+\end{itemize}
+ \end{description}
+\end{seg}
+Wir betrachten zunächst nur Wirkungen diskreter Gruppen. Diese Definition beschreibt genau genommen eine \emph{Wirkung von links}, bei einer \emph{Wirkung von rechts} benutze das Gesetz $g\cdot (h\cdot x)=(h\cdot g)\cdot x$ (anstatt $g\cdot(h\cdot x)=(g\cdot h)\cdot x$.)
+
+[Wirkungen von rechts werden auch durch $(g,x)\mapsto x\cdot g$ beschreiben, dann haben wir $(x\cdot h)\cdot g=x\cdot (h\cdot g)$]
+
+\begin{exs*}[$G=X$]
+ durch $g\cdot x:= gx$ ist eine Wirkung, denn es gilt $h\cdot (g\cdot x)=hgx$. Entsprechend ist $g\cdot x=xg$ eine Wirkung von rechts, denn:
+\[
+ h\cdot(g\cdot x)=h\cdot (xg)=(xg)h=x(gh)=(gh)\cdot x
+\]
+
+\[
+ g\cdot x=g^{-1}x
+\]
+ist Wirkung von rechts.
+\[
+ h\cdot (g\cdot x)=h\cdot(g^{-1}x)=h^{-1}g^{-1}x=(gh)^{-1}x=(gh)\cdot x
+\]
+\[
+ g\cdot x=xg^{-1}
+\]
+ist Wirkung von links.
+\[
+ h\cdot(g\cdot x)=h\cdot(xg^{-1})=xg^{-1}h^{-1}=x(hg)^{-1}=(hg)\cdot x
+\]
+\end{exs*}
+\begin{df}\label{thm2:3.3}
+ Für eine Gruppenwirkung von $G$ auf $X$ heißt $G\cdot x:=G(x):=\{g\cdot x|g\in G\}$ die \emph{Bahn} oder der Orbit von $x$ und
+\[
+ G_x=\{g\in G|g\cdot x = x\}
+\]
+heißt die \emph{Standgruppe} von $x$ oder die \emph{Isotopie(unter)gruppe} von $x$ auch \emph{Stabilisator von $x$}.
+\end{df}
+\begin{note*}
+ $G_x$ ist eine Untergruppe von $G$, denn: $1\cdot x=x$, also $1\in G_x$ seien $g,h \in G_x$, denn gilt $(gh)\cdot x=g\cdot(h\cdot x)=g(x)=x$, also $gh\in G_x$ und sei $g\in G_x$, denn gilt $g^{-1}x=g^{-1}\cdot (g\cdot x)=(g^{-1}g)\cdot x=1x=x$, also auch $g^{-1}\in G_x$.
+\end{note*}
+\begin{seg}{Zusatz zur Definition:}
+ Man sagt eine Gruppenwirkung ist \emph{transitiv}, falls $G\cdot x= X$ für ein $x\in X$.
+\end{seg}
+\begin{ex*}
+ \item $\text{Gl}(n, \R)$ operiert auf $\R^n$ durch $A\cdot x:= Ax\in \R^n$. ($Ex=x, (AB)x=A(Bx)$ Mathemultiplikationassoziativität). Diese Wirkung hat zwei Bahnen nämlich $\{0\}$ und $\R^n\setminus\{0\}$
+ \item $\text{Gl}(n, \R)$ operiert auf $\R^{n^2}$ durch $A\cdot X=AXA^{-1}$ entspricht die Basistranformation.
+ \item $O(n)$ operiert auf $S^{n-1}=\{x\in \R^n|\,||x||=1\}$ diese Wirkung ist transitiv und
+\[
+ O(n)_{e_1}=\left \{ \left ( \, \begin{matrix} 1 & \vline & \begin{matrix} 0 & \cdots & 0 \end{matrix}\\ \hline \begin{matrix} 0 \\ \vdots \\ 0\end{matrix}& \vline & \text{\LARGE{A}} \end{matrix}\, \right ) \, | A \in O(n-1)\right \}
+\] 
+\end{ex*}
+\begin{df}\label{thm2:3.4}
+ Eine Gruppenwirkung heißt \emph{blätternd}, wenn es zu jedem $x\in X$ eine Umgebung $U$ gibt mit $U\cap g\cdot U=\emptyset$ für alle $g\in G\setminus\{1\}$
+\end{df}
+\begin{lem}
+ Die diskrete Gruppe $G$ wirke blätternd auf den topologischen Raum $X$. Dann ist die Abbildung $\pi: X\to X/G$, wobei $X/G$ der Quotientenraum von $X$ bezüglich der Relation
+\[
+ x\sim y :\iff x\in G\cdot y \iff \exists g\in G: g\cdot y=x
+\]
+bezeichnet. ($X/G=\{G\cdot x|x\in X\}$ wird als \emph{Bahnenraum} der Wirkung bezeichnet) eine Überlagerung.
+\fixme[fig75]
+\end{lem}
+\begin{proof}
+\fixme[fig76]
+ Sei $[x]=G\cdot x\in X/G$. Sei $U$ eine Umgebung wie in Definition \ref{thm2:3.4} und sei $V:=\pi(U)$, Dann ist $\pi^{-1}(V)=\bigcup_{g\in G} gU$ eine disjunkte Vereinigung, denn falls $g\neq g'$, folgt $g\cdot U \cap g'\cdot U=g\cdot (U\cap(g^{-1}g U)=g\cdot(\emptyset)=\emptyset$.
+
+Betrachte nun $\pi|g\cdot U$ für ein $g\in G$, $\pi$ ist stetig, wegen "`blätternd"' ist $\pi|g\cdot U$ injektiv und es gilt $\pi(gU)=V$.
+Da die Quotientabbildung offen ist, folgt, dass $\pi\vline_{gU}$ ein Homöomorphismus ist.
+\end{proof}
+\fixme[fig77]
+Von nun an bezeichne $p: E \to B$ stets eine Überlagerung und sei $e_0 \in E$ und $b_0=p(e_0)$
+Wir wollen eine Wirkung der FUndamentalgruppe $\pi_1(B; b_0)$ auf der Faser $E_{b_0}$ definieren.\\
+
+\begin{df}
+ Sei $c_0:[0,1]\to B$ ein Weg mit Anfangspunkt $b_0=\omega(0)$ und Endpunkt $b_1=\omega(1)$. Es sei
+\[
+ \tilde \lambda_\omega: E_{b_0} \times [0,1]
+\]
+die noch Korollar \ref{thm2:2.5} eindeutig bestimmte Abbildung mit
+\[
+ p(\tilde \Lambda_\omega (e,t))=\omega(t) \qquad \tilde \Lambda_{\omega}(e,0)=e
+\]
+Weiter sei $\Lambda_\omega(e):= \tilde \Lambda_\omega(e,1)$
+\end{df}
+\begin{lem}\label{thm2:3.7}
+ Es gilt
+\begin{enumerate}[(i)]
+ \item $\Lambda_\omega$ bildet $E_{b_0}$ nach $E_{b_1}$ nach.
+ \item $\Lambda_{\omega*\eta}=\Lambda_{\eta} \circ \lambda_\omega$
+ \item Sind $\omega$ und $\eta$ homotop mit festen Endpunkten, dann gilt $\Lambda_\omega=\lambda_\eta$
+ \item $\Lambda_\omega: E_{b_0} \to E_{b_1}$ ist bijektiv
+\end{enumerate}
+\end{lem}
+\begin{proof}
+ (i) und (ii)  folgen direkt aus der Definition von $\Lambda_\omega$. (iii) folgt aus dem Monodromielemma Korollar \ref{thm2:2.6} (iv) folgt aus (i)-(iii), da $\Lambda_{\omega^{-1}}\circ \Lambda_\omega\stackrel{(ii)}{=} \Lambda_{\omega*\omega^{-1}}=\Lambda_\epsilon=\id_{E_{b_0}}$, wobei $\epsilon$ ein konstanter Weg ist. 
+\end{proof}
+
+\begin{seg}{Zusamenfassung: Überlagerung und Gruppenwirkung}
+ \fixme[fig78]
+Es ist $\pi_1(\R P^n)=\Z/2\Z=\{\pm 1\}$. (fixen)
+
+Die Fundamentalgruppe wirkt auf der Faser $E_{b_0}$ über $B_0$\\
+\fixme[fig79]
+
+
+$\Lambda_\omega(e_0)=\tilde \omega(1)$ ist der Endpunkt der Hochehubung $\omega$ mit Startpunkt $e_0$
+
+Wir haben bereits einige Eigenschaften bewiesen:
+\begin{enumerate}[(i)]
+ \item $\Lambda_\omega: E_{b_0} \to E_{b_1}$
+ \item $\Lambda_{\omega*\eta}=\Lambda_{\eta} \circ \Lambda_{\omega}$
+ \item $\omega, \eta$ homotop mit festen Endpunkten $\implies \Lambda_\omega=\Lambda_\eta$
+ \item $\Lambda_\omega: E_{b_0} \to E_{b_1}$ Bijektion\\
+\fixme[fig80]
+\end{enumerate}
+\fixme[from mathematiker : Vielleich sind fixes nötig]
+\end{seg}
+
+\begin{st}
+ Die Fundamentalgruppe $\pi_1(B; b_0)$ operiert von rechts auf der Faser $E_{p_0}=p^{-1}(\{b_0\})$ vermöge:
+\[
+ e\cdot [\omega] := \Lambda_\omega(e)
+\]
+Die Standgruppe des Punktes $e_0$ ist dabei die Untergruppe
+\[
+ H(p;e_0):=\pi_1(p) (\pi_1(E;e_0))\subset \pi_1(B;b_0)
+\]
+Ist $E$ wegzusammenhängend, so ist die Wirkung transitiv und induziert die Bijektion
+\[
+ E_{b_0} \leftrightarrow H(p; e_0)
+\]
+
+
+
+\end{st}
+\begin{note*}
+\begin{itemize}
+\item $G\cdot x \stackrel{1:1}{\leftrightarrow} G/G_x$ operiert eins zu eins.
+\item Sei $G$ eine Gruppe und $H \subset G$ Teilmenge, dann kann man definieren:
+\[
+ gH:=\{g\cdot h|h \in H\}
+\]
+natürlich kann man auch definieren:
+\[
+ Hg:=\{h\cdot g|h\in H\}
+\]
+Man bezeichnet diese als Links- bzw. Rechtsnebenklasse.
+\begin{seg}{Allgemeine Tasache:}
+ mit der Gruppenwirkung von $G$ auf $X$:
+\[
+ G\cdot x \stackrel{\text{bijektiv}}{\longleftrightarrow} G/G_x
+\]
+\[
+ g\cdot x \leftarrow| gG_x
+\]
+Es ist $gh\cdot x=g\cdot x$ und $gG_x=ghG_x$ mit $h\in G_x$
+\end{seg}
+\end{itemize}
+\end{note*}
+\begin{proof}
+ Aus Lemma \ref{thm2:3.7}(iii) folgt, dass die Abbildung $([\omega], e)\mapsto \Lambda_\omega(e)$ wohldefiniert ist und dass gilt $(1,e) \mapsto \Lambda_\epsilon(e)=e$. Aus (ii) folgt $(e\cdot [\omega])\cdot [\eta]=\Lambda_{\eta}(\Lambda_\omega(e))=\Lambda_{\eta}\circ \Lambda_{\omega}(e)=\Lambda_{\omega*\eta}(e)=(e\cdot [\omega*\eta])=e\cdot ([\omega][\eta])$. Dies zeigt den ersten Tiel der Beauptung. Die Standgruppe von $e_0$ besteht aus Homotopieklassen von Schleifen, die sich zu geschlossenen Wegen mit Anfangs- und Endpunkt $e_0$ hochheben, also aus homomorphen Bild von $\pi_1(E; e_0)$ unter $\pi_1(p)$. Falls $E$ wegzusammenhängend ist, gibt es zu je zwei Punkten $e_0, e_1 \in E_{b_1}$ einen verbindenden Weg $\eta$ in $E$. Dann ist $\omega:= p \circ \eta$ eine Schleife in $B$ mit Anfangs- und Endpunkt $b_0$ und es gilt $\Lambda_{\omega}(e_0)=e_1$
+\end{proof}
+\begin{kor}
+ $\pi_1(p): \pi_1(E; e_0)\to \pi_1(B, b_0)$ ist injektiv
+\end{kor}
+\begin{proof}
+ Folgt aus dem Homotpie-Hochebungssatz. Ist das Bild einer Schleife homotop mit festen Endpunkten zu einer konstanten Schleife, so auch die Hochebung.
+\end{proof}
+\begin{df}
+ Ein topologischer Raum $X$ heißt \emph{lokal wegzusammenhängend}, wenn es zu jedem Punkt $x\in X$ und jeder Umgebung $U$ von $x$ eine wegzusammenhängende Umgebung von $x$ gibt, die in $U$ enthalten ist. 
+\end{df}
+\begin{note*}
+Um ein Gegenbeispiel zu finden, sollten wir eine Menge finden, die gerade so ist, dass eine Wegstück außerhalb zu finden ist, also in etwa so:
+\fixme[fig81] 
+ wegzusammenhängend $\not{\implies}$ lokal wegzusammenhängend. Gegenbeispiel: Vereinigung von Geradenstücken in $\R^2$:\\
+\fixme[fig82]
+
+lokal wegzusammenhängend $\not{\implies}$ wegzusammenhängend. Gegenbeispiel: Zweipunktmenge.
+\end{note*}
+\begin{st}[Hochhebungssatz]
+ Sei $X$ ein sowohl wegzusammenhängender als auch lokal wegzusammenhängender topologische Raum $f:X \to B$ eine stetige Abbildung mit $f(x_0)=b_0$. Dann besitzt $f$ genau dann eine Hochhebung $F: X\to E$ (dass heißt $p\circ F=f$) mit $F(x_0)=e_0$, wenn gilt:
+\[
+ \underbrace{\pi_1(f) (\pi_1(X;x_0))}_{\text{Bild von $\pi_1(f)$}} \subset \underbrace{\pi_1(p) (\pi_1(E;e_0))}{\text{Bild von $\pi_1(p)$}}
+\]
+Es sei angemerkt, dass $\pi_1(p) (\pi_1(E;e_0))\subset \pi_1(B; b_0)$ 
+\end{st}
+
+\begin{note*}
+ $f:X\to Y, f(x_0)=y_0$.  $\pi_1(f):\pi_1(X;x_0)\to \pi_1(Y;y_0): [\omega]\mapsto [f\circ \omega]$\\
+\fixme[fig83] \fixme[fig84]
+\end{note*}
+\begin{proof}
+ Wegen $p\circ F=f$ ist klar, dass die Bedingung erfüllt ist, wenn die Hochhebung $F$ existiert. (Denn: $\im(\pi_1(f))=\im(\pi_1(p\circ f))=\im(\pi_1(p)\circ \pi_1(F))\subset \im(\pi_1(p))$). Angenommen, die Bedingung sei erfüllt. Sei $x\in X$. Wir wählen einen Weg $\omega$ von $x_0$ nach $x$ und definieren $F(x):= \Lambda_{f\circ \omega}(e_0)$, denn wenn $F$ existiert, muss es dieser Gleichung genügen. 
+\fixme[fig85]\\
+Wir zeigen, dass $F$ wohldefiniert ist. Sei $\eta$ ein weiterer Weg von $x_0$ nach $x$. Dann ist $\Lambda_{f\circ \omega}(e_0)=\Lambda_{f\circ \eta} (e_0)$, falls sich $f\circ(\omega*\eta^{-1})$ zu einem geschlossenen Weg mit Anfangs- und Endpunkt $e_0$ hocheben. Dies gilt aber genau dann, wenn $f\circ(\omega*\eta^{-1})$ das Bild einer geschlossenen Schleife in $E$ mit Anfangs- und Endpunt $e_0$ ist, was durch die Bedingung garantiert ist.
+
+Die Stetigkeit von $F$ folgt aus lokalen Wegzusammenhang.
+\end{proof}
 
 
 
