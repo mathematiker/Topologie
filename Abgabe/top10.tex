@@ -1,0 +1,122 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\homo}{\cong}
+
+\begin{document}
+\setcounter{section}{10}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+ \item Wir wollen die Homotopien in Lemma 1.5 (siehe Bilder) formal aufschreiben:
+\begin{enumerate}[a)]
+\item
+$
+ w*\epsilon \sim w:
+$
+\[
+ H(s,t):=\begin{cases} w(2t-st) &, 0 \le t \le \frac{1}{2-s}\\ x_0 &, \frac{1}{2-s}\le t \end{cases}
+\]
+\item $w*w^{-1} \sim \epsilon:$
+\[
+ H(s,t):=\begin{cases} w(2t) &, 0 \le t \le \frac{1-s}{2}\\ w(1-s)&, \frac{1-s}{2}\le t \le \frac{1+s}{2}\\ w(2-2t)&, \frac{1+s}{2}\le t \le 1 \end{cases}
+\]
+\item $(w*\eta)*\xi \sim w *(\eta*\xi)$:
+\[
+ H(s,t):=\begin{cases} w(4t-2t)&, 0 \le t \le \frac{1+s}{4} \\ \eta(4t-s-1) &, \frac{1+s}{4} \le t \le \frac{2+s}{4} \\ \xi(2t-2s+2st-1)&, \frac{2+s}{4} \le t \le 1 \end{cases}
+\]
+\end{enumerate}
+\item Satz 1.11 besagt, dass $\pi_1(X\times Y; (x_0, y_0)) \cong \pi_1(X;x_0) \times \pi_1(Y, y_0)$ und mit $Y=\R$:
+\[
+ \pi_1(X\times \R;(x_0,0)) \cong \pi_1(X;x_0) \times \{ 1 \}
+\]
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+ \begin{enumerate}[i]
+  \item $\gamma: [0,1] \to S^n$ mit $\gamma(0)=\gamma(1)=p$. Zu zeigen ist: $\exists_{\tilde \gamma: I \to S^n} \gamma \simeq \tilde \gamma $. Sei $J=\{-1,1\}^{n+1}$ Indexmenge. Sei $\epsilon>0$:
+\[
+ U_j:= \{x=(x_1,...,x_{n+1}) \in S^n|j_i x_i > - \epsilon\}, \text{ mit } j \in J
+\]
+\fixme[Grafik fehlt]
+
+Damit ist $\mathcal U = \{U_j\}_{j\in J}$ offene Überdeckung von $S^n$. Setze Blatt 5 Aufgabe 4. Diese sagt aus $\sup_{x,y\in B} |x-y|<\lambda$ 
+
+$X=[0,1], V_j=\gamma^{-1}(U_j)$
+\[
+ \implies \exists_{\lambda>0} \forall_{s,t \text{ mit } |s-t|<\lambda}\exists_{j\in J} [s,t] \in V_j
+\]
+Sei $0=t_0 < t_1 < ... < t_m=1$ mit $t_{i+1}-t_i < \lambda$
+\[
+ \implies \forall_{i=1,..., m} \exists_{j\in J} [t_{i-1}, t_i]\in V_j
+\]
+\[
+ \implies \forall_{i=1,..., m} \exists_{j\in J} \forall_{t\in [t_{i-1}, t_i}] \gamma(t) \in U_j
+\]
+\[
+ \tilde \gamma(t_i)=\gamma(t_i), i=0,..., m
+\]
+Dazwischen nutzen wir die \emph{geodätische Verbindungslinie}. Dort ist $\tilde \gamma$ auf Großkreisen in einem $U_j$, wobei $U_j$ zusammenziehbar. Alle Wege in $U_j$ sind homotop. und damit:
+\[
+ \gamma \simeq \tilde \gamma
+\]
+
+
+\fixme[Grafik fehlt]
+
+\item $\tilde \gamma$ besteht  aus höchstens $m$ Großkreise. Es gibt $\infty$ viele Großkreise von $N$ nach $S$
+
+\fixme[Grafik fehlt]
+
+Es gibt einen, auf dem $\tilde \gamma$ nicht verläuft. Dieser schneidet $\tilde \gamma$ höchstens $2m$-mal.
+ \end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+ \begin{enumerate}[(i)]
+  \item Beweisskizze: Betrachte Fälle...  $w_0=w_1$, $w_0\neq w_1$: $w_0$, $w_1$ überlappen sich.  $w_0$ $\implies w_0=w_1$, $w_1$ überlappen sich nicht, dan kann man das Wort durch das Kürzen der jeweilig anderen Kürzung erstellen.
+  \item Man kann alternativ zeigen, dass das Diamantlemma auch allgemeiner für beliebig viele Aneinanderreihung von Kürzungen gilt. Zunächst einmal folgt die Existenz, da die Wortlänge endlich ist. Dann würde sich mit der Gegenannahme ergeben, dass es eine weitere Kürzung gibt, dass ergibt schließlich den Widerspruch.
+  \item Wohldefiniertheit: siehe (ii), $\emptyset$ ist Nullelement, Inverse $s^{-1}=[s_n^{-1}, ..., s_1^{-1}]$. Assoziativ folgt aus der Unabhängigkeit der Reihenfolge (Korollar zu (ii)). 
+ \end{enumerate}
+
+\end{aufgabe}
+\begin{aufgabe}
+\begin{itemize}
+\item $F=\{x^z\}, z \in \Z$. Betrachte $X=\{x\}$
+\item nicht frei, denn weder unendlich noch einelementig...
+\item $(\Z, +)$ ist nicht isomorph zu $(\Z^2, +)$... Als weiteres sollte noch gezeigt werden, dass es keine Bijektion gibt für $|X|>1$
+\end{itemize} 
+\end{aufgabe}
+
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item
+Lösung liegt zu Hause
+\item
+\[
+ f,g: (X,x_0) \to (G,1), f\sim g
+\]
+z.z. $f\sim g$ relativ zu $x_0$:\\
+\[
+ F:X\times[0,1] \to G, F(\cdot, 0)=f, F(\cdot, 1)=g
+\]
+Nun definieren wir die Homotopie:
+\[
+ H: (X,x_0)\times [0,1] \to (G,1): (x,t) \mapsto F(x_=,t)^{-1}F(x,t)
+\]
+Es gilt:
+\[
+ H(x,0)=...=f(x), H(x,1)=...=g(x), H(x_0, t)=...=1
+\]
+Um zu zeigen, dass $\Gamma_0$ Untergruppe ist, ist zu zeigen $[x\mapsto 1]\in \Gamma_0$, $1^{-1}=1 \implies [f]^{-1} \in \Gamma_0$, $1\cdot 1=1 \implies \text{ abgeschlossen}$
+\item $f: [0,1]/\{0,1\} \to G$ mit $f(0)=f(1)=g(0)=g(1)=1$
+\[
+ H(s,t)=\begin{cases} g(s-ts) f(s+ts) &, s \le \frac{1}{2} \\ g(s+(s-1)t) f(s+(1-s)t) &, s>1\frac{1}{2} \end{cases}
+\]
+stetig (Übung)
+\[
+ \implies g \cdot f \simeq g*f \stackrel{(iv)}{\implies} f*g \simeq g*f
+\]
+
+\end{enumerate}
+\end{aufgabe}
+\end{document}
