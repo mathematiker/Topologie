@@ -1,0 +1,57 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\homo}{\cong}
+
+\begin{document}
+\setcounter{section}{11}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item z.z. $ \R \ncong \R^n $\\
+GA: $ \exists $ Homöomorphismus $ \Psi $.
+
+Dann ergibt sich der Widerspruch da, $ \R\setminus\{0\} $ nicht zusammenhängend ist. ($ \R_-\cup \R_+ $ wäre eine Zerlegung in nichtleere offene Menge). Nun ist aber auf der anderen Seite $ \R^n\setminus\{\Phi(0)\} $ zusammenhängend. (sogar wegzusammenhängend)
+
+\item \fixme[Hier fehlt was]
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item 
+\begin{enumerate}
+\item $ X $ ist wegzusammenhängend und damit auch zusammenhängend:\\
+
+\item Wir wollen zeigen, dass $ \pi_1(X)=\const. $:
+
+Zunächst wählen wir $ x_0\in U\cap V $. Wir konstruieren uns $ 0=s_0<s_1<...<s_{2m}=1 $ mit $ x_n:=c(s_n) $, wobei $ x_{2n}\in U\cap V, x_{4n+1} \in U\setminus V, x_{4n+3}\in V\setminus U $, sowie 
+\[
+c([s_{4n}, s_{4n+2}])\subset U, c([s_{4n+2}, s_{4n+4}\subset V
+\]
+Verbinden wir die Endpunkte von $c([s_{4n}, s_{4n+2}])$ mit $ x_0 $, so folgt, dass diese homotop mit festen Endpunkten zu $ x_0 $ ist. Dies können wir für alle Teilstücke fortsetzen und damit gibt es eine Homotopie mit festen Endpunkten zur konstanten Abbildung.  Und damit ist die Fundamentalgruppe von $ X $ konstant.
+\end{enumerate}
+Damit ist $ X $ einfach zusammenhägend
+\item Wir konstruieren eine Überdeckung von $ X $. Sei $ J=\{0,1\}^{n+1} $  $ S^n=\bigcup_{j\in J}$ mit einem $ \epsilon >0 $: 
+\[
+ U_j:= \{x=(x_1,...,x_{n+1}) \in S^n|j_i x_i > - \epsilon\}, \text{ mit } j \in J
+\]
+Dann ist $ U_j $ offensichtlich zusammenziehbar und damit einfach zusammenhängend.  Die Schnitte sind desweiteren wegzusammenhängend. $ S^n $ ist wegzusammenhägend. Damit sind die Voraussetzungen für den Satz erfüllt. und Damit ist $ S^n $ einfach zusammenhängend und damit ist $ \pi_1(S^n)=\{1\} $
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}
+\begin{enumerate}[(i)]
+\item An dieser Stelle einige Beispiele für Kategorien:
+\begin{itemize}
+\item Die Menge der Vektorräume, mit der Menge von linearen Abbildungen zwischen zwei Vektorräumen, wobei das Einselement die Identität ist.
+\item Die Menge der Vektorräume, mit der Menge von Matrizen, wobei das Einselement die Einheitsmatrix ist.
+\item Die Klasse der Teilmengen von $ \R $, mit der Menge von glatten Abbildungen zwischen zwei Mengen, wobei das Einselement die Identität ist. 
+\end{itemize}
+\item Tatsächlich lassen sich Homotopien verknüpfen, diese ist assoziativ. Zudem ist das Einselement, die Idenität. (Homotopieäquivalenz ist reflexiv)
+\item \fixme[Hier fehlt was]
+\item \fixme[Hier fehlt was]
+\end{enumerate}  
+\end{aufgabe}
+\end{document}
