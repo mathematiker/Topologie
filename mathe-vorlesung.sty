@@ -17,6 +17,7 @@
 \usepackage{enumerate}
 \usepackage{parskip}
 \usepackage{changepage}
+\usepackage{centernot}
 
 \usepackage{framed}
 \usepackage{pstricks}
@@ -121,6 +122,9 @@
 \newcommand{\f}[2]{\frac{#1}{#2}}
 %\renewcommand{\l}[1][\left{#1}]
 %\renewcommand{\r}[1][\right{#1}]
+\newcommand{\nimplies}{\centernot{\Longrightarrow}}
+\newcommand{\imblies}{\Longleftarrow}
+\renewcommand{\nimplies}{\centernot{\Longleftarrow}}
 
 % Skalarprodukt
 \newcommand{\<}{\langle}

@@ -1729,14 +1729,20 @@ Weiter sei $\Lambda_\omega(e):= \tilde \Lambda_\omega(e,1)$
 \end{proof}
 
 \begin{seg}{Zusamenfassung: Überlagerung und Gruppenwirkung}
- \fixme[fig78]
+\begin{figure}[H]
+\centering
+ \includegraphics[scale=0.5]{fig78.png}
+\end{figure}
 Es ist $\pi_1(\R P^n)=\Z/2\Z=\{\pm 1\}$. (fixen)
 
 Die Fundamentalgruppe wirkt auf der Faser $E_{b_0}$ über $B_0$\\
-\fixme[fig79]
+\begin{figure}[H]
+\centering
+ \includegraphics[scale=0.3]{fig79.png}
+\end{figure}
 
 
-$\Lambda_\omega(e_0)=\tilde \omega(1)$ ist der Endpunkt der Hochehubung $\omega$ mit Startpunkt $e_0$
+$\Lambda_\omega(e_0)=\tilde \omega(1)$ ist der Endpunkt der Hochhebung $\omega$ mit Startpunkt $e_0$
 
 Wir haben bereits einige Eigenschaften bewiesen:
 \begin{enumerate}[(i)]
@@ -1744,7 +1750,10 @@ Wir haben bereits einige Eigenschaften bewiesen:
  \item $\Lambda_{\omega*\eta}=\Lambda_{\eta} \circ \Lambda_{\omega}$
  \item $\omega, \eta$ homotop mit festen Endpunkten $\implies \Lambda_\omega=\Lambda_\eta$
  \item $\Lambda_\omega: E_{b_0} \to E_{b_1}$ Bijektion\\
-\fixme[fig80]
+\begin{figure}[H]
+\centering
+ \includegraphics[scale=0.3]{fig80.png}
+\end{figure}
 \end{enumerate}
 \fixme[from mathematiker : Vielleich sind fixes nötig]
 \end{seg}
@@ -1804,11 +1813,17 @@ Es ist $gh\cdot x=g\cdot x$ und $gG_x=ghG_x$ mit $h\in G_x$
 \end{df}
 \begin{note*}
 Um ein Gegenbeispiel zu finden, sollten wir eine Menge finden, die gerade so ist, dass eine Wegstück außerhalb zu finden ist, also in etwa so:
-\fixme[fig81] 
- wegzusammenhängend $\not{\implies}$ lokal wegzusammenhängend. Gegenbeispiel: Vereinigung von Geradenstücken in $\R^2$:\\
-\fixme[fig82]
+\begin{figure}[H]
+\centering
+ \includegraphics[scale=0.3]{fig81.png}
+\end{figure}
+ wegzusammenhängend $\nimplies$ lokal wegzusammenhängend. Gegenbeispiel: Vereinigung von Geradenstücken in $\R^2$:\\
+\begin{figure}[H]
+\centering
+ \includegraphics[scale=0.3]{fig82.png}
+\end{figure}
 
-lokal wegzusammenhängend $\not{\implies}$ wegzusammenhängend. Gegenbeispiel: Zweipunktmenge.
+lokal wegzusammenhängend $\nimplies$ wegzusammenhängend. Gegenbeispiel: Zweipunktmenge.
 \end{note*}
 \begin{st}[Hochhebungssatz]
  Sei $X$ ein sowohl wegzusammenhängender als auch lokal wegzusammenhängender topologische Raum $f:X \to B$ eine stetige Abbildung mit $f(x_0)=b_0$. Dann besitzt $f$ genau dann eine Hochhebung $F: X\to E$ (dass heißt $p\circ F=f$) mit $F(x_0)=e_0$, wenn gilt:
@@ -1820,11 +1835,18 @@ Es sei angemerkt, dass $\pi_1(p) (\pi_1(E;e_0))\subset \pi_1(B; b_0)$
 
 \begin{note*}
  $f:X\to Y, f(x_0)=y_0$.  $\pi_1(f):\pi_1(X;x_0)\to \pi_1(Y;y_0): [\omega]\mapsto [f\circ \omega]$\\
-\fixme[fig83] \fixme[fig84]
+\begin{figure}[H]
+\centering
+ \makebox{\includegraphics[scale=0.3]{fig83.png}}
+ \makebox{\includegraphics[scale=0.3]{fig84.png}}
+\end{figure}
 \end{note*}
 \begin{proof}
  Wegen $p\circ F=f$ ist klar, dass die Bedingung erfüllt ist, wenn die Hochhebung $F$ existiert. (Denn: $\im(\pi_1(f))=\im(\pi_1(p\circ f))=\im(\pi_1(p)\circ \pi_1(F))\subset \im(\pi_1(p))$). Angenommen, die Bedingung sei erfüllt. Sei $x\in X$. Wir wählen einen Weg $\omega$ von $x_0$ nach $x$ und definieren $F(x):= \Lambda_{f\circ \omega}(e_0)$, denn wenn $F$ existiert, muss es dieser Gleichung genügen. 
-\fixme[fig85]\\
+\begin{figure}[H]
+\centering
+ \includegraphics[scale=0.3]{fig85.png}
+\end{figure}
 Wir zeigen, dass $F$ wohldefiniert ist. Sei $\eta$ ein weiterer Weg von $x_0$ nach $x$. Dann ist $\Lambda_{f\circ \omega}(e_0)=\Lambda_{f\circ \eta} (e_0)$, falls sich $f\circ(\omega*\eta^{-1})$ zu einem geschlossenen Weg mit Anfangs- und Endpunkt $e_0$ hocheben. Dies gilt aber genau dann, wenn $f\circ(\omega*\eta^{-1})$ das Bild einer geschlossenen Schleife in $E$ mit Anfangs- und Endpunt $e_0$ ist, was durch die Bedingung garantiert ist.
 
 Die Stetigkeit von $F$ folgt aus lokalen Wegzusammenhang.
