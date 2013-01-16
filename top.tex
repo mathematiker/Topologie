@@ -109,6 +109,7 @@ Eine Abbildung $f: X\rightarrow \tilde X$ zwischen metrischen Räume ist genau d
 \begin{seg}{"`$\implies$"'}
 Sei $\eps>0$, dann gibt es $\delta>0$, so dass aus $d(x',a)<\delta$ folgt: $d(f(x'),f(a))<\eps$. Weiter gibt es ein $k\in \N$, so dass $d(x_n,a)<\delta$ für $n \ge k$.  Insgesamt folgt $d(f(x_n),f(a))<\eps$ für alle $n\ge k$.
 \end{seg}
+
 \begin{seg}{"`$\Longleftarrow$"'}
 Angenommen, $f$ ist nicht stetig. Dann gibt es ein $x \in X$ und ein $\eps>0$, so dass es zu jeden $n\in \N$ ein $x_n$ mit $d(x_n,x)<\frac{1}{n}$ und $d(f(x_n), f(x))\ge \eps$ gibt. Damit ergibt sich der Widerspruch.
 \end{seg}
@@ -155,6 +156,7 @@ Eine Abbildung zwischen metrischen Räumen ist stetig genau dann, wenn die Urbil
 \begin{seg}{"`$\Longrightarrow$"'}
 Sei $ f: X \to \tilde X $ stetig und $ V \subset \tilde X $ offen.  Dann ist $ f^{-1}(V) $ nach \ref{st:1.8} eine Umgebung jeder ihrer Punkte somit offen.
 \end{seg}
+
 \begin{seg}{"`$\Longleftarrow$"'}
 Seien umgekehrt die Urbilder offener Mengen offen und $ x \in X $. Sei $ \eps>0 $.  Nach Voraussetzung $ f^{-1}(B_\eps(f(x)) $ offen und enthält somit einen $ \delta $-Ball um den Punkt x.
 \end{seg}
@@ -655,6 +657,7 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
  \begin{enumerate}[(i)]
   \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$, dann enthält $V$ eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal U$ mit  $U \subset V$. Damit ist $ \mathcal U $ eine abzählbare Umgebungsbasis von $p$.
 \item \begin{seg}{„$\implies$“} bereits gezeigt in \ref{thm:1.17} \end{seg}
+
 \begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$. Sei $\mathcal U=\{U_1,U_2,U_3,...\}$ eine abzählbare Umgebungsbasis von $x$. Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,...$ Umgebungen von $x$. Nach Annahme gibt es in jeder dieser Mengen $U_1\cap...\cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
 \end{seg}
 \end{enumerate}
@@ -1006,6 +1009,7 @@ $\simeq$ ist eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \e
  \begin{seg}{"`$\Longleftarrow$"'}
   Sei $f: \overline{B_1(0)}\to X$ stetig. Definiere die gesuchte Abbildung durch $h(x,t)=f((1-t)x)$.
  \end{seg}
+ 
 \begin{seg}{"`$\implies$"'}
  Sei $h$ eine Homotopie mit $h(\cdot, 0)=f(\cdot)$, mit $f:S^n \to X$ und $h(\cdot, 1)=\const.$
 \fixme[fig42]
@@ -1228,6 +1232,7 @@ Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega
 \begin{seg}{Problem bei diesem Beweis}
  Möglicherweise ist $S^n \setminus \omega([0,1])$ \emph{leer}, in der Tat gibt es flächen-/raumfüllende stetige Wege.
 \end{seg}
+
 \begin{seg}{Exkurs: flächenfüllende "`Kurve"' (=Weg)}
  Definiere $[0,1] \to A $, wobei $A$ Dreiecksfläche ist, surjektiv wie folgt:
 
@@ -1788,6 +1793,7 @@ natürlich kann man auch definieren:
  Hg:=\{h\cdot g|h\in H\}
 \]
 Man bezeichnet diese als Links- bzw. Rechtsnebenklasse.
+
 \begin{seg}{Allgemeine Tasache:}
  mit der Gruppenwirkung von $G$ auf $X$:
 \[
