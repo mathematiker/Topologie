@@ -1825,7 +1825,7 @@ Um ein Gegenbeispiel zu finden, sollten wir eine Menge finden, die gerade so ist
 
 lokal wegzusammenhängend $\nimplies$ wegzusammenhängend. Gegenbeispiel: Zweipunktmenge.
 \end{note*}
-\begin{st}[Hochhebungssatz]
+\begin{st}[Hochhebungssatz] \label{thm2:3.11}
  Sei $X$ ein sowohl wegzusammenhängender als auch lokal wegzusammenhängender topologische Raum $f:X \to B$ eine stetige Abbildung mit $f(x_0)=b_0$. Dann besitzt $f$ genau dann eine Hochhebung $F: X\to E$ (dass heißt $p\circ F=f$) mit $F(x_0)=e_0$, wenn gilt:
 \[
  \underbrace{\pi_1(f) (\pi_1(X;x_0))}_{\text{Bild von $\pi_1(f)$}} \subset \underbrace{\pi_1(p) (\pi_1(E;e_0))}{\text{Bild von $\pi_1(p)$}}
@@ -1834,7 +1834,7 @@ Es sei angemerkt, dass $\pi_1(p) (\pi_1(E;e_0))\subset \pi_1(B; b_0)$
 \end{st}
 
 \begin{note*}
- $f:X\to Y, f(x_0)=y_0$.  $\pi_1(f):\pi_1(X;x_0)\to \pi_1(Y;y_0): [\omega]\mapsto [f\circ \omega]$\\
+ $f:X\to Y, f(x_0)=y_0$ induziert  $\pi_1(f):\pi_1(X;x_0)\to \pi_1(Y;y_0): [\omega]\mapsto [f\circ \omega]$\\
 \begin{figure}[H]
 \centering
  \makebox{\includegraphics[scale=0.3]{fig83.png}}
@@ -1849,15 +1849,81 @@ Es sei angemerkt, dass $\pi_1(p) (\pi_1(E;e_0))\subset \pi_1(B; b_0)$
 \end{figure}
 Wir zeigen, dass $F$ wohldefiniert ist. Sei $\eta$ ein weiterer Weg von $x_0$ nach $x$. Dann ist $\Lambda_{f\circ \omega}(e_0)=\Lambda_{f\circ \eta} (e_0)$, falls sich $f\circ(\omega*\eta^{-1})$ zu einem geschlossenen Weg mit Anfangs- und Endpunkt $e_0$ hocheben. Dies gilt aber genau dann, wenn $f\circ(\omega*\eta^{-1})$ das Bild einer geschlossenen Schleife in $E$ mit Anfangs- und Endpunt $e_0$ ist, was durch die Bedingung garantiert ist.
 
-Die Stetigkeit von $F$ folgt aus lokalen Wegzusammenhang.
+Die Stetigkeit von $F$ folgt aus dem lokalen Wegzusammenhang. Der lokale Wegzusammenhang von $X$ garantiert die Stetigkeit von $F$, denn es gibt um jeden Punkt $x\in X$ eine wegzusammenhängende Umgebung, die unter $f$ in eine schlicht überlagerte Umgebung von $f(x)$ in $B$ abgebildet wird. 
 \end{proof}
 
+\begin{note*}[Hochhebungssatz anschaulich]
+Wir erinnern: die induzierten Homomorphismen auf der Fundamentalgruppen sind:
+\[
+ f: X\stackrel{\text{stetig}}{\Longrightarrow} Y: x\mapsto y \longrightarrow \pi_1(X;x_0)
+\]
+induziert:
+\[
+ \pi_1(X;x_0) \stackrel{\pi_1(f)}{\longrightarrow} \pi_1(Y;y_0): [\omega] \mapsto [f\circ w]
+\]
+\fixme[fig86]
+Eine Hochhebung sieht folgendermaßen aus:\\
+\fixme[fig87]\\
+\begin{seg}{Idee:}
+ Wege können hochgehoben werden. Finde Weg von $x_0$ nach $x$ und setze $F(x):=\tilde \omega(1)$, wobei $\tilde \omega$ Hochhebung von $\omega$.
+\end{seg}
 
+\begin{seg}{Problem:}
+ Es kann verschiedene Wege von $x_0$ nach $x$ geben, zum Beispiel:\\
+\fixme[fig88]\\
+Zwei Wege von $x_0$ nach $x$ entspricht einer Schleife von $x_0$ durch $x$. Es muss also eine Schleife $\phi$ in $E$ geben, so dass $[f\circ \omega*\eta^{-1}]=[p\circ \phi]$, dass heißt es muss $\im(\pi_1(f))\subset \im(\pi_1(p))$.\\
+\fixme[fig89]
+\end{seg}
+\end{note*}
+Wir wollen Satz \ref{thm2:3.11} verwenden, um zwei verschiedene Überlagerungen über demselben \emph{Basisraum} $B$ zu vergleichen. Wir wollen also folgende Situation betrachten:\\
+\fixme[fig90]\\
+Wir wollen die Frage studieren, wann sich die Abbildung $\id_B\circ p:E\to B$ zu einer Abbildung $f:E \to E'$ hochheben lässt. Damit wir den Hochhebungssatz anwenden können, nehmen wir an, dass $B$ wegzusammenhängend und lokal wegzusammenhängend ist. 
+\begin{kor}
+ Sei $B$ wegzusammenhängend und lokal wegzusammenhängend. Seien $p:E\to B$ und $p':E'\to B$ Überlagerung mit wegzusammenhängenden \emph{Totalräumen} $E$ und $E'$.
 
+Es seien $e_0\in E, e'_0\in E'$ und $b=p(e_0)=p'(e'_0)$. Dann existiert genau dann eine stetige Abbildung $f:E\to E'$ mit $p'\circ f=p$ und $f(e_0)=e'_0$, wenn gilt $\pi_1(p)(\pi_1(E,e_0))\subset \pi_1(p')(\pi_1(E', e'_0))$ (bzw. $\im(\pi_1(p))\subset \im \pi_1(p')$).
+\end{kor}
+\begin{note}
+ den Urbildbereich einer Überlagerung ezeichnet man als \emph{Totalraum}. Und den Bildbereich \emph{Basisraum} $B$. 
+\end{note}
+Wie man sich leicht überlegt überlegt, gilt in der Situation von Korollar \ref{thm2:3.12} auch, dass $f:E\to E'$ eine Überlagerung ist. Dies motiviert insbesondere folgende Definition:
 
+\begin{df}
+ Eine Überlagerung $p:E\to B$ heißt \emph{universelle Überlagerung}, wenn $E$ einfach zusammenhängend ist (also $\pi_1(E)\cong \{1\}$ ist).
+\end{df}
+Wir wollen den Hochhebungssatz nun benutzen, wenn eine Wirkung einer gewissen Untergruppe der Fundamentalgruppe der Basis auf den Totalraum zu definieren. Es handelt sich dabei um die Fortsetzung der in Satz \ref{thm2:3.8} definierten Wirkung auf der Faser $E_b$.
 
+Wir betrachten der Spezialfall $E=E'$ des Korollars ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
+\[
+ \pi_1(\pi_1(E;e'_0))=[\omega]^{-1}\cdot \pi_1(p)(\pi_1(E;e_0)\cdot [\omega]
+\]
+\fixme[fig91]
+Genau dann gibt es eine stetige Hochhebung $f:E\to E$ der Identität auf $B$ mit $f(e_0)=e'_0$, wenn die obige Gruppe $\pi_1(p))\pi_1(E;e_0))$ enthält, mit anderen Worten, wenn diese Untergruppe unter Konjugation mit $[\omega]$ invariant bleibt.
 
+\begin{note*}
+Kunjugation von $a$ mit $g$ ist $gag^{-1}$
+\end{note*}
 
+Wir benutzen den folgenden Begriff aus der Gruppentheorie:
+
+Sei $G$ eine Gruppe und $H$ eine Untergruppe. Man sagt, ein Element $g\in G$ \emph{normalisiert} $H$, falls $gHg^{-1}=H$ gilt. Die Menge 
+\[
+ N_G(H)=\{g\in G| gHg^{-1}=H\}
+\]
+aller Elemente, die $H$ normalisieren heißt \emph{Normalisator} von $H$. Falls $N_G(H)=G$, dass heißt galls $gHg^{-1}=H \, \forall g\in G$, dann sagt man, $H$ ist eine \emph{normale Untergruppe}. Für solche gilt, dass die Menge der Nebenklasse $G/H:=\{gH|g\in G\}$ eine natürliche Gruppenstruktur hat $(g\cdot H)cdot (k\cdot H)=g k \underbrace{(k^{-1}Hk)}_{=H}H=g\cdot k \cdot HH=g\cdot $.
+
+Wie man sich leicht überlegt, ist $N_G(H)\subset G$ eine Untergruppe.  
+
+\begin{st}
+ Sei $B$ wegzusammenhängend und lokal wegzusammenhängend. Sei $p:E\to B$ eine Überlagerung mit wegzusammenhängendem Totalraum. Es sei $H(p;e_0)=\pi_1(p)(\pi_1(E;e_0))$ und sei $N(p;e_0)$ der Normalisator von $H(p;e_0)$ in $\pi_1(B;b_0) $, wobei $b_0=p(e_0)$. 
+Dann operiert die diskrete Gruppe $N(p;e_0)/H(p;e_0)$ blätternd von rechts auf $E$, so dass die von den Gruppenelementen induzierten Homoöomorphismen HOchhebungen von $p:E\to B$ sind.
+
+Ferner gilt für eine Untergruppe $K$ von $N(p;e_0)$, mit $K\supset H(p,e_0)$, dass
+\[
+ \bar p: E/K \to B, eK\mapsto p(e) 
+\]
+ eine Überlagerung ist mit $\pi_1(\bar p)(\pi_1(E/K; e_0 K))=K$.
+\end{st}
 
 
 
