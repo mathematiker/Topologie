@@ -1764,7 +1764,7 @@ Wir haben bereits einige Eigenschaften bewiesen:
 \fixme[from mathematiker : Vielleich sind fixes nötig]
 \end{seg}
 
-\begin{st}
+\begin{st}\label{thm2:3.8}
  Die Fundamentalgruppe $\pi_1(B; b_0)$ operiert von rechts auf der Faser $E_{p_0}=p^{-1}(\{b_0\})$ vermöge:
 \[
  e\cdot [\omega] := \Lambda_\omega(e)
@@ -1890,9 +1890,9 @@ Wir wollen die Frage studieren, wann sich die Abbildung $\id_B\circ p:E\to B$ zu
 
 Es seien $e_0\in E, e'_0\in E'$ und $b=p(e_0)=p'(e'_0)$. Dann existiert genau dann eine stetige Abbildung $f:E\to E'$ mit $p'\circ f=p$ und $f(e_0)=e'_0$, wenn gilt $\pi_1(p)(\pi_1(E,e_0))\subset \pi_1(p')(\pi_1(E', e'_0))$ (bzw. $\im(\pi_1(p))\subset \im \pi_1(p')$).
 \end{kor}
-\begin{note}
+\begin{note*}
  den Urbildbereich einer Überlagerung ezeichnet man als \emph{Totalraum}. Und den Bildbereich \emph{Basisraum} $B$. 
-\end{note}
+\end{note*}
 Wie man sich leicht überlegt überlegt, gilt in der Situation von Korollar \ref{thm2:3.12} auch, dass $f:E\to E'$ eine Überlagerung ist. Dies motiviert insbesondere folgende Definition:
 
 \begin{df}
@@ -1921,8 +1921,8 @@ aller Elemente, die $H$ normalisieren heißt \emph{Normalisator} von $H$. Falls 
 
 Wie man sich leicht überlegt, ist $N_G(H)\subset G$ eine Untergruppe.  
 
-\begin{st}
- Sei $B$ wegzusammenhängend und lokal wegzusammenhängend. Sei $p:E\to B$ eine Überlagerung mit wegzusammenhängendem Totalraum. Es sei $H(p;e_0)=\pi_1(p)(\pi_1(E;e_0))$ und sei $N(p;e_0)$ der Normalisator von $H(p;e_0)$ in $\pi_1(B;b_0) $, wobei $b_0=p(e_0)$. 
+\begin{st}\label{thm2:3.14}
+ Sei $B$ wegzusammenhängend und lokal wegzusammenhängend. Sei $p:E\to B$ eine Überlagerung mit wegzusammenhängendem Totalraum. Es sei \fbox{$H(p;e_0)=\pi_1(p)(\pi_1(E;e_0))$} und sei $N(p;e_0)$ der Normalisator von $H(p;e_0)$ in $\pi_1(B;b_0) $, wobei $b_0=p(e_0)$. 
 Dann operiert die diskrete Gruppe $N(p;e_0)/H(p;e_0)$ blätternd von rechts auf $E$, so dass die von den Gruppenelementen induzierten Homoöomorphismen HOchhebungen von $p:E\to B$ sind.
 
 Ferner gilt für eine Untergruppe $K$ von $N(p;e_0)$, mit $K\supset H(p,e_0)$, dass
@@ -1930,14 +1930,70 @@ Ferner gilt für eine Untergruppe $K$ von $N(p;e_0)$, mit $K\supset H(p,e_0)$, d
  \bar p: E/K \to B, eK\mapsto p(e) 
 \]
  eine Überlagerung ist mit $\pi_1(\bar p)(\pi_1(E/K; e_0 K))=K$.
+\fixme[fig92]
 \end{st}
+\begin{note*}
+\begin{itemize}
+\item Insbesondere gilt, wenn $E$ einfach zusammenhängend ist, also $\pi_1(E;e_0)=\{1\}$, dann folgt $H(p;e_0)\cong \{1\}$ und $N(p;e_0)=\pi_1(B;b_0)$.
+\item $H(p;e_0)$ wird auch als \emph{charakteristische Untergruppe} von $p$ genannt.
+\end{itemize}
+\end{note*}
+\begin{proof}
+\fixme[fig93]
+ Zunächst ist klar, dass die oben definierten stetigen Abbildungen $E\to E$ eine stetige Fortsetzungen der Wirkung der 
+Fundamentalgruppe $\pi_1(B;b_0)$ auf dr Faser über $b_0$ sind (vgl. Satz \ref{thm2:3.8}) auf ganz $E$ sind.  Diese 
+Abbildung sind also nach dem Hochhebungssatz bereits eindeutig durch das Bild des Puntkes $e_0$ bestimmt. 
+Daraus folgt, dass es sich um eine Gruppenwirkung handelt. Die Untergruppe $H(p, e_0)$ ist dabei 
+gerade die Standgruppe von $e_0$ diese Elemente werden trivial auf $E$.
 
+Da die von dieser Gruppenwirkung induzierte Homöomorphismen von $E$ mit $p$ verträglich sind, wrken sie auf dem Urbild $p^{-1}(U)=\dotcup_{\alpha} U_\alpha$ einer trivial überlagerten Umgebung $U$ durch Permutation der Blätter $U_\alpha$, also ist die Gruppenwirkung blätternd.\\
+\fixme[fig94]\\
+Also ist nach Lemma \ref{thm2:3.5} die Abbildung $\bar{p}$ eine Überlagerung. Die Aussage über das Bild von $\pi_1(\bar p)$ ergibt sich aus Satz \ref{thm2:3.8}, dem $K$ ist die Standgruppe der $\pi_1(B;b_0)$-Wirkung auf der Faser $\bar p^{-1}(b_0)$ in diesem Fall.
+\end{proof}
+Mit Hilfe von Satz \ref{thm2:3.14} können wir nun \emph{alle} Überlagerungen des Raumes $B$ konstruieren, sobald wir eine universelle (=einfach zusammenhängende) Überlagerung $\tilde p: \tilde B\to B$ gefunden haben, denn für diese gilt $H(\tilde p; e_0)=\{1\}$ und $N(\tilde; e_0)=\pi_1(B;b_0)$, dass heißt wir können damit zu jeder Untergruppe $K\subset \pi_1(B;b_0)$ eine "'passende"' Überlagerung $p:E\to B$ mit $H(p;e_0)=K$ konstruieren.
+Aus Korrolar \label{thm2:3.12} (Vergleich von Überlagerungen) folgt nämlich insbesondere, dass zwei Überlagerungen $p_1, p_2: E_1, E_2 \to B$ mit $H(p_1;e_0)=H(p_2;e_0)$ \emph{isomorph} sind, dass heißt es gibt einen Homöomorphismus $f:E_1\to E_2$ mit $p_2\circ f = p_1$.
 
+Die Existenz einer universellen Überlagerung werden wir im nächsten Abschnitten beweisen (unter gewissen Voraussetzungen).
 
+\subsection{Universelle Überlagerung und Decktransformationen}
+Zunächst wollen wir eine Anwendung der universellen Überlagerung betrachten. Wir wollen die Gruppe der Decktransformationen einführen, die zur Fundamentalgruppe der Basis isomorph ist. Dies liefert in vielen Fällen eine einfache Möglichkeit, Fundamentalgruppen zu bestimmen.
+\begin{df}
+ Sei $p:E\to B$ eine Überlagerung. Ein Homöomorphismus $f:E\to E$ heißt \emph{Decktransformation} oder \emph{Automorphismus} der Überlagerung $p$, falls $p\cdot p \cdot f=p$.
+\end{df}
+Decktransformationen sind also Homöomorphismen von $E\to E$, die jede einzelne Faser $E_b=p^{-1}(\{b\})$ in sich abbilden. Damit ist klar, dass Inverse und Komposition von Decktransformationen wiederum Decktranformationen sind und die Decktransformationen bilden eine Gruppe $\Deck(p)=\Aut(p)$.
+\begin{st}
+ Sei $p:E\to B$ eine universellle Überlagerung. Dann gilt $\Deck(p)\cong \pi_1(B)$, falls $B$ wegzusammenhängend und lokal wegzusammenhängend ist.
 
+\fixme[fig95]
+\end{st}
+\begin{seg}{Anwendung}
+ zum Beispiel erhalten wir sogleich:
+\begin{itemize}
+ \item $\pi_1(S^1)\cong \Z$\\
+\fixme[fig96]
+ \item $\pi_1(\R P^1)\cong \Z_2$
 
- 
- 
+\end{itemize}
+
+\end{seg}
+\begin{proof}
+ Nach Satz \ref{thm2:3.14} gilt bei universellen Überlagerungen, dass die Gruppe $N(p; e_0)/H(p;e_0)=\pi_1(B;b_0)\setminus\{1\}=\pi_1(B;b_0)$ blätternd auf $E$ durch Decktransformationen wirkt. Insbesonders wirkt nun die Identität trivial und wir erhalten einen injektiven Homomorphismus:
+\[
+ \jota: \pi_1(B;b_0)\to \Deck(p)
+\]
+Es bleibt, Surjektivität zu zeigen.  Sei also $\Gamma\in \Deck(p)$. Sei $\omega$ ein Weg von $e_0$ nach $e_0\circ \gamma$. Dann ist $p\circ \omega$ eine Schleife mit Basispunkt $b_0$. Dies liefert eine Abbildung $f: \Deck(p)\to \pi_1(B,b_0)$, denn: ist $\eta$ ein zweiter Weg von $e_0$ noch $e_0 \circ \gamma$.\\
+\fixme[fig97]\\
+so ist $\eta$ zu $w$ homotop mit festen Endpunkten, wegen des einfachen Zusammenhangs von $E$. Es gilt $\jota\circ f = \id_{\Deck(p)}$.
+
+Denn der Homöomorphismus $\jota(f(\gamma))$ bildet $e_0$ auf $e_0\circ \gamma$ ab, und wir schließen daraus, dass $\jota(f(\gamma))=\gamma$, denn sonst gäbe es neben der Identität auf eine zweite Hochhebung von $p$, nämlich $\eta(f(\gamma))\gamma^{-1}$, die $e_0 \circ \gamma$ auf sich abbildet.
+\end{proof}
+\begin{kor}
+ Sei der topologische Raum $X$ einfach zusammenhhängend und lokal wegzusammenhängend. Die diskrete Gurppe $\Gamma$ operiere blätternd auf $X$, dann gilt für die Überlagerung $p: X\to X/\Gamma$, $x\mapsto x \cdot \Gamma$, dass $\Gamma=\Deck(p)\cong\pi_1(X/\Gamma)$.
+\end{kor}
+\begin{proof}
+ Offensichtlich sind die Elemente von $\Gamma$ Decktransformationen von $X$, denn die Bahnen der $\Gamma$-Wirkung sind die Fasern der Überlagerung, also $\Gamma\subset \Deck(p)$. Sei $e\in X$. Es gilt also zu jedem Element der Faser $e'\in E_{p(e)}=e\cdot \Gamma$ ein $\gamma \in \Gamma$ mit $e\cdot \gamma=e'$, da die Decktransformation durch das Bild eines Punktes eindeutig bestimmt sind, kann es also nicht mehr Element in $\Deck(p)$ geben, die nicht in $\Gamma$ liegen. 
+\end{proof}
+
 
 
 
