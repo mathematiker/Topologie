@@ -1,0 +1,75 @@
+\documentclass{scrartcl}
+\usepackage{mathe-blatt}
+\blatttop
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\homo}{\cong}
+
+\begin{document}
+\setcounter{section}{12}
+\setcounter{aufgabe}{1}
+\begin{aufgabe}
+\begin{enumerate}
+ \item Wir wollen zeigen, dass die Zusammenhangskomponenten offen sind:
+
+Sei $e\subset X$ Zusammenhangskomponente, dann folgt insbesondere aus dem lokalen Wegzusammenhang, dass jeder Punkt $x$ eine (offene) Umgebung $U_x$ besitzt, die wegzusammenhängend und damit insbesondere zusammenhängend sind. Dann folgt:
+\[
+ \bigcup_{x\in e} U_x=\left ( \bigcup_{x\in e} U_x \right ) \cup e= \bigcup_{x\in e} (\underbrace{U_x \cup e}_{=e})=e
+\]
+Tatsächlich gilt $U_x\cup e=e$, da $e$ maximal zusammenhängende Menge ist, als Vereinigung von zusammenhängenden Mengen, deren Schnitt nichtleer ist ($x\in U_x \land x\in e$), folgt damit auch der Zusammenhang von $U_x\cup e$ zusammenhängend, und mit der Maximalität von $e$ $U_x\cup e \subset e$ und völlig trivial dann auch $U_x\cup e = e$.
+
+Damit ist die Zusammenhangskomponente offen. 
+
+\item Wir wollen nun zeigen, dass jede zusammenhängende offene Teilmenge $T$ wegzusammenhängend ist: 
+
+Jede zusammenhängende Teilmenge ist in einer Zusammenhangskomponente enthalten:
+
+Nun besitzt jedes Element $x$ eine Umgebung $ U\subset T$ offen.  Aufgrund des lokalen Wegzusammenhangs finden wir eine (offene) Umgebung $U_x\subset U$, sodass Wegzusammenhang besteht. Dann können wir die Menge $T$ überdecken:
+\[
+ T=\bigcup_{x\in T} U_x
+\]
+Wir stellen fest, dass die Vereinigung der $U_x$ zusammenhängend ist, und die Komponenten wegzusammenhängend sind. Nun folgt analog zu 1. auch, dass die Wegzusammenhangskomponenten von $T$ offen sind.  Offensichtlich sind diese auch abgeschlossen. Denn das Komplement lässt sich aus der Vereinigung von Wegzusammenhangskomponenten (die offen sind) schreiben.  Damit ist jede Zusammenhangskomponente offen und abgeschlossen. Insbesondere folgt aus dem Zusammenhang von $T$, dann dass jede Wegzusammenhangskomponente von $x\in T$ gleich $T$ ist und insbesondere folgt damit der Wegzusammenhang von $T$.
+\end{enumerate}
+\end{aufgabe}
+\begin{aufgabe}
+\[
+ \text{z.z.: } p:E\to B \text{ Überlagerung } \iff p \,\vline\,_{p^{-1}(B')}:p^{-1}(B')\to B' \text{ Überlagerung }
+\]
+\begin{seg}{"`$\implies$"'}
+ $p:E\to B$ Überlagerung $\implies \forall_{x\in B} \exists_{U_x} p^{-1}(U)=\,\dot\cup\,_{alpha} V_\alpha \implies p^{-1}\,\vline\,_{p^{-1}(B')}=\cup_\alpha \underbrace{V_\alpha\cap B'}_{\text{offen nach Aufgabe 2}}$ 
+Man überzeuge sich selbst, dass $p\, \vline \,_{p^{-1}(B')}$, damit ein Homöomorphismus von $V_\alpha\cap p^{-1}(B')\to U_\alpha\cap p(B')$ beschreibt.
+\end{seg}
+\begin{seg}{"`$\Longleftarrow$"'}
+ Sei $B'$ Überlagerung, dann gilt:
+\[
+p\, \vline \,_{p^{-1}(B')}: p^{-1}(B')\to B' \text{ Überlagerung } \implies \forall_{x\in B} \exists_{U_x} p^{-1}\, \vline \,_{p^{-1}(B')} (U)=\cup_\alpha V_\alpha
+\]
+Dann können wir die Vereinigung aller Mengen aller Komponenten betrachten:
+\[
+p^{-1}(U)=\cup_{B'} \cup_\alpha V_{\alpha, B'}
+\]
+Tatsächlich, sind die $ V_{\alpha} $ alle Homöomorphismen nach Voraussetzungen.  Damit ist alles gezeigt.
+\end{seg}
+
+\end{aufgabe}
+
+\begin{aufgabe}
+ \begin{seg}{Hawaiianische Ohrring}
+ \begin{itemize}
+ \item Wegzusammenhang: Ja, über (0,0) kann jeder punkt erreicht werden.
+ \item lokal wegzusammenhängend: Ja, es können genügend kleine Umgebungen für jede Umgebung gewählt werden, dass stets (0,0) enthalten ist und jeder Punkt über (0,0) erreicht werden, oder ein kreisstück isoliert vorzufinden ist. betrachte hierfür die Abstandsfunktion zu beliebigen punkt, dann existiert nach dem Satz von Weierstraß ein punkt mit minimalen Abstand, mit der Hausdorffeigenschaft, ergibt sich, dann die Aussage.
+ \item lokal einfach zusammenhängend: Nein, für beliebige schleifen, können diese nicht zusammengezogen werden und damit ist die Menge nicht einfach zusammenängend.  
+ \item semi-lokal einfach zusammenhängend: Nein, analog... (semi-lokal einfach zusammenhängend ist das stärkere Argument)
+ \end{itemize}
+ \end{seg}
+
+ \begin{seg}{Kegel über Hawaiianischen Orring}
+ \begin{itemize}
+ \item wegzusammenhängend: Ja, gleiche Argumentation.
+ \item lokal wegzusammenhängend: Ja, gleiche Argumentation (außer bei der Spitze, ergeben sich stets Wege über die Spitze des Kegels.
+ \item lokal einfach zusammenhängend: Nein,  schleifen auf $ H \times \{0\} $ können beispielsweise weiterhin nicht auf kleinen Umgebungen zusammengezogen werden. 
+ \item semi-lokal einfach zusammenhängend: Ja,  wir können tatsächlich Homotopien mit festen Endpunkten konstruieren. Für jede Schleife, können wir über die Spitze, die Schleifen zusammenziehen.
+ \end{itemize}
+ \end{seg}
+\end{aufgabe}
+
+\end{document}
