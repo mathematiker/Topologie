@@ -2365,11 +2365,94 @@ Daher gibt es (genau) eine Topologie, dür die die $V(U, \alpha)$ offen sind (da
  \fixme[fig104]
 \caption{}
 \end{figure} 
-
-
-
-
 \end{proof}
+
+\subsection{Der Satz von Seifert und van Kampen}
+beim Satz von Seifert und van Kampen handelt es sich um ein starkes Hilfsmittel zur Berechnung von Fundamentalgruppen. Wenn ein topologischer Raum $X$ die Vereinigung affiner Teilmengen $U,V$ ist, so dass $U,V$, und $U\cap V$ wegzusammenhängend sind, dann gibt der Satz an, wie sich die Fundamentalgruppe von $X$ aus denen von $U$ und $V$ "`zusammengesetzt"'.
+\begin{figure}[H]
+ \centering
+ \fixme[fig105]
+\caption{}
+\end{figure}
+Wir benötigen einige Begriffe aus der Gruppentheorie.
+
+Sei $G$ eine Gruppe und $H\subset G$ eine Untergruppe, dann heißt $H$ \emph{normale Untergruppe} oder \emph{Normalteiler}, falls $gHg^{-1}=H$ für alle $g\in G,$ dass heißt falls $H$ invariant unter Konjugation. Eine Abbildung $\phi: G\to K$ zwischen Gruppen heißt \emph{(Gruppen)homomorphismus}, falls $\phi(g_1\cdot g_2)=\phi(g_1)\cdot \phi(g_2)$ für alle $g_1, g_2\in G$ gilt. Wegen $\phi(g)=\phi(1\cdot g)=\phi(1)\cdot \phi(g)$ gilt $\phi(1_G)=1_K$ (dass heißt $\phi$ bildet das neutrale Element von $G$ auf das neutrale Element von $K$ ab. Aus $1=\phi(1)=\phi(g\cdot g^{-1})=\phi(g)\cdot \phi(g^{-1})$ folgt $\phi(g^{-1})=\phi(g)^{-1}$.  Der \emph{Kern} eines Gruppenhomomorphismus ist die Menge $\ker \phi = \{g\in G|\phi(g)=1\}$.
+
+Ein Gruppenhomomorphismus ist injektiv genau dann, wenn der Kern trivial ist (dass heißt falls $\ker \phi = \{1\}$.), denn:
+\[
+ \phi(g)=\phi(h)\iff 1=\phi(g)\cdot \phi(h)^{-1}=\phi(g)\cdot \phi(h^{1})=\phi(g\cdot h^{-1})\iff g\cdot h^{-1}\in \ker \phi
+\]
+Eine Untergruppe $H\subset G$ ist eine Normalteiler genau dann, wenn $H$ als Kern eines Gruppenhomomorphismus auftritt, dass heißt falls es einen Homomorphismus $\phi: G\to K$ gibt mit $\ker \phi=H$.
+
+Denn: ist $H$ ein Normalteiler, so ist $H$ der Kern des (surjektiven) Gruppenhomomorphisismum $\pi: G \to G/H: g\mapsto gH$ (wobei $G/H$ die natürliche Gruppenstruktur $(g_1\cdot H)\cdot (g_2 H)=g_1 g_2 H$ trägt, siehe (Abschnitt 3). Ist andererseits $\phi:G\to K$ ein Gruppenhomomorphismus und $h\in \ker \phi$, so liegt auch $ghg^{-1}$ im Kern, denn:
+\[
+ \phi(g\cdot h \cdot g^{-1})= \phi(g)\cdot\underbrace{\phi(h)}_{=1} \cdot \phi(g)^{-1}=1
+\]
+(Bei abelschen Gruppen sind alle UNtergruppen Normalerteiler, zum Beispiel $2\Z \subset \Z \to \Z^2=\Z_2=\Z/2\Z$)
+Stets sind $\{1\}, G\subset G$ Normalteiler. Bezeichnung  $H\trianglelefteq G$ bedeutet $H\subset G$ Normalteiler)
+
+Das \emph{direkte} Produkt $G_1\times... \times G_k$ von $k$ Gruppen $G_1, ..., G_k$ ist die Menge:
+\[
+ \{(g_1, g_2,...,g_k)|g_i \in G_i\}
+\]
+mit der komponentenweisen Verknüpfung
+\[
+ (g_1,...,g_k)\cdot (h_1,..., h_k):=(g_1h_1,..., g_kh_k)
+\]
+als Gruppenstruktur. Die Faktoren $G_i$ sind auf kanonische Weise durch die injektive $G_i\to G_1\times ... \times G_k, g_i \mapsto (1,..., 1, g_i, 1,..., 1)$ eingebettet (als $\{1\}\times... \times\{1\} \times G_i \times\{1\}  ... \times \{1\})$) und kommutieren miteinander, sind insbesondere Normalteiler.
+
+ Eine ganz andere Konstruktion ist das \emph{freie Produkt} von Gruppen. Seien $G_1, ..., G_k$ disjunkte Gruppen. Ein \emph{Wort} der \emph{Länge} $l\in \N_0$ ist eine Abbildung $\{1,..., l\} \to G_1\cup ... \cup G_k$, also eine endliche Folge von ELementen $x_1x_2... x_l$ mit $x_i\in G_1\cup...\cup G_k$ das \emph{leere Wort} bezeichnen wir mit $1$.
+
+Das \emph{Produkt} von zwei Worten ist durch Aneinanderreihen erklärt:
+\[
+ (x_1x_2...x_l)\cdot (y_1y_2...y_m):=x_1x_2...x_ly_1y_2...y_m
+\]
+Ein Wort heißt \emph{reduziert}, falls für alle aufeinanderfolgendenden Indexpaare $i, i+1$ mit $x_i\in G_m, x_{i+1}\in G_n$ gilt $m\neq n$. Offensichtlich lässt sich jedes Wort auf kanonische Weise zu einem reduzierten Wort machen ("`\emph{reduzireen}"'), indem man aufeinanderfolgende Elemente, die aus den selben Gruppe $G_i$ stammen, multipliziert, dass heißt durch ihr Produkt ersetzt und neutrale Elemente streicht. 
+
+Wir definieren dann das \emph{freie Produkt} der Gruppen $G_1*... * G_k$ als die Menge der reduzierten Worte
+\[
+ G_1*...*G_k:=\{x_1...x_l|l\in \N_0, x_1...x_l \text{ reduziertes Wort } \}
+\]
+und definieren die Gruppenverknüpfung durch das Produkt von Worten (Hintereinanderschreiben) und anschließendes Reduzieren.
+\begin{ex*}
+ Das freie Produkt $\Z*\Z$ besteht aus Worten der Form
+\[
+ \{a^{n_0} b^{n_1} a^{n_2} b^{n_3} a^{n_{2k+1}}|k\in \N_0, n_1 \in \Z, n_1,..., n_{2k}\neq 0\}
+\]
+wobei wir die beiden Faktoren multiplikativ geschrieben haben als $\{a^n|n\in \Z\}$ bzw $\{b^n|n\in \Z\}$. Wir bemerken, dass freie Produkte stets unendlich sind, falls mindestens zwei der Faktoren nichttriviale Gruppen sind (im Gegensatz zum direkten Produkt).
+
+\end{ex*}
+\begin{note*}
+ $\Z*\Z$: 
+\[
+ 4\cdot 3 = 7
+\]
+\[
+ 1\cdot 1 \neq 1\cdot 1
+\]
+\[
+ (1\cdot 1)\cdot(1\cdot 1)=1\cdot 1 \cdot 1 \cdot 1 = 1\cdot 2 \cdot 1
+\]
+\[
+ (1\cdot 3)\cdot(-3\cdot -1)=1\cdot (3-3)\cdot (-1)=1\cdot 0\cdot (-1)=1\cdot (-1)=0=1=e
+\]
+wobei $e$ das neutrale Element in $\Z * \Z$
+\fixme[from mathematiker : fixen]
+\end{note*}
+
+Sei $A\subset G$ eine beliebige Teilmenge der Gruppe $G$. Wir definieren die \emph{von $A$ erzeugte Untergruppe} als die Schnittmenge aller von Untergruppen von $G$, die $A$ enthalten (beliebige Schnitte von Untergruppen sind wieder Untergruppen) und analog den von $A$ erzeugten Normalteiler als die Schnittmenge aller Normalteiler von $G$, die $A$ enthalten (zum Beispiel $G$ ist ein Normalteiler von $G$, der $A$ enthält).
+ 
+\begin{st}[Seifert-van Kampen]
+ Sei der topologische Raum $X=U\cup V$ mit $U, V\le X$ offen und $U,V, U\cap V$ wegzusammenhängend. Sei $x_0\in U\cap V$. Dann ist
+\[
+ \pi_1(X;x_0) \cong \pi_1(U;x_0)*\pi_1(V;x_0)/N
+\]
+wobei $N$ der Normalteiler von $\pi_1(U;x_0)*\pi_1(V_j;x_0)$ ist, der von den Elementen der Form
+\fixme[Beweis vervollständigen]
+
+
+\end{st}
+
 
 
 
