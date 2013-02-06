@@ -2733,18 +2733,303 @@ kombinatorische "`Brezelfläche"':
 \begin{st}[Rado 1924]
  Jede geschlossene Fläche tritt als geometrische Realisierung $K$ ist homöomorph zu einer kombinatorische Fläche $K, \mathcal K)$ auf (ist "'\emph{triangulierbar}"'))
 \end{st}
+
+\begin{df}
+ Sind $(K, \mathcal K)$, $(L, \mathcal L)$ zwei endliche simpliziale Polyeder, so heißt eine stetige Abbildung $f: K \to L$ \emph{simplizial}, wenn für jedes $\sigma\in \mathcal K$
+\begin{enumerate}[(i)]
+ \item die Bildmenge $f(\sigma)$ ein Element von $\mathcal L$ ist.
+ \item die Abbildung $f\vline\,_{\Delta(\sigma)}: \Delta(\sigma)\to \Delta(\sigma)$ affin ist.
+\end{enumerate}
+
+Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbildung hat.
+\end{df}
+\begin{df}
+ Zwie kombinatorische Flächen heißen \emph{kombinatorisch äquivalent}, wenn sie isomorphe "`\emph{Unterteilmengen}"' besitzen.
+\end{df}
+\begin{figure}
+ \centering
+\fixme[fig129]
+\caption{Unterteilung}
+\end{figure}
+
+\begin{df}
+ Eine \emph{Zerschneidung} einer kombinatorischen Fläche $(Y,\mathcal Y)$ und einer simplizialen Abbildung. $\phi:(Y, \mathcal Y)\to (X, \mathcal X)$, so dass $\phi\vline\,_{\mathcal Y_2}:\mathcal Y_2 \to \mathcal X_2$ bijektiv ist. (bijektiv auf 2 Simplizes, $0$- und $1$-Simplizes werden eventuell zusammengeklebt.)
+\begin{figure}
+ \centering
+\fixme[fig130]
+\caption{}
+\end{figure}
+\end{df}
+
+Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Polygonmodell)
+\begin{seg}{Zerschneidung eines $2$-Torus}
+ \begin{figure}
+ \centering
+\fixme[fig131]
+\caption{}
+\end{figure}
+\end{seg}
+
+\begin{df}
+ Der \emph{Rand} einer kombinatorischen Fläche bestaht aus allen $1$-Simplizes, die nicht Teilimplizes in zwei verschieden $2$-Simplizes sind. Eine kombinatorische Fläche heißt \emph{n-Eck}, wenn ihr Rand aus genau n $1$-Simplizes besteht und sie zu einem $2$-Simplex homöomorph ist.
+\begin{figure}
+ \centering
+\fixme[fig132]
+\caption{}
+\end{figure}
+\end{df}
+
+\begin{lem}
+ Sei $\phi: \mathcal Y\to \mathcal X$ eine Zerschneidung von $\mathcal X$ \emph{entlang eines $1$-Simplex} (dass heißt $\phi^{-1}(e)$ besteht aus zwei $1-$Simplizes von $\mathcal X$, aller anderen haben zur ein $1$-Simplex im Urbild. Sei $\mathcal Y$ die disjunkte Vereinigung eines $n$-Ecks und eines $m$-Ecks. Dann ist $\mathcal X$ ein ($m+n-2$)-Eck.
+\end{lem}
 \begin{proof}
-Offensichtlich (nicht). Übung (nicht) 
+ \begin{figure}
+ \centering
+\fixme[fig133]
+\caption{}
+\end{figure}
+\end{proof}
+\begin{st}
+ Eine zusammenhängende kombinatorische Fläche lässt sich zu einem $m$-Eck zerschneiden.
+\end{st}
+\fixme[from mathematiker : Überprüfe Nummerierung]
+\begin{proof}
+ Eine Zerschneidung $\mathcal Y$ von $\mathcal X$ heißt \emph{flach}, wenn jede Komponente $\mathcal Y_i$ von $\mathcal Y$ ein $n_i$-Eck ist. es existiert immer eine flache Zerschneidung. zum Beispiel die disjunkte Vereinigung der $2$-Simplizes von $\mathcal X$.
+\begin{figure}
+ \centering
+\fixme[fig134]
+\caption{}
+\end{figure}
+Sei unter all solce eine mit minimale Anzahl von Komponenten gewählt.
+\begin{seg}{Diese Anzahl ist gleich 1}
+ Da $\mathcal X$ zusammenhängend ist, gibt es nämlich sonst zwei $1$-SImplizes in $Y$, die von $\phi$ identifiziert werden. Nach Lemma \ref{thm3:1.11} lassen sich diese zu einem $n$-Eckk zusammenkleben, wobei eine neue flache Zerschneidung mit verringerter Komponentenzahl entsteht.
+\end{seg}
 \end{proof}
 
+Eine Zerschneidung $\phi: \mathcal Y \to \mathcal X$ einer geschlossenen Fläche liefert eine Äquivalenzrelation auf dem Rand von $\mathcal Y$: Jede Randkante wird mit genau einer anderen verklebt. Für diese Identifikation gibt es genau zwei Möglichkeiten, die den beiden Möglichkeiten, die den beiden Möglichkeiten entsprechen, die Menge der Endpunkte $\{p_0, p_1\}$ eines $1$-Simplex $\Delta(p_0, p_1)$ auf die Menge der Endpunkte $\{a_0, a_1\}$ eines anderen $1$-Simplex bijektiv abzubilden.
+
+Sei $\mathcal k=\{a_1, ..., a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir gebenden Kanten eine Orientierung, indem wir fordern, dass beim positiven Drucklaufen das Inneren von $\mathcal Y$ links liegen soll.
+
+\begin{figure}
+ \centering
+\fixme[fig135]
+\caption{}
+\end{figure}
+
+Wir schreiben $a_i^{-1}$ für jeweils die umgekehrt durchgelaufene Kante. Wir setzen $\mathcal k^0:=\{a_1,..., a_{2n}, a_1^{-1}, ..., a_{2n}^{-1}\}$ für die Menge der \emph{orienterten Kante}.
+
+\begin{df}
+ Ein \emph{Polygon-Modell} besteht aus einem $2n$-Eck $\mathcal Y$ mit Kantenmenge $\mathcal k$ und einer \emph{Involution} $\psi: \mathcal k^0 \to \mathcal k^0$, die folgende Bedingung erfüllt: Sind $a,b\in \mathcal k$ und ist $\psi(a)=b^{\epsilon}$, so ist $b\neq a$ und $\Psi(a^{-1})=b^{-\epsilon}$.
+\end{df}
+\begin{note*}
+ \emph{Involution} bedeutet $\psi\circ \psi=\id$
+\end{note*}
 
 
+\begin{exs*}
+ \begin{enumerate}[(i)]
+  \item \emph{Torus}:
+\begin{figure}
+ \centering
+\fixme[fig136]
+\caption{}
+\end{figure}
+\item komplexeres Beispiel:
+\begin{figure}
+ \centering
+\fixme[fig137]
+\caption{}
+\end{figure}
+Es ergibt sich das \emph{Wort}: $acfbf^{-1}db^{-1}d^{-1}ea^{-1}e^{-1}c^{-1}$
+ \end{enumerate}
+\end{exs*}
+\begin{df}
+ Ein \emph{Flächen-Wort} ist ein formaler Ausdruck
+\[
+ a_{i_1}^{\epsilon_i} a_{i_2}^{\epsilon_2}.... a_{i_{2r}}^{\epsilon_{2r}}
+\]
+wobei $\epsilon_0=\pm 1$ und jedes Index $i\in \{1,..., r\}$ unter der Indizes $i_1, i_2, ..., i_{2r}$ genau zweimal vorkommt. Das zugehörige Polygonmodell besteht aus einem $2r$-Eck mit zyklisch angeordneten Kanten $b_1,..., b_{2r}$ mit
+\[
+ \psi(b_\mu)=b_v^\epsilon \text{ für } i_\mu=i_v \text{ und } \epsilon_\mu=\epsilon \epsilon_0
+\]
+Zwei Flächen-Worte heißen äquivalent, wenn die durch sie beschriebenen Flächen kombinatorisch äquivalent sind.
+(Auf die Triangulierung des Polygonmodells kommt es nicht an, S. E, Ossa 106.)
+\end{df}
+\begin{seg}{Ziel:}
+ Klassifiziere Flächen-Worte bis auf Äquivalenz
+\end{seg}
+\begin{exs*}
+\begin{enumerate}[(i)]
+ \item \emph{Torus}: $aba^{-1}b^{-1}$ (äquivalent: $b^{-1}aba^{-1}$ oder zum Beispiel $a^{-1} b^{-1} a b$).
+ \item \emph{Kleinsche Flasche}: $aba^{-1}b^{-1}$.
+\begin{figure}
+ \centering
+\fixme[fig138]
+\caption{}
+\end{figure}
+\end{enumerate}
+\end{exs*}
+\begin{lem}
+\begin{enumerate}
+ \item Zyklische Vertauschung
+ \item $...a^{\epsilon}...a^{\epsilon'}... \sim ...a^{-\epsilon}...a^{-\epsilon'}...$
+ \item $...ab... ab... \sim ... a ... a...$
+ \item $...ab... b^{-1} a^{-1}... \sim ... a ... a^{-1} ...$
+\setcounter{figure}{139}
+\begin{figure}
+ \centering
+\fixme[fig140]
+\caption{}
+\end{figure}
 
+\end{enumerate}
+\end{lem}
+\begin{proof}
+ Offensichtlich.
+\end{proof}
+Man kann zum Beispiel immer erreichen, dass das erste Auftreten eines Buchstaben mit Exponent $+1$ ist (nach ii)
+\begin{lem}[Beiziehen]
+ \[
+  ...abb^{-1}c... \sim ...ac...
+ \]
+\end{lem}
+\begin{proof}
+ \begin{figure}
+ \centering
+\fixme[fig141]
+\caption{}
+\end{figure}
+\end{proof}
 
+Ein Flächen-Wort heißt \emph{gekürzt}, wenn kein $bb^{-1}$ (oder $b^{-1}b$) noch vorkommt. WIr wollen Flächen-Worte als gekürzt, außer sie sind von der Form $aa^{-1}$, wir wollen dies als Polygon-Modell der Sphäre zulassen.
 
+\begin{note*}[Polygonmodelle mit 2 Kanten]
+ \begin{figure}
+ \centering
+\fixme[fig142]
+\caption{}
+\end{figure}
+\end{note*}
 
+\begin{note*}[Moebius-Band]
+ \begin{figure}
+ \centering
+\fixme[fig143]
+\caption{}
+\end{figure}
+$...c...c...$ auch \emph{Kreuzhaube} genannt.
+\end{note*}
 
+\begin{note*}[Henkel]
+$...a...b...a^{-1}...b^{-1}...$
+ \begin{figure}
+ \centering
+\fixme[fig144]
+\caption{}
+\end{figure}
+\end{note*}
+Die Anzahl der Äquivalenzklassen von Endpunkten von Kanten heißt \emph{Eckenzahl}
+\begin{figure}
+ \centering
+\fixme[fig145]
+\caption{}
+\end{figure}
 
+besitzt Eckenzahl 1.
+
+\begin{lem}\label{thm3:1.19}
+ Ein gekürztes Flächen-Wort ist äquivalent zu einem gekürzten Flächenwort mit Eckenzahl 1
+\end{lem}
+\begin{ex*}
+ \begin{figure}
+ \centering
+\fixme[fig146]
+\caption{}
+\end{figure}
+\end{ex*}
+\begin{proof}
+ Die Ecke $P$ kommt nun in verringerter Anzahl vor ($Q$ dafür einmal öfter). Durch Wiederholen erreicht man, dass $P$ nur noch einmal vorkommt. Dann haben wir entweder $aa^{-1}$ (fertig) oder $aa^{-1}...$ und wir können "`Beiziehen"'.
+\end{proof}
+
+\begin{lem}[Kreuzhauben-Normierung]
+ Ein gekürztes Flächen-Wort mit Eckenzahl $1$ und $k$ Kreuzhauben ist äquivalent zu $c_1c_1c_2c_2...c_kc_k...$, wobei alle sonstigen Kanten genau einmal mit Exponent $+1$ und einmal mit $-1$ auftreten.
+\end{lem}
+\begin{proof}
+ \begin{figure}
+ \centering
+\fixme[fig147]
+\caption{}
+\end{figure}
+Bereits vorhandene Kreuzhauben der Form $dd$ werden dabei nicht vereinfacht.
+\end{proof}
+
+\begin{lem}[Henkel-Normierung]
+ Ein gekürztes Flächen-Wort mit Eckenzahl $1$ ist äquivalent zu einem Produkt von Worten der Gestalt $c_ic_j$ und $a_jb_ja_j^{-1}b_j^{-1}$
+\end{lem}
+\begin{proof}
+ Wir nehmen an, dass die Kreuzhauben bereits normiert wie in Lemma \ref{thm3: 1.18} vorkommen. Dann muss das Wort von der Form $...a...b...a^{-1}...b^{\pm1}...$, denn sonst würde der Rand des Polygons, wenn man $a$ und $a^{-1}$ entfernt (nach Identifikation der übrigen entsprechenden Kanten) in zwei Komponenten zerfallen,
+\begin{figure}
+ \centering
+\fixme[fig148]
+\caption{}
+\end{figure}
+Widerspruch zu Eckenzahl $1$. Der Exponent von $b^{\pm 1}$ muss $-1$ sein, wegen der vorherigen Kreuzhauben-Normierung. Wir formen nun $...a...b...a^{-1}...b^{-1}...$ zu $...aba^{-1}b^{-1}...$
+\begin{figure}
+ \centering
+\fixme[fig149]
+\caption{}
+\end{figure}
+Bereits norimerte andere Henkel und normierte Kreuzhauben bleiben dabei normiert.
+\end{proof}
+\begin{lem}[Henkel-Elimination]
+ Ein gekürztes Flächenwort mit Eckenzahl $1$, dass mindestens eine Kreuzhaube enthält, ist äquivalent zu einem Wort der Gestalt $c_1c_1c_2c_2...c_kc_k$
+(einem Produkt von normierten Kreuzhauben).
+\end{lem}
+\begin{proof}
+ Falls außer einer Kreuzhaube noch mindestens ein Henkel vorkommt, ist das Wort äquivalent zu $ccaba^{-1}b^{-1}...$ Wir formulieren:
+\begin{figure}
+ \centering
+\fixme[fig150]
+\caption{}
+\end{figure}
+Nun haben wir einen Henkel weniger und zwei Kreuzhauben mehr. (diese können normiert werden).
+\end{proof}
+
+\begin{note*}[Endergebnis]
+ Wir können das Flächenwort äquivalent in eine der drei folgenden Normalformen umformen;
+ \begin{enumerate}[(1)]
+  \item $aa^{-1}$ die Rechenweg dieses Worts  (die Sphäre) nennen wir auch $F_0$
+  \item $a_1b_1a_1^{-1} b_1^{-1} a_2 b_2a_2^{-1} b_2^{-1}...a_gb_g a_g^{-1} b_g^{-1}$ der Realisierung nennen wir auch $F_g, g\ge 1$
+  \item $c_1c_1c_2c_2...c_g$ die Realisierung nennen wir auch $N_g$.
+ \end{enumerate}
+Die Fläche $F_g, g\ge 0$ nennt man die \emph{orientierbare geschlossenen Flächen von Geschlecht} $g$.
+\begin{figure}
+ \centering
+\fixme[fig151]
+\caption{}
+\end{figure}
+Die Flächen $N_g, g\ge 1$ ennt man die \emph{nicht-orientierbaren Flächen} vom Geschlecht $g$
+\begin{figure}
+ \centering
+\fixme[fig152]
+\caption{}
+\end{figure}
+\end{note*}
+\begin{st}
+ Jede geschlossene Fläche ist zu einem $F_g, g\ge 0$ oder $Ng, g\ge 1$ homöomorph. Wir haben noch nicht ausgeschlossen, dass die $F_g$ und $N_g$ untereinander homöomorph sind.
+\end{st}
+\begin{st}
+ Sei $\omega(a_1,...,a_n)=a^{\epsilon_1}_{i_1} a^{\epsilon_2}_{i_2}... a^{\epsilon_2r}_{i_{2r}}$ ein FLächenwort mit Eckenzahl $1$. Sei $X$ die Realisierung des zugehörigen Polygon-Modells und $x_0\in X$ das gemeinsame Bild der Endpunkte aller Kanten, dann hat $\pi_1(X;x_0)$ die Präsentation
+\[
+ \pi_1(X;x_0)=\langle a_1,..,a_r \, \vline \, w(a_1,...a_r)=1\rangle
+\]
+dass heißt die freie Gruppe über $a_1,..., a_r$ modulo dem von $w(a_1,..., a_r)$ erzeugten Normalteiler.
+\begin{kor*}
+ $\pi_1(F_g)_{ab}\cong \Z^g$, $\pi_1(N_0)_{ab}\cong \Z^{g-1} \oplus \Z_2$ abelsch gemachte Gruppe
+\end{kor*}
+
+\fixme[Überprüfen]
+\end{st}
 
 
 
