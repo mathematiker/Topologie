@@ -2,5 +2,5 @@ Topologie
 =========
 Die Vorlesungszeit ist rum, wir habens geschafft, nun müssen wir nur noch die Prüfung schaffen...
 Vorallem danke ich an dieser Stelle diejenigen von euch, die mitgeholfen haben...
-===
+
 Viel Glück :D
