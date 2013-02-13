@@ -1,11 +1,19 @@
 \ProvidesPackage{mathe-vorlesung}
 
-\usepackage[utf8x]{inputenc}
-\usepackage{ngerman}
+\usepackage[ngerman]{babel} 	% Deutsche Sprachunterstützung für Silbentrennung, etc.
+\usepackage[T1]{fontenc}		% Erlaubt das kopieren/suchen von/nach Umlauten im pdf-Dokument
+\usepackage[utf8]{inputenc}		% Encoding der tex-Dateien, erlaubt direkte Eingabe von Sonderzeichen
+\usepackage{lmodern}			% Schönere Schriftart für pdf-Dokumente
 
-\usepackage[a4paper,left=25mm,right=25mm, top=20mm, bottom=40mm]{geometry}
+% Seitenkonfiguration
+\usepackage[a4paper, left=20mm, right=20mm, top=20mm, bottom=30mm]{geometry}
 
-\usepackage{hyperref}
+%\usepackage[hidelinks]{hyperref}			% Macht Referenzen im pdf-Dokument anklickbar
+\usepackage{hyperref}			% Macht Referenzen im pdf-Dokument anklickbar
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
 
 \usepackage{bbm}
 \usepackage{algpseudocode}
@@ -13,7 +21,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 %\usepackage{amsthm}
-\usepackage{ntheorem}
+\usepackage[hyperref,thmmarks]{ntheorem}
 \usepackage{enumerate}
 \usepackage{parskip}
 \usepackage{changepage}
@@ -22,15 +30,36 @@
 \usepackage{framed}
 \usepackage{pstricks}
 
+
 %\usepackage{mathtools}
 
 %\renewcommand{\proofname}{\normalfont\itshape\underline{Beweis}}
 
-\theoremstyle{break}
-\theorembodyfont{\normalfont}
-\theorempreskipamount 1.5em
-\theoremindent 1em
-\theoremheaderfont{\kern-1em\normalfont\bfseries}
+\usepackage{listings}			% Einbinden von Code-Schnipsel
+% Hack um deutsche Sonderzeichen in lstinputlisting zu unterstützen
+\lstset{literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}2{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1}
+\lstset{
+  basicstyle=\small\ttfamily,
+  numbers=left,
+  columns=fullflexible,
+  breaklines=true,
+  mathescape=true,
+  escapechar=\#,
+  tabsize=4,
+  frame=lines,
+  showstringspaces=false
+}
+
+%========================
+% Theorems
+%========================
+
+\theoremstyle{break} 								% Vordefinierter Style mit Zeilenumbruch
+\theorembodyfont{\normalfont} 						% Aufrecht statt kursiv im body-Teil
+% Deprecated: (use \theorempreskip instead)
+\theorempreskipamount 2.5em 						% Abstand vor Theroem
+\theoremindent 2ex 									% Theroem einrücken
+\theoremheaderfont{\kern-1em\normalfont\bfseries} 	% Überschrift wieder ausrücken
 
 %\theorempreskip{} 
 
@@ -58,9 +87,24 @@
 \renewtheorem*{note*}{Bemerkung}
 \renewtheorem*{att*}{Beachte}
 
-\theoremheaderfont{\kern-1em\bfseries\small\itshape}
+% Beweis
+\theorempreskipamount 1.5em 								% Abstand vor Theroem
+\theoremheaderfont{\kern-1em\bfseries\small\itshape}% Kursiv und kleiner als oben
+\theoremsymbol{\ensuremath{\square}}
 \newtheorem*{proof}{Beweis}
+\theoremsymbol{}
 
+% Segment-Environment für kleinere gedankliche Abschnitte
+\theoremstyle{emptybreak}
+\theoremheaderfont{\kern-2em\bfseries\small}
+\theoremindent 2em 									% Theroem einrücken
+\theoremprework{
+	%\setlength\theorempreskipamount{5ex}\setlength\theorempostskipamount{5cm}
+	\ \\ % Erzwinge Absatz, sonst komische Überschneidungsprobleme
+	\vspace{-2em}
+	%\topsep
+}
+\newtheorem{seg}{}
 
 
 % Skript Zeichen
@@ -76,6 +120,9 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\Q}{\mathbb{Q}}
 \renewcommand{\P}{\mathbb{P}}
+
+% Diakritische Zeichen
+\renewcommand{\tilde}{\widetilde}
 
 % Griechische Buchstaben
 \renewcommand{\phi}{\varphi}
@@ -113,6 +160,11 @@
 \newcommand{\Pot}{\operatorname{Pot}}
 \newcommand{\Deck}{\operatorname{Deck}}
 \newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\Var}{\operatorname{Var}}
+\renewcommand{\div}{\operatorname{div}}
 
 
 \newcommand{\fixme}{\text{FIXME}}
@@ -133,19 +185,13 @@
 \renewcommand{\>}{\rangle}
 
 
-\newenvironment{seg}[1]{
-	\underline{#1}
-	\begin{adjustwidth}{1.3em}{0em}
-}{
-	\end{adjustwidth}
-}
-
 % Algorithmen
 \newcommand{\Input}{\Require}
 \newcommand{\Assume}{\Require}
 \newcommand{\Assert}{\Require}
 \newcommand{\Output}{\Ensure}
 
+% Typos, etc.
 \newcommand{\jota}{\iota}
 \newcommand{\my}{\mu}
 
