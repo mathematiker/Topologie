@@ -13,6 +13,7 @@
 \usetikzlibrary{arrows,patterns}
 \usepackage{float}
 \usepackage[T1]{fontenc}
+\usepackage{stmaryrd}
 
 \title{Topologie}
 
@@ -1909,8 +1910,8 @@ heißt die \emph{Standgruppe} von $x$ oder die \emph{Isotopie(unter)gruppe} von 
 \end{df}
 
 
-\begin{lem}
- Die diskrete Gruppe $G$ wirke blätternd auf den topologischen Raum $X$. Dann ist die Abbildung $\pi: X\to X/G$, wobei $X/G$ der Quotientenraum von $X$ bezüglich der Relation
+\begin{lem}\label{thm2:3.5}
+ Die diskrete Gruppe $G$ wirke blätternd auf den topologischen Raum $X$. Dann ist die Abbildung $\pi: X\to X/G$ eine Überlagerung, wobei $X/G$ den Quotientenraum von $X$ bezüglich der Relation
 \[
  x\sim y :\iff x\in G\cdot y \iff \exists g\in G: g\cdot y=x
 \]
@@ -1953,12 +1954,12 @@ Weiter sei $\Lambda_\omega(e):= \tilde \Lambda_\omega(e,1)$
 \begin{enumerate}[(i)]
  \item $\Lambda_\omega$ bildet $E_{b_0}$ nach $E_{b_1}$ nach.
  \item $\Lambda_{\omega*\eta}=\Lambda_{\eta} \circ \lambda_\omega$
- \item Sind $\omega$ und $\eta$ homotop mit festen Endpunkten, dann gilt $\Lambda_\omega=\lambda_\eta$
+ \item Sind $\omega$ und $\eta$ homotop mit festen Endpunkten, dann gilt $\Lambda_\omega=\Lambda_\eta$
  \item $\Lambda_\omega: E_{b_0} \to E_{b_1}$ ist bijektiv
 \end{enumerate}
 \end{lem}
 \begin{proof}
- (i) und (ii)  folgen direkt aus der Definition von $\Lambda_\omega$. (iii) folgt aus dem Monodromielemma Korollar \ref{thm2:2.6} (iv) folgt aus (i)-(iii), da $\Lambda_{\omega^{-1}}\circ \Lambda_\omega\stackrel{(ii)}{=} \Lambda_{\omega*\omega^{-1}}=\Lambda_\epsilon=\id_{E_{b_0}}$, wobei $\epsilon$ ein konstanter Weg ist. 
+ (i) und (ii)  folgen direkt aus der Definition von $\Lambda_\omega$. (iii) folgt aus dem Monodromielemma Korollar \ref{thm2:2.6} (iv) folgt aus (i)-(iii), da $\Lambda_{\omega^{-1}}\circ \Lambda_\omega\stackrel{(ii)}{=} \Lambda_{\omega*\omega^{-1}}=\Lambda_\epsilon=\id_{E_{b_0}}$, wobei $\epsilon$ ein konstanter Weg in $b_0$ ist. 
 \end{proof}
 
 \begin{seg}{Zusamenfassung: Überlagerung und Gruppenwirkung}
@@ -1995,7 +1996,7 @@ Wir haben bereits einige Eigenschaften bewiesen:
 \end{seg}
 
 \begin{st}\label{thm2:3.8}
- Die Fundamentalgruppe $\pi_1(B; b_0)$ operiert von rechts auf der Faser $E_{p_0}=p^{-1}(\{b_0\})$ vermöge:
+ Die Fundamentalgruppe $\pi_1(B; b_0)$ operiert von rechts auf der Faser $E_{b_0}=p^{-1}(\{b_0\})$ vermöge:
 \[
  e\cdot [\omega] := \Lambda_\omega(e)
 \]
@@ -2005,7 +2006,7 @@ Die Standgruppe des Punktes $e_0$ ist dabei die Untergruppe
 \]
 Ist $E$ wegzusammenhängend, so ist die Wirkung transitiv und induziert die Bijektion
 \[
- E_{b_0} \leftrightarrow H(p; e_0)
+ E_{b_0} \leftrightarrow \pi_1(B; b_0) / H(p; e_0)
 \]
 
 
@@ -2030,20 +2031,20 @@ Man bezeichnet diese als Links- bzw. Rechtsnebenklasse.
  G\cdot x \stackrel{\text{bijektiv}}{\longleftrightarrow} G/G_x
 \]
 \[
- g\cdot x \leftarrow| gG_x
+ g\cdot x \mapsfrom gG_x
 \]
 Es ist $gh\cdot x=g\cdot x$ und $gG_x=ghG_x$ mit $h\in G_x$
 \end{seg}
 \end{itemize}
 \end{note*}
 \begin{proof}
- Aus Lemma \ref{thm2:3.7}(iii) folgt, dass die Abbildung $([\omega], e)\mapsto \Lambda_\omega(e)$ wohldefiniert ist und dass gilt $(1,e) \mapsto \Lambda_\epsilon(e)=e$. Aus (ii) folgt $(e\cdot [\omega])\cdot [\eta]=\Lambda_{\eta}(\Lambda_\omega(e))=\Lambda_{\eta}\circ \Lambda_{\omega}(e)=\Lambda_{\omega*\eta}(e)=(e\cdot [\omega*\eta])=e\cdot ([\omega][\eta])$. Dies zeigt den ersten Tiel der Beauptung. Die Standgruppe von $e_0$ besteht aus Homotopieklassen von Schleifen, die sich zu geschlossenen Wegen mit Anfangs- und Endpunkt $e_0$ hochheben, also aus homomorphen Bild von $\pi_1(E; e_0)$ unter $\pi_1(p)$. Falls $E$ wegzusammenhängend ist, gibt es zu je zwei Punkten $e_0, e_1 \in E_{b_1}$ einen verbindenden Weg $\eta$ in $E$. Dann ist $\omega:= p \circ \eta$ eine Schleife in $B$ mit Anfangs- und Endpunkt $b_0$ und es gilt $\Lambda_{\omega}(e_0)=e_1$
+ Aus Lemma \ref{thm2:3.7}(iii) folgt, dass die Abbildung $([\omega], e)\mapsto \Lambda_\omega(e)$ wohldefiniert ist und dass gilt $(1,e) \mapsto \Lambda_\epsilon(e)=e$. Aus (ii) folgt $(e\cdot [\omega])\cdot [\eta]=\Lambda_{\eta}(\Lambda_\omega(e))=\Lambda_{\eta}\circ \Lambda_{\omega}(e)=\Lambda_{\omega*\eta}(e)=(e\cdot [\omega*\eta])=e\cdot ([\omega][\eta])$. Dies zeigt den ersten Teil der Behauptung. Die Standgruppe von $e_0$ besteht aus den Homotopieklassen von Schleifen, die sich zu geschlossenen Wegen mit Anfangs- und Endpunkt $e_0$ hochheben, also aus dem homomorphen Bild von $\pi_1(E; e_0)$ unter $\pi_1(p)$. Falls $E$ wegzusammenhängend ist, gibt es zu je zwei Punkten $e_0, e_1 \in E_{b_1}$ einen verbindenden Weg $\eta$ in $E$. Dann ist $\omega:= p \circ \eta$ eine Schleife in $B$ mit Anfangs- und Endpunkt $b_0$ und es gilt $\Lambda_{\omega}(e_0)=e_1$
 \end{proof}
 \begin{kor}
  $\pi_1(p): \pi_1(E; e_0)\to \pi_1(B, b_0)$ ist injektiv
 \end{kor}
 \begin{proof}
- Folgt aus dem Homotpie-Hochebungssatz. Ist das Bild einer Schleife homotop mit festen Endpunkten zu einer konstanten Schleife, so auch die Hochebung.
+ Folgt aus dem Homotopie-Hochebungssatz \ref{thm2:2.4}. Ist das Bild einer Schleife homotop mit festen Endpunkten zu einer konstanten Schleife, so auch die Hochebung.
 \end{proof}
 \begin{df}
  Ein topologischer Raum $X$ heißt \emph{lokal wegzusammenhängend}, wenn es zu jedem Punkt $x\in X$ und jeder Umgebung $U$ von $x$ eine wegzusammenhängende Umgebung von $x$ gibt, die in $U$ enthalten ist. 
@@ -2055,19 +2056,19 @@ Um ein Gegenbeispiel zu finden, sollten wir eine Menge finden, die gerade so ist
  \includegraphics[scale=0.3]{fig81.png}
  \caption{}
 \end{figure}
- wegzusammenhängend $\nimplies$ lokal wegzusammenhängend. Gegenbeispiel: Vereinigung von Geradenstücken in $\R^2$:\\
+ wegzusammenhängend $\centernot \implies$  lokal wegzusammenhängend.  Gegenbeispiel: Vereinigung von Geradenstücken in $\R^2$:\\
 \begin{figure}[H]
 \centering
  \includegraphics[scale=0.3]{fig82.png}
  \caption{}
 \end{figure}
 
-lokal wegzusammenhängend $\nimplies$ wegzusammenhängend. Gegenbeispiel: Zweipunktmenge.
+ wegzusammenhängend $\nimplies$ lokal wegzusammenhängend. Gegenbeispiel: Zweipunktmenge.
 \end{note*}
 \begin{st}[Hochhebungssatz] \label{thm2:3.11}
- Sei $X$ ein sowohl wegzusammenhängender als auch lokal wegzusammenhängender topologische Raum $f:X \to B$ eine stetige Abbildung mit $f(x_0)=b_0$. Dann besitzt $f$ genau dann eine Hochhebung $F: X\to E$ (dass heißt $p\circ F=f$) mit $F(x_0)=e_0$, wenn gilt:
+ Sei $X$ ein sowohl wegzusammenhängender als auch lokal wegzusammenhängender topologischer Raum, $f:X \to B$ eine stetige Abbildung mit $f(x_0)=b_0$. Dann besitzt $f$ genau dann eine Hochhebung $F: X\to E$ (dass heißt $p\circ F=f$) mit $F(x_0)=e_0$, wenn gilt:
 \[
- \underbrace{\pi_1(f) (\pi_1(X;x_0))}_{\text{Bild von $\pi_1(f)$}} \subset \underbrace{\pi_1(p) (\pi_1(E;e_0))}{\text{Bild von $\pi_1(p)$}}
+ \underbrace{\pi_1(f) (\pi_1(X;x_0))}_{\text{Bild von $\pi_1(f)$}} \subset \underbrace{\pi_1(p) (\pi_1(E;e_0))}_{\text{Bild von $\pi_1(p)$}}
 \]
 Es sei angemerkt, dass $\pi_1(p) (\pi_1(E;e_0))\subset \pi_1(B; b_0)$ 
 \end{st}
@@ -2095,9 +2096,9 @@ Die Stetigkeit von $F$ folgt aus dem lokalen Wegzusammenhang. Der lokale Wegzusa
 \end{proof}
 
 \begin{note*}[Hochhebungssatz anschaulich]
-Wir erinnern: die induzierten Homomorphismen auf der Fundamentalgruppen sind:
+Erinnerung: die induzierten Homomorphismen auf den Fundamentalgruppen sind:
 \[
- f: X\stackrel{\text{stetig}}{\Longrightarrow} Y: x\mapsto y \longrightarrow \pi_1(X;x_0)
+ f: X\stackrel{\text{stetig}}{\longrightarrow} Y: x_0\mapsto y_0
 \]
 induziert:
 \[
@@ -2140,34 +2141,34 @@ Wir wollen Satz \ref{thm2:3.11} verwenden, um zwei verschiedene Überlagerungen 
 \caption{}
 \end{figure}
 Wir wollen die Frage studieren, wann sich die Abbildung $\id_B\circ p:E\to B$ zu einer Abbildung $f:E \to E'$ hochheben lässt. Damit wir den Hochhebungssatz anwenden können, nehmen wir an, dass $B$ wegzusammenhängend und lokal wegzusammenhängend ist. 
-\begin{kor}
+\begin{kor}\label{thm2:3.12}
  Sei $B$ wegzusammenhängend und lokal wegzusammenhängend. Seien $p:E\to B$ und $p':E'\to B$ Überlagerung mit wegzusammenhängenden \emph{Totalräumen} $E$ und $E'$.
 
 Es seien $e_0\in E, e'_0\in E'$ und $b=p(e_0)=p'(e'_0)$. Dann existiert genau dann eine stetige Abbildung $f:E\to E'$ mit $p'\circ f=p$ und $f(e_0)=e'_0$, wenn gilt $\pi_1(p)(\pi_1(E,e_0))\subset \pi_1(p')(\pi_1(E', e'_0))$ (bzw. $\im(\pi_1(p))\subset \im \pi_1(p')$).
 \end{kor}
 \begin{note*}
- den Urbildbereich einer Überlagerung ezeichnet man als \emph{Totalraum}. Und den Bildbereich \emph{Basisraum} $B$. 
+ Den Urbildbereich einer Überlagerung bezeichnet man als \emph{Totalraum}. Und den Bildbereich \emph{Basisraum} $B$. 
 \end{note*}
 Wie man sich leicht überlegt überlegt, gilt in der Situation von Korollar \ref{thm2:3.12} auch, dass $f:E\to E'$ eine Überlagerung ist. Dies motiviert insbesondere folgende Definition:
 
 \begin{df}
  Eine Überlagerung $p:E\to B$ heißt \emph{universelle Überlagerung}, wenn $E$ einfach zusammenhängend ist (also $\pi_1(E)\cong \{1\}$ ist).
 \end{df}
-Wir wollen den Hochhebungssatz nun benutzen, wenn eine Wirkung einer gewissen Untergruppe der Fundamentalgruppe der Basis auf den Totalraum zu definieren. Es handelt sich dabei um die Fortsetzung der in Satz \ref{thm2:3.8} definierten Wirkung auf der Faser $E_b$.
+Wir wollen den Hochhebungssatz nun benutzen, um eine Wirkung einer gewissen Untergruppe der Fundamentalgruppe der Basis auf den Totalraum zu definieren. Es handelt sich dabei um die Fortsetzung der in Satz \ref{thm2:3.8} definierten Wirkung auf der Faser $E_b$.
 
-Wir betrachten der Spezialfall $E=E'$ des Korollars ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
+Wir betrachten der Spezialfall $E=E'$ des Korollars. Ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
 \[
- \pi_1(\pi_1(E;e'_0))=[\omega]^{-1}\cdot \pi_1(p)(\pi_1(E;e_0)\cdot [\omega]
+ \pi_1(p)(\pi_1(E;e'_0))=[\omega]^{-1}\cdot \pi_1(p)(\pi_1(E;e_0)\cdot [\omega]
 \]
 \begin{figure}[H]
 \centering
  \fixme[fig91]
 \caption{}
 \end{figure}
-Genau dann gibt es eine stetige Hochhebung $f:E\to E$ der Identität auf $B$ mit $f(e_0)=e'_0$, wenn die obige Gruppe $\pi_1(p))\pi_1(E;e_0))$ enthält, mit anderen Worten, wenn diese Untergruppe unter Konjugation mit $[\omega]$ invariant bleibt.
+Genau dann gibt es eine stetige Hochhebung $f:E\to E$ der Identität auf $B$ mit $f(e_0)=e'_0$, wenn die obige Gruppe $\pi_1(p)(\pi_1(E;e_0))$ enthält, mit anderen Worten, wenn diese Untergruppe unter Konjugation mit $[\omega]$ invariant bleibt.
 
 \begin{note*}
-Kunjugation von $a$ mit $g$ ist $gag^{-1}$
+Konjugation von $a$ mit $g$ ist $gag^{-1}$
 \end{note*}
 
 Wir benutzen den folgenden Begriff aus der Gruppentheorie:
@@ -2176,13 +2177,13 @@ Sei $G$ eine Gruppe und $H$ eine Untergruppe. Man sagt, ein Element $g\in G$ \em
 \[
  N_G(H)=\{g\in G| gHg^{-1}=H\}
 \]
-aller Elemente, die $H$ normalisieren heißt \emph{Normalisator} von $H$. Falls $N_G(H)=G$, dass heißt galls $gHg^{-1}=H \, \forall g\in G$, dann sagt man, $H$ ist eine \emph{normale Untergruppe}. Für solche gilt, dass die Menge der Nebenklasse $G/H:=\{gH|g\in G\}$ eine natürliche Gruppenstruktur hat $(g\cdot H)cdot (k\cdot H)=g k \underbrace{(k^{-1}Hk)}_{=H}H=g\cdot k \cdot HH=g\cdot $.
+aller Elemente, die $H$ normalisieren heißt \emph{Normalisator} von $H$. Falls $N_G(H)=G$, dass heißt galls $gHg^{-1}=H \, \forall g\in G$, dann sagt man, $H$ ist eine \emph{normale Untergruppe}. Für solche gilt, dass die Menge der Nebenklasse $G/H:=\{gH|g\in G\}$ eine natürliche Gruppenstruktur hat $(g\cdot H)\cdot (k\cdot H)=g k \underbrace{(k^{-1}Hk)}_{=H}H=g\cdot k \cdot HH=g\cdot k \cdot H$.
 
 Wie man sich leicht überlegt, ist $N_G(H)\subset G$ eine Untergruppe.  
 
 \begin{st}\label{thm2:3.14}
  Sei $B$ wegzusammenhängend und lokal wegzusammenhängend. Sei $p:E\to B$ eine Überlagerung mit wegzusammenhängendem Totalraum. Es sei \fbox{$H(p;e_0)=\pi_1(p)(\pi_1(E;e_0))$} und sei $N(p;e_0)$ der Normalisator von $H(p;e_0)$ in $\pi_1(B;b_0) $, wobei $b_0=p(e_0)$. 
-Dann operiert die diskrete Gruppe $N(p;e_0)/H(p;e_0)$ blätternd von rechts auf $E$, so dass die von den Gruppenelementen induzierten Homoöomorphismen HOchhebungen von $p:E\to B$ sind.
+Dann operiert die diskrete Gruppe $N(p;e_0)/H(p;e_0)$ blätternd von rechts auf $E$, so dass die von den Gruppenelementen induzierten Homöomorphismen Hochhebungen von $p:E\to B$ sind.
 
 Ferner gilt für eine Untergruppe $K$ von $N(p;e_0)$, mit $K\supset H(p,e_0)$, dass
 \[
@@ -2207,33 +2208,33 @@ Ferner gilt für eine Untergruppe $K$ von $N(p;e_0)$, mit $K\supset H(p,e_0)$, d
  \fixme[fig93]
 \caption{}
 \end{figure}
- Zunächst ist klar, dass die oben definierten stetigen Abbildungen $E\to E$ eine stetige Fortsetzungen der Wirkung der 
-Fundamentalgruppe $\pi_1(B;b_0)$ auf dr Faser über $b_0$ sind (vgl. Satz \ref{thm2:3.8}) auf ganz $E$ sind.  Diese 
-Abbildung sind also nach dem Hochhebungssatz bereits eindeutig durch das Bild des Puntkes $e_0$ bestimmt. 
+ Zunächst ist klar, dass die oben definierten stetigen Abbildungen $E\to E$ stetige Fortsetzungen der Wirkung der 
+Fundamentalgruppe $\pi_1(B;b_0)$ auf der Faser über $b_0$ sind (vgl. Satz \ref{thm2:3.8}) auf ganz $E$ sind.  Diese 
+Abbildungen sind also nach dem Hochhebungssatz bereits eindeutig durch das Bild des Puntkes $e_0$ bestimmt. 
 Daraus folgt, dass es sich um eine Gruppenwirkung handelt. Die Untergruppe $H(p, e_0)$ ist dabei 
-gerade die Standgruppe von $e_0$ diese Elemente werden trivial auf $E$.
+gerade die Standgruppe von $e_0$ diese Elemente wirken trivial auf $E$.
 
-Da die von dieser Gruppenwirkung induzierte Homöomorphismen von $E$ mit $p$ verträglich sind, wrken sie auf dem Urbild $p^{-1}(U)=\dotcup_{\alpha} U_\alpha$ einer trivial überlagerten Umgebung $U$ durch Permutation der Blätter $U_\alpha$, also ist die Gruppenwirkung blätternd.
+Da die von dieser Gruppenwirkung induzierte Homöomorphismen von $E$ mit $p$ verträglich sind, wirken sie auf dem Urbild $p^{-1}(U)=\dotcup_{\alpha} U_\alpha$ einer trivial überlagerten Umgebung $U$ durch Permutation der Blätter $U_\alpha$, (also ist die Gruppenwirkung blätternd.)
 \begin{figure}[H]
 \centering
  \fixme[fig94]
 \caption{}
 \end{figure}
-Also ist nach Lemma \ref{thm2:3.5} die Abbildung $\bar{p}$ eine Überlagerung. Die Aussage über das Bild von $\pi_1(\bar p)$ ergibt sich aus Satz \ref{thm2:3.8}, dem $K$ ist die Standgruppe der $\pi_1(B;b_0)$-Wirkung auf der Faser $\bar p^{-1}(b_0)$ in diesem Fall.
+Also ist nach Lemma \ref{thm2:3.5} die Abbildung $\bar{p}$ eine Überlagerung. Die Aussage über das Bild von $\pi_1(\bar p)$ ergibt sich aus Satz \ref{thm2:3.8}, denn $K$ ist die Standgruppe der $\pi_1(B;b_0)$-Wirkung auf der Faser $\bar p^{-1}(b_0)$ in diesem Fall.
 \end{proof}
-Mit Hilfe von Satz \ref{thm2:3.14} können wir nun \emph{alle} Überlagerungen des Raumes $B$ konstruieren, sobald wir eine universelle (=einfach zusammenhängende) Überlagerung $\tilde p: \tilde B\to B$ gefunden haben, denn für diese gilt $H(\tilde p; e_0)=\{1\}$ und $N(\tilde; e_0)=\pi_1(B;b_0)$, dass heißt wir können damit zu jeder Untergruppe $K\subset \pi_1(B;b_0)$ eine "'passende"' Überlagerung $p:E\to B$ mit $H(p;e_0)=K$ konstruieren.
-Aus Korrolar \label{thm2:3.12} (Vergleich von Überlagerungen) folgt nämlich insbesondere, dass zwei Überlagerungen $p_1, p_2: E_1, E_2 \to B$ mit $H(p_1;e_0)=H(p_2;e_0)$ \emph{isomorph} sind, dass heißt es gibt einen Homöomorphismus $f:E_1\to E_2$ mit $p_2\circ f = p_1$.
+Mit Hilfe von Satz \ref{thm2:3.14} können wir nun \emph{alle} Überlagerungen des Raumes $B$ konstruieren, sobald wir eine universelle (=einfach zusammenhängende) Überlagerung $\tilde p: \tilde B\to B$ gefunden haben, denn für diese gilt $H(\tilde p; e_0)=\{1\}$ und $N(\tilde p; e_0)=\pi_1(B;b_0)$, dass heißt wir können damit zu jeder Untergruppe $K\subset \pi_1(B;b_0)$ eine "'passende"' Überlagerung $p:E\to B$ mit $H(p;e_0)=K$ konstruieren.
+Aus Korrolar \ref{thm2:3.12} (Vergleich von Überlagerungen) folgt nämlich insbesondere, dass zwei Überlagerungen $p_1, p_2: E_1, E_2 \to B$ mit $H(p_1;e_0)=H(p_2;e'_0)$ \emph{isomorph} sind, dass heißt es gibt einen Homöomorphismus $f:E_1\to E_2$ mit $p_2\circ f = p_1$.
 
-Die Existenz einer universellen Überlagerung werden wir im nächsten Abschnitten beweisen (unter gewissen Voraussetzungen).
+Die Existenz einer universellen Überlagerung werden wir im nächsten Abschnitt beweisen (unter gewissen Voraussetzungen).
 
 \subsection{Universelle Überlagerung und Decktransformationen}
 Zunächst wollen wir eine Anwendung der universellen Überlagerung betrachten. Wir wollen die Gruppe der Decktransformationen einführen, die zur Fundamentalgruppe der Basis isomorph ist. Dies liefert in vielen Fällen eine einfache Möglichkeit, Fundamentalgruppen zu bestimmen.
 \begin{df}
- Sei $p:E\to B$ eine Überlagerung. Ein Homöomorphismus $f:E\to E$ heißt \emph{Decktransformation} oder \emph{Automorphismus} der Überlagerung $p$, falls $p\cdot p \cdot f=p$.
+ Sei $p:E\to B$ eine Überlagerung. Ein Homöomorphismus $f:E\to E$ heißt \emph{Decktransformation} oder \emph{Automorphismus} der Überlagerung $p$, falls $p \cdot f=p$.
 \end{df}
 Decktransformationen sind also Homöomorphismen von $E\to E$, die jede einzelne Faser $E_b=p^{-1}(\{b\})$ in sich abbilden. Damit ist klar, dass Inverse und Komposition von Decktransformationen wiederum Decktranformationen sind und die Decktransformationen bilden eine Gruppe $\Deck(p)=\Aut(p)$.
 \begin{st}
- Sei $p:E\to B$ eine universellle Überlagerung. Dann gilt $\Deck(p)\cong \pi_1(B)$, falls $B$ wegzusammenhängend und lokal wegzusammenhängend ist.
+ Sei $p:E\to B$ eine universelle Überlagerung. Dann gilt $\Deck(p)\cong \pi_1(B)$, falls $B$ wegzusammenhängend und lokal wegzusammenhängend ist.
 
 \begin{figure}[H]
 \centering
