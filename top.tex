@@ -1739,7 +1739,7 @@ mit $V_\alpha$ offen und homöomorph zu $U$. Sei $F(x)\in V_{\alpha_1}$ und $G(x
 \]
 eine offene Umgebung von $x$. Es gilt $D\subset V$, falls $\alpha_1=\alpha_2$ und $D\subset W$ falls $\alpha_1\neq \alpha_2$.
 \end{proof}
-\begin{st}[Homotopie-Hochhebungssatz] \label{thm:2.4}
+\begin{st}[Homotopie-Hochhebungssatz] \label{thm2:2.4}
  Sei $p: E\to B$ eine Überlagerung und seien $F: X \to E$ sowie $H: X\times [0,1] \to B$ stetige Abbildungen mit $H(x,0)=p(F(x))$ für alle $x\in X$. Dann gibt es genau eine Hochhebung $\tilde H$ von $H$ mit $\tilde H(\cdot, 0)=F(\cdot)$.
 \end{st}
 \begin{proof}
@@ -1752,35 +1752,35 @@ eine offene Umgebung von $x$. Es gilt $D\subset V$, falls $\alpha_1=\alpha_2$ un
  \fixme[fig73]
 \caption{}
 \end{figure}
-Zu jedem $x\in X$ gibt es eine Umgebung $U_x$ und eine Hochhebung $H^x$ von $H|_{U_x\times[0,1]}$. Denn stimmen wegen der Eindeutigkeit verschiedene solchen Abbildungen $H^x, H^y$ auf der Schnittmenge ihrer Definitionsbereiche überein und wir erhalten auf ganz $X$ wohldefinierte Hochhebung $\tilde H$
+Zu jedem $x\in X$ gibt es eine Umgebung $U_x$ und eine Hochhebung $H^x$ von $H|_{U_x\times[0,1]}$. Dann stimmen wegen der Eindeutigkeit verschiedene solchen Abbildungen $H^x, H^y$ auf der Schnittmenge ihrer Definitionsbereiche überein und wir erhalten eine auf ganz $X \times[0,1]$ wohldefinierte Hochhebung $\tilde H$
 \item Wir beweisen also die lokale Hochhebbarkeit: 
 
-Sei $x\in X$. ZU jedem $t\in[0,1]$ gibt es ein $\epsilon_t>0$ und eine Umgebung $U_{X,t}$ von $x$ in $X$, so dass $H(U_{X,t}, (t-\epsilon_t, t+ \epsilon_t)$ in einer trivial überlagerten Umgebung von $H(x,t)$ enthalten ist.
+Sei $x\in X$. Zu jedem $t\in[0,1]$ gibt es ein $\epsilon_t>0$ und eine Umgebung $U_{x,t}$ von $x$ in $X$, so dass $H(U_{x,t}, (t-\epsilon_t, t+ \epsilon_t)$ in einer trivial überlagerten Umgebung von $H(x,t)$ enthalten ist.
 
 Wegen der Kompaktheit von $[0,1]$ überdecken endlich viele der $(t-\epsilon_t, t+\epsilon_t)$ bereits $[0,1]$ und es gibt eine Umgebung $U_x$ und eine Zerlegung
 \[
  0=t_0<t_1<...<t_m=1,
 \]
-so dass $H(U_x\times (t_k, t_{k+1}))$ ganz in eine trivial überlagerten Menge $U(k)$ enthalten ist. Nun können wir induktiv $H^x: U_{x}\times [0,t_k] \to E$ definieren: Ist $H^x$ auf $U_x\times [0,t_k]$ bereits definiert, so definieren wir $H^x$ auf $U\times[t_k,t_{k+1}]$ durch $U_x\times [t_k, t_{k+1}]\stackrel{H}{\to} U(k) \stackrel{(p|V_{\alpha_k})^{-1}}\to V_{\alpha_k}\hookrightarrow E$, wobei $H^x(x,0)=F(x)$ gesetzt wird.
+so dass $H(U_x\times (t_k, t_{k+1}))$ ganz in eine trivial überlagerten Menge $U(k)$ enthalten ist. Nun können wir induktiv $H^x: U_{x}\times [0,t_k] \to E$ definieren: Ist $H^x$ auf $U_x\times [0,t_k]$ bereits definiert, so definieren wir $H^x$ auf $U_x\times[t_k,t_{k+1}]$ durch $U_x\times [t_k, t_{k+1}]\stackrel{H}{\to} U(k) \stackrel{(p|V_{\alpha_k})^{-1}}\to V_{\alpha_k}\hookrightarrow E$, wobei $H^x(x,0)=F(x)$ gesetzt wird.
  \end{enumerate}
 
 \end{proof}
 
-Im folgenden wollen wir Zusammenhangen zwischen Fundamentalgruppe und Überlagerung.
+Im folgenden wollen wir den Zusammenhang zwischen Fundamentalgruppe und Überlagerung betrachten.
 \begin{kor}[Wege-Hochhebungssatz] \label{thm2:2.5}
- Sei $p:E\to B$ eine Überlagerung und $\omega:[0,1]\to B$ ein Weg mit Anfangspunkt $b=\omega(0)$. Dann gibt es zu $e\in E_b=p^{-1}(\{b\})$ genau einen Weg $\tilde \omega: [0,1] \to E$ mit Anfangspunkt $\tilde \omega(0)=e$, da eine Hochhebung von $\omega$ ist.
+ Sei $p:E\to B$ eine Überlagerung und $\omega:[0,1]\to B$ ein Weg mit Anfangspunkt $b=\omega(0)$. Dann gibt es zu $e\in E_b=p^{-1}(\{b\})$ genau einen Weg $\tilde \omega: [0,1] \to E$ mit Anfangspunkt $\tilde \omega(0)=e$, der eine Hochhebung von $\omega$ ist.
 \end{kor}
 Für den Zusammenhang zwischen Fundamentalgruppe und Überlagerungen ist es auch eine wichtige Beobachtung, dass die Endpunkte hochgehobener Wege invariant unter Homotopien (mit festen Endpunkten sind.) 
 \begin{kor}[Monodromie Lemma]\label{thm2:2.6}
  Ist $p: E\to B$ eine Überlagerung und sind $ \omega_1, \omega_2: [0,1]\to B$ zwei Wege in $B$ mit Anfangspunkt $b=\omega_1(0)=\omega_2(0)$, 
-die zueinander homotop mit festen Endpunkten sind.  Dann haben zwei Lifts $\tilde \omega_1, \tilde \omega_2$ von $\omega_1$ bzw.  $\omega_2$ mit demselben Anfangspunkt $e=\omega_1(0)=\omega_2(0)$ auch den selben Endpunkt $\tilde \omega_1(1)=\tilde \omega_2(1)$.
+die zueinander homotop mit festen Endpunkten sind.  Dann haben zwei Lifts $\tilde \omega_1, \tilde \omega_2$ von $\omega_1$ bzw.  $\omega_2$ mit demselben Anfangspunkt $e=\tilde \omega_1(0)= \tilde \omega_2(0)$ auch den selben Endpunkt $\tilde \omega_1(1)=\tilde \omega_2(1)$.
 \end{kor}
 \begin{proof}
- Sei $H: [0,1] \to B$ eine Homotopie mit festen Endpunkten und $H(\cdot, 0)=\omega_1, H(\cdot, 1)=\omega_2 $. Nach Satz \ref{thm2:2.4} gibt es genau eine Hochhebung, $\tilde H$ von $H$ mit $\tilde H(\cdot, 0)=\tilde \omega(1)$, wenn $\tilde \omega_1$ eine Hochhebung von $\omega_1$ ist. 
+ Sei $H: [0,1] \times [0,1]\to B$ eine Homotopie mit festen Endpunkten und $H(\cdot, 0)=\omega_1, H(\cdot, 1)=\omega_2 $. Nach Satz \ref{thm2:2.4} gibt es genau eine Hochhebung $\tilde H$ von $H$ mit $\tilde H(\cdot, 0)=\tilde \omega_1(\cdot)$, wenn $\tilde \omega_1$ eine Hochhebung von $\omega_1$ ist. 
 Nach Korollar \ref{thm2:2.5} ist $\tilde \omega_1$ aber durch $\tilde \omega_1(0)=e$ eindeutig festgelegt.
 
-Sei $U\subset B$ eine trivial Überlagerte offene Umgebung von $\omega_2(1)=H(1,t), \forall_[0,1]$. Dann ist $c:= \tilde H(1, \cdot): [0,1]\to E$ eine Abbildungen, deren Bild ganz in der disjunkten Vereinigung $\dotcup_{\alpha\in A}=p^{-1}(U)$. 
-Falls $\tilde H(1,0)\in V_\alpha$, dann folgt auch $\tilde H(1,t) \in V_a$ (für dasselbe $\alpha$), denn sonst erhält man einen Widerspruch zum Zusammenhang von $[0,1]=\dotcup_{\tilde H(1,[0,1])\cap V_\alpha=\emptyset} c^{-1}(V_\alpha)$.
+Sei $U\subset B$ eine trivial Überlagerte offene Umgebung von $\omega_2(1)=H(1,t), \forall_{t \in [0,1]}$. Dann ist $c:= \tilde H(1, \cdot): [0,1]\to E$ eine Abbildung, deren Bild ganz in der disjunkten Vereinigung $\dotcup_{\alpha\in A} V_\alpha=p^{-1}(U)$. 
+Falls $\tilde H(1,0)\in V_\alpha$, dann folgt auch $\tilde H(1,t) \in V_\alpha$ (für dasselbe $\alpha$), denn sonst erhält man einen Widerspruch zum Zusammenhang von $[0,1]=\dotcup_{\tilde H(1,[0,1])\cap V_\alpha=\emptyset} c^{-1}(V_\alpha)$.
 \end{proof}
 Anschaulich sagt der Satz aus, dass der Endpunkt der Hochebung kann nicht springen.
 
@@ -1789,7 +1789,7 @@ Damit können wir einen genaueren Beweis für $\pi_1(S^1)\homo \Z$ geben:
  $\pi_1(S^1)\homo \Z$
 \end{st}
 \begin{proof}
- Die Abbildung $p:R\to S^1, t\mapsto e^{2\pi i t}$ ist eine Überlagerung. Wir betrachten:
+ Die Abbildung $p:\R\to S^1, t\mapsto e^{2\pi i t}$ ist eine Überlagerung. Wir betrachten:
 \[
  f:\pi_1(S^1; 1)\to \Z: [\omega] \mapsto \tilde \omega (1)
 \]
@@ -1798,8 +1798,8 @@ Damit können wir einen genaueren Beweis für $\pi_1(S^1)\homo \Z$ geben:
  \fixme[fig74]
 \caption{}
 \end{figure}
-wobei $\tilde \omega$ die nach Korrolar \ref{thm2:2.5} eindeutige festgelegte Hochebung der Schleife $\omega$ mit $\tilde \omega(0)=0$ ist. Nach dem Monodromielemma Korrolar \ref{thm2:2.6} hängt $\tilde \omega(1)$ zum von der Homotopieklasse von $\omega$ (mit festen Endpunkten) ab, also ist $f$ wohldefiniert.
-Wir definieren "'Standard-Schleifen"' im $S^1$ wie folt: Sei $\tilde \omega_k:=p\circ \tilde \omega_k$. Offensichtlich ist $\tilde \omega_k$ eine Hochebung von $\omega_k$ und $f([\omega_k])=k$. Dies zeigt die Surjektivität und die Injektivität folgt daraus, dass je zwei Wege mit denselben Anfangs- und Endpunkten in $\R$ (mit festen Endpunkten) zueinander homotop sind. Um die Homomorphieeigenschaften nachzuweisen überlegt man sich:
+wobei $\tilde \omega$ die nach Korrolar \ref{thm2:2.5} eindeutige festgelegte Hochebung der Schleife $\omega$ mit $\tilde \omega(0)=0$ ist. Nach dem Monodromielemma Korrolar \ref{thm2:2.6} hängt $\tilde \omega(1)$ nur von der Homotopieklasse von $\omega$ (mit festen Endpunkten) ab, also ist $f$ wohldefiniert.
+Wir definieren "'Standard-Schleifen"' im $S^1$ wie folgt: Sei $\tilde \omega_k:= [0,1] \to \R, t \mapsto t * k$ für $k \in \Z$ und $w_k:=p\circ \tilde \omega_k$. Offensichtlich ist $\tilde \omega_k$ eine Hochebung von $\omega_k$ und $f([\omega_k])=k$. Dies zeigt die Surjektivität und die Injektivität folgt daraus, dass je zwei Wege mit denselben Anfangs- und Endpunkten in $\R$ (mit festen Endpunkten) zueinander homotop sind. Um die Homomorphieeigenschaften nachzuweisen überlegt man sich:
 \[
  f([\omega_k][\omega_l])=f([\omega_k * \omega_l])=f([\omega_{k+l}])
 \]
@@ -1816,24 +1816,25 @@ $G\to G, g\mapsto g^{-1}$ stetig sind.
   \item Liegruppen und topologischen Gruppen.
  \end{enumerate}
 \end{exs*}
-\begin{df}
+\begin{df}\label{thm2:3.2}
  Sei $G$ eine topologische Gruppe und $X$ ein topologischer Raum. Eine(\emph{Gruppen-})\emph{Wirkung} (auch: \emph{Operation}) von $G$ auf $X$ ist eine stetige Abbildung:
 \[
  G\times X\to X: (g,x) \mapsto g\cdot x
 \]
-mit den Eigenschaften $1\cdot x^{-} = x^{-}, (ab)\cdot x^{-}=a\cdot (b\cdot x^{-})$
+mit den Eigenschaften $1\cdot x = x, (ab)\cdot x=a\cdot (b\cdot x)$
 \end{df}
 \begin{note*}
- Stets gilt, dass $x\mapsto g\cdot x^{-}$ für ein festes Gruppenelement $g$ ein Homöomorphismus von $X$ ist. denn $g^{-1}(g\cdot x^{-})=(g^{-1}g)\cdot x=1\cdot x=x.$
+ Stets gilt, dass $x\mapsto g\cdot x$ für ein festes Gruppenelement $g$ ein Homöomorphismus von $X$ ist. denn $g^{-1} \cdot (g\cdot x)=(g^{-1}g)\cdot x=1\cdot x=x.$
 \end{note*}
 \begin{exs*}
  \begin{enumerate}[1)]
-  \item Linkstranslation von $G$ auf sich $g\cdot x^{-}:=gx$ für $g,x\in G$.
-  \item Rechtstranslation von $G$ auf sich $g\cdot x^{-}=$
+  \item Linkstranslation von $G$ auf sich $g\cdot x:=gx$ für $g,x\in G$.
+  \item Rechtstranslation von $G$ auf sich $g\cdot x:=xg^{-1}$
+  \item Konjugation: $g \cdot x := gxg^{-1}$
+  \item Eine \emph{Darstellung} einer topologischen Gruppe, zum Beispiel die Wirkung von $GL(n, \R)$ auf $\R^n$ durch $A \cdot v := Av$
  \end{enumerate}
- \fixme[from mathematiker : Scheint unvollständig zu sein]
-
 \end{exs*}
+Wir werden zunächst nur Wirkungen diskreter Gruppen betrachten.
 
 \begin{seg}{Zusammenfassung}
  \begin{description}
@@ -1844,15 +1845,17 @@ mit den Eigenschaften $1\cdot x^{-} = x^{-}, (ab)\cdot x^{-}=a\cdot (b\cdot x^{-
 \]
 \begin{itemize}
  \item stetig
- \item es gilt $g\cdot (h\cdot x)=(g\cdot h)\cdot x$ und $1\cdot x = x$
+ \item es gilt $g\cdot (h\cdot x)=(gh)\cdot x$ und $1\cdot x = x$
 
-automatisch folgt, dass die Abbildung $x\mapsto g\cdot x$ ein Homöomorphismus ist, denn zum Beispiel eine Menge von Homöomorphismen von $X$, die abgeschlossen unter der Verkettung ist, zu jedem Homöomorphismus auch das Inverse und die Identität enthält, bildet eine Gruppe zusammen mit einer Wirkung auf $X$ ($g\cdot x:=g(x)$
+Automatisch folgt, dass die Abbildung $x\mapsto g\cdot x$ ein Homöomorphismus ist, denn $g^{-1} \cdot (g\cdot x)=(g^{-1}g)\cdot x=1\cdot x=x.$
+
+Zum Beispiel eine Menge von Homöomorphismen von $X$, die abgeschlossen unter der Verkettung ist, zu jedem Homöomorphismus auch das Inverse und die Identität enthält, bildet eine Gruppe zusammen mit einer Wirkung auf $X$ ($g\cdot x:=g(x)$)
 \end{itemize}
  \end{description}
 \end{seg}
-Wir betrachten zunächst nur Wirkungen diskreter Gruppen. Diese Definition beschreibt genau genommen eine \emph{Wirkung von links}, bei einer \emph{Wirkung von rechts} benutze das Gesetz $g\cdot (h\cdot x)=(h\cdot g)\cdot x$ (anstatt $g\cdot(h\cdot x)=(g\cdot h)\cdot x$.)
+Diese Definition beschreibt genau genommen eine \emph{Wirkung von links}, bei einer \emph{Wirkung von rechts} benutze das Gesetz $g\cdot (h\cdot x)=(hg)\cdot x$ (anstatt $g\cdot(h\cdot x)=(gh)\cdot x$.)
 
-[Wirkungen von rechts werden auch durch $(g,x)\mapsto x\cdot g$ beschreiben, dann haben wir $(x\cdot h)\cdot g=x\cdot (h\cdot g)$]
+[Wirkungen von rechts werden auch durch $(g,x)\mapsto x\cdot g$ beschreiben, dann haben wir $(x\cdot h)\cdot g=x\cdot (hg)$]
 
 \begin{exs*}[$G=X$]
  durch $g\cdot x:= gx$ ist eine Wirkung, denn es gilt $h\cdot (g\cdot x)=hgx$. Entsprechend ist $g\cdot x=xg$ eine Wirkung von rechts, denn:
@@ -1883,14 +1886,14 @@ ist Wirkung von links.
 heißt die \emph{Standgruppe} von $x$ oder die \emph{Isotopie(unter)gruppe} von $x$ auch \emph{Stabilisator von $x$}.
 \end{df}
 \begin{note*}
- $G_x$ ist eine Untergruppe von $G$, denn: $1\cdot x=x$, also $1\in G_x$ seien $g,h \in G_x$, denn gilt $(gh)\cdot x=g\cdot(h\cdot x)=g(x)=x$, also $gh\in G_x$ und sei $g\in G_x$, denn gilt $g^{-1}x=g^{-1}\cdot (g\cdot x)=(g^{-1}g)\cdot x=1x=x$, also auch $g^{-1}\in G_x$.
+ $G_x$ ist eine Untergruppe von $G$, denn: $1\cdot x=x$, also $1\in G_x$ seien $g,h \in G_x$, dann gilt $(gh)\cdot x=g\cdot(h\cdot x)=g \cdot x=x$, also $gh\in G_x$ und sei $g\in G_x$, dann gilt $g^{-1} \cdot x=g^{-1}\cdot (g\cdot x)=(g^{-1}g)\cdot x=1x=x$, also auch $g^{-1}\in G_x$.
 \end{note*}
 \begin{seg}{Zusatz zur Definition:}
  Man sagt eine Gruppenwirkung ist \emph{transitiv}, falls $G\cdot x= X$ für ein $x\in X$.
 \end{seg}
 \begin{ex*}
- \item $\text{Gl}(n, \R)$ operiert auf $\R^n$ durch $A\cdot x:= Ax\in \R^n$. ($Ex=x, (AB)x=A(Bx)$ Mathemultiplikationassoziativität). Diese Wirkung hat zwei Bahnen nämlich $\{0\}$ und $\R^n\setminus\{0\}$
- \item $\text{Gl}(n, \R)$ operiert auf $\R^{n^2}$ durch $A\cdot X=AXA^{-1}$ entspricht die Basistranformation.
+ \item $\text{Gl}(n, \R)$ operiert auf $\R^n$ durch $A\cdot x:= Ax\in \R^n$. ($Ex=x, (AB)x=A(Bx)$ Matrixmultiplikation ist assoziativ). Diese Wirkung hat zwei Bahnen nämlich $\{0\}$ und $\R^n\setminus\{0\}$
+ \item $\text{Gl}(n, \R)$ operiert auf $\R^{n^2}$ durch $A\cdot X=AXA^{-1}$ entspricht der Basistranformation.
  \item $O(n)$ operiert auf $S^{n-1}=\{x\in \R^n|\,||x||=1\}$ diese Wirkung ist transitiv und
 \[
  O(n)_{e_1}=\left \{ \left ( \, \begin{matrix} 1 & \vline & \begin{matrix} 0 & \cdots & 0 \end{matrix}\\ \hline \begin{matrix} 0 \\ \vdots \\ 0\end{matrix}& \vline & \text{\LARGE{A}} \end{matrix}\, \right ) \, | A \in O(n-1)\right \}
@@ -1898,18 +1901,21 @@ heißt die \emph{Standgruppe} von $x$ oder die \emph{Isotopie(unter)gruppe} von 
 \end{ex*}
 \begin{df}\label{thm2:3.4}
  Eine Gruppenwirkung heißt \emph{blätternd}, wenn es zu jedem $x\in X$ eine Umgebung $U$ gibt mit $U\cap g\cdot U=\emptyset$ für alle $g\in G\setminus\{1\}$
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{fig75.png} 
+\caption{}
+\end{figure}
 \end{df}
+
+
 \begin{lem}
  Die diskrete Gruppe $G$ wirke blätternd auf den topologischen Raum $X$. Dann ist die Abbildung $\pi: X\to X/G$, wobei $X/G$ der Quotientenraum von $X$ bezüglich der Relation
 \[
  x\sim y :\iff x\in G\cdot y \iff \exists g\in G: g\cdot y=x
 \]
 bezeichnet. ($X/G=\{G\cdot x|x\in X\}$ wird als \emph{Bahnenraum} der Wirkung bezeichnet) eine Überlagerung.
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.3]{fig75.png} 
-\caption{}
-\end{figure}
+
 
 \end{lem}
 \begin{proof}
@@ -1918,25 +1924,25 @@ bezeichnet. ($X/G=\{G\cdot x|x\in X\}$ wird als \emph{Bahnenraum} der Wirkung be
 \includegraphics[scale=0.3]{fig76.png} 
 \caption{}
 \end{figure}
- Sei $[x]=G\cdot x\in X/G$. Sei $U$ eine Umgebung wie in Definition \ref{thm2:3.4} und sei $V:=\pi(U)$, Dann ist $\pi^{-1}(V)=\bigcup_{g\in G} gU$ eine disjunkte Vereinigung, denn falls $g\neq g'$, folgt $g\cdot U \cap g'\cdot U=g\cdot (U\cap(g^{-1}g U)=g\cdot(\emptyset)=\emptyset$.
+ Sei $[x]=G\cdot x\in X/G$. Sei $U$ eine Umgebung wie in Definition \ref{thm2:3.4} und sei $V:=\pi(U)$, Dann ist $\pi^{-1}(V)=\bigcup_{g\in G} gU$ eine disjunkte Vereinigung, denn falls $g\neq g'$, folgt $g\cdot U \cap g'\cdot U=g\cdot (U\cap(g^{-1}g) \cdot U =g\cdot(\emptyset)=\emptyset$.
 
-Betrachte nun $\pi|g\cdot U$ für ein $g\in G$, $\pi$ ist stetig, wegen "`blätternd"' ist $\pi|g\cdot U$ injektiv und es gilt $\pi(gU)=V$.
-Da die Quotientabbildung offen ist, folgt, dass $\pi\vline_{gU}$ ein Homöomorphismus ist.
+Betrachte nun $\pi|_{g\cdot U}$ für ein $g\in G$, $\pi$ ist stetig, wegen "`blätternd"' ist $\pi|_{g\cdot U}$ injektiv und es gilt $\pi(gU)=V$.
+Da die Quotientabbildung offen ist, folgt, dass  $\pi|_{g\cdot U}$ ein Homöomorphismus ist.
 \end{proof}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{fig77.png} 
 \caption{}
 \end{figure}
-Von nun an bezeichne $p: E \to B$ stets eine Überlagerung und sei $e_0 \in E$ und $b_0=p(e_0)$
-Wir wollen eine Wirkung der FUndamentalgruppe $\pi_1(B; b_0)$ auf der Faser $E_{b_0}$ definieren.\\
+Von nun an bezeichne $p: E \to B$ stets eine Überlagerung und sei $e_0 \in E$ und $b_0=p(e_0)$.
+Wir wollen eine Wirkung der Fundamentalgruppe $\pi_1(B; b_0)$ auf der Faser $E_{b_0}$ definieren.\\
 
 \begin{df}
- Sei $c_0:[0,1]\to B$ ein Weg mit Anfangspunkt $b_0=\omega(0)$ und Endpunkt $b_1=\omega(1)$. Es sei
+ Sei $\omega:[0,1]\to B$ ein Weg mit Anfangspunkt $b_0=\omega(0)$ und Endpunkt $b_1=\omega(1)$. Es sei
 \[
- \tilde \lambda_\omega: E_{b_0} \times [0,1]
+ \tilde \Lambda_\omega: E_{b_0} \times [0,1]
 \]
-die noch Korollar \ref{thm2:2.5} eindeutig bestimmte Abbildung mit
+die nach Korollar \ref{thm2:2.5} eindeutig bestimmte Abbildung mit
 \[
  p(\tilde \Lambda_\omega (e,t))=\omega(t) \qquad \tilde \Lambda_{\omega}(e,0)=e
 \]
