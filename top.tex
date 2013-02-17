@@ -594,7 +594,7 @@ Die Relation $ p\sim q \stackrel{\text{def}}{\iff} $ es gibt einen weg von $ p $
 \begin{st}
 \begin{enumerate}[(i)]
 \item Stetige Bilder von (weg-)zusammenhängenden Räumen sind (weg-)zusammenhängend.
-\item Vereinigungen (weg-)zusammenhängender Räume $ X_i, i\in I, $ mit $ \bigcap X_i\neq \emptyset $ sind wegzusammenhängend.
+\item Vereinigungen (weg-)zusammenhängender Räume $ X_i, i\in I, $ mit $ \bigcap X_i\neq \emptyset $ sind (weg-)zusammenhängend.
 \item Ein Produkt $ X\times Y $ von (weg-)zusammenhängenden nichtleeren topologischen Räumen $ X,Y $ ist genau dann (weg-)zusammenhängend, wenn die beiden Faktoren es sind. 
 \end{enumerate}
 \end{st}
@@ -1925,7 +1925,7 @@ bezeichnet. ($X/G=\{G\cdot x|x\in X\}$ wird als \emph{Bahnenraum} der Wirkung be
 \includegraphics[scale=0.3]{fig76.png} 
 \caption{}
 \end{figure}
- Sei $[x]=G\cdot x\in X/G$. Sei $U$ eine Umgebung wie in Definition \ref{thm2:3.4} und sei $V:=\pi(U)$, Dann ist $\pi^{-1}(V)=\bigcup_{g\in G} gU$ eine disjunkte Vereinigung, denn falls $g\neq g'$, folgt $g\cdot U \cap g'\cdot U=g\cdot (U\cap(g^{-1}g) \cdot U =g\cdot(\emptyset)=\emptyset$.
+ Sei $[x]=G\cdot x\in X/G$. Sei $U$ eine Umgebung wie in Definition \ref{thm2:3.4} und sei $V:=\pi(U)$, Dann ist $\pi^{-1}(V)=\bigcup_{g\in G} gU$ eine disjunkte Vereinigung, denn falls $g\neq g'$, folgt $g\cdot U \cap g'\cdot U=g\cdot (U\cap(g^{-1}g') \cdot U =g\cdot(\emptyset)=\emptyset$.
 
 Betrachte nun $\pi|_{g\cdot U}$ für ein $g\in G$, $\pi$ ist stetig, wegen "`blätternd"' ist $\pi|_{g\cdot U}$ injektiv und es gilt $\pi(gU)=V$.
 Da die Quotientabbildung offen ist, folgt, dass  $\pi|_{g\cdot U}$ ein Homöomorphismus ist.
@@ -2040,7 +2040,7 @@ Es ist $gh\cdot x=g\cdot x$ und $gG_x=ghG_x$ mit $h\in G_x$
 \begin{proof}
  Aus Lemma \ref{thm2:3.7}(iii) folgt, dass die Abbildung $([\omega], e)\mapsto \Lambda_\omega(e)$ wohldefiniert ist und dass gilt $(1,e) \mapsto \Lambda_\epsilon(e)=e$. Aus (ii) folgt $(e\cdot [\omega])\cdot [\eta]=\Lambda_{\eta}(\Lambda_\omega(e))=\Lambda_{\eta}\circ \Lambda_{\omega}(e)=\Lambda_{\omega*\eta}(e)=(e\cdot [\omega*\eta])=e\cdot ([\omega][\eta])$. Dies zeigt den ersten Teil der Behauptung. Die Standgruppe von $e_0$ besteht aus den Homotopieklassen von Schleifen, die sich zu geschlossenen Wegen mit Anfangs- und Endpunkt $e_0$ hochheben, also aus dem homomorphen Bild von $\pi_1(E; e_0)$ unter $\pi_1(p)$. Falls $E$ wegzusammenhängend ist, gibt es zu je zwei Punkten $e_0, e_1 \in E_{b_1}$ einen verbindenden Weg $\eta$ in $E$. Dann ist $\omega:= p \circ \eta$ eine Schleife in $B$ mit Anfangs- und Endpunkt $b_0$ und es gilt $\Lambda_{\omega}(e_0)=e_1$
 \end{proof}
-\begin{kor}
+\begin{kor}\label{thm2:3.9}
  $\pi_1(p): \pi_1(E; e_0)\to \pi_1(B, b_0)$ ist injektiv
 \end{kor}
 \begin{proof}
@@ -2177,7 +2177,7 @@ Sei $G$ eine Gruppe und $H$ eine Untergruppe. Man sagt, ein Element $g\in G$ \em
 \[
  N_G(H)=\{g\in G| gHg^{-1}=H\}
 \]
-aller Elemente, die $H$ normalisieren heißt \emph{Normalisator} von $H$. Falls $N_G(H)=G$, dass heißt galls $gHg^{-1}=H \, \forall g\in G$, dann sagt man, $H$ ist eine \emph{normale Untergruppe}. Für solche gilt, dass die Menge der Nebenklasse $G/H:=\{gH|g\in G\}$ eine natürliche Gruppenstruktur hat $(g\cdot H)\cdot (k\cdot H)=g k \underbrace{(k^{-1}Hk)}_{=H}H=g\cdot k \cdot HH=g\cdot k \cdot H$.
+aller Elemente, die $H$ normalisieren heißt \emph{Normalisator} von $H$. Falls $N_G(H)=G$, dass heißt falls $gHg^{-1}=H \, \forall g\in G$, dann sagt man, $H$ ist eine \emph{normale Untergruppe}. Für solche gilt, dass die Menge der Nebenklasse $G/H:=\{gH|g\in G\}$ eine natürliche Gruppenstruktur hat $(g\cdot H)\cdot (k\cdot H)=g k \underbrace{(k^{-1}Hk)}_{=H}H=g\cdot k \cdot HH=g\cdot k \cdot H$.
 
 Wie man sich leicht überlegt, ist $N_G(H)\subset G$ eine Untergruppe.  
 
@@ -2257,26 +2257,28 @@ Decktransformationen sind also Homöomorphismen von $E\to E$, die jede einzelne 
 
 \end{seg}
 \begin{proof}
- Nach Satz \ref{thm2:3.14} gilt bei universellen Überlagerungen, dass die Gruppe $N(p; e_0)/H(p;e_0)=\pi_1(B;b_0)\setminus\{1\}=\pi_1(B;b_0)$ blätternd auf $E$ durch Decktransformationen wirkt. Insbesonders wirkt nun die Identität trivial und wir erhalten einen injektiven Homomorphismus:
+ Nach Satz \ref{thm2:3.14} gilt bei universellen Überlagerungen, dass die Gruppe $N(p; e_0)/H(p;e_0)=\pi_1(B;b_0)/\{1\}=\pi_1(B;b_0)$ blätternd auf $E$ durch Decktransformationen wirkt. Insbesonders wirkt nur die Identität trivial und wir erhalten einen injektiven Homomorphismus:
 \[
  \jota: \pi_1(B;b_0)\to \Deck(p)
 \]
-Es bleibt, Surjektivität zu zeigen.  Sei also $\Gamma\in \Deck(p)$. Sei $\omega$ ein Weg von $e_0$ nach $e_0\circ \gamma$. Dann ist $p\circ \omega$ eine Schleife mit Basispunkt $b_0$. Dies liefert eine Abbildung $f: \Deck(p)\to \pi_1(B,b_0)$, denn: ist $\eta$ ein zweiter Weg von $e_0$ noch $e_0 \circ \gamma$.
+Es bleibt die Surjektivität zu zeigen.  Sei also $\gamma\in \Deck(p)$. Sei $\omega$ ein Weg von $e_0$ nach $e_0\cdot \gamma$. Dann ist $p\circ \omega$ eine Schleife mit Basispunkt $b_0$. Dies liefert eine Abbildung $f: \Deck(p)\to \pi_1(B,b_0)$, denn: ist $\eta$ ein zweiter Weg von $e_0$ noch $e_0 \cdot \gamma$,
 \begin{figure}[H]
 \centering
  \fixme[fig97]
 \caption{}
 \end{figure}
-so ist $\eta$ zu $w$ homotop mit festen Endpunkten, wegen des einfachen Zusammenhangs von $E$. Es gilt $\jota\circ f = \id_{\Deck(p)}$.
-
-Denn der Homöomorphismus $\jota(f(\gamma))$ bildet $e_0$ auf $e_0\circ \gamma$ ab, und wir schließen daraus, dass $\jota(f(\gamma))=\gamma$, denn sonst gäbe es neben der Identität auf eine zweite Hochhebung von $p$, nämlich $\eta(f(\gamma))\gamma^{-1}$, die $e_0 \circ \gamma$ auf sich abbildet.
+so ist $\eta$ zu $\omega$ homotop mit festen Endpunkten, wegen des einfachen Zusammenhangs von $E$. Es gilt $\jota\circ f = \id_{\Deck(p)}$, denn der Homöomorphismus $\jota(f(\gamma))$ bildet $e_0$ auf $e_0\cdot \gamma$ ab, und wir schließen daraus, dass $\jota(f(\gamma))=\gamma$, denn sonst gäbe es neben der Identität auf $E$ eine zweite Hochhebung von $p$, nämlich $\iota(f(\gamma))\gamma^{-1}$, die $e_0$ auf sich abbildet, im Widerspruch zu Satz \ref{thm2:2.3}.
 \end{proof}
 \begin{kor}
  Sei der topologische Raum $X$ einfach zusammenhhängend und lokal wegzusammenhängend. Die diskrete Gurppe $\Gamma$ operiere blätternd auf $X$, dann gilt für die Überlagerung $p: X\to X/\Gamma$, $x\mapsto x \cdot \Gamma$, dass $\Gamma=\Deck(p)\cong\pi_1(X/\Gamma)$.
 \end{kor}
 \begin{proof}
- Offensichtlich sind die Elemente von $\Gamma$ Decktransformationen von $X$, denn die Bahnen der $\Gamma$-Wirkung sind die Fasern der Überlagerung, also $\Gamma\subset \Deck(p)$. Sei $e\in X$. Es gilt also zu jedem Element der Faser $e'\in E_{p(e)}=e\cdot \Gamma$ ein $\gamma \in \Gamma$ mit $e\cdot \gamma=e'$, da die Decktransformation durch das Bild eines Punktes eindeutig bestimmt sind, kann es also nicht mehr Element in $\Deck(p)$ geben, die nicht in $\Gamma$ liegen. 
+ Offensichtlich sind die Elemente von $\Gamma$ Decktransformationen von $X$, denn die Bahnen der $\Gamma$-Wirkung sind gerade die Fasern der Überlagerung, also $\Gamma\subset \Deck(p)$. Sei $e\in X$. Es gilt also zu jedem Element der Faser $e'\in E_{p(e)}=e\cdot \Gamma$ ein $\gamma \in \Gamma$ mit $e\cdot \gamma=e'$, da die Decktransformationen durch das Bild eines Punktes eindeutig bestimmt sind, kann es also nicht mehr Elemente in $\Deck(p)$ geben, die nicht in $\Gamma$ liegen. 
 \end{proof}
+\begin{note*}
+ Zum Beispiel: $T^2 = \R^2 / \Z^2 \implies \pi_1(T^2) \simeq \Z \times \Z$
+\end{note*}
+
 Im folgenden wollen wir einen Satz über die Existenz der universellen Überlagerung zeigen. Zunächst überlegen wir uns eine notwendige Bedingung.
 \begin{df}
  Ein topologischer Raum $B$ heißt \emph{semi-lokal einfach zusammenhängend}, wenn jedes $b\in B$ eine Umgebung $U\subset B$ besitzt, so dass jede Schleife in $U$ mit Basispunkt $b$ in $B$ nullhomotop ist.
@@ -2284,38 +2286,43 @@ Im folgenden wollen wir einen Satz über die Existenz der universellen Überlage
 \begin{note*}
 \item "`lokal einfach zusammenhängend"' wäre: In jeder Umgebung von $b$ gibt es eine einfach zusammenhängende Umgebung von $b$.
 \end{note*}
-\begin{ex*}["`Hawaiianischen  Ohrringen"']
+\begin{ex*}["`Hawaiische  Ohrringe"']
+Die  Hawaiischen  Ohrringe sind weder lokal einfach zusammenhängend noch semi-lokal einfach zusammenhängend.
  \begin{figure}[H]
 \centering
  \fixme[fig98]
 \caption{}
 \end{figure}
-Diese ist nur nicht lokal einfach zusammenhängend und damit auch nicht semi-lokal einfach zusammenhängend.
+\end{ex*}
 
-Für einen Raum, der semi-lokal einfach zusammenhängend, aber nicht lokal zusammenhängend ist der "`Kegel über den Hawaiianischen Ohrringen"'
+\begin{ex*}["`Kegel über den Hawaiischen  Ohrringen"']
+Beispiel für einen Raum, der semi-lokal einfach zusammenhängend, aber nicht lokal einfach zusammenhängend ist, ist der "`Kegel über den Hawaiischen  Ohrringen"'
 \begin{figure}[H]
 \centering
  \fixme[fig99]
 \caption{}
 \end{figure}
-Dieser ist semi-lokal, aber nicht lokal einfach zusammenhängend. Diese Eigenschaft ist notwendig für die Existenz einer universellen Überlaterung $p: E \to B$;
+\end{ex*}
+\begin{note*}
+ Diese Eigenschaft ist notwendig für die Existenz einer universellen Überlagerung $p: E \to B$;
 \begin{figure}[H]
 \centering
 \fixme[fig100]
 \caption{}
 \end{figure}
 Denn sei $U \subset B$ eine trivial überlagerte Umgebung, dann lässt sich jede geschlossene Schleife in $U$ zu einer \emph{geschlossenen} Schleife in $E$ hochheben und dort zusammenziehen. Verketten mit $p$ liefert die Homotopie zur konstanten Schleife in $B$.
-\end{ex*}
+\end{note*}
+
 \subsubsection*{Vorbemerkung zur Konstruktion der universellen Überlagerung}
  Um die Idee der Konstruktion besser zu verstehen, wollen wir zunächst annehmen, dass $p:E\to B$ bereits eine universelle Überlagerung ist.
 
-Sei $b_0\in B$ ein fest gewählter Basispunkt und $b_1$ ein weiterer Punkt in $B$, wenn $w$ ein Weg von $b_0$ nach $b_1$ ist, dann erhalten wir mit der im Abschnitt 3 eingeführter Abbildung $\Lambda_\omega$ eine Abbildung von der Faser $E_{b_0}$ in die Faser $E_{b_1}$. Diese hängt nur von der Homotopieklasse (mit festen Endpunkten) ab.\\
+Sei $b_0\in B$ ein fest gewählter Basispunkt und $b_1$ ein weiterer Punkt in $B$, wenn $w$ ein Weg von $b_0$ nach $b_1$ ist, dann erhalten wir mit der in Abschnitt 3 eingeführter Abbildung $\Lambda_\omega$ eine Abbildung von der Faser $E_{b_0}$ in die Faser $E_{b_1}$. Diese hängt nur von der Homotopieklasse (mit festen Endpunkten) ab.\\
 \begin{figure}[H]
  \centering
 \fixme[fig101]
 \caption{}
 \end{figure}
-Ist andereseits $\Lambda_{\omega}(e)=\Lambda_{\eta}(e)$ für anderen Weg $\eta$ von $b_0$ nach $b_1$, dann ist $\eta$ auch homotop (m.f.E.\footnote{mit festen Endpunkten}) zu $\omega$, denn die Hochhebungen von $\omega$ und $\eta$ lassen sich ineinander deformieren, da $E$ einfach zusammenhängend ist.
+Ist andereseits $\Lambda_{\omega}(e)=\Lambda_{\eta}(e)$ für einen anderen Weg $\eta$ von $b_0$ nach $b_1$, dann ist $\eta$ auch homotop (m.f.E.\footnote{mit festen Endpunkten}) zu $\omega$, denn die Hochhebungen von $\omega$ und $\eta$ lassen sich ineinander deformieren, da $E$ einfach zusammenhängend ist.
 
 Also stehen die Punkte in der Faser über $b_1$ in einer $1:1$-Beziehung zu den Homotopieklassen (m.f.E) von Wegen von $b_0$ nach $b_1$.
 \begin{figure}[H]
@@ -2326,7 +2333,7 @@ Also stehen die Punkte in der Faser über $b_1$ in einer $1:1$-Beziehung zu den 
 
 Insgesamt folgt, dass es eine Bijektion gibt zwischen dem Totalraum $E$ und der Menge der Homotopieklassen (m. f. E.) von Wegen in $B$ mit Anfangspunkt $b_0$ (und beliebigem Endpunkt.)
 \begin{st}[Existenz der universellen Überlagerung]
- Sei $B$ ein wegzusaamenhängender, lokal wegzusammenhängender und semi-lokal einfach zusammenhängender topologischer Raum. Dann existiert eine universelle Überlagerung $p:E \to B$
+ Sei $B$ ein wegzusammenhängender, lokal wegzusammenhängender und semi-lokal einfach zusammenhängender topologischer Raum. Dann existiert eine universelle Überlagerung $p:E \to B$
 \end{st}
 \begin{proof}
  Sei $b_0\in B$. Sei 
@@ -2346,7 +2353,7 @@ Für $[\omega]\in p^{-1}(U)$ mit $\omega(1)=b\in U$ sei $\eta$ ein Weg von $b$ n
 \[
  \Phi([\omega])=(\omega(1), \underbrace{[\omega*\eta]}_{b_0 \rightarrow b_1})\in U \times F(b_1)
 \]
-Es folgt, da $\eta$ zu $\eta'$ homotop (m. f. E.) ist, dass die Abbildung $\Phi$ wohldefiniert. (hier geht der semi-lokale einfache Zusammenhang ein!)
+Es folgt, da $\eta$ zu $\eta'$ homotop (m. f. E.) ist, dass die Abbildung $\Phi$ wohldefiniert ist. (hier geht der semi-lokale einfache Zusammenhang ein!)
 
 $\Phi$ liefert uns eine Bijektion:
 \[
@@ -2359,9 +2366,9 @@ $\Phi$ liefert uns eine Bijektion:
  Sei $b\in U, [\theta]\in F(b_1)$. Sei $\mu$ ein Weg in $U$ von $b_1$ nach $b$. Setze $\omega:=\theta*\mu$. Dann $\omega(1)=b$ und $[\omega*\mu^{-1}]=[\theta]$. Für $\alpha\in F(b_1)$ sei $V(U, \alpha):=\Phi^{-1}(U\times\{\alpha\})$. Dann ist $p\vline_{V(U, \alpha)}:V(U,\alpha)\to U$ bijektiv. Wir versehen $V(U,\alpha)$ mit der initialen Topologie, so dass obige Abbildung ein Homöomorphismus wird.
 \end{seg}
 
-Die Mengen $V(U, \alpha)$ überdecken ganz $E$. Ein Durchschnitt zweier slcher Mengen ist entweder leer oder die Wegzusammenhangskomponenten sind entweder leer oder von der Form $V(U', \alpha')$.
+Die Mengen $V(U, \alpha)$ überdecken ganz $E$. Ein Durchschnitt zweier solcher Mengen ist entweder leer oder die Wegzusammenhangskomponenten sind entweder leer oder von der Form $V(U', \alpha')$.
 
-Daher gibt es (genau) eine Topologie, dür die die $V(U, \alpha)$ offen sind (dass heißt verwenden die Mengen $V(U, \alpha)$ als Basis) und diese induziert auf den $V(U, \alpha)$ die oben gewählte. Damit ist $p:E \to B$ eine Überlagerung. Nach der Vorbemerkung und Korollar \ref{thm2:3.9} folgt, dass $E$ einfach zusammenhängend ist.
+Daher gibt es (genau) eine Topologie, für die die $V(U, \alpha)$ offen sind (dass heißt wir verwenden die Mengen $V(U, \alpha)$ als Basis) und diese induziert auf den $V(U, \alpha)$ die oben gewählte. Damit ist $p:E \to B$ eine Überlagerung. Nach der Vorbemerkung und Korollar \ref{thm2:3.9} folgt, dass $E$ einfach zusammenhängend ist.
 \begin{figure}[H]
 \centering
  \fixme[fig104]
@@ -2370,7 +2377,7 @@ Daher gibt es (genau) eine Topologie, dür die die $V(U, \alpha)$ offen sind (da
 \end{proof}
 
 \subsection{Der Satz von Seifert und van Kampen}
-beim Satz von Seifert und van Kampen handelt es sich um ein starkes Hilfsmittel zur Berechnung von Fundamentalgruppen. Wenn ein topologischer Raum $X$ die Vereinigung affiner Teilmengen $U,V$ ist, so dass $U,V$, und $U\cap V$ wegzusammenhängend sind, dann gibt der Satz an, wie sich die Fundamentalgruppe von $X$ aus denen von $U$ und $V$ "`zusammengesetzt"'.
+Beim Satz von Seifert und van Kampen handelt es sich um ein starkes Hilfsmittel zur Berechnung von Fundamentalgruppen. Wenn ein topologischer Raum $X$ die Vereinigung offener Teilmengen $U,V$ ist, so dass $U,V$, und $U\cap V$ wegzusammenhängend sind, dann gibt der Satz an, wie sich die Fundamentalgruppe von $X$ aus denen von $U$ und $V$ "`zusammensetzt"'.
 \begin{figure}[H]
  \centering
  \fixme[fig105]
@@ -2378,48 +2385,48 @@ beim Satz von Seifert und van Kampen handelt es sich um ein starkes Hilfsmittel 
 \end{figure}
 Wir benötigen einige Begriffe aus der Gruppentheorie.
 
-Sei $G$ eine Gruppe und $H\subset G$ eine Untergruppe, dann heißt $H$ \emph{normale Untergruppe} oder \emph{Normalteiler}, falls $gHg^{-1}=H$ für alle $g\in G,$ dass heißt falls $H$ invariant unter Konjugation. Eine Abbildung $\phi: G\to K$ zwischen Gruppen heißt \emph{(Gruppen)homomorphismus}, falls $\phi(g_1\cdot g_2)=\phi(g_1)\cdot \phi(g_2)$ für alle $g_1, g_2\in G$ gilt. Wegen $\phi(g)=\phi(1\cdot g)=\phi(1)\cdot \phi(g)$ gilt $\phi(1_G)=1_K$ (dass heißt $\phi$ bildet das neutrale Element von $G$ auf das neutrale Element von $K$ ab. Aus $1=\phi(1)=\phi(g\cdot g^{-1})=\phi(g)\cdot \phi(g^{-1})$ folgt $\phi(g^{-1})=\phi(g)^{-1}$.  Der \emph{Kern} eines Gruppenhomomorphismus ist die Menge $\ker \phi = \{g\in G|\phi(g)=1\}$.
+Sei $G$ eine Gruppe und $H\subset G$ eine Untergruppe, dann heißt $H$ \emph{normale Untergruppe} oder \emph{Normalteiler}, falls $gHg^{-1}=H$ für alle $g\in G,$ dass heißt falls $H$ invariant unter Konjugation ist. Eine Abbildung $\phi: G\to K$ zwischen Gruppen heißt \emph{(Gruppen)homomorphismus}, falls $\phi(g_1\cdot g_2)=\phi(g_1)\cdot \phi(g_2)$ für alle $g_1, g_2\in G$ gilt. Wegen $\phi(g)=\phi(1\cdot g)=\phi(1)\cdot \phi(g)$ gilt $\phi(1_G)=1_K$ (dass heißt $\phi$ bildet das neutrale Element von $G$ auf das neutrale Element von $K$ ab. Aus $1=\phi(1)=\phi(g\cdot g^{-1})=\phi(g)\cdot \phi(g^{-1})$ folgt $\phi(g^{-1})=\phi(g)^{-1}$.  Der \emph{Kern} eines Gruppenhomomorphismus ist die Menge $\ker \phi = \{g\in G|\phi(g)=1\}$.
 
 Ein Gruppenhomomorphismus ist injektiv genau dann, wenn der Kern trivial ist (dass heißt falls $\ker \phi = \{1\}$.), denn:
 \[
- \phi(g)=\phi(h)\iff 1=\phi(g)\cdot \phi(h)^{-1}=\phi(g)\cdot \phi(h^{1})=\phi(g\cdot h^{-1})\iff g\cdot h^{-1}\in \ker \phi
+ \phi(g)=\phi(h)\iff 1=\phi(g)\cdot \phi(h)^{-1}=\phi(g)\cdot \phi(h^{-1})=\phi(g\cdot h^{-1})\iff g\cdot h^{-1}\in \ker \phi
 \]
-Eine Untergruppe $H\subset G$ ist eine Normalteiler genau dann, wenn $H$ als Kern eines Gruppenhomomorphismus auftritt, dass heißt falls es einen Homomorphismus $\phi: G\to K$ gibt mit $\ker \phi=H$.
+Eine Untergruppe $H\subset G$ ist ein Normalteiler genau dann, wenn $H$ als Kern eines Gruppenhomomorphismus auftritt, dass heißt falls es einen Homomorphismus $\phi: G\to K$ gibt mit $\ker \phi=H$.
 
-Denn: ist $H$ ein Normalteiler, so ist $H$ der Kern des (surjektiven) Gruppenhomomorphisismum $\pi: G \to G/H: g\mapsto gH$ (wobei $G/H$ die natürliche Gruppenstruktur $(g_1\cdot H)\cdot (g_2 H)=g_1 g_2 H$ trägt, siehe (Abschnitt 3). Ist andererseits $\phi:G\to K$ ein Gruppenhomomorphismus und $h\in \ker \phi$, so liegt auch $ghg^{-1}$ im Kern, denn:
+Denn: ist $H$ ein Normalteiler, so ist $H$ der Kern des (surjektiven) Gruppenhomomorphismus $\pi: G \to G/H: g\mapsto gH$ (wobei $G/H$ die natürliche Gruppenstruktur $(g_1\cdot H)\cdot (g_2 H)=g_1 g_2 H$ trägt, siehe (Abschnitt 3). Ist andererseits $\phi:G\to K$ ein Gruppenhomomorphismus und $h\in \ker \phi$, so liegt auch $ghg^{-1}$ im Kern, denn:
 \[
  \phi(g\cdot h \cdot g^{-1})= \phi(g)\cdot\underbrace{\phi(h)}_{=1} \cdot \phi(g)^{-1}=1
 \]
-(Bei abelschen Gruppen sind alle UNtergruppen Normalerteiler, zum Beispiel $2\Z \subset \Z \to \Z^2=\Z_2=\Z/2\Z$)
+(Bei abelschen Gruppen sind alle Untergruppen Normalerteiler, zum Beispiel $2\Z \subset \Z \to \Z_2=\Z/2\Z$).
 Stets sind $\{1\}, G\subset G$ Normalteiler. Bezeichnung  $H\trianglelefteq G$ bedeutet $H\subset G$ Normalteiler)
 
-Das \emph{direkte} Produkt $G_1\times... \times G_k$ von $k$ Gruppen $G_1, ..., G_k$ ist die Menge:
+Das \emph{direkte} Produkt $G_1\times \dotsb \times G_k$ von $k$ Gruppen $G_1, \dotsc, G_k$ ist die Menge:
 \[
- \{(g_1, g_2,...,g_k)|g_i \in G_i\}
+ \{(g_1, g_2,\dotsc,g_k)|g_i \in G_i\}
 \]
 mit der komponentenweisen Verknüpfung
 \[
- (g_1,...,g_k)\cdot (h_1,..., h_k):=(g_1h_1,..., g_kh_k)
+ (g_1,\dotsc,g_k)\cdot (h_1,\dotsc, h_k):=(g_1h_1,\dotsc, g_kh_k)
 \]
-als Gruppenstruktur. Die Faktoren $G_i$ sind auf kanonische Weise durch die injektive $G_i\to G_1\times ... \times G_k, g_i \mapsto (1,..., 1, g_i, 1,..., 1)$ eingebettet (als $\{1\}\times... \times\{1\} \times G_i \times\{1\}  ... \times \{1\})$) und kommutieren miteinander, sind insbesondere Normalteiler.
+als Gruppenstruktur. Die Faktoren $G_i$ sind auf kanonische Weise durch die injektive $G_i\to G_1\times \dotsb \times G_k, g_i \mapsto (1,\dotsc, 1, g_i, 1,\dotsc, 1)$ eingebettet (als $\{1\}\times \dotsb \times\{1\} \times G_i \times\{1\} \dotsb \times \{1\})$) und kommutieren miteinander, sind insbesondere Normalteiler.
 
- Eine ganz andere Konstruktion ist das \emph{freie Produkt} von Gruppen. Seien $G_1, ..., G_k$ disjunkte Gruppen. Ein \emph{Wort} der \emph{Länge} $l\in \N_0$ ist eine Abbildung $\{1,..., l\} \to G_1\cup ... \cup G_k$, also eine endliche Folge von ELementen $x_1x_2... x_l$ mit $x_i\in G_1\cup...\cup G_k$ das \emph{leere Wort} bezeichnen wir mit $1$.
+ Eine ganz andere Konstruktion ist das \emph{freie Produkt} von Gruppen. Seien $G_1,\dotsc, G_k$ disjunkte Gruppen. Ein \emph{Wort} der \emph{Länge} $l\in \N_0$ ist eine Abbildung $\{1,\dotsc, l\} \to G_1\cup \dotsb \cup G_k$, also eine endliche Folge von Elementen $x_1x_2 \dotsc x_l$ mit $x_i\in G_1\cup \dotsb \cup G_k$ das \emph{leere Wort} bezeichnen wir mit $1$.
 
 Das \emph{Produkt} von zwei Worten ist durch Aneinanderreihen erklärt:
 \[
- (x_1x_2...x_l)\cdot (y_1y_2...y_m):=x_1x_2...x_ly_1y_2...y_m
+ (x_1x_2\dotsb x_l)\cdot (y_1y_2 \dotsb y_m):=x_1x_2 \dotsb x_ly_1y_2 \dotsb y_m
 \]
-Ein Wort heißt \emph{reduziert}, falls für alle aufeinanderfolgendenden Indexpaare $i, i+1$ mit $x_i\in G_m, x_{i+1}\in G_n$ gilt $m\neq n$. Offensichtlich lässt sich jedes Wort auf kanonische Weise zu einem reduzierten Wort machen ("`\emph{reduzireen}"'), indem man aufeinanderfolgende Elemente, die aus den selben Gruppe $G_i$ stammen, multipliziert, dass heißt durch ihr Produkt ersetzt und neutrale Elemente streicht. 
+Ein Wort heißt \emph{reduziert}, falls für alle aufeinanderfolgendenden Indexpaare $i, i+1$ mit $x_i\in G_m, x_{i+1}\in G_n$ gilt $m\neq n$. Offensichtlich lässt sich jedes Wort auf kanonische Weise zu einem reduzierten Wort machen ("`\emph{reduzieren}"'), indem man aufeinanderfolgende Elemente, die aus derselben Gruppe $G_i$ stammen, multipliziert, dass heißt durch ihr Produkt ersetzt und neutrale Elemente streicht. 
 
-Wir definieren dann das \emph{freie Produkt} der Gruppen $G_1*... * G_k$ als die Menge der reduzierten Worte
+Wir definieren dann das \emph{freie Produkt} der Gruppen $G_1, \dotsc  ,G_k$ als die Menge der reduzierten Worte
 \[
- G_1*...*G_k:=\{x_1...x_l|l\in \N_0, x_1...x_l \text{ reduziertes Wort } \}
+ G_1*\dotsm *G_k:=\{x_1 \dotsb x_l|l\in \N_0, x_1 \dotsb x_l \text{ reduziertes Wort } \}
 \]
 und definieren die Gruppenverknüpfung durch das Produkt von Worten (Hintereinanderschreiben) und anschließendes Reduzieren.
 \begin{ex*}
  Das freie Produkt $\Z*\Z$ besteht aus Worten der Form
 \[
- \{a^{n_0} b^{n_1} a^{n_2} b^{n_3} a^{n_{2k+1}}|k\in \N_0, n_1 \in \Z, n_1,..., n_{2k}\neq 0\}
+ \{a^{n_0} b^{n_1} a^{n_2} b^{n_3} \dotsb a^{n_{2k}}b^{n_{2k+1}}|k\in \N_0, n_i \in \Z, n_1,\dotsc, n_{2k}\neq 0\}
 \]
 wobei wir die beiden Faktoren multiplikativ geschrieben haben als $\{a^n|n\in \Z\}$ bzw $\{b^n|n\in \Z\}$. Wir bemerken, dass freie Produkte stets unendlich sind, falls mindestens zwei der Faktoren nichttriviale Gruppen sind (im Gegensatz zum direkten Produkt).
 
