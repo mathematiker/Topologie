@@ -2408,9 +2408,9 @@ mit der komponentenweisen Verknüpfung
 \[
  (g_1,\dotsc,g_k)\cdot (h_1,\dotsc, h_k):=(g_1h_1,\dotsc, g_kh_k)
 \]
-als Gruppenstruktur. Die Faktoren $G_i$ sind auf kanonische Weise durch die injektive $G_i\to G_1\times \dotsb \times G_k, g_i \mapsto (1,\dotsc, 1, g_i, 1,\dotsc, 1)$ eingebettet (als $\{1\}\times \dotsb \times\{1\} \times G_i \times\{1\} \dotsb \times \{1\})$) und kommutieren miteinander, sind insbesondere Normalteiler.
+als Gruppenstruktur. Die Faktoren $G_i$ sind auf kanonische Weise durch die injektiven Abbildungen $G_i\to G_1\times \dotsb \times G_k, g_i \mapsto (1,\dotsc, 1, g_i, 1,\dotsc, 1)$ eingebettet (als $\{1\}\times \dotsb \times\{1\} \times G_i \times\{1\} \dotsb \times \{1\}$) und kommutieren miteinander, sind insbesondere Normalteiler.
 
- Eine ganz andere Konstruktion ist das \emph{freie Produkt} von Gruppen. Seien $G_1,\dotsc, G_k$ disjunkte Gruppen. Ein \emph{Wort} der \emph{Länge} $l\in \N_0$ ist eine Abbildung $\{1,\dotsc, l\} \to G_1\cup \dotsb \cup G_k$, also eine endliche Folge von Elementen $x_1x_2 \dotsc x_l$ mit $x_i\in G_1\cup \dotsb \cup G_k$ das \emph{leere Wort} bezeichnen wir mit $1$.
+ Eine ganz andere Konstruktion ist das \emph{freie Produkt} von Gruppen. Seien $G_1,\dotsc, G_k$ disjunkte Gruppen. Ein \emph{Wort} der \emph{Länge} $l\in \N_0$ ist eine Abbildung $\{1,\dotsc, l\} \to G_1\cup \dotsb \cup G_k$, also eine endliche Folge von Elementen $x_1x_2 \dotsb x_l$ mit $x_i\in G_1\cup \dotsb \cup G_k$ das \emph{leere Wort} bezeichnen wir mit $1$.
 
 Das \emph{Produkt} von zwei Worten ist durch Aneinanderreihen erklärt:
 \[
@@ -2432,38 +2432,34 @@ wobei wir die beiden Faktoren multiplikativ geschrieben haben als $\{a^n|n\in \Z
 
 \end{ex*}
 \begin{note*}
- $\Z*\Z$: 
+ $\textcolor{red}{\Z}*\textcolor{blue}{\Z}$: 
 \[
- 4\cdot 3 = 7
+ \textcolor{red}{4\cdot 3} =  \textcolor{red}{7}
 \]
 \[
- 1\cdot 1 \neq 1\cdot 1
+ \textcolor{red}{1}\cdot \textcolor{blue}{1} \neq \textcolor{blue}{1}\cdot \textcolor{red}{1}
 \]
 \[
- (1\cdot 1)\cdot(1\cdot 1)=1\cdot 1 \cdot 1 \cdot 1 = 1\cdot 2 \cdot 1
+  (\textcolor{red}{1}\cdot \textcolor{blue}{1}) \cdot (\textcolor{blue}{1}\cdot \textcolor{red}{1})  = \textcolor{red}{1}\cdot \textcolor{blue}{1 \cdot 1} \cdot \textcolor{red}{1} = \textcolor{red}{1}\cdot \textcolor{blue}{2}\cdot \textcolor{red}{1}
 \]
 \[
- (1\cdot 3)\cdot(-3\cdot -1)=1\cdot (3-3)\cdot (-1)=1\cdot 0\cdot (-1)=1\cdot (-1)=0=1=e
+ (\textcolor{red}{1}\cdot \textcolor{blue}{3}) \cdot (\textcolor{blue}{-3}\cdot \textcolor{red}{-1})  = \textcolor{red}{1}\cdot (\textcolor{blue}{3 \cdot -3}) \cdot \textcolor{red}{-1} = \textcolor{red}{1}\cdot \textcolor{blue}{0}\cdot \textcolor{red}{-1} = \textcolor{red}{1 \cdot -1} = \textcolor{red}{0} = 1 = e
 \]
-wobei $e$ das neutrale Element in $\Z * \Z$
-\fixme[from mathematiker : fixen]
+wobei $e$ das neutrale Element in  $\textcolor{red}{\Z}*\textcolor{blue}{\Z}$ ist.
 \end{note*}
 
-Sei $A\subset G$ eine beliebige Teilmenge der Gruppe $G$. Wir definieren die \emph{von $A$ erzeugte Untergruppe} als die Schnittmenge aller von Untergruppen von $G$, die $A$ enthalten (beliebige Schnitte von Untergruppen sind wieder Untergruppen) und analog den von $A$ erzeugten Normalteiler als die Schnittmenge aller Normalteiler von $G$, die $A$ enthalten (zum Beispiel $G$ ist ein Normalteiler von $G$, der $A$ enthält).
+Sei $A\subset G$ eine beliebige Teilmenge der Gruppe $G$. Wir definieren die \emph{von $A$ erzeugte Untergruppe} als die Schnittmenge aller Untergruppen von $G$, die $A$ enthalten (beliebige Schnitte von Untergruppen sind wieder Untergruppen) und analog den von $A$ erzeugten Normalteiler als die Schnittmenge aller Normalteiler von $G$, die $A$ enthalten (zum Beispiel $G$ ist ein Normalteiler von $G$, der $A$ enthält).
  
 \begin{st}[Seifert-van Kampen]\label{thm2:5.2}
- Sei der topologische Raum $X=U\cup V$ mit $U, V\le X$ offen und $U,V, U\cap V$ wegzusammenhängend. Sei $x_0\in U\cap V$. Dann ist
+ Sei der topologische Raum $X=U\cup V$ mit $U, V\subset X$ offen und $U,V, U\cap V$ wegzusammenhängend. Sei $x_0\in U\cap V$. Dann ist
 \[
  \pi_1(X;x_0) \cong \pi_1(U;x_0)*\pi_1(V;x_0)/N
 \]
-wobei $N$ der Normalteiler von $\pi_1(U;x_0)*\pi_1(V_j;x_0)$ ist, der von den Elementen der Form $[\omega]_U\cdot [\omega]_V^{-1}$ mit $\omega\in \Omega(U\cap V; x_0)$ erzeugt wird, wobei die Indizes die Homotopieklassen in $U$ bzw. $V$ (mit festen Basispunkt $x_0$) bezeichnen.
+wobei $N$ der Normalteiler von $\pi_1(U;x_0)*\pi_1(V;x_0)$ ist, der von den Elementen der Form $[\omega]_U\cdot [\omega]_V^{-1}$ mit $\omega\in \Omega(U\cap V; x_0)$ erzeugt wird, wobei die Indizes die Homotopieklassen in $U$ bzw. $V$ (mit festen Basispunkt $x_0$) bezeichnen.
 \end{st}
- \fixme[from mathematiker: Überprüfen]
-
-
 \begin{note*}[Satz von Seifert und van Kampen anschaulich]
  \begin{itemize}
-  \item Die $\pi_1(U;x_0)*\pi_1(V;x_0)$ entsteht durch Aneinanderhängen von Schleifen in $U$ bzw. $V$ (mit Basispunkt $x_0$) in beliebiger Reihenfolge
+  \item Die Gruppe $\pi_1(U;x_0)*\pi_1(V;x_0)$ entsteht durch Aneinanderhängen von Schleifen in $U$ bzw. $V$ (mit Basispunkt $x_0$) in beliebiger Reihenfolge
 \begin{figure}[H]
 \centering
 \fixme[fig106]
@@ -2482,11 +2478,11 @@ wobei $N$ der Normalteiler von $\pi_1(U;x_0)*\pi_1(V_j;x_0)$ ist, der von den El
  Sei $X$ topologischer Raum mit $X=U\cup V$, $U,V$ offen, wegzusammenhängend und $U\cap V$ einfach zusammenhängend, $x_0\in U\cap V$, dann gilt $\pi_1(X,x_0)\cong \pi_1(U;x_0)*\pi_1(V;x_0)$.
 \end{kor}
 \begin{proof}
- Es gilt $[\omega]_K=1, [\omega]_V=1$, da alle $\Omega(U\cap V;x_0)$ sogar in $U\cap V$ nullhomotop sind.
+ Es gilt $[\omega]_U=1, [\omega]_V=1$, da alle $\omega \in \Omega(U\cap V;x_0)$ sogar in $U\cap V$ nullhomotop sind.
 \end{proof}
 \begin{ex*}
  \begin{enumerate}[(i)]
-  \item $\pi_1(S^1\wedge S^1, x_0)\cong \Z*\Z$
+  \item $\pi_1(S^1\vee S^1, x_0)\cong \Z*\Z$
 \begin{figure}[H]
  \centering
 \fixme[fig107]
@@ -2508,19 +2504,22 @@ Wir wollen nun Satz \ref{thm2:5.2} beweisen. Hierfür benötigen wir noch folgen
 \begin{proof}
  Da $\ker(\phi)\subset G$ ein Normalteiler ist, $G/\ker(\phi)$ eine Gruppe mit Verknüpfung
 \[
- (g\ker(\phi))\cdot(k\cdot \ker(\phi))
+ (g \cdot \ker(\phi))\cdot(k\cdot \ker(\phi)) = g \cdot k \cdot \ker(\phi)
 \]
-Die Abbildung $\bar \phi$ ist wohldefiniert, denn wenn $k\in \ker(\phi)$, dann ist $\phi(g\cdot k)=\phi(gk)=\phi(g)\cdot \phi(k)=\phi(g)$ und offensicht surjektiv. Sie ist injektiv, denn $\bar \phi(g\cdot \ker(\phi))=1$ impliziert $g\in \ker(\phi)$.
+Also folgt die Homomorphieeigenschaft:
+\[
+ \bar \phi ((g \cdot \ker(\phi))\cdot(k\cdot \ker(\phi))) = \bar \phi (g \cdot k \cdot \ker(\phi)) = \phi (gk) = \phi (g) \phi (k) = \bar \phi (g \cdot \ker(\phi))  \bar \phi (k \cdot \ker(\phi))
+\]
 
-Wir schreiben einen surjektiven Gruppenhomomorpohismus $\phi: \pi_1(U;x_0)*\pi_1(V;x_0)\to \pi_1(X;x_0)$ (und zeigen dann $N=\ker\phi$). (und zeigen dann $N=\ker\phi$).
-
-\emph{Wir definieren $\phi$ wie folgt.} Sei $[\omega_1]_{\omega_1}\cdot [\omega_2]_{\omega_2}\cdot ... [\omega_k]_{\omega_k}$ ein reduziertes Wort in $\pi_1(U; x_0)*\pi_1(V;x_0)$, dass heißt $W_1=U$ oder $V$ aber immer abwechselnd und $[\omega_2]\in \pi_1(W_i;x_0)$.
-
-Sei $[\omega_1]_X\cdot [\omega_2]_X\cdot ... [\omega_k]_X$ das Bild dieses Wortes in $\pi_1(X;x_0)$. Diese ABbildung ist offensichtlich ein Gruppenhomorphismus.
+Die Abbildung $\bar \phi$ ist wohldefiniert, denn wenn $k\in \ker(\phi)$, denn ist $\phi(g\cdot k)=\phi(gk)=\phi(g)\cdot \phi(k)=\phi(g)$ und offensichtlich surjektiv. Sie ist injektiv, denn $\bar \phi(g\cdot \ker(\phi))=1$ impliziert $g\in \ker(\phi)$.
 \end{proof}
+Wir schreiben einen surjektiven Gruppenhomomorpohismus $\phi: \pi_1(U;x_0)*\pi_1(V;x_0)\to \pi_1(X;x_0)$ (und zeigen dann $N=\ker\phi$).
 
+\emph{Wir definieren $\phi$ wie folgt.} Sei $[\omega_1]_{W_1}\cdot [\omega_2]_{W_2}\cdot ... [\omega_k]_{W_k}$ ein reduziertes Wort in $\pi_1(U; x_0)*\pi_1(V;x_0)$, dass heißt $W_i=U$ oder $V$ aber immer abwechselnd und $[\omega_i]\in \pi_1(W_i;x_0)$.
+
+Sei $[\omega_1]_X\cdot [\omega_2]_X\cdot ... [\omega_k]_X$ das Bild dieses Wortes in $\pi_1(X;x_0)$. Diese Abbildung ist offensichtlich ein Gruppenhomorphismus.
 \begin{lem} \label{thm2:5.5}
- $\phi$ ist injektiv
+ $\phi$ ist surjektiv
 \end{lem}
 \begin{proof}
  Sei $\omega\in \Omega(X;x_0)$. Mit einem Kompaktheitsargument kann man zeigen, dass es eine Unterteilung des Intervalls $[0,1]$ gibt, dass heißt $0=t_0<t_1<...<t_{k-1}<t_k=1$, so dass $\omega([t_i, t_{i+1}])$, ganz in $U$ oder ganz in $V$ liegt.
@@ -2529,13 +2528,13 @@ Sei $[\omega_1]_X\cdot [\omega_2]_X\cdot ... [\omega_k]_X$ das Bild dieses Worte
 \fixme[fig109]
 \caption{}
 \end{figure}
-Durch Weglassen von Unterteilungspunkten erreichen wir, dass $U$ und $V$ sich abwechseln, insbesondere gilt dann $\omega(t_i)\in U\cap V$. Wähle Wege $\alpha_i:[0,1]\to U\cap V$ von $x_0$ nach $\omega(t_2).$
+Durch Weglassen von Unterteilungspunkten erreichen wir, dass $U$ und $V$ sich abwechseln, insbesondere gilt dann $\omega(t_i)\in U\cap V$. Wähle Wege $\alpha_i:[0,1]\to U\cap V$ von $x_0$ nach $\omega(t_i).$
 
 Dann ist $\omega_i:=\alpha_{i-1} * \omega|_{[t_{i-1}, t_i]}*\alpha_i^{-1}$ eine Schleife mit Basispunkt $x_0$, die ganz in $U$ bzw. ganz in $V$ liegt, wobei wir $\alpha_0$ und $\alpha_k$ als konstante Schleifen in $x_0$ wählen. Nun gilt:
 \begin{align*}
- &[\omega_1]_X\cdot ... \cdot [\omega_k]_X=[\omega_1*...*\omega_k]_X\\
-&=\left [\alpha_0*\omega|_{[t_0,t_1]}*\alpha_1*\alpha_1^{-1}*\omega|_{[t_1, t_2]}*\alpha_2*\alpha_2^{-1}...*\alpha_{k-1}*\alpha_{k-1}^{-1}*\omega|_{[t_{k-1},t_k]}*\alpha_k^{-1} \right ]_X\\
-&= [\omega|_{[t_1, t_2]}]*...*\omega|_{[t_{k-1}, t_k]}]_X=[\omega]_X.
+ &[\omega_1]_X\cdot \dotso \cdot [\omega_k]_X=[\omega_1* \dotsm *\omega_k]_X\\
+&=\left [\alpha_0*\omega|_{[t_0,t_1]}*\alpha_1^{-1}*\alpha_1*\omega|_{[t_1, t_2]}*\alpha_2^{-1}*\alpha_2 * \dotsm *\alpha_{k-1}^{-1}*\alpha_{k-1}*\omega|_{[t_{k-1},t_k]}*\alpha_k \right ]_X\\
+&= [\omega|_{[t_0, t_1]}]* \dotsm *\omega|_{[t_{k-1}, t_k]}]_X=[\omega]_X.
 \end{align*}
 \end{proof}
 \begin{lem}
@@ -2544,7 +2543,7 @@ Dann ist $\omega_i:=\alpha_{i-1} * \omega|_{[t_{i-1}, t_i]}*\alpha_i^{-1}$ eine 
 \begin{proof}
  $N$ ist der von der Menge
 \[
- \{[\omega]_K\cdot [\omega]_V^{-1}|\omega\in \Omega(U\cap V;x_0)\}\subset \pi_1(V;x_0)*\pi_1(V;x_0)\}
+ \{[\omega]_U\cdot [\omega]_V^{-1}|\omega\in \Omega(U\cap V;x_0)\}\subset \pi_1(V;x_0)*\pi_1(V;x_0)\}
 \]
 erzeugte Normalteiler. Sei $\omega\in \Omega(U\cap V; x_0)$. Dann gilt $\phi([\omega]_U\cdot [\omega]_V^{-1})=[\omega]_X\cdot [\omega]_X^{-1}=1$, also liegen alle Elemente der obigen Menge im Kern, also auch der davon erzeugte Normalteiler.
 \end{proof}
@@ -2552,10 +2551,10 @@ erzeugte Normalteiler. Sei $\omega\in \Omega(U\cap V; x_0)$. Dann gilt $\phi([\o
  $\ker(\phi)\subset N$
 \end{lem}
 \begin{proof}
- Sei $w$ ein Wort $[\alpha_1]\cdot [\beta_1][\alpha_2]\cdot [\beta_2]...[a_k]\cdot [\beta_k]$ mit $[\alpha_i]\in \pi_1(U;x_0)$, $[\beta_i]\in \pi_1(V;x_0)$. Sei $w\in \ker(\phi)$, dass heißt es gibt eine Homotopie 
+ Sei $\omega$ ein Wort $[\alpha_1]\cdot[\beta_1]\cdot[\alpha_2]\cdot[\beta_2]\cdot\dotsc\cdot[a_k]\cdot[\beta_k]$ mit $[\alpha_i]\in \pi_1(U;x_0)$, $[\beta_i]\in \pi_1(V;x_0)$. Sei $\omega\in \ker(\phi)$, dass heißt es gibt eine Homotopie 
 $H:[0,1]\times[0,1]\to X$, $(s,t)\mapsto H(s,t)$ mit 
 \[
- H(\cdot, 0)=\alpha_1*\beta_1*...*\alpha_k*\beta_k, H(\cdot, 2)=x_0
+ H(\cdot, 0)=\alpha_1*\beta_1*...*\alpha_k*\beta_k, H(\cdot, 1)=x_0
 \]
 \begin{figure}
  \centering
@@ -2564,7 +2563,7 @@ $H:[0,1]\times[0,1]\to X$, $(s,t)\mapsto H(s,t)$ mit
 \end{figure}
 Mit einem Kompaktheitsargument finden wir $n\in \N$, so dass die Teilquadrate von $[0,1]\times[0,1]$ der Seitenlänge $1/n$ ganz nach $U$ oder ganz nach $V$ abgebildet werden. Wir nehmen an, dass $n$ ein Vielfaches von $2k$ ist.
 
-Die Beweisstragie ist nun, $w=H(\cdot, 0)$, in $x_0=H(\cdot, 1)$ schrittweise "`Zeile für Zeile"' überzuführen, wobei die in jedem Schritt verwendeten Wörter dieselbe Nebenklasse in $\pi_1(U;x_0)*\pi_1(V;x_0)/N$ repräsentieren:
+Die Beweisstragie ist nun, $\omega=H(\cdot, 0)$, in $x_0=H(\cdot, 1)$ schrittweise "`Zeile für Zeile"' überzuführen, wobei die in jedem Schritt verwendeten Wörter dieselbe Nebenklasse in $\pi_1(U;x_0)*\pi_1(V;x_0)/N$ repräsentieren:
 \begin{figure}[H]
  \centering
 \fixme[fig111]
@@ -2572,7 +2571,7 @@ Die Beweisstragie ist nun, $w=H(\cdot, 0)$, in $x_0=H(\cdot, 1)$ schrittweise "`
 \end{figure} 
 wir benötigen folgende Vorbereitung.
 
-Sei $f$ eine monoton steigende Funktion $[0,1]\to[0,1]$ die jeweils auf eine Umgebung von $k/n$ konstant ist.
+Sei $f$ eine monoton steigende Funktion $[0,1]\to[0,1]$ die jeweils auf einer Umgebung von $k/n$ konstant ist.
 \begin{figure}[H]
  \centering
 \fixme[fig112]
@@ -2592,7 +2591,7 @@ und ersetze $H$ durch $(t,s)\mapsto H(f(s), f(t))$. Dann ist $H$ auf einer Kreis
 \caption{}
 \end{figure}
 \begin{align*}
- [a]_U\cdot [b]_V\cdot [c]_V=[g^{-1}dh]_U\cdot [n^{-1} ek[_V\cdot [k^{-1}f l]_V=[gd]_U\cdot \underbrace{[h]_U[h^{-1}]_V}_{\in N}\cdot [ekk^{-1}fl]_V\stackrel{\text{im Quotiente}}=[g^{-1}]_U[d]_U[e]_V\cdot [f]_V[l]_V 
+ [a]_U\cdot [b]_V\cdot [c]_V=[g^{-1}dh]_U\cdot [h^{-1} ek]_V\cdot [k^{-1}f l]_V=[gd]_U\cdot \underbrace{[h]_U[h^{-1}]_V}_{\in N}\cdot [ekk^{-1}fl]_V\stackrel{\text{im Quotienten}}=[g^{-1}]_U[d]_U[e]_V\cdot [f]_V[l]_V 
 \end{align*}
 \end{ex*}
 
@@ -2621,7 +2620,7 @@ Klassifikation bis auf Homöomorphie. Als Hilfsmittel werden wir sogenannte "`\e
 \[
  \lambda_0p_0+\lambda_1p_1+\lambda_2p_2+...+\lambda_mp_m
 \]
-heißt \emph{Affinkombination}, falls $\lambda_1+\lambda_2+...+\lambda_n=1$ gilt, \emph{Konvexkombination}, falls zusätzlich $0\le \lambda_i\le 1$ für alle $i=0,..., m$ gilt.
+heißt \emph{Affinkombination}, falls $\lambda_1+\lambda_2+...+\lambda_m=1$ gilt, \emph{Konvexkombination}, falls zusätzlich $0\le \lambda_i\le 1$ für alle $i=0,..., m$ gilt.
 
 zum Beispiel:
  \begin{figure}
@@ -2676,7 +2675,7 @@ Man kann nun geometrische Körper im $\R^n$, als Vereinigung von Simplizes darst
 \fixme[fig122]
 \caption{}
 \end{figure}[H]
-dass sich je zwei beteiligte Simplizes zur im einem gemeinsamen Teilsimplex schneiden dürfen:
+dass sich je zwei beteiligte Simplizes nur im einem gemeinsamen Teilsimplex schneiden dürfen:
  \begin{figure}
  \centering
 \fixme[fig123]
@@ -2696,7 +2695,7 @@ dass sich je zwei beteiligte Simplizes zur im einem gemeinsamen Teilsimplex schn
  \begin{enumerate}[(1)]
   \item $\mathcal K$ ist eine Familie von Eckenmengen, so dass die Eckenmenge von jedem Teilsimplex wieder in $\mathcal K$ enthalten sind. ($\mathcal K$ ist ein "`\emph{abstrakter simplizialer Komplex}"').
   \item $K$ ist die "'\emph{geometrische Realisierung}"'
-  \item Nach (ii) gilt, dass sich zwei Simplizes zum in einem gemeinsamen Teilsimplex schneiden dürfen. (oder in der leeren Menge)
+  \item Nach (ii) gilt, dass sich zwei Simplizes nur in einem gemeinsamen Teilsimplex schneiden dürfen. (oder in der leeren Menge)
 \end{enumerate}
 \end{note*}
 Wenn zu den Flächen:
@@ -2747,13 +2746,13 @@ kombinatorische "`Brezelfläche"':
  Sind $(K, \mathcal K)$, $(L, \mathcal L)$ zwei endliche simpliziale Polyeder, so heißt eine stetige Abbildung $f: K \to L$ \emph{simplizial}, wenn für jedes $\sigma\in \mathcal K$
 \begin{enumerate}[(i)]
  \item die Bildmenge $f(\sigma)$ ein Element von $\mathcal L$ ist.
- \item die Abbildung $f\vline\,_{\Delta(\sigma)}: \Delta(\sigma)\to \Delta(\sigma)$ affin ist.
+ \item die Abbildung $f\vline\,_{\Delta(\sigma)}: \Delta(\sigma)\to \Delta(f(\sigma))$ affin ist.
 \end{enumerate}
 
 Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbildung hat.
 \end{df}
 \begin{df}
- Zwie kombinatorische Flächen heißen \emph{kombinatorisch äquivalent}, wenn sie isomorphe "`\emph{Unterteilmengen}"' besitzen.
+ Zwei kombinatorische Flächen heißen \emph{kombinatorisch äquivalent}, wenn sie isomorphe "`\emph{Unterteilungen}"' besitzen.
 \end{df}
 \begin{figure}
  \centering
@@ -2762,7 +2761,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
 \end{figure}
 
 \begin{df}
- Eine \emph{Zerschneidung} einer kombinatorischen Fläche $(Y,\mathcal Y)$ und einer simplizialen Abbildung. $\phi:(Y, \mathcal Y)\to (X, \mathcal X)$, so dass $\phi\vline\,_{\mathcal Y_2}:\mathcal Y_2 \to \mathcal X_2$ bijektiv ist. (bijektiv auf 2 Simplizes, $0$- und $1$-Simplizes werden eventuell zusammengeklebt.)
+ Eine \emph{Zerschneidung} einer kombinatorischen Fläche  $(X, \mathcal X)$ besteht aus einer kombinatorischen Fläche $(Y,\mathcal Y)$ und einer simplizialen Abbildung. $\phi:(Y, \mathcal Y)\to (X, \mathcal X)$, so dass $\phi\vline\,_{\mathcal Y_2}:\mathcal Y_2 \to \mathcal X_2$ bijektiv ist. (bijektiv auf 2 Simplizes, $0$- und $1$-Simplizes werden eventuell zusammengeklebt.)
 \begin{figure}
  \centering
 \fixme[fig130]
@@ -2780,7 +2779,7 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
 \end{seg}
 
 \begin{df}
- Der \emph{Rand} einer kombinatorischen Fläche bestaht aus allen $1$-Simplizes, die nicht Teilimplizes in zwei verschieden $2$-Simplizes sind. Eine kombinatorische Fläche heißt \emph{n-Eck}, wenn ihr Rand aus genau n $1$-Simplizes besteht und sie zu einem $2$-Simplex homöomorph ist.
+ Der \emph{Rand} einer kombinatorischen Fläche besteht aus allen $1$-Simplizes, die nicht Teilsimplizes in zwei verschiedenen $2$-Simplizes sind. Eine kombinatorische Fläche heißt \emph{n-Eck}, wenn ihr Rand aus genau n $1$-Simplizes besteht und sie zu einem $2$-Simplex homöomorph ist.
 \begin{figure}
  \centering
 \fixme[fig132]
@@ -2788,8 +2787,8 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
 \end{figure}
 \end{df}
 
-\begin{lem}
- Sei $\phi: \mathcal Y\to \mathcal X$ eine Zerschneidung von $\mathcal X$ \emph{entlang eines $1$-Simplex} (dass heißt $\phi^{-1}(e)$ besteht aus zwei $1-$Simplizes von $\mathcal X$, aller anderen haben zur ein $1$-Simplex im Urbild. Sei $\mathcal Y$ die disjunkte Vereinigung eines $n$-Ecks und eines $m$-Ecks. Dann ist $\mathcal X$ ein ($m+n-2$)-Eck.
+\begin{lem}\label{thm3:1.11} 
+ Sei $\phi: \mathcal Y\to \mathcal X$ eine Zerschneidung von $\mathcal X$ \emph{entlang eines $1$-Simplex} $e$ (dass heißt $\phi^{-1}(e)$ besteht aus zwei $1-$Simplizes von $\mathcal Y$, alle anderen haben nur ein $1$-Simplex im Urbild. Sei $\mathcal Y$ die disjunkte Vereinigung eines $n$-Ecks und eines $m$-Ecks. Dann ist $\mathcal X$ ein ($m+n-2$)-Eck.
 \end{lem}
 \begin{proof}
  \begin{figure}
@@ -2803,21 +2802,20 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
 \end{st}
 \fixme[from mathematiker : Überprüfe Nummerierung]
 \begin{proof}
- Eine Zerschneidung $\mathcal Y$ von $\mathcal X$ heißt \emph{flach}, wenn jede Komponente $\mathcal Y_i$ von $\mathcal Y$ ein $n_i$-Eck ist. es existiert immer eine flache Zerschneidung. zum Beispiel die disjunkte Vereinigung der $2$-Simplizes von $\mathcal X$.
+ Eine Zerschneidung $\mathcal Y$ von $\mathcal X$ heißt \emph{flach}, wenn jede Komponente $\mathcal Y_i$ von $\mathcal Y$ ein $n_i$-Eck ist. Es existiert immer eine flache Zerschneidung, zum Beispiel die disjunkte Vereinigung der $2$-Simplizes von $\mathcal X$.
 \begin{figure}
  \centering
 \fixme[fig134]
 \caption{}
 \end{figure}
-Sei unter all solce eine mit minimale Anzahl von Komponenten gewählt.
-\begin{seg}{Diese Anzahl ist gleich 1}
- Da $\mathcal X$ zusammenhängend ist, gibt es nämlich sonst zwei $1$-SImplizes in $Y$, die von $\phi$ identifiziert werden. Nach Lemma \ref{thm3:1.11} lassen sich diese zu einem $n$-Eckk zusammenkleben, wobei eine neue flache Zerschneidung mit verringerter Komponentenzahl entsteht.
-\end{seg}
+Sei unter all solchen eine mit minimaler Anzahl von Komponenten gewählt.
+Diese Anzahl ist gleich 1:
+ Da $\mathcal X$ zusammenhängend ist, gibt es nämlich sonst zwei $1$-Simplizes in $\mathcal Y$, die von $\phi$ identifiziert werden. Nach Lemma \ref{thm3:1.11} lassen sich diese zu einem $n$-Eck zusammenkleben, wobei eine neue flache Zerschneidung mit verringerter Komponentenzahl entsteht.
 \end{proof}
 
-Eine Zerschneidung $\phi: \mathcal Y \to \mathcal X$ einer geschlossenen Fläche liefert eine Äquivalenzrelation auf dem Rand von $\mathcal Y$: Jede Randkante wird mit genau einer anderen verklebt. Für diese Identifikation gibt es genau zwei Möglichkeiten, die den beiden Möglichkeiten, die den beiden Möglichkeiten entsprechen, die Menge der Endpunkte $\{p_0, p_1\}$ eines $1$-Simplex $\Delta(p_0, p_1)$ auf die Menge der Endpunkte $\{a_0, a_1\}$ eines anderen $1$-Simplex bijektiv abzubilden.
+Eine Zerschneidung $\phi: \mathcal Y \to \mathcal X$ einer geschlossenen Fläche liefert eine Äquivalenzrelation auf dem Rand von $\mathcal Y$: Jede Randkante wird mit genau einer anderen verklebt. Für diese Identifikation gibt es genau zwei Möglichkeiten, die den beiden Möglichkeiten entsprechen, die Menge der Endpunkte $\{p_0, p_1\}$ eines $1$-Simplex $\Delta(p_0, p_1)$ auf die Menge der Endpunkte $\{a_0, a_1\}$ eines anderen $1$-Simplex bijektiv abzubilden.
 
-Sei $\mathcal k=\{a_1, ..., a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir gebenden Kanten eine Orientierung, indem wir fordern, dass beim positiven Drucklaufen das Inneren von $\mathcal Y$ links liegen soll.
+Sei $\mathcal k=\{a_1, ..., a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir geben den Kanten eine Orientierung, indem wir fordern, dass beim positiven Durchlaufen das Innere von $\mathcal Y$ links liegen soll.
 
 \begin{figure}
  \centering
@@ -2825,7 +2823,7 @@ Sei $\mathcal k=\{a_1, ..., a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir
 \caption{}
 \end{figure}
 
-Wir schreiben $a_i^{-1}$ für jeweils die umgekehrt durchgelaufene Kante. Wir setzen $\mathcal k^0:=\{a_1,..., a_{2n}, a_1^{-1}, ..., a_{2n}^{-1}\}$ für die Menge der \emph{orienterten Kante}.
+Wir schreiben $a_i^{-1}$ für die jeweils umgekehrt durchlaufene Kante. Wir setzen $\mathcal k^0:=\{a_1,\dotsc, a_{2n}, a_1^{-1},\dotsc , a_{2n}^{-1}\}$ für die Menge der \emph{orientierten Kanten}.
 
 \begin{df}
  Ein \emph{Polygon-Modell} besteht aus einem $2n$-Eck $\mathcal Y$ mit Kantenmenge $\mathcal k$ und einer \emph{Involution} $\psi: \mathcal k^0 \to \mathcal k^0$, die folgende Bedingung erfüllt: Sind $a,b\in \mathcal k$ und ist $\psi(a)=b^{\epsilon}$, so ist $b\neq a$ und $\Psi(a^{-1})=b^{-\epsilon}$.
