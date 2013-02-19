@@ -188,7 +188,7 @@ Eine Menge $ X $ zusammen mit einer Topologie auf $ X $ heißt \emph{topologisch
 \begin{note*}
 \begin{enumerate}[(\roman{enumi})]
 \item Natürlich ist die Definition so gemacht, dass die in einem metrischen Raum durch \ref{def:1.1.7} gegebenen offenen Mengen eine Topologie bilden. (Übung) 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \fixme[fig5]
 \caption{}
@@ -350,7 +350,7 @@ Sei $ X $ ein topologischer Raum und $ A\subset X $ ein Teilraum. Dann ist durch
 \end{seg}
 \item \begin{seg}{Beispiel zu (i)}
 Sei X ein topologischer Raum. Betrachte $ X\times [0,1] $
-\begin{figure}
+\begin{figure}[H]
 \centering
  \fixme[fig9]
 \caption{}
@@ -359,13 +359,13 @@ Man erhält den Kegel $CX:=X\times[0,1]/X\times\{1\}$
 \end{seg}
 \item Allgemeiner: "`\emph{Zusammenkleben}"'
 \begin{enumerate}[(a)]
-\item 
+\item .
 \begin{figure}[H]
 \centering
  \fixme[fig10]
 \caption{}
 \end{figure}
-\item 
+\item .
 \begin{figure}[H]
 \centering
  \fixme[fig11]
@@ -399,8 +399,8 @@ Die \emph{finale Topologie} ist die feinste Topologie auf Y die f stetig macht i
 \begin{exs*}
 \begin{enumerate}[(i)]
 \item Die Teilraumtopologie auf $M\subset X$ ist die initale Topologie bezüglich der \emph{Inklusionsabbildung} $ i:M\to X,m\mapsto m $, denn es gilt $ i^{-1}(U)=U\cap M $ für (offene) Mengen in $ X $.
-\item Die Quotiententopologie ist die finale Topologie bezüglich der Quotientenabbildung ist die finale Topologie bezüglich der Quotientenabbildung $ q: X\to X/\sim, x\mapsto [x] $
-\item in ähnlicher Weise lässt sich die Summentopologie charakterisieren.  Sie ist die feinste Topologie, so dass beide Inklusionsabbildungen
+\item Die Quotiententopologie ist die finale Topologie bezüglich der Quotientenabbildung  $ q: X\to X/\sim, x\mapsto [x] $
+\item In ähnlicher Weise lässt sich die Summentopologie charakterisieren.  Sie ist die feinste Topologie, so dass beide Inklusionsabbildungen
 $ i_X:X\to X+Y, x \mapsto x, i_Y: Y\to X+Y,y\mapsto y $ stetig sind.  Dies zeigt, dass es sinnvoll ist die Defnition \ref{thm:2.5} noch etwas weiter zu fassen.
 \end{enumerate}
 \end{exs*}
@@ -816,10 +816,9 @@ Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann i
  Sei $X$ kompakt, $A\subset X$ abgeschlossen. Sei $U_i, i\in I,$ eine offene Überdeckung von $A$.
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{fig28.png}
+\includegraphics[scale=0.5]{fig27.png}
+\caption{}
 \end{figure}
-
-\fixme[Grafik stimmt nicht überein]\\
 
 Nach Definition der Teilraumtopologie gibt es offene Mengen $V_i$ von $X$, so dass $U_i=V_i\cap A$. Dann ist 
 \[
@@ -838,22 +837,16 @@ In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
  Sei $X$ ein Hausdorffraum und $A\subset X$ kompakt mit der induzierten Topologie. Wir wollen zeigen, dass es um jeden Punkt $x\in X\setminus A$ eine Umgebung gibt, die A nicht trifft, dann ist $X\setminus A$ offen. Sei $p\in X\setminus A$. Nach der Hausdorffeigenschaft von $X$ finden wir zu jedem $a\in A$ eine offene Umgebung $U_a$ von $a$ und eine offene Umgebung $V_a$ von $p$, so dass $U_a\cap V_a=\emptyset$ gilt. \\
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{fig27.png}
+\includegraphics[scale=0.5]{fig28.png}
 \caption{}
 \end{figure}
-<<<<<<< HEAD
-\fixme[passt nicht]
-=======
-\fixme[Grafik stimmt nicht überein]\\
+
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{fig29.png}
+\caption{}
 \end{figure}
-<<<<<<< HEAD
-\fixme[passt nicht]
-=======
-\fixme[Grafik stimmt nicht überein]
 
 Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unendlich vieler Mengen), aber da wir wegen der Kompaktheit von $A$ endlich viele Mengen $U_{a_1},\dotsc  , U_{a_n}$ auswählen können, so dass $A\subset U_{a_1}\cup\dotsb \cup U_{a_n}$. Dann gilt: $V_{a_1}\cap\dotsb \cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
 \end{proof}
@@ -1182,7 +1175,6 @@ Räume heißen \emph{homotopieäquivalent} oder vom gleichen \emph{Homotopietyp}
  \begin{enumerate}
   \item $\R^n$ ist zusammenziehbar: Sei $f: \R^n\to \{0\}$ und $g:\{0\}\to \R^n, 0 \mapsto 0$. Dann ist $f\circ g=\id_{\{0\}}$ und es gilt $g\circ f(x)=0$ für alle $x\in \R^n$, diese Abbildung ist homotop zu $\id_{\R^n}$, nämlich ist durch $f(x,t):= t\cdot x$ eine Homotopie gegeben.
   \item Eine Teilmenge $K\subset \R^n$ heißt \emph{sternförmig bezüglich} $x_0 \in K$, wenn die Verbindungsstrecke von $x_0$ zu jedem beliebigen Punkt $x\in K$ enthalten ist.\\
-  \setcounter{figure}{43}  %%% entfernen, wenn alle Grafiken drin sind :)
 \begin{figure}[H]
 \centering
  \fixme[fig44]
@@ -1324,27 +1316,28 @@ $\epsilon(t)=x_0 \forall_{t\in [0,1]}$ bezeichnen.
 und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichnen.
 \end{lem}
 \begin{proof}
+Wir wollen anhand von Skizzen andeuten wie die Homotopien zu wählen sind.
 \fixme[from mathematiker : Nummerierung und Formatierung bitte Überprüfen]
 \begin{enumerate}[(i)]
-\item 
-\begin{figure}[ht]
+\item .
+\begin{figure}[H]
 \centering
 \input{fig51}
 \caption{}
 \end{figure}
-\item 
-\begin{figure}[ht]
+\item .
+\begin{figure}[H]
 \centering
 \input{fig52}
 \caption{}
 \end{figure}
-\item 
+\item .
 \begin{figure}[H]
 \centering
 \input{fig53}
 \caption{}
 \end{figure}
-\item 
+\item .
 \begin{figure}[H]
 \centering
 \input{fig54}
@@ -1407,7 +1400,7 @@ Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega
 \caption{}
 \end{figure}
 \begin{proof}[Beweisskizze]
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{fig59.png}
 \caption{}
@@ -1459,6 +1452,7 @@ Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). 
 \caption{}
 \end{figure}
 $\pi_1("'\infty"'; p) \homo ?$
+\fixme[from GnuLinux: bitte Bild überprüfen]
 \end{seg}
  \end{enumerate}
 \end{exs*}
@@ -1558,7 +1552,7 @@ dies zeigt, dass $\pi_1(f)$ und $\pi_1(f^{-1})$ zueinander inverse Gruppenhomomo
 Dies ist ein Isomorphismus, denn $([\omega],[\eta])\mapsto [t\mapsto (\omega(t), \eta(t))]$ ist die Inverse (wie man sich \emph{leicht} überlegt ist $\Psi$ wohldefiniert.)
 \end{proof}
 \begin{kor}
- Für die Fundamentalgruppe eines $2-$dimensionale Torus $T^2 \homo S^1 \times S^1$ ist isomorph zu $\Z\times \Z$
+  Die Fundamentalgruppe eines $2-$dimensionale Torus $T^2 \homo S^1 \times S^1$ ist isomorph zu $\Z\times \Z$
 
 
 %$\pi_1(f)$ und $\pi_1(f^{-1})$ sind zueinander inverse Gruppenhomomorphismen.
@@ -2556,7 +2550,7 @@ $H:[0,1]\times[0,1]\to X$, $(s,t)\mapsto H(s,t)$ mit
 \[
  H(\cdot, 0)=\alpha_1*\beta_1*\dotsb *\alpha_k*\beta_k, H(\cdot, 1)=x_0
 \]
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig110]
 \caption{}
@@ -2578,14 +2572,14 @@ Sei $f$ eine monoton steigende Funktion $[0,1]\to[0,1]$ die jeweils auf einer Um
 \caption{}
 \end{figure}
 und ersetze $H$ durch $(t,s)\mapsto H(f(s), f(t))$. Dann ist $H$ auf einer Kreisschreibe um jeden Gitterpunkt konstant.  Wir erreichen, dass $H$ auf den Gitterpunkten den Wert $x_0$ annimmt (Wähle einen Weg nach $x_0$ und verwende den Radius der Kreisscheibe zum Umparametrisieren). Jetzt wird jede Kante im Gitter auf eine Schleife mit Basispunkt $x_0$ abgebildet.
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig113]
 \caption{}
 \end{figure} 
 \end{proof}
 \begin{ex*}
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig114]
 \caption{}
@@ -2623,13 +2617,13 @@ Klassifikation bis auf Homöomorphie. Als Hilfsmittel werden wir sogenannte "`\e
 heißt \emph{Affinkombination}, falls $\lambda_1+\lambda_2+\dotsb +\lambda_m=1$ gilt, \emph{Konvexkombination}, falls zusätzlich $0\le \lambda_i\le 1$ für alle $i=0,\dotsc  , m$ gilt.
 
 zum Beispiel:
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig117]
 \caption{}
 \end{figure}
 Die Menge aller Affinkombinationen bzw. Konvexkombinationen von $p_0,\dotsc  , p_m$ wird mit $\operatorname{Aff}(p_0,\dotsc  ,p_m)$ bzw. $\operatorname{Kon}(p_0,\dotsc  ,p_m)$ bezeichnet.
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig118]
 \caption{}
@@ -2642,13 +2636,13 @@ $\operatorname{Kon}(p_0,\dotsc  .,p_m)$ heißt \emph{konvexe Hülle} von $p_0,\d
 \begin{exs*}
  \begin{enumerate}[(i)]
   \item \emph{Standardsimplex} $\Delta(e_1,.., e_{m+1})$ im $\R^{n+1}$
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig119]
 \caption{ein Punkt (1) auf der Zahlengerade $\R$ (links); eine Strecke ($e_1e_2$) auf der Ebene $\R^2$ (zentral); Dreiecksfläche im Raum $\R^3$ rechts}
 \end{figure} 
 \item das $3$-Simplex $\Delta(0, e_1, e_2, e_3)$
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig120]
 \caption{}
@@ -2670,13 +2664,13 @@ Der \emph{Rand} $\delta \Sigma$ ist die Vereinigung aller $(m-1)-$dimensionalen 
 \caption{}
 \end{figure}
 Man kann nun geometrische Körper im $\R^n$, als Vereinigung von Simplizes darstellen, dabei fordern wir, 
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig122]
 \caption{}
 \end{figure}[H]
 dass sich je zwei beteiligte Simplizes nur im einem gemeinsamen Teilsimplex schneiden dürfen:
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig123]
 \caption{}
@@ -2704,14 +2698,14 @@ Nun zu den Flächen:
 \begin{enumerate}[(i)]
  \item Jedes Simplex von $\mathcal X$ ist in einem $2-$Simplex von $\mathcal X$ enthalten.
  \item Jedes $1$-Simplex von $\mathcal X$ ist in höchstens zwei $2$-Simplizes enthalten.
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig124]
 \caption{}
 \end{figure}
  \item Ist $p$ ein $0$-Simplex in $\mathcal X$, so gibt es eine Anordnung $\Delta_1,\dotsc  ,\Delta_n$ der $2$-Simplizes
 von $\mathcal X$, die $p$ enthalten, so dass $\Delta_i$ und $\Delta_{i+1}$ jeweils eine Seite gemeinsam haben.
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig125]
 \caption{}
@@ -2720,19 +2714,19 @@ von $\mathcal X$, die $p$ enthalten, so dass $\Delta_i$ und $\Delta_{i+1}$ jewei
 \end{enumerate}
 \end{df}
 \begin{exs*}[kombinatorische Fläche] 
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig126]
 \caption{}
 \end{figure}
 auch: "'\emph{Zerschneidung}"' daran, kombinatorische Fläche mit Rand
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig127]
 \caption{}
 \end{figure}
 kombinatorische "`Brezelfläche"':
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig128]
 \caption{}
@@ -2754,7 +2748,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
 \begin{df}
  Zwei kombinatorische Flächen heißen \emph{kombinatorisch äquivalent}, wenn sie isomorphe "`\emph{Unterteilungen}"' besitzen.
 \end{df}
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig129]
 \caption{Unterteilung}
@@ -2762,7 +2756,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
 
 \begin{df}
  Eine \emph{Zerschneidung} einer kombinatorischen Fläche  $(X, \mathcal X)$ besteht aus einer kombinatorischen Fläche $(Y,\mathcal Y)$ und einer simplizialen Abbildung. $\phi:(Y, \mathcal Y)\to (X, \mathcal X)$, so dass $\phi\vline\,_{\mathcal Y_2}:\mathcal Y_2 \to \mathcal X_2$ bijektiv ist. (bijektiv auf 2 Simplizes, $0$- und $1$-Simplizes werden eventuell zusammengeklebt.)
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig130]
 \caption{}
@@ -2771,7 +2765,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
 
 Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Polygonmodell)
 \begin{seg}{Zerschneidung eines $2$-Torus}
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig131]
 \caption{}
@@ -2780,7 +2774,7 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
 
 \begin{df}
  Der \emph{Rand} einer kombinatorischen Fläche besteht aus allen $1$-Simplizes, die nicht Teilsimplizes in zwei verschiedenen $2$-Simplizes sind. Eine kombinatorische Fläche heißt \emph{n-Eck}, wenn ihr Rand aus genau n $1$-Simplizes besteht und sie zu einem $2$-Simplex homöomorph ist.
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig132]
 \caption{}
@@ -2791,7 +2785,7 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
  Sei $\phi: \mathcal Y\to \mathcal X$ eine Zerschneidung von $\mathcal X$ \emph{entlang eines $1$-Simplex} $e$ (dass heißt $\phi^{-1}(e)$ besteht aus zwei $1-$Simplizes von $\mathcal Y$, alle anderen haben nur ein $1$-Simplex im Urbild. Sei $\mathcal Y$ die disjunkte Vereinigung eines $n$-Ecks und eines $m$-Ecks. Dann ist $\mathcal X$ ein ($m+n-2$)-Eck.
 \end{lem}
 \begin{proof}
- \begin{figure}
+ \begin{figure}[H]
  \centering
 \fixme[fig133]
 \caption{}
@@ -2803,7 +2797,7 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
 \fixme[from mathematiker : Überprüfe Nummerierung]
 \begin{proof}
  Eine Zerschneidung $\mathcal Y$ von $\mathcal X$ heißt \emph{flach}, wenn jede Komponente $\mathcal Y_i$ von $\mathcal Y$ ein $n_i$-Eck ist. Es existiert immer eine flache Zerschneidung, zum Beispiel die disjunkte Vereinigung der $2$-Simplizes von $\mathcal X$.
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig134]
 \caption{}
@@ -2817,7 +2811,7 @@ Eine Zerschneidung $\phi: \mathcal Y \to \mathcal X$ einer geschlossenen Fläche
 
 Sei $\mathcal k=\{a_1, \dotsc  , a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir geben den Kanten eine Orientierung, indem wir fordern, dass beim positiven Durchlaufen das Innere von $\mathcal Y$ links liegen soll.
 
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig135]
 \caption{}
@@ -2836,13 +2830,13 @@ Wir schreiben $a_i^{-1}$ für die jeweils umgekehrt durchlaufene Kante. Wir setz
 \begin{exs*}
  \begin{enumerate}[(i)]
   \item \emph{Torus}:
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig136]
 \caption{}
 \end{figure}
 \item komplexeres Beispiel:
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig137]
 \caption{}
@@ -2869,7 +2863,7 @@ Zwei Flächen-Worte heißen äquivalent, wenn die durch sie beschriebenen Fläch
 \begin{enumerate}[(i)]
  \item \emph{Torus}: $aba^{-1}b^{-1}$ (äquivalent: $b^{-1}aba^{-1}$ oder zum Beispiel $a^{-1} b^{-1} a b$).
  \item \emph{Kleinsche Flasche}: $aba^{-1}b^{-1}$.
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig138]
 \caption{}
@@ -2883,7 +2877,7 @@ Zwei Flächen-Worte heißen äquivalent, wenn die durch sie beschriebenen Fläch
  \item $\dotsb ab\dotsb ab\dotsb \sim \dotsb a \dotsb a\dotsb$
  \item $\dotsb ab\dotsb b^{-1} a^{-1}\dotsb \sim \dotsb a \dotsb a^{-1} \dotsb$
 \setcounter{figure}{139}
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig140]
 \caption{}
@@ -2962,8 +2956,8 @@ besitzt Eckenzahl 1.
  Die Ecke $P$ kommt nun in verringerter Anzahl vor ($Q$ dafür einmal öfter). Durch Wiederholen erreicht man, dass $P$ nur noch einmal vorkommt. Dann haben wir entweder $aa^{-1}$ (fertig) oder $aa^{-1}\dotsb $ und wir können "`Beiziehen"'.
 \end{proof}
 
-\begin{lem}[Kreuzhauben-Normierung]
- Ein gekürztes Flächen-Wort mit Eckenzahl $1$ und $k$ Kreuzhauben ist äquivalent zu $c_1c_1c_2c_2\dotsb c_kc_k\dotsb $, wobei alle sonstigen Kanten genau einmal mit Exponent $+1$ und einmal mit $-1$ auftreten.
+\begin{lem}[Kreuzhauben-Normierung] \label{thm3: 1.18} 
+ Ein gekürztes Flächen-Wort mit Eckenzahl $1$ und $k$ Kreuzhauben ist äquivalent zu einem Wort der Gestalt $c_1c_1\dotsb c_2c_2\dotsb c_kc_k\dotsb $, wobei alle sonstigen Kanten genau einmal mit Exponent $+1$ und einmal mit $-1$ auftreten.
 \end{lem}
 \begin{proof}
 .
@@ -2972,11 +2966,11 @@ besitzt Eckenzahl 1.
 \fixme[fig147]
 \caption{}
 \end{figure}
-Bereits vorhandene Kreuzhauben der Form $dd$ werden dabei nicht vereinfacht.
+Bereits vorhandene Kreuzhauben der Form $dd$ werden dabei nicht verändert.
 \end{proof}
 
 \begin{lem}[Henkel-Normierung]
- Ein gekürztes Flächen-Wort mit Eckenzahl $1$ ist äquivalent zu einem Produkt von Worten der Gestalt $c_ic_j$ und $a_jb_ja_j^{-1}b_j^{-1}$
+ Ein gekürztes Flächen-Wort mit Eckenzahl $1$ ist äquivalent zu einem Produkt von Worten der Gestalt $c_ic_i$ und $a_jb_ja_j^{-1}b_j^{-1}$
 \end{lem}
 \begin{proof}
  Wir nehmen an, dass die Kreuzhauben bereits normiert wie in Lemma \ref{thm3: 1.18} vorkommen. Dann muss das Wort von der Form $\dotsb a\dotsb b\dotsb a^{-1}\dotsb b^{\pm1}\dotsb $, denn sonst würde der Rand des Polygons, wenn man $a$ und $a^{-1}$ entfernt (nach Identifikation der übrigen entsprechenden Kanten) in zwei Komponenten zerfallen,
@@ -2998,7 +2992,7 @@ Bereits norimerte andere Henkel und normierte Kreuzhauben bleiben dabei normiert
 (einem Produkt von normierten Kreuzhauben).
 \end{lem}
 \begin{proof}
- Falls außer einer Kreuzhaube noch mindestens ein Henkel vorkommt, ist das Wort äquivalent zu $ccaba^{-1}b^{-1}\dotsb $ Wir formulieren:
+ Falls außer einer Kreuzhaube noch mindestens ein Henkel vorkommt, ist das Wort äquivalent zu $\dotsb ccaba^{-1}b^{-1}\dotsb $ Wir formulieren:
 \begin{figure}[H]
  \centering
 \fixme[fig150]
@@ -3010,17 +3004,17 @@ Nun haben wir einen Henkel weniger und zwei Kreuzhauben mehr. (diese können nor
 \begin{note*}[Endergebnis]
  Wir können das Flächenwort äquivalent in eine der drei folgenden Normalformen umformen;
  \begin{enumerate}[(1)]
-  \item $aa^{-1}$ die Rechenweg dieses Worts  (die Sphäre) nennen wir auch $F_0$
-  \item $a_1b_1a_1^{-1} b_1^{-1} a_2 b_2a_2^{-1} b_2^{-1}\dotsb a_gb_g a_g^{-1} b_g^{-1}$ der Realisierung nennen wir auch $F_g, g\ge 1$
+  \item $aa^{-1}$ die Realisierung dieses Worts  (die Sphäre) nennen wir auch $F_0$
+  \item $a_1b_1a_1^{-1} b_1^{-1} a_2 b_2a_2^{-1} b_2^{-1}\dotsb a_gb_g a_g^{-1} b_g^{-1}$ die Realisierung nennen wir auch $F_g, g\ge 1$
   \item $c_1c_1c_2c_2\dotsb c_g$ die Realisierung nennen wir auch $N_g$.
  \end{enumerate}
-Die Fläche $F_g, g\ge 0$ nennt man die \emph{orientierbare geschlossenen Flächen von Geschlecht} $g$.
+Die Fläche $F_g, g\ge 0$ nennt man die \emph{orientierbaren geschlossenen Flächen von Geschlecht} $g$.
 \begin{figure}[H]
  \centering
 \fixme[fig151]
 \caption{}
 \end{figure}
-Die Flächen $N_g, g\ge 1$ ennt man die \emph{nicht-orientierbaren Flächen} vom Geschlecht $g$
+Die Flächen $N_g, g\ge 1$ nennt man die \emph{nicht-orientierbaren Flächen} vom Geschlecht $g$
 \begin{figure}[H]
  \centering
 \fixme[fig152]
@@ -3033,14 +3027,12 @@ Die Flächen $N_g, g\ge 1$ ennt man die \emph{nicht-orientierbaren Flächen} vom
 \begin{st}
  Sei $\omega(a_1,\dotsc  ,a_n)=a^{\epsilon_1}_{i_1} a^{\epsilon_2}_{i_2}\dotsb  a^{\epsilon_2r}_{i_{2r}}$ ein Flächenwort mit Eckenzahl $1$. Sei $X$ die Realisierung des zugehörigen Polygon-Modells und $x_0\in X$ das gemeinsame Bild der Endpunkte aller Kanten, dann hat $\pi_1(X;x_0)$ die Präsentation
 \[
- \pi_1(X;x_0)=\langle a_1,..,a_r \, \vline \, w(a_1,\dotsc  ,a_r)=1\rangle
+ \pi_1(X;x_0)=\langle a_1,\dotsc,a_r \, \vline \, w(a_1,\dotsc  ,a_r)=1\rangle
 \]
 dass heißt die freie Gruppe über $a_1,\dotsc  , a_r$ modulo dem von $w(a_1,\dotsc, a_r)$ erzeugten Normalteiler.
 \begin{kor*}
- $\pi_1(F_g)_{ab}\cong \Z^g$, $\pi_1(N_0)_{ab}\cong \Z^{g-1} \oplus \Z_2$ abelsch gemachte Gruppe
+ $\pi_1(F_g)_{ab}\cong \Z^g$, $\pi_1(N_g)_{ab}\cong \Z^{g-1} \oplus \Z_2$ abelsch gemachte Gruppe
 \end{kor*}
-
-\fixme[Überprüfen]
 \end{st}
 
 
