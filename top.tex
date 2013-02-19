@@ -58,7 +58,7 @@ Ein \emph{metrischer Raum} ist eine Menge $X$ zusammen mit einer Funktion $d: X 
 \end{enumerate}
 \end{df}
 \begin{ex*}
-Auf $\R^n$ ist durch die \emph{Euklidische Norm} $||x||=\sqrt{x_1^2+...+x_n^2}$ die \emph{Euklidische Abstandsfunktion} $d(x,y)=||x-y||$ gegeben. Auf $\R$ oder auf $\C$ ist diese Metrik durch den Betrag $d(x,y):=|x-y|$ definiert.  Man erhält auf diese Weise aus jeder Norm eine Metrik. Hierbei liefern verschiedene Normen natürlich verschiedene Metriken. Hier einige Beispiele auf $\R^2$:
+Auf $\R^n$ ist durch die \emph{Euklidische Norm} $||x||=\sqrt{x_1^2+\dotsb +x_n^2}$ die \emph{Euklidische Abstandsfunktion} $d(x,y)=||x-y||$ gegeben. Auf $\R$ oder auf $\C$ ist diese Metrik durch den Betrag $d(x,y):=|x-y|$ definiert.  Man erhält auf diese Weise aus jeder Norm eine Metrik. Hierbei liefern verschiedene Normen natürlich verschiedene Metriken. Hier einige Beispiele auf $\R^2$:
 \begin{itemize} 
 \item euklidische Norm: $||x||_2=\sqrt{x_1^2+x_2^2}$
 \item Maximumsnorm: $||x||_\infty := \max(|x_1|, |x_2|)$
@@ -196,9 +196,9 @@ Eine Menge $ X $ zusammen mit einer Topologie auf $ X $ heißt \emph{topologisch
 \item Verschiedene Metriken können diesselbe Topologie erzeugen, vgl. der aus der Analysis bekannter Satz, dass alle Normen auf dem $ \R^n $ äquivalent.
   Daraus folgt: die Metrik $ d(x,y) :=||x-y|| $ definiert für \emph{alle Normen auf $ \R^n $} dieselbe Topologie, die sogenannte \emph{Standardtopologie}, zum Beispiel definieren:
 \begin{align*}
-d_1(x,y)&=|x_1-y_1|+...+|x_n-y_n|\\
-d_2(x,y)&=\sqrt{(x_1-y_1)^2+...+(x_n-y_n)^2}\\
-d_\infty(x,y)&=\max(|x_1-y_1|, ..., |x_n-y_n|)
+d_1(x,y)&=|x_1-y_1|+\dotsb +|x_n-y_n|\\
+d_2(x,y)&=\sqrt{(x_1-y_1)^2+\dotsb +(x_n-y_n)^2}\\
+d_\infty(x,y)&=\max(|x_1-y_1|, \dotsc  , |x_n-y_n|)
 \end{align*}
 alle die Standardtopologie.
 \end{enumerate}
@@ -661,7 +661,7 @@ Kann man beliebige Familien von Teilmengen eines Raumes $X$ vorgeben und fordern
  Sei $X$ eine Menge und $\mathcal S\subset \Pot(X)$  eine Familie von Teilmengen von $X$. Dann gibt es genau eine Topologie auf $X$, die dieses $S$ als Subbasis hat.
 \end{st}
 \begin{proof}
-Sei $\mathcal B:=\{S_1\cap...\cap S_n|n\in \N_0, S_1,...,S_n\in \mathcal S\}$ und setze $O:=\{\bigcup_iB_i|B_i\in \mathcal B\} \cup\{\emptyset,X\}$.
+Sei $\mathcal B:=\{S_1\cap\dotsb \cap S_n|n\in \N_0, S_1,\dotsc  ,S_n\in \mathcal S\}$ und setze $O:=\{\bigcup_iB_i|B_i\in \mathcal B\} \cup\{\emptyset,X\}$.
  Wir zeigen, dass $O$ eine Topologie auf $X$ ist. Offensichtlich liegen beliebigen Vereinigung von Mengen in $O$ wieder in $O$. 
 Sei $U_1=\bigcup_{i\in I_1}B_i, U_2=\bigcup_{i\in I_2}B_i$, mit $B_i\in \mathcal B$. Dann ist:
 \[
@@ -698,7 +698,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
 \end{seg}
 \begin{note*}
  \begin{itemize}
-  \item $\mathcal S=\{X_1\times X_2\times ... \times X_{k-1} \times U \times X_{k+1} \times...\times X_n |U\subset X_k$ offen $, k \in \{1, \dotsc n \} \} $
+  \item $\mathcal S=\{X_1\times X_2\times \dotsb  \times X_{k-1} \times U \times X_{k+1} \times\dotsb \times X_n |U\subset X_k$ offen $, k \in \{1, \dotsc n \} \} $
   \item $\R^3=\{(x_1,x_2,x_3)|x_\alpha\in \R\}$, $\R^3=\{f:\{1,2,3\}\mapsto \R, \alpha\mapsto x_\alpha\}$
  \end{itemize}
 \end{note*}
@@ -748,7 +748,7 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
   \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$, dann enthält $V$ eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal U$ mit  $U \subset V$. Damit ist $ \mathcal U $ eine abzählbare Umgebungsbasis von $p$.
 \item \begin{seg}{„$\implies$“} bereits gezeigt in \ref{thm:1.17} \end{seg}
 
-\begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$. Sei $\mathcal U=\{U_1,U_2,U_3,...\}$ eine abzählbare Umgebungsbasis von $x$. Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,...$ Umgebungen von $x$. Nach Annahme gibt es in jeder dieser Mengen $U_1\cap...\cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
+\begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$. Sei $\mathcal U=\{U_1,U_2,U_3,\dotsc  \}$ eine abzählbare Umgebungsbasis von $x$. Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,\dotsc  $ Umgebungen von $x$. Nach Annahme gibt es in jeder dieser Mengen $U_1\cap\dotsb \cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
 \end{seg}
 \end{enumerate}
 \end{proof}
@@ -760,7 +760,7 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
  Eine \emph{offene Überdeckung} eines topologischen Raumes $X$ ist eine Familie $U_i$, $i\in I$, von offenen Teilmengen von $X$ mit der Eigenschaft $\bigcup_{i\in I} U_i=X$.
 \end{df}
 \begin{df}\label{thm:6.2}
- Ein topologischer Raum $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ eine \emph{endliche Teilüberdeckung} besitzt, dass heißt falls folgendes gilt: ist $U_i, i\in I$, eine offene Überdeckung von $X$, so gibt es endlich viele $i_1, ...,i_n\in I$, so dass $U_{i_1}\cup ...\cup U_{i_n}=X$ gilt.
+ Ein topologischer Raum $X$ heißt \emph{kompakt}, wenn jede offene Überdeckung von $X$ eine \emph{endliche Teilüberdeckung} besitzt, dass heißt falls folgendes gilt: ist $U_i, i\in I$, eine offene Überdeckung von $X$, so gibt es endlich viele $i_1, \dotsc  ,i_n\in I$, so dass $U_{i_1}\cup \dotsb \cup U_{i_n}=X$ gilt.
 \end{df}
 \begin{ex*}
  $\R^n$ ist \emph{nicht kompakt}, denn die offene Überdeckung durch $B_k(0),k\in \N$ besitzt k          eine endliche Teilüberdeckung.
@@ -787,7 +787,7 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
 \[
  U_\eps:=(X\setminus\bar{B_\eps(x)})\cap A, \eps>0 := \{ y\in A|d(x,y) > \eps\}
 \]
-bilden eine offene Überdeckung von $A$, es gibt eine endliche Teilüberdeckung $U_{\eps_1}\cup... \cup U_{\eps_k}$, und es folgt, dass $B_\eps(x)$ mit $\eps:=\min\{\eps_1,...,\eps_k\}$ ganz in $X\setminus A$ liegt.
+bilden eine offene Überdeckung von $A$, es gibt eine endliche Teilüberdeckung $U_{\eps_1}\cup\dotsb  \cup U_{\eps_k}$, und es folgt, dass $B_\eps(x)$ mit $\eps:=\min\{\eps_1,\dotsc  ,\eps_k\}$ ganz in $X\setminus A$ liegt.
 \begin{figure}[H]
 \centering
  \fixme[fig26]
@@ -801,13 +801,13 @@ Die Umkehrung gilt in beliebigen metrischen Räumen \emph{nicht}, der Begriff �
 \]
 eine Metrik (die dieselbe Topologie erzeugt) also ist die Unterscheidung zwischen beschränkten und unbeschränkten Mengen hier nicht sehr hilfreich.
 \begin{note*}
- Ein metrischer Raum ist kompakt, wenn er \emph{vollständig} und \emph{totalbeschränkt} ist, \emph{totalbeschränkt} bedeutet: zu jedem $\eps>0$ gibt es ein endliches $\eps$-Netz, dass heißt zu jedem $\eps>0$ gibt es endlich viele Punkte $x_1,...,x_k$ mit $\bigcup_{i=1}^kB_\eps(x_i)=X$.
+ Ein metrischer Raum ist kompakt, wenn er \emph{vollständig} und \emph{totalbeschränkt} ist, \emph{totalbeschränkt} bedeutet: zu jedem $\eps>0$ gibt es ein endliches $\eps$-Netz, dass heißt zu jedem $\eps>0$ gibt es endlich viele Punkte $x_1,\dotsc  ,x_k$ mit $\bigcup_{i=1}^kB_\eps(x_i)=X$.
 \end{note*}
 \begin{st}\label{thm:1.6.6}
  Stetige Bilder kompakter Räume sind kompakt.
 \end{st}
 \begin{proof}
-Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann ist $f^{-1}(U_i),i\in I$, eine offene Überdeckung von $X$. Diese besitzt aber eine endliche Teilüberdeckung $f^{-1}(U_{i_1})\cup ...\cup f^{-1}(U_{i_n})=X$. Dann ist $U_{i_1}\cup ...\cup U_{i_n}$ eine offene Überdeckung von $Y$, falls $f$ surjektiv ist.
+Sei $f:X\to Y$ stetig und $U_i, i\in I$ eine offene Überdeckung von $Y$. Dann ist $f^{-1}(U_i),i\in I$, eine offene Überdeckung von $X$. Diese besitzt aber eine endliche Teilüberdeckung $f^{-1}(U_{i_1})\cup \dotsb \cup f^{-1}(U_{i_n})=X$. Dann ist $U_{i_1}\cup \dotsb \cup U_{i_n}$ eine offene Überdeckung von $Y$, falls $f$ surjektiv ist.
 \end{proof}
 \begin{st}\label{thm:1.6.7}
  Abgeschlossene Teilräume von kompakten Mengen sind kompakt.
@@ -827,9 +827,9 @@ Nach Definition der Teilraumtopologie gibt es offene Mengen $V_i$ von $X$, so da
 \]
 eine offene Überdeckung von $X$, diese hat eine endliche Teilüberdeckung der Form 
 \[
-(X\setminus A)\cup V_{i_1} \cup...\cup V_{i_n}
+(X\setminus A)\cup V_{i_1} \cup\dotsb \cup V_{i_n}
 \]
-Somit überdecken die Mengen $U_{i_1}=V_{i_1}\cap A, ..., U_{i_n}=V_{i_n}\cap A$ ganz $A$.
+Somit überdecken die Mengen $U_{i_1}=V_{i_1}\cap A, \dotsc  , U_{i_n}=V_{i_n}\cap A$ ganz $A$.
 \end{proof}
 \begin{st} \label{thm:1.6.8}
 In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
@@ -855,7 +855,7 @@ In einem Hausdorffraum sind kompakte Teilräume abgeschlossen.
 =======
 \fixme[Grafik stimmt nicht überein]
 
-Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unendlich vieler Mengen), aber da wir wegen der Kompaktheit von $A$ endlich viele Mengen $U_{a_1},..., U_{a_n}$ auswählen können, so dass $A\subset U_{a_1}\cup...\cup U_{a_n}$. Dann gilt: $V_{a_1}\cap...\cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
+Der Schnitt aller $V_a, a\in A$ ist möglicherweise nicht offen (da eventuell Schnittmenge unendlich vieler Mengen), aber da wir wegen der Kompaktheit von $A$ endlich viele Mengen $U_{a_1},\dotsc  , U_{a_n}$ auswählen können, so dass $A\subset U_{a_1}\cup\dotsb \cup U_{a_n}$. Dann gilt: $V_{a_1}\cap\dotsb \cap V_{a_n}$ ist offen und liegt ganz im Komplement von $A$.
 \end{proof}
 Insgesamt folgt aus Satz \ref{thm:1.6.7} und Satz \ref{thm:1.6.8}, dass in einem kompakten Hausdorffraum \underline{die} Abgeschlossenheit und Kompaktheit von Teilräumen äquivalent sind.
 \begin{st}\label{thm:6.8}
@@ -914,7 +914,7 @@ Denn jedes $x$ liegt in einem $U_\alpha$. Da die $O_n$ eine Basis bilden ist $U_
  Sei $X$ ein Raum mit abzählbarer Basis.
 \begin{enumerate}[(i)]
  \item Sei $X$ kompakt und $x_n$ eine Folge ohne konvergente Teilfolge. Nach \ref{thm:1.6.12} gibt es zu jedem $p\in X$ eine Umgebung $U_p$ mit $x_n\in U_p$ nur für endlich viele Indizes $n$. Die $U_p$ bilden eine Überdeckung. Wegen der Kompaktheit gibt es endlich viele Mengen $U_{p_1}, \dotsc, U_{p_k}$ die $X$ überdecken. Insgesamt ist $x_n\in U_{p_1}\cup \dotsb \cup U_{p_k}=X$ nur für endlich viele Indizes. Dies ergibt den Widerspruch.
- \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, ...$ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für alle $n \in \N$, dass heißt es gibt $x_n\in X\setminus(U_1\cup...\cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_n \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
+ \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, \dotsc  $ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für alle $n \in \N$, dass heißt es gibt $x_n\in X\setminus(U_1\cup\dotsb \cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_n \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
 \end{enumerate}
 \end{seg}
 \begin{note*}
@@ -938,7 +938,7 @@ Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$n$-dimensionale Untermannigfalt
 \caption{}
 \end{figure}
 \[
- \boxed{\Phi(U\cap M)=V\cap(\R^n\times(\underbrace{0,...,0}_{k-\text{mal}}))}
+ \boxed{\Phi(U\cap M)=V\cap(\R^n\times(\underbrace{0,\dotsc  ,0}_{k-\text{mal}}))}
 \]
 \end{df}
 \begin{exs*}
@@ -946,7 +946,7 @@ Eine Teilmenge $M\subset \R^{n+k}$ heißt \emph{$n$-dimensionale Untermannigfalt
   \item offene Mengen im $\R^n$ sind $n-$dimensionale Untermannigfaltigkeit.
   \item lineare (affine) Unterräume (Punkte, Geraden, Ebenen,...) sind Untermannigfaltigkeiten
   \item Die Einheitsphäre $S^n\subset \R^{n+1}$ ist eine $n-$dimensionale Untermannigfaltigkeit
-  \item Dass (iii) gilt, zeigt man zum Beispiel, indem man nachrechnet, dass $S^n$ ein \emph{reguläres Urbild} ist. Zum Beispiel ist $S^n$ das Urbild $f^{-1}(\{1\})$ der Abbildung $\R^{n+1}\to \R, (x_1,...,x_{n+1})\mapsto x_1^2+...+x_{n+1}^2$
+  \item Dass (iii) gilt, zeigt man zum Beispiel, indem man nachrechnet, dass $S^n$ ein \emph{reguläres Urbild} ist. Zum Beispiel ist $S^n$ das Urbild $f^{-1}(\{1\})$ der Abbildung $\R^{n+1}\to \R, (x_1,\dotsc  ,x_{n+1})\mapsto x_1^2+\dotsb +x_{n+1}^2$
  \end{enumerate}
 Mannigfaltigkeiten sind Räume, die im Kleinen dem Euklidischen Raum $\R^n$ ähneln, aber nicht notwendig im Großen.
 \end{exs*}
@@ -1012,7 +1012,7 @@ und $\pi:M\to M/\Gamma$ ein lokaler Homöomorphismus. (dass heißt $\forall_{p\i
 \]
 als Vereinigung von offenen Mengen offen, also ist auch $\pi(U)$ offen.
 \item Zu $p\in M$ gibt es eine Umgebung $U$, die keine verschiedenen äquivalenten Punkte enthält, dass heißt $x,\gamma x\in U$ für ein $\gamma\in \Gamma \implies \gamma=\id_x$.
-Der Punkt $p$ besitzt eine abzählbare Umgebungsbasis $U_1\supset U_2 \supset U_3 \supset...$, da $M$ lokal homöomorph zu $\R^n$. Gäbe es in jedem $U_k$ äquivalent verschiedene Elemente, etwa $x_k, \gamma_k x_k\in U_k, \gamma_k\neq \id_X$,
+Der Punkt $p$ besitzt eine abzählbare Umgebungsbasis $U_1\supset U_2 \supset U_3 \supset\dotsb $, da $M$ lokal homöomorph zu $\R^n$. Gäbe es in jedem $U_k$ äquivalent verschiedene Elemente, etwa $x_k, \gamma_k x_k\in U_k, \gamma_k\neq \id_X$,
 dann könnten wir wegen der Endlichkeit von $\Gamma$ eine Teilfolge $x_{k_l}, \gamma x_{k_l}$ mit konstantem $\gamma\in \Gamma\setminus\{\id\}$ auswählen. Aus $x_{k_l}\to p, \gamma x_{k_l}\to p$ folgt $x_{k_l} \to \gamma^{-1} p$, also $p=\gamma^{-1} p$, also $\gamma=\id_X$ wegen der Fixpunktfreiheit.
 \item Auf der Umgebung $U$ aus ii) ist $\pi$ injektiv. Indem wir $U$ eventuell weiter enschränken, können wir annehmen, dass $U$ auch offen ist.  Indem wir $U$ weiter verkleinern, können wir annehmen, dass $U$ homöomorph zu einer offenen Teilmenge des $\R^n$ ist. Wegen (i) ist dann $V:=\pi(U)$ offen und $\pi\vline_U:U\to V$ ein Homöomorphismus.  Insgesamt folgt, dass auch $V\subset M/\Gamma$ homöomorph zu einer offenen Teilmenge das $\R^n$ ist. \\
 Noch zu zeigen sind.
@@ -1093,7 +1093,7 @@ Sei nun
 \[
  \lambda_i: M \to \R, \lambda_i(x):=\begin{cases} \tilde \lambda_i(x)&, x\in U_i\\ 0 &,x \notin U_i \end{cases}
 \]
-(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ stetig ist und $M\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$ offen ist. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$ stetig.  Nun können wir den gesuchten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} , \psi(x)=(\psi_1(x),..., \psi_r(x), \lambda_1(x),..., \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, dann wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,..., r\}$ mit $x\in V_i \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)= \phi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bijektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
+(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ stetig ist und $M\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$ offen ist. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$ stetig.  Nun können wir den gesuchten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} , \psi(x)=(\psi_1(x),\dotsc  , \psi_r(x), \lambda_1(x),\dotsc  , \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, dann wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,\dotsc  , r\}$ mit $x\in V_i \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)= \phi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bijektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
 \end{proof}
 \subsection{Homotopie}
 Homotopie ist die Präzisierung der geometrische Idee von der stetigen Deformation einer Abbildung in eine andere.
@@ -1421,7 +1421,7 @@ Nämlich ist für $\omega \in \Omega(\R^n;0)$ die Abbildung $H(t,s):=(1-s)\omega
 \begin{seg}{Exkurs: flächenfüllende "`Kurve"' (=Weg)}
  Definiere $[0,1] \to A $, wobei $A$ Dreiecksfläche ist, surjektiv wie folgt:
 
-Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101...$ in Binärdarstellung unterteile das Dreieck rekursiv in kleinere Dreiecke:
+Sei $x\in [0,1]$ und sei zum  Beispiel $x=0,00101\dotsc  $ in Binärdarstellung unterteile das Dreieck rekursiv in kleinere Dreiecke:
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.3]{fig60.png}
@@ -1442,7 +1442,7 @@ Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlage
 \caption{}
 \end{figure}
 \end{proof}
-Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<...<t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
+Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<\dotsb <t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
 \[
  f(\omega*\eta)=f(\omega)+f(\eta)
 \]
@@ -1760,7 +1760,7 @@ Sei $x\in X$. Zu jedem $t\in[0,1]$ gibt es ein $\epsilon_t>0$ und eine Umgebung 
 
 Wegen der Kompaktheit von $[0,1]$ überdecken endlich viele der $(t-\epsilon_t, t+\epsilon_t)$ bereits $[0,1]$ und es gibt eine Umgebung $U_x$ und eine Zerlegung
 \[
- 0=t_0<t_1<...<t_m=1,
+ 0=t_0<t_1<\dotsb <t_m=1,
 \]
 so dass $H(U_x\times (t_k, t_{k+1}))$ ganz in eine trivial überlagerten Menge $U(k)$ enthalten ist. Nun können wir induktiv $H^x: U_{x}\times [0,t_k] \to E$ definieren: Ist $H^x$ auf $U_x\times [0,t_k]$ bereits definiert, so definieren wir $H^x$ auf $U_x\times[t_k,t_{k+1}]$ durch $U_x\times [t_k, t_{k+1}]\stackrel{H}{\to} U(k) \stackrel{(p|V_{\alpha_k})^{-1}}\to V_{\alpha_k}\hookrightarrow E$, wobei $H^x(x,0)=F(x)$ gesetzt wird.
  \end{enumerate}
@@ -2522,7 +2522,7 @@ Sei $[\omega_1]_X\cdot [\omega_2]_X\cdot ... [\omega_k]_X$ das Bild dieses Worte
  $\phi$ ist surjektiv
 \end{lem}
 \begin{proof}
- Sei $\omega\in \Omega(X;x_0)$. Mit einem Kompaktheitsargument kann man zeigen, dass es eine Unterteilung des Intervalls $[0,1]$ gibt, dass heißt $0=t_0<t_1<...<t_{k-1}<t_k=1$, so dass $\omega([t_i, t_{i+1}])$, ganz in $U$ oder ganz in $V$ liegt.
+ Sei $\omega\in \Omega(X;x_0)$. Mit einem Kompaktheitsargument kann man zeigen, dass es eine Unterteilung des Intervalls $[0,1]$ gibt, dass heißt $0=t_0<t_1<\dotsb <t_{k-1}<t_k=1$, so dass $\omega([t_i, t_{i+1}])$, ganz in $U$ oder ganz in $V$ liegt.
 \begin{figure}[H]
  \centering
 \fixme[fig109]
@@ -2554,7 +2554,7 @@ erzeugte Normalteiler. Sei $\omega\in \Omega(U\cap V; x_0)$. Dann gilt $\phi([\o
  Sei $\omega$ ein Wort $[\alpha_1]\cdot[\beta_1]\cdot[\alpha_2]\cdot[\beta_2]\cdot\dotsc\cdot[a_k]\cdot[\beta_k]$ mit $[\alpha_i]\in \pi_1(U;x_0)$, $[\beta_i]\in \pi_1(V;x_0)$. Sei $\omega\in \ker(\phi)$, dass heißt es gibt eine Homotopie 
 $H:[0,1]\times[0,1]\to X$, $(s,t)\mapsto H(s,t)$ mit 
 \[
- H(\cdot, 0)=\alpha_1*\beta_1*...*\alpha_k*\beta_k, H(\cdot, 1)=x_0
+ H(\cdot, 0)=\alpha_1*\beta_1*\dotsb *\alpha_k*\beta_k, H(\cdot, 1)=x_0
 \]
 \begin{figure}
  \centering
@@ -2616,11 +2616,11 @@ Klassifikation bis auf Homöomorphie. Als Hilfsmittel werden wir sogenannte "`\e
 \end{figure}
 \end{seg}
 \begin{seg}{Vorbereitungen:}
- Seien $p_0, ..., p_m$ Vektoren im $\R^n$. Eine reelle Linearkombination:
+ Seien $p_0, \dotsc  , p_m$ Vektoren im $\R^n$. Eine reelle Linearkombination:
 \[
- \lambda_0p_0+\lambda_1p_1+\lambda_2p_2+...+\lambda_mp_m
+ \lambda_0p_0+\lambda_1p_1+\lambda_2p_2+\dotsb +\lambda_mp_m
 \]
-heißt \emph{Affinkombination}, falls $\lambda_1+\lambda_2+...+\lambda_m=1$ gilt, \emph{Konvexkombination}, falls zusätzlich $0\le \lambda_i\le 1$ für alle $i=0,..., m$ gilt.
+heißt \emph{Affinkombination}, falls $\lambda_1+\lambda_2+\dotsb +\lambda_m=1$ gilt, \emph{Konvexkombination}, falls zusätzlich $0\le \lambda_i\le 1$ für alle $i=0,\dotsc  , m$ gilt.
 
 zum Beispiel:
  \begin{figure}
@@ -2628,16 +2628,16 @@ zum Beispiel:
 \fixme[fig117]
 \caption{}
 \end{figure}
-Die Menge aller Affinkombinationen bzw. Konvexkombinationen von $p_0,..., p_m$ wird mit $\operatorname{Aff}(p_0,...,p_m)$ bzw. $\operatorname{Kon}(p_0,...,p_m)$ bezeichnet.
+Die Menge aller Affinkombinationen bzw. Konvexkombinationen von $p_0,\dotsc  , p_m$ wird mit $\operatorname{Aff}(p_0,\dotsc  ,p_m)$ bzw. $\operatorname{Kon}(p_0,\dotsc  ,p_m)$ bezeichnet.
  \begin{figure}
  \centering
 \fixme[fig118]
 \caption{}
 \end{figure}
-$\operatorname{Kon}(p_0,....,p_m)$ heißt \emph{konvexe Hülle} von $p_0,...,p_m$. Eine Menge $\{p_0,...,p_m\}$ heißt \emph{affinunabhängig}, wenn $\dim(\operatorname{Aff}(p_0,...,p_m))=m$ ist.
+$\operatorname{Kon}(p_0,\dotsc  .,p_m)$ heißt \emph{konvexe Hülle} von $p_0,\dotsc  ,p_m$. Eine Menge $\{p_0,\dotsc  ,p_m\}$ heißt \emph{affinunabhängig}, wenn $\dim(\operatorname{Aff}(p_0,\dotsc  ,p_m))=m$ ist.
 \end{seg}
 \begin{note*}
- $\operatorname{Aff}(p_0,..., p_m)$ ist affiner Unterraum des $\R^n$
+ $\operatorname{Aff}(p_0,\dotsc  , p_m)$ ist affiner Unterraum des $\R^n$
 \end{note*}
 \begin{exs*}
  \begin{enumerate}[(i)]
@@ -2656,12 +2656,12 @@ $\operatorname{Kon}(p_0,....,p_m)$ heißt \emph{konvexe Hülle} von $p_0,...,p_m
  \end{enumerate}
 \end{exs*}
 \begin{df}
- Sei $\Sigma\subset \R^n$ ein $m$-dimensionaler Simplex mit Eckpunkten $p_0, ..., p_m$. 
+ Sei $\Sigma\subset \R^n$ ein $m$-dimensionaler Simplex mit Eckpunkten $p_0, \dotsc  , p_m$. 
 Ein $r$-dimensionales \emph{Teilsimplex} ist eine Teilmenge $\Sigma'\subset \Sigma$ der Gestalt.
 \[
- \Sigma'=\Delta(q_0,..., q_r)
+ \Sigma'=\Delta(q_0,\dotsc  , q_r)
 \]
-wobei $\{q_0,..., q_r\}\subset\{p_0,..., p_m\}$
+wobei $\{q_0,\dotsc  , q_r\}\subset\{p_0,\dotsc  , p_m\}$
 
 Der \emph{Rand} $\delta \Sigma$ ist die Vereinigung aller $(m-1)-$dimensionalen Teilsimplizes von $\Sigma$.
  \begin{figure}[H]
@@ -2698,18 +2698,18 @@ dass sich je zwei beteiligte Simplizes nur im einem gemeinsamen Teilsimplex schn
   \item Nach (ii) gilt, dass sich zwei Simplizes nur in einem gemeinsamen Teilsimplex schneiden dürfen. (oder in der leeren Menge)
 \end{enumerate}
 \end{note*}
-Wenn zu den Flächen:
+Nun zu den Flächen:
 \begin{df}
  \emph{Eine kombinatorische  Fläche} ist endliches simpliziales Polyeder $(X, \mathcal X)$ mit folgenden Eigenschaften:
 \begin{enumerate}[(i)]
- \item Jedes Simplex von $\mathcal X$ ist einen $2-$Simplex von $\mathcal X$ enthalten.
- \item Jedes $1$-Simplex von $\mathcal X$ ist in höchsten zwei $2$-Simplizes enthalten.
+ \item Jedes Simplex von $\mathcal X$ ist in einem $2-$Simplex von $\mathcal X$ enthalten.
+ \item Jedes $1$-Simplex von $\mathcal X$ ist in höchstens zwei $2$-Simplizes enthalten.
  \begin{figure}
  \centering
 \fixme[fig124]
 \caption{}
 \end{figure}
- \item Ist $p$ ein $0$-Simplex in $\mathcal X$, so gibt es eine Anordnung $\Delta_1,...,\Delta_n$ der $2$-Simplizes
+ \item Ist $p$ ein $0$-Simplex in $\mathcal X$, so gibt es eine Anordnung $\Delta_1,\dotsc  ,\Delta_n$ der $2$-Simplizes
 von $\mathcal X$, die $p$ enthalten, so dass $\Delta_i$ und $\Delta_{i+1}$ jeweils eine Seite gemeinsam haben.
  \begin{figure}
  \centering
@@ -2725,7 +2725,7 @@ von $\mathcal X$, die $p$ enthalten, so dass $\Delta_i$ und $\Delta_{i+1}$ jewei
 \fixme[fig126]
 \caption{}
 \end{figure}
-auc: "'\emph{Zerschneidung}"' daran, kombinatorische Fläche mit Rand
+auch: "'\emph{Zerschneidung}"' daran, kombinatorische Fläche mit Rand
  \begin{figure}
  \centering
 \fixme[fig127]
@@ -2739,7 +2739,7 @@ kombinatorische "`Brezelfläche"':
 \end{figure}
 \end{exs*}
 \begin{st}[Rado 1924]
- Jede geschlossene Fläche tritt als geometrische Realisierung $K$ ist homöomorph zu einer kombinatorische Fläche $K, \mathcal K)$ auf (ist "'\emph{triangulierbar}"'))
+ Jede geschlossene Fläche tritt als geometrische Realisierung $K$ ist homöomorph zu einer kombinatorische Fläche ($K, \mathcal K)$ auf (ist "'\emph{triangulierbar}"'))
 \end{st}
 
 \begin{df}
@@ -2815,7 +2815,7 @@ Diese Anzahl ist gleich 1:
 
 Eine Zerschneidung $\phi: \mathcal Y \to \mathcal X$ einer geschlossenen Fläche liefert eine Äquivalenzrelation auf dem Rand von $\mathcal Y$: Jede Randkante wird mit genau einer anderen verklebt. Für diese Identifikation gibt es genau zwei Möglichkeiten, die den beiden Möglichkeiten entsprechen, die Menge der Endpunkte $\{p_0, p_1\}$ eines $1$-Simplex $\Delta(p_0, p_1)$ auf die Menge der Endpunkte $\{a_0, a_1\}$ eines anderen $1$-Simplex bijektiv abzubilden.
 
-Sei $\mathcal k=\{a_1, ..., a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir geben den Kanten eine Orientierung, indem wir fordern, dass beim positiven Durchlaufen das Innere von $\mathcal Y$ links liegen soll.
+Sei $\mathcal k=\{a_1, \dotsc  , a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir geben den Kanten eine Orientierung, indem wir fordern, dass beim positiven Durchlaufen das Innere von $\mathcal Y$ links liegen soll.
 
 \begin{figure}
  \centering
@@ -2826,7 +2826,7 @@ Sei $\mathcal k=\{a_1, ..., a_{2n}\}$ die Menge der Kanten von $\mathcal Y$. Wir
 Wir schreiben $a_i^{-1}$ für die jeweils umgekehrt durchlaufene Kante. Wir setzen $\mathcal k^0:=\{a_1,\dotsc, a_{2n}, a_1^{-1},\dotsc , a_{2n}^{-1}\}$ für die Menge der \emph{orientierten Kanten}.
 
 \begin{df}
- Ein \emph{Polygon-Modell} besteht aus einem $2n$-Eck $\mathcal Y$ mit Kantenmenge $\mathcal k$ und einer \emph{Involution} $\psi: \mathcal k^0 \to \mathcal k^0$, die folgende Bedingung erfüllt: Sind $a,b\in \mathcal k$ und ist $\psi(a)=b^{\epsilon}$, so ist $b\neq a$ und $\Psi(a^{-1})=b^{-\epsilon}$.
+ Ein \emph{Polygon-Modell} besteht aus einem $2n$-Eck $\mathcal Y$ mit Kantenmenge $\mathcal k$ und einer \emph{Involution} $\psi: \mathcal k^0 \to \mathcal k^0$, die folgende Bedingung erfüllt: Sind $a,b\in \mathcal k$ und ist $\psi(a)=b^{\epsilon}$, so ist $b\neq a$ und $\psi(a^{-1})=b^{-\epsilon}$.
 \end{df}
 \begin{note*}
  \emph{Involution} bedeutet $\psi\circ \psi=\id$
@@ -2853,11 +2853,11 @@ Es ergibt sich das \emph{Wort}: $acfbf^{-1}db^{-1}d^{-1}ea^{-1}e^{-1}c^{-1}$
 \begin{df}
  Ein \emph{Flächen-Wort} ist ein formaler Ausdruck
 \[
- a_{i_1}^{\epsilon_i} a_{i_2}^{\epsilon_2}.... a_{i_{2r}}^{\epsilon_{2r}}
+ a_{i_1}^{\epsilon_1} a_{i_2}^{\epsilon_2} \dotsb a_{i_{2r}}^{\epsilon_{2r}}
 \]
-wobei $\epsilon_0=\pm 1$ und jedes Index $i\in \{1,..., r\}$ unter der Indizes $i_1, i_2, ..., i_{2r}$ genau zweimal vorkommt. Das zugehörige Polygonmodell besteht aus einem $2r$-Eck mit zyklisch angeordneten Kanten $b_1,..., b_{2r}$ mit
+wobei $\epsilon_l=\pm 1$ und jeder Index $i\in \{1,\dotsc, r\}$ unter den Indizes $i_1, i_2, \dotsc , i_{2r}$ genau zweimal vorkommt. Das zugehörige Polygonmodell besteht aus einem $2r$-Eck mit zyklisch angeordneten Kanten $b_1,\dotsc , b_{2r}$ mit
 \[
- \psi(b_\mu)=b_v^\epsilon \text{ für } i_\mu=i_v \text{ und } \epsilon_\mu=\epsilon \epsilon_0
+ \psi(b_\mu)=b_v^\epsilon \text{ für } i_\mu=i_v \text{ und } \epsilon_\mu=\epsilon \epsilon_v
 \]
 Zwei Flächen-Worte heißen äquivalent, wenn die durch sie beschriebenen Flächen kombinatorisch äquivalent sind.
 (Auf die Triangulierung des Polygonmodells kommt es nicht an, S. E, Ossa 106.)
@@ -2879,9 +2879,9 @@ Zwei Flächen-Worte heißen äquivalent, wenn die durch sie beschriebenen Fläch
 \begin{lem}
 \begin{enumerate}
  \item Zyklische Vertauschung
- \item $...a^{\epsilon}...a^{\epsilon'}... \sim ...a^{-\epsilon}...a^{-\epsilon'}...$
- \item $...ab... ab... \sim ... a ... a...$
- \item $...ab... b^{-1} a^{-1}... \sim ... a ... a^{-1} ...$
+ \item $\dotsb a^{\epsilon}\dotsb a^{\epsilon'}\dotsb \sim \dotsb a^{-\epsilon}\dotsb a^{-\epsilon'}\dotsb$
+ \item $\dotsb ab\dotsb ab\dotsb \sim \dotsb a \dotsb a\dotsb$
+ \item $\dotsb ab\dotsb b^{-1} a^{-1}\dotsb \sim \dotsb a \dotsb a^{-1} \dotsb$
 \setcounter{figure}{139}
 \begin{figure}
  \centering
@@ -2897,21 +2897,23 @@ Zwei Flächen-Worte heißen äquivalent, wenn die durch sie beschriebenen Fläch
 Man kann zum Beispiel immer erreichen, dass das erste Auftreten eines Buchstaben mit Exponent $+1$ ist (nach ii)
 \begin{lem}[Beiziehen]
  \[
-  ...abb^{-1}c... \sim ...ac...
+  \dotsb abb^{-1}c\dotsb  \sim \dotsb ac\dotsb 
  \]
 \end{lem}
 \begin{proof}
- \begin{figure}
+.
+ \begin{figure}[H]
  \centering
 \fixme[fig141]
 \caption{}
 \end{figure}
 \end{proof}
 
-Ein Flächen-Wort heißt \emph{gekürzt}, wenn kein $bb^{-1}$ (oder $b^{-1}b$) noch vorkommt. WIr wollen Flächen-Worte als gekürzt, außer sie sind von der Form $aa^{-1}$, wir wollen dies als Polygon-Modell der Sphäre zulassen.
+Ein Flächen-Wort heißt \emph{gekürzt}, wenn kein $bb^{-1}$ (oder $b^{-1}b$) noch vorkommt. Wir wollen Flächen-Worte als gekürzt, außer sie sind von der Form $aa^{-1}$, wir wollen dies als Polygon-Modell der Sphäre zulassen.
 
 \begin{note*}[Polygonmodelle mit 2 Kanten]
- \begin{figure}
+.
+ \begin{figure}[H]
  \centering
 \fixme[fig142]
 \caption{}
@@ -2919,24 +2921,25 @@ Ein Flächen-Wort heißt \emph{gekürzt}, wenn kein $bb^{-1}$ (oder $b^{-1}b$) n
 \end{note*}
 
 \begin{note*}[Moebius-Band]
- \begin{figure}
+.
+ \begin{figure}[H]
  \centering
 \fixme[fig143]
 \caption{}
 \end{figure}
-$...c...c...$ auch \emph{Kreuzhaube} genannt.
+$\dotsb c\dotsb c\dotsb $ auch \emph{Kreuzhaube} genannt.
 \end{note*}
 
 \begin{note*}[Henkel]
-$...a...b...a^{-1}...b^{-1}...$
- \begin{figure}
+$\dotsb a\dotsb b\dotsb a^{-1}\dotsb b^{-1}\dotsb $
+ \begin{figure}[H]
  \centering
 \fixme[fig144]
 \caption{}
 \end{figure}
 \end{note*}
 Die Anzahl der Äquivalenzklassen von Endpunkten von Kanten heißt \emph{Eckenzahl}
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig145]
 \caption{}
@@ -2948,21 +2951,23 @@ besitzt Eckenzahl 1.
  Ein gekürztes Flächen-Wort ist äquivalent zu einem gekürzten Flächenwort mit Eckenzahl 1
 \end{lem}
 \begin{ex*}
- \begin{figure}
+.
+ \begin{figure}[H]
  \centering
 \fixme[fig146]
 \caption{}
 \end{figure}
 \end{ex*}
 \begin{proof}
- Die Ecke $P$ kommt nun in verringerter Anzahl vor ($Q$ dafür einmal öfter). Durch Wiederholen erreicht man, dass $P$ nur noch einmal vorkommt. Dann haben wir entweder $aa^{-1}$ (fertig) oder $aa^{-1}...$ und wir können "`Beiziehen"'.
+ Die Ecke $P$ kommt nun in verringerter Anzahl vor ($Q$ dafür einmal öfter). Durch Wiederholen erreicht man, dass $P$ nur noch einmal vorkommt. Dann haben wir entweder $aa^{-1}$ (fertig) oder $aa^{-1}\dotsb $ und wir können "`Beiziehen"'.
 \end{proof}
 
 \begin{lem}[Kreuzhauben-Normierung]
- Ein gekürztes Flächen-Wort mit Eckenzahl $1$ und $k$ Kreuzhauben ist äquivalent zu $c_1c_1c_2c_2...c_kc_k...$, wobei alle sonstigen Kanten genau einmal mit Exponent $+1$ und einmal mit $-1$ auftreten.
+ Ein gekürztes Flächen-Wort mit Eckenzahl $1$ und $k$ Kreuzhauben ist äquivalent zu $c_1c_1c_2c_2\dotsb c_kc_k\dotsb $, wobei alle sonstigen Kanten genau einmal mit Exponent $+1$ und einmal mit $-1$ auftreten.
 \end{lem}
 \begin{proof}
- \begin{figure}
+.
+ \begin{figure}[H]
  \centering
 \fixme[fig147]
 \caption{}
@@ -2974,14 +2979,14 @@ Bereits vorhandene Kreuzhauben der Form $dd$ werden dabei nicht vereinfacht.
  Ein gekürztes Flächen-Wort mit Eckenzahl $1$ ist äquivalent zu einem Produkt von Worten der Gestalt $c_ic_j$ und $a_jb_ja_j^{-1}b_j^{-1}$
 \end{lem}
 \begin{proof}
- Wir nehmen an, dass die Kreuzhauben bereits normiert wie in Lemma \ref{thm3: 1.18} vorkommen. Dann muss das Wort von der Form $...a...b...a^{-1}...b^{\pm1}...$, denn sonst würde der Rand des Polygons, wenn man $a$ und $a^{-1}$ entfernt (nach Identifikation der übrigen entsprechenden Kanten) in zwei Komponenten zerfallen,
-\begin{figure}
+ Wir nehmen an, dass die Kreuzhauben bereits normiert wie in Lemma \ref{thm3: 1.18} vorkommen. Dann muss das Wort von der Form $\dotsb a\dotsb b\dotsb a^{-1}\dotsb b^{\pm1}\dotsb $, denn sonst würde der Rand des Polygons, wenn man $a$ und $a^{-1}$ entfernt (nach Identifikation der übrigen entsprechenden Kanten) in zwei Komponenten zerfallen,
+\begin{figure}[H]
  \centering
 \fixme[fig148]
 \caption{}
 \end{figure}
-Widerspruch zu Eckenzahl $1$. Der Exponent von $b^{\pm 1}$ muss $-1$ sein, wegen der vorherigen Kreuzhauben-Normierung. Wir formen nun $...a...b...a^{-1}...b^{-1}...$ zu $...aba^{-1}b^{-1}...$
-\begin{figure}
+Widerspruch zu Eckenzahl $1$. Der Exponent von $b^{\pm 1}$ muss $-1$ sein, wegen der vorherigen Kreuzhauben-Normierung. Wir formen nun $\dotsb a\dotsb b\dotsb a^{-1}\dotsb b^{-1}\dotsb $ zu $\dotsb aba^{-1}b^{-1}\dotsb $
+\begin{figure}[H]
  \centering
 \fixme[fig149]
 \caption{}
@@ -2989,12 +2994,12 @@ Widerspruch zu Eckenzahl $1$. Der Exponent von $b^{\pm 1}$ muss $-1$ sein, wegen
 Bereits norimerte andere Henkel und normierte Kreuzhauben bleiben dabei normiert.
 \end{proof}
 \begin{lem}[Henkel-Elimination]
- Ein gekürztes Flächenwort mit Eckenzahl $1$, dass mindestens eine Kreuzhaube enthält, ist äquivalent zu einem Wort der Gestalt $c_1c_1c_2c_2...c_kc_k$
+ Ein gekürztes Flächenwort mit Eckenzahl $1$, dass mindestens eine Kreuzhaube enthält, ist äquivalent zu einem Wort der Gestalt $c_1c_1c_2c_2\dotsb c_kc_k$
 (einem Produkt von normierten Kreuzhauben).
 \end{lem}
 \begin{proof}
- Falls außer einer Kreuzhaube noch mindestens ein Henkel vorkommt, ist das Wort äquivalent zu $ccaba^{-1}b^{-1}...$ Wir formulieren:
-\begin{figure}
+ Falls außer einer Kreuzhaube noch mindestens ein Henkel vorkommt, ist das Wort äquivalent zu $ccaba^{-1}b^{-1}\dotsb $ Wir formulieren:
+\begin{figure}[H]
  \centering
 \fixme[fig150]
 \caption{}
@@ -3006,17 +3011,17 @@ Nun haben wir einen Henkel weniger und zwei Kreuzhauben mehr. (diese können nor
  Wir können das Flächenwort äquivalent in eine der drei folgenden Normalformen umformen;
  \begin{enumerate}[(1)]
   \item $aa^{-1}$ die Rechenweg dieses Worts  (die Sphäre) nennen wir auch $F_0$
-  \item $a_1b_1a_1^{-1} b_1^{-1} a_2 b_2a_2^{-1} b_2^{-1}...a_gb_g a_g^{-1} b_g^{-1}$ der Realisierung nennen wir auch $F_g, g\ge 1$
-  \item $c_1c_1c_2c_2...c_g$ die Realisierung nennen wir auch $N_g$.
+  \item $a_1b_1a_1^{-1} b_1^{-1} a_2 b_2a_2^{-1} b_2^{-1}\dotsb a_gb_g a_g^{-1} b_g^{-1}$ der Realisierung nennen wir auch $F_g, g\ge 1$
+  \item $c_1c_1c_2c_2\dotsb c_g$ die Realisierung nennen wir auch $N_g$.
  \end{enumerate}
 Die Fläche $F_g, g\ge 0$ nennt man die \emph{orientierbare geschlossenen Flächen von Geschlecht} $g$.
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig151]
 \caption{}
 \end{figure}
 Die Flächen $N_g, g\ge 1$ ennt man die \emph{nicht-orientierbaren Flächen} vom Geschlecht $g$
-\begin{figure}
+\begin{figure}[H]
  \centering
 \fixme[fig152]
 \caption{}
@@ -3026,11 +3031,11 @@ Die Flächen $N_g, g\ge 1$ ennt man die \emph{nicht-orientierbaren Flächen} vom
  Jede geschlossene Fläche ist zu einem $F_g, g\ge 0$ oder $Ng, g\ge 1$ homöomorph. Wir haben noch nicht ausgeschlossen, dass die $F_g$ und $N_g$ untereinander homöomorph sind.
 \end{st}
 \begin{st}
- Sei $\omega(a_1,...,a_n)=a^{\epsilon_1}_{i_1} a^{\epsilon_2}_{i_2}... a^{\epsilon_2r}_{i_{2r}}$ ein FLächenwort mit Eckenzahl $1$. Sei $X$ die Realisierung des zugehörigen Polygon-Modells und $x_0\in X$ das gemeinsame Bild der Endpunkte aller Kanten, dann hat $\pi_1(X;x_0)$ die Präsentation
+ Sei $\omega(a_1,\dotsc  ,a_n)=a^{\epsilon_1}_{i_1} a^{\epsilon_2}_{i_2}\dotsb  a^{\epsilon_2r}_{i_{2r}}$ ein Flächenwort mit Eckenzahl $1$. Sei $X$ die Realisierung des zugehörigen Polygon-Modells und $x_0\in X$ das gemeinsame Bild der Endpunkte aller Kanten, dann hat $\pi_1(X;x_0)$ die Präsentation
 \[
- \pi_1(X;x_0)=\langle a_1,..,a_r \, \vline \, w(a_1,...a_r)=1\rangle
+ \pi_1(X;x_0)=\langle a_1,..,a_r \, \vline \, w(a_1,\dotsc  ,a_r)=1\rangle
 \]
-dass heißt die freie Gruppe über $a_1,..., a_r$ modulo dem von $w(a_1,..., a_r)$ erzeugten Normalteiler.
+dass heißt die freie Gruppe über $a_1,\dotsc  , a_r$ modulo dem von $w(a_1,\dotsc, a_r)$ erzeugten Normalteiler.
 \begin{kor*}
  $\pi_1(F_g)_{ab}\cong \Z^g$, $\pi_1(N_0)_{ab}\cong \Z^{g-1} \oplus \Z_2$ abelsch gemachte Gruppe
 \end{kor*}
