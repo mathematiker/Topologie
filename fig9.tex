@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=1.5, >=triangle 90]
+\begin {scope}
+  \draw [-] (0,0) -- (0,1);
+  \draw (0,0) node [anchor=east] {$0$};
+  \draw (0,1) node [anchor=east] {$1$};
+  \draw [-] (0.2,-0.2) -- (1.2,-0.2);
+  \draw [-] (0.2,0) -- (1.2,0); 
+  \draw [-,red] (0.2,1) -- (1.2,1);
+  \draw [-] (0.2,0) -- (0.2,1);
+  \draw [-] (0.4,0) -- (0.4,1);
+  \draw [-] (0.6,0) -- (0.6,1);
+  \draw [-] (0.8,0) -- (0.8,1);
+  \draw [-] (1.0,0) -- (1.0,1);
+  \draw [-] (1.2,0) -- (1.2,1);
+  \draw [[-,red] (0.2,1.2) -- (0.6,1.2);
+  \draw [-{]},red] (0.8,1.2) -- (1.2,1.2);
+  \draw [red] (0.7,1.2) node [anchor=center] {$A$};
+  \draw (0.7,-0.4) node [anchor=center] {$X \times [0,1]$};
+\end {scope}
+ \draw [->] (1.4,0.5) -- (2.2,0.5);
+\begin {scope}[xshift=2.5cm,]
+  \draw [-] (0,0) -- (0,1);
+  \draw (0,0) node [anchor=east] {$0$};
+  \draw (0,1) node [anchor=east] {$1$};
+  \draw [-] (0.2,-0.2) -- (1.2,-0.2);
+  \draw [-] (0.2,0) -- (1.2,0); 
+  \draw [-] (0.2,0) -- (0.7,1);
+  \draw [-] (0.4,0) -- (0.7,1);
+  \draw [-] (0.6,0) -- (0.7,1);
+  \draw [-] (0.8,0) -- (0.7,1);
+  \draw [-] (1.0,0) -- (0.7,1);
+  \draw [-] (1.2,0) -- (0.7,1);
+  \filldraw [red] (0.7,1) circle (1pt);
+  \draw [red] (0.7,1.2) node [anchor=center] {$A$};
+  \draw (0.7,-0.4) node [anchor=center] {$CX$};
+\end {scope}
+
+
+\end{tikzpicture}
+ 
+
+
