@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=1.5, >=triangle 90]
+\begin {scope}[scale=0.5]
+  \draw [-] (-0.2,-3) -- (2.3,-3);
+  \draw [-] ( 2.7,-3) -- (5.2,-3);
+  \filldraw [red] (2.5,-2.8) circle (1pt);
+  \filldraw [red] (2.5,-3.2) circle (1pt);
+  \draw  (2.5,-4.4) node [anchor=north] {Gerade mit Doppelpunkt};  
+\end {scope}
+ 
+\begin {scope}[scale=0.5,xshift=9cm, yshift=-3cm]
+ \draw  (0,0) circle (1cm);
+ \draw  (2,0) circle (1cm);
+ \filldraw [red] (1,0) circle (1pt);
+\draw  (1,-1.4) node [anchor=north] {``Acht''};  
+\end {scope}
+
+\begin {scope}[scale=0.5,xshift=16cm, yshift=-3cm]
+ \draw  (0,0) circle (1cm);
+ \draw [<->] (-0.68,-0.68) -- (0.68,0.68);
+ \filldraw [red] (0.7,0.7) circle (1pt);
+\filldraw [red] (-0.7,-0.7) circle (1pt);
+\draw  (0,-1.4) node [anchor=north] {$\R P^1$};  
+\end {scope}
+\end{tikzpicture}
+
