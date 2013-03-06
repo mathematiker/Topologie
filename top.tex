@@ -10,7 +10,7 @@
 \usepackage{txfonts}
 \renewcommand{\bigsqcap}{\prod}
 \usepackage{tikz}
-\usetikzlibrary{arrows,patterns}
+\usetikzlibrary{arrows,patterns,matrix}
 \usetikzlibrary{shapes.geometric}
 \usepackage{float}
 \usepackage[T1]{fontenc}
@@ -958,7 +958,7 @@ Mannigfaltigkeiten sind Räume, die im Kleinen dem Euklidischen Raum $\R^n$ ähn
   \item Muss lokal aussehen wie $\R^n$. Keine topologische Mannigfaltigkeit sind.
 \begin{figure}[H]
 \centering
- \fixme[fig32]
+ \input{fig32}
 \caption{}
 \end{figure}
 \item Im Gegensatz zu Untermannigfaltigkeit hat man keine „Glattheitsbedingung“ so ist zum Beispiel ein Quadrat im $\R^2$ eine topologische Mannigfaltigkeit.
@@ -1459,7 +1459,7 @@ $\pi_1("'\infty"'; p) \homo ?$
  Fundamentalgruppe einer "`Acht"':\\
 \begin{figure}[H]
 \centering
- \fixme[fig63]
+ \input{fig63}
 \caption{}
 \end{figure}
 \end{seg}
@@ -2130,7 +2130,7 @@ Zwei Wege von $x_0$ nach $x$ entspricht einer Schleife von $x_0$ durch $x$. Es m
 Wir wollen Satz \ref{thm2:3.11} verwenden, um zwei verschiedene Überlagerungen über demselben \emph{Basisraum} $B$ zu vergleichen. Wir wollen also folgende Situation betrachten:
 \begin{figure}[H]
 \centering
- \fixme[fig90]
+ \input{fig90}
 \caption{}
 \end{figure}
 Wir wollen die Frage studieren, wann sich die Abbildung $\id_B\circ p:E\to B$ zu einer Abbildung $f:E \to E'$ hochheben lässt. Damit wir den Hochhebungssatz anwenden können, nehmen wir an, dass $B$ wegzusammenhängend und lokal wegzusammenhängend ist. 
@@ -2149,12 +2149,21 @@ Wie man sich leicht überlegt überlegt, gilt in der Situation von Korollar \ref
 \end{df}
 Wir wollen den Hochhebungssatz nun benutzen, um eine Wirkung einer gewissen Untergruppe der Fundamentalgruppe der Basis auf den Totalraum zu definieren. Es handelt sich dabei um die Fortsetzung der in Satz \ref{thm2:3.8} definierten Wirkung auf der Faser $E_b$.
 
-Wir betrachten der Spezialfall $E=E'$ des Korollars. Ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
+Wir betrachten der Spezialfall $E=E'$ des Korollars. 
+\begin{figure}[H]
+\centering
+ \input{fig90b}
+%\caption{}
+\end{figure}
+
+Ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
 \[
  \pi_1(p)(\pi_1(E;e'_0))=[\omega]^{-1}\cdot \pi_1(p)(\pi_1(E;e_0)\cdot [\omega]
 \]
+
 \begin{figure}[H]
 \centering
+ %\input{fig91}
  \fixme[fig91]
 \caption{}
 \end{figure}
@@ -2485,7 +2494,7 @@ wobei $N$ der Normalteiler von $\pi_1(U;x_0)*\pi_1(V;x_0)$ ist, der von den Elem
   \item analog: $\R^2\setminus\{2 \text{Punkte}\}\cong \Z*\Z$
 \begin{figure}[H]
  \centering
-\fixme[fig108]
+\input{fig108}
 \caption{}
 \end{figure}
  \end{enumerate}
@@ -2551,7 +2560,7 @@ $H:[0,1]\times[0,1]\to X$, $(s,t)\mapsto H(s,t)$ mit
 \]
 \begin{figure}[H]
  \centering
-\fixme[fig110]
+\input{fig110}
 \caption{}
 \end{figure}
 Mit einem Kompaktheitsargument finden wir $n\in \N$, so dass die Teilquadrate von $[0,1]\times[0,1]$ der Seitenlänge $1/n$ ganz nach $U$ oder ganz nach $V$ abgebildet werden. Wir nehmen an, dass $n$ ein Vielfaches von $2k$ ist.
@@ -2559,32 +2568,32 @@ Mit einem Kompaktheitsargument finden wir $n\in \N$, so dass die Teilquadrate vo
 Die Beweisstragie ist nun, $\omega=H(\cdot, 0)$, in $x_0=H(\cdot, 1)$ schrittweise "`Zeile für Zeile"' überzuführen, wobei die in jedem Schritt verwendeten Wörter dieselbe Nebenklasse in $\pi_1(U;x_0)*\pi_1(V;x_0)/N$ repräsentieren:
 \begin{figure}[H]
  \centering
-\fixme[fig111]
+\input{fig111}
 \caption{}
 \end{figure} 
-wir benötigen folgende Vorbereitung.
+Wir benötigen folgende Vorbereitung.
 
 Sei $f$ eine monoton steigende Funktion $[0,1]\to[0,1]$ die jeweils auf einer Umgebung von $k/n$ konstant ist.
 \begin{figure}[H]
  \centering
-\fixme[fig112]
+\input{fig112}
 \caption{}
 \end{figure}
 und ersetze $H$ durch $(t,s)\mapsto H(f(s), f(t))$. Dann ist $H$ auf einer Kreisschreibe um jeden Gitterpunkt konstant.  Wir erreichen, dass $H$ auf den Gitterpunkten den Wert $x_0$ annimmt (Wähle einen Weg nach $x_0$ und verwende den Radius der Kreisscheibe zum Umparametrisieren). Jetzt wird jede Kante im Gitter auf eine Schleife mit Basispunkt $x_0$ abgebildet.
 \begin{figure}[H]
  \centering
-\fixme[fig113]
+\input{fig113}
 \caption{}
 \end{figure} 
 \end{proof}
 \begin{ex*}
  \begin{figure}[H]
  \centering
-\fixme[fig114]
+\input{fig114}
 \caption{}
 \end{figure}
 \begin{align*}
- [a]_U\cdot [b]_V\cdot [c]_V=[g^{-1}dh]_U\cdot [h^{-1} ek]_V\cdot [k^{-1}f l]_V=[gd]_U\cdot \underbrace{[h]_U[h^{-1}]_V}_{\in N}\cdot [ekk^{-1}fl]_V\stackrel{\text{im Quotienten}}=[g^{-1}]_U[d]_U[e]_V\cdot [f]_V[l]_V 
+ [a]_U\cdot [b]_V\cdot [c]_V=[g^{-1}dh]_U\cdot [h^{-1} ek]_V\cdot [k^{-1}f l]_V=[g^{-1}d]_U\cdot \underbrace{[h]_U[h^{-1}]_V}_{\in N}\cdot [ekk^{-1}fl]_V\stackrel{\text{im Quotienten}}=[g^{-1}]_U[d]_U[e]_V\cdot [f]_V[l]_V 
 \end{align*}
 \end{ex*}
 

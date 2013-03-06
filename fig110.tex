@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=3, >=triangle 90]
+\begin {scope}
+  \draw (0,0) rectangle (1,1);
+  \draw  (0,0) node [anchor=north east] {$0$}; 
+  \draw  (1,0) node [anchor=north west] {$1$}; 
+  \draw  (0,1) node [anchor=south east] {$1$};
+  \draw  (0.5,0) node [anchor=north] {$\omega$};
+  \draw  (0.5,1) node [anchor=south] {$x_0$};
+  \draw  (0,0.5) node [anchor=east] {$x_0$};
+  \draw  (1,0.5) node [anchor=west] {$x_0$};
+\end {scope}
+\draw [->] (1.2,0.5) -- (2.8,0.5);
+\begin{scope}[xshift=3cm]
+  \draw[step=.125cm] (0,0) grid (1,1);
+  \draw  (0,0) node [anchor=north east] {$0$}; 
+  \draw  (1,0) node [anchor=north west] {$1$}; 
+  \draw  (0,1) node [anchor=south east] {$1$};
+  \draw  (1,0.93) node [anchor=west,scale=1.1] {$\}\frac{1} {n}$};
+  \draw  (1.05,1.05) node [anchor=south,scale=1.1,rotate=90] {$\}$};
+  \draw  (0.93,1.05) node [anchor=south,scale=1.1] {$\frac{1} {n}$};
+\end{scope}
+\end{tikzpicture}

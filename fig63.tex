@@ -1,0 +1,19 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\begin {scope}
+  \draw  (0,0) circle (1cm);
+  \draw  (3,0) circle (1cm);
+  \filldraw [red] (1,0) circle (1pt);
+  \filldraw [red] (2,0) circle (1pt);
+  \draw  (0,-1.4) node [anchor=north] {$S^1$};  
+  \draw  (3,-1.4) node [anchor=north] {$S^1$};  
+\end {scope}
+
+\draw [->](4.2,0) -- (7.8,0);
+ 
+\begin {scope}[xshift=9cm]
+ \draw  (0,0) circle (1cm);
+ \draw  (2,0) circle (1cm);
+ \filldraw [red] (1,0) circle (1pt);
+  \draw  (1,-1.4) node [anchor=north] {$S^1\vee S^1$};  
+\end {scope}
+\end{tikzpicture}

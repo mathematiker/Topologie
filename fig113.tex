@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=2, >=triangle 90]
+\begin{scope}[xshift=0cm]
+ 
+  \draw  [->] (0,0) -- (1,0);
+  \draw  [->] (1,0) -- (2,0);
+  \draw  [->] (2,0) -- (3,0);
+  \draw  [-] (3,0) -- (3.5,0);
+ 
+  \draw  [->] (0,1) -- (1,1);
+  \draw  [->] (1,1) -- (2,1);
+  \draw  [->] (2,1) -- (3,1);
+  \draw  [-] (3,1) -- (3.5,1);
+ 
+  \draw  [->] (0.5,1.5) -- (0.5,0.5);
+  \draw  [->] (1.5,1.5) -- (1.5,0.5);
+  \draw  [->] (2.5,1.5) -- (2.5,0.5);
+  \draw  [->] (3.5,1.5) -- (3.5,0.5);
+
+  \draw  [-] (0.5,0.5) -- (0.5,0);
+  \draw  [-] (1.5,0.5) -- (1.5,0);
+  \draw  [-] (2.5,0.5) -- (2.5,0);
+  \draw  [-] (3.5,0.5) -- (3.5,0);
+
+  \draw  (1,0.5) node [] {$U$};
+  \draw  (2,0.5) node [] {$V$};
+  \draw  (3,0.5) node [] {$V$};
+
+  \draw  (1,0) node [anchor=north] {$a$};
+  \draw  (2,0) node [anchor=north] {$b$};
+  \draw  (3,0) node [anchor=north] {$c$};
+
+  \draw  (1,1) node [anchor=south] {$d$};
+  \draw  (2,1) node [anchor=south] {$e$};
+  \draw  (3,1) node [anchor=south] {$f$};
+
+  \draw  (0.5,0.5) node [anchor=east] {$g$};
+  \draw  (1.5,0.5) node [anchor=east] {$h$};
+  \draw  (2.5,0.5) node [anchor=east] {$k$};
+  \draw  (3.5,0.5) node [anchor=east] {$l$};
+\end{scope}
+\end{tikzpicture}
+

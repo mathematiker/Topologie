@@ -1,0 +1,14 @@
+\begin{tikzpicture}[description/.style={fill=white,inner sep=2pt}]   
+\matrix (m) [matrix of math nodes, row sep=3em,
+    column sep=2.5em, text height=1.5ex, text depth=0.25ex]
+    { E & & E\\
+      &&\\
+      B  & &B\\ };
+    %\draw[double,double distance=5pt] (m-1-1) – (m-1-3);
+       \path[->,font=\scriptsize]
+    (m-1-1)  edge node[auto] {$ f $} (m-1-3)
+     (m-1-1) edge node[auto,swap] {$ p $} (m-3-1)
+    (m-3-1) edge node[auto,swap] {$ id_B $} (m-3-3)
+    (m-1-3) edge node[auto] {$ p $} (m-3-3);
+\end{tikzpicture}
+
