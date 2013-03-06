@@ -1065,7 +1065,7 @@ Jeder $\eps$-Ball in $\R^n$ ist wegzusammenhängend, also gibt es um jeden Punkt
  Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup \dotsb \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.
 \begin{figure}[H]
 \centering
- \fixme[fig37]
+ \input{fig37}
 \caption{}
 \end{figure}
 Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
@@ -1142,21 +1142,21 @@ $\simeq$ ist eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \e
 \end{st}
 \begin{proof}
  \begin{seg}{"`$\Longleftarrow$"'}
-  Sei $f: \overline{B_1(0)}\to X$ stetig. Definiere die gesuchte Abbildung durch $h(x,t)=f((1-t)x)$.
+  Sei $f: \overline{B_{1}^{n+1}(0)}\to X$ stetig. Definiere die gesuchte Abbildung durch $h(x,t)=f((1-t)x)$.
  \end{seg}
  
 \begin{seg}{"`$\implies$"'}
  Sei $h$ eine Homotopie mit $h(\cdot, 0)=f(\cdot)$, mit $f:S^n \to X$ und $h(\cdot, 1)=\const.$
 \begin{figure}[H]
 \centering
- \fixme[fig42]
+  \input{fig42}
 \caption{}
 \end{figure}
 Wir betrachten $S^n\times[0,1]$ mit der Äquivalenzrelation $(p,t)\sim (q,s) :\iff (p=q \land t=s) \lor t=s=1$. Dann ist $S^n\times[0,1]/\sim$ homöomorph zu $\overline{B_1^{n+1}(0)}$. Sei $\phi ((p,t)):S^n\times[0,1]\to \overline{B_1^{n+1}(0)}$ mit $(p,t)\mapsto (1-t)\cdot p$, dann ist $\bar \phi: S^n \times[0,1]/\sim \to \overline{B_1^{n+1}(0)}, \bar \phi([(p,t)])=\phi((p,t))$ wohldefiniert, bijektiv und stetig. (Denn $\phi$ ist stetig, $S^n\times [0,1]/\sim$ trägt die Quotiententopologie, $\phi=\bar \phi \circ q $, $q$ die Quotientenabbildung\\
 \begin{center}
 \makebox{
 \begin{xy}
- (0,0)*+{S^n\times [0,1]}; (40,0)*+{\overline{B_1(0)}}; (20, -20)*+{S^n\times [0,1]/\sim};
+ (0,0)*+{S^n\times [0,1]}; (40,0)*+{\overline{B_{1}^{n+1}(0)}}; (20, -20)*+{S^n\times [0,1]/\sim};
 {\ar (10,0)*+{}; (30,0)*+{}}?*!/_2mm/{ \phi};
 {\ar (30,-20)*+{}; (40,-1)*+{} }?*!/_2mm/{\bar \phi};
 {\ar (0,-1)*+{}; (10,-20)*+{}}?*!/^6mm/{ q};
