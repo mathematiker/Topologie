@@ -1,0 +1,7 @@
+\begin{tikzpicture}[scale=3, >=triangle 90]
+\node [regular polygon, regular polygon sides = 3,draw,name=dreieck,minimum size = 3cm] at (0,0) {};
+\draw [-](dreieck.corner 3) -- (dreieck.side 1);
+\draw [-](dreieck.corner 1) -- (dreieck.side 2);
+\draw [-](dreieck.corner 2) -- (dreieck.side 3);
+\end{tikzpicture}
+
