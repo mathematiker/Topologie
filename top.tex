@@ -1271,9 +1271,9 @@ die Menge aller stetigen Wege in $X$ von $x_0$ nach $x_1$.
 \end{figure}
 Die Menge $\Omega(X; x_0):=\Omega(X; x_0, x_0)$ bezeichnen wir als die Menge aller \emph{Schleifen} mit \emph{Basispunkt} $x_0$.
 \end{df}
-\begin{df} Für $\omega\in \Omega(X; x_0, x_1)$ und $\nu\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega*\nu$ definiert durch:
+\begin{df} Für $\omega\in \Omega(X; x_0, x_1)$ und $\eta\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega*\eta$ definiert durch:
  \[
-  \omega*\nu(t):=\begin{cases} \omega(2t) &\text{ falls } t\in[0,\frac{1}{2})\\ \nu(2t-1) &\text{ falls } t\in[\frac{1}{2}, 1] \end{cases}
+  \omega*\eta(t):=\begin{cases} \omega(2t) &\text{ falls } t\in[0,\frac{1}{2})\\ \eta(2t-1) &\text{ falls } t\in[\frac{1}{2}, 1] \end{cases}
  \]
 \begin{figure}[H]
 \centering
@@ -1288,18 +1288,18 @@ Wir wollen auf dem Raum der Schleifen $\Omega(X; x_0)$ eine Äquivalenzrelation 
  \fixme[fig50]
 \caption{}
 \end{figure}
- Seien $\omega, \nu \in \Omega(X; x_0, x_1)$. Eine \emph{Homotopie mit festen Endpunkten} von $\omega$ nach $\nu$ ist eine stetige Abbildung
+ Seien $\omega, \eta \in \Omega(X; x_0, x_1)$. Eine \emph{Homotopie mit festen Endpunkten} von $\omega$ nach $\eta$ ist eine stetige Abbildung
 \[
  H: [0,1]\times [0,1] \to X,
 \]
 so dass gilt: 
 \begin{align*}
  H(t,0)=\omega(t)&, H(0,s)=x_0\\
- H(t,1)=\nu(t)&, H(1,s)=x_1
+ H(t,1)=\eta(t)&, H(1,s)=x_1
 \end{align*}
 \end{df}
 \begin{lem}
- Die Relation $\omega\sim \nu:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\nu$) ist eine Äquivalenzrelation.
+ Die Relation $\omega\sim \eta:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\eta$) ist eine Äquivalenzrelation.
 \end{lem}
 \begin{proof}
  Ist derselbe wie für Homotopie von stetigen Abbildung.
@@ -1308,10 +1308,10 @@ so dass gilt:
  Es gilt in $\Omega(X;x_0),$ wobei wir mit $\epsilon$ die \emph{konstante Schleife} 
 $\epsilon(t)=x_0 \forall_{t\in [0,1]}$ bezeichnen.
 \begin{enumerate}[(i)]
- \item $\omega \sim \omega' \land \nu \sim \nu' \implies \omega *\nu \sim \omega' * \nu'$
+ \item $\omega \sim \omega' \land \eta \sim \eta' \implies \omega *\eta \sim \omega' * \eta'$
   \item $\epsilon * \omega \sim \omega \sim \omega* \epsilon$ 
 \item $\omega * \omega^{-1} \sim \epsilon \sim \omega^{-1}*\omega$
- \item $(\omega * \nu)*\xi \sim \omega*(\nu * \xi)$
+ \item $(\omega * \eta)*\xi \sim \omega*(\eta * \xi)$
 \end{enumerate}
 und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichnen.
 \end{lem}
@@ -1346,7 +1346,7 @@ Wir wollen anhand von Skizzen andeuten wie die Homotopien zu wählen sind.
 \end{enumerate}
 \end{proof}
 \begin{note*}[Explizit für (i)]
-Sei $f$ die Homotopie zwischen $\omega$ und $\omega'$ und $g$ die Homotopie zwischen $\nu$ und $ \nu'$. Definiere:
+Sei $f$ die Homotopie zwischen $\omega$ und $\omega'$ und $g$ die Homotopie zwischen $\eta$ und $ \eta'$. Definiere:
 \[
  H:[0,1]\times[0,1]\to X
 \]
@@ -1372,15 +1372,15 @@ wobei $\Omega(X;x_0)$ Schleifen mit Basispunkt $x_0$ und $\sim$ die Homotopie mi
 Sei $\epsilon$ konstante Schleife $[0,1]\to \{x_0\}$.
 Es gilt: $\textcolor {red} {[\omega]}=\textcolor {yellow} {[\omega']}$, $\textcolor {red} {[\omega]}\neq [\epsilon]$, $\textcolor {blue} {[\alpha]}\neq \textcolor {green} {[\beta]}\neq \textcolor {red} {[\omega]}, \textcolor {blue} {[\alpha]}=[\epsilon]$
 \begin{st}
- Das Produkt von Schleifen $(\omega, \nu) \mapsto \omega * \nu$ induziert ein Produkt auf $\pi_1(X;x_0)$. Für 
+ Das Produkt von Schleifen $(\omega, \eta) \mapsto \omega * \eta$ induziert ein Produkt auf $\pi_1(X;x_0)$. Für 
 eine Schleife $\omega \in \Omega(X;x_0)$ bezeichne $[\omega] \in \pi_1(X; x_0)$ ihre Homotopieklasse mit festen Endpunkten. Mit diesem Produkt ist $\pi_1(X;x_0)$ eine Gruppe
 \end{st}
 \begin{proof}
- Seien $\omega, \nu \in \Omega(X; x_0)$. Setze 
+ Seien $\omega, \eta \in \Omega(X; x_0)$. Setze 
 \[
- [\omega] \cdot [\nu]:=[\omega*\nu]
+ [\omega] \cdot [\eta]:=[\omega*\eta]
 \]
-Dies ist wohldefiniert, denn nach Lemma \ref{thm:2.1.5} (i) gilt $\omega \sim \omega' \land \nu \sim \nu' \implies \omega * \nu \sim \omega' * \nu'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich wohldefiniert, denn $\omega \sim \omega' \implies \omega^{-1}\sim (\omega')^{-1}$. Die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm:2.1.5} (ii) (iii): $\omega*\omega^{-1}\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm:2.1.5} liefert die Assoziativität der Verknüpfung. 
+Dies ist wohldefiniert, denn nach Lemma \ref{thm:2.1.5} (i) gilt $\omega \sim \omega' \land \eta \sim \eta' \implies \omega * \eta \sim \omega' * \eta'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich wohldefiniert, denn $\omega \sim \omega' \implies \omega^{-1}\sim (\omega')^{-1}$. Die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm:2.1.5} (ii) (iii): $\omega*\omega^{-1}\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm:2.1.5} liefert die Assoziativität der Verknüpfung. 
 \end{proof}
 Die so definierte Gruppe $\pi_1(X;x_0)$ ist im Allgemeinen nicht abelsch, wie wir später sehen werden. Die Menge $\Omega(X;x_0)$ bildet \emph{keine} Gruppe mit der Verknüpfung $*$, denn zum Beispiel $\omega*\omega^{-1}\neq \epsilon$, wenn $\omega$ nicht konstant ist.
 \begin{exs*}
