@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows,patterns,matrix}
 \usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.markings}
 \usepackage{float}
 \usepackage[T1]{fontenc}
 \usepackage{stmaryrd}
@@ -534,7 +535,7 @@ Ein topologischer Raum heißt \emph{zusammmenhängend}, wenn er sich nicht in zw
 \end{df}
 \begin{figure}[H]
 \centering
- \fixme[fig19]
+  \input{fig19}
 \caption{}
 \end{figure}
 \begin{note*}
@@ -562,7 +563,7 @@ Ein topologischer Raum heißt \emph{wegzusammenhängend}, wenn es zu je zwei Pun
 $ \R^n $ ist wegzusammenhängend, in der Tat, benutze man zum Beispiel $ c(t)=(1-t)p+tq $.
 \begin{figure}[H]
 \centering
- \fixme[fig20]
+ \input{fig20}
 \caption{}
 \end{figure}
 \end{ex*}
@@ -573,7 +574,7 @@ Ein wegzusammenhängender topologischer Raum ist zusammenhängend.
 Angenommen $ X=A\dotcup B $, wobei $ A $ und $ B $ beide offen und nichtleer.  Sei $ p\in A $ und $ q\in B $ und $ c $ ein Weg zwischen p und q. 
 \begin{figure}[H]
 \centering
- \fixme[fig21]
+ \input{fig21}
 \caption{}
 \end{figure}
 Dann wäre $[0,1]=c^{-1}(A)\dotcup c^{-1}(B)$ eine Zerlegung in zwei disjunkte, nichtleere offene Mengen.
@@ -1177,7 +1178,7 @@ Räume heißen \emph{homotopieäquivalent} oder vom gleichen \emph{Homotopietyp}
   \item Eine Teilmenge $K\subset \R^n$ heißt \emph{sternförmig bezüglich} $x_0 \in K$, wenn die Verbindungsstrecke von $x_0$ zu jedem beliebigen Punkt $x\in K$ enthalten ist.\\
 \begin{figure}[H]
 \centering
- \fixme[fig44]
+ \input {fig44}
 \caption{}
 \end{figure}
 Sternförmige Mengen sind nullhomotop, denn durch $h: K\times I \to K, (x,t) \mapsto (1-t)x+tx_0$ ist $\id_K$ zu einer konstanten Abbildung homotop. (Allgemein gilt: Ein Raum $X$ ist zusammenziehbar, wenn $\id_X$ nullhomotop ist vgl. 1. )
@@ -2292,7 +2293,7 @@ Im folgenden wollen wir einen Satz über die Existenz der universellen Überlage
 Die  Hawaiischen  Ohrringe sind weder lokal einfach zusammenhängend noch semi-lokal einfach zusammenhängend.
  \begin{figure}[H]
 \centering
- \fixme[fig98]
+ \input{fig98}
 \caption{}
 \end{figure}
 \end{ex*}
@@ -2301,7 +2302,7 @@ Die  Hawaiischen  Ohrringe sind weder lokal einfach zusammenhängend noch semi-l
 Beispiel für einen Raum, der semi-lokal einfach zusammenhängend, aber nicht lokal einfach zusammenhängend ist, ist der "`Kegel über den Hawaiischen  Ohrringen"'
 \begin{figure}[H]
 \centering
- \fixme[fig99]
+ \input{fig99}
 \caption{}
 \end{figure}
 \end{ex*}
@@ -2766,7 +2767,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
  Eine \emph{Zerschneidung} einer kombinatorischen Fläche  $(X, \mathcal X)$ besteht aus einer kombinatorischen Fläche $(Y,\mathcal Y)$ und einer simplizialen Abbildung. $\phi:(Y, \mathcal Y)\to (X, \mathcal X)$, so dass $\phi\vline\,_{\mathcal Y_2}:\mathcal Y_2 \to \mathcal X_2$ bijektiv ist. (bijektiv auf 2 Simplizes, $0$- und $1$-Simplizes werden eventuell zusammengeklebt.)
 \begin{figure}[H]
  \centering
-\fixme[fig130]
+\input{fig130}
 \caption{}
 \end{figure}
 \end{df}
@@ -2784,7 +2785,7 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
  Der \emph{Rand} einer kombinatorischen Fläche besteht aus allen $1$-Simplizes, die nicht Teilsimplizes in zwei verschiedenen $2$-Simplizes sind. Eine kombinatorische Fläche heißt \emph{n-Eck}, wenn ihr Rand aus genau n $1$-Simplizes besteht und sie zu einem $2$-Simplex homöomorph ist.
 \begin{figure}[H]
  \centering
-\fixme[fig132]
+\input{fig132}
 \caption{}
 \end{figure}
 \end{df}
@@ -2793,9 +2794,10 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
  Sei $\phi: \mathcal Y\to \mathcal X$ eine Zerschneidung von $\mathcal X$ \emph{entlang eines $1$-Simplex} $e$ (dass heißt $\phi^{-1}(e)$ besteht aus zwei $1-$Simplizes von $\mathcal Y$, alle anderen haben nur ein $1$-Simplex im Urbild. Sei $\mathcal Y$ die disjunkte Vereinigung eines $n$-Ecks und eines $m$-Ecks. Dann ist $\mathcal X$ ein ($m+n-2$)-Eck.
 \end{lem}
 \begin{proof}
+.
  \begin{figure}[H]
  \centering
-\fixme[fig133]
+\input{fig133}
 \caption{}
 \end{figure}
 \end{proof}
@@ -2821,7 +2823,7 @@ Sei $\mathcal k=\{a_1, \dotsc  , a_{2n}\}$ die Menge der Kanten von $\mathcal Y$
 
 \begin{figure}[H]
  \centering
-\fixme[fig135]
+\input{fig135}
 \caption{}
 \end{figure}
 
@@ -2840,7 +2842,7 @@ Wir schreiben $a_i^{-1}$ für die jeweils umgekehrt durchlaufene Kante. Wir setz
   \item \emph{Torus}:
 \begin{figure}[H]
  \centering
-\fixme[fig136]
+\input{fig136}
 \caption{}
 \end{figure}
 \item komplexeres Beispiel:

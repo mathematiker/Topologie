@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=1, >=triangle 60]
+\begin{scope}
+  \clip (-2.5,-2.5) rectangle (2.5,2.5);
+  \draw[step=.5cm,gray,very thin] (-2.2,-2.2) grid (2.2,2.2);
+  \draw [-triangle 90] (-2.4,0) -- (2.4,0);
+  \draw [-triangle 90] (0,-2.4) -- (0,2.4); 
+  \draw   (0,0) circle (1cm);
+  \foreach \x in {0,30,...,360}
+    {	\draw [red,->] (0,0)	-- (\x+15:1cm);
+	\draw [red,->] (0,0)	 ++(\x+15:3cm) -- (\x+15:1cm); 
+    }
+  \filldraw   [white] (0,0) circle (1pt);
+\end{scope}
+\end{tikzpicture}

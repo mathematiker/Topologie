@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=3, >=triangle 90]
+\node [regular polygon, regular polygon sides = 3,name=dreieck,minimum size = 3cm,rotate=180,scale=2] at (0,0) {};
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+    \draw[postaction={decorate},green] (dreieck.side 1) -- (dreieck.corner 1);
+    \draw[postaction={decorate},green] (dreieck.side 1) -- (dreieck.corner 2);
+    \draw[postaction={decorate},blue] (dreieck.side 2) -- (dreieck.corner 2);
+    \draw[postaction={decorate},blue] (dreieck.side 2) -- (dreieck.corner 3);
+    \draw[postaction={decorate},red] (dreieck.side 3) -- (dreieck.corner 3);
+    \draw[postaction={decorate},red] (dreieck.side 3) -- (dreieck.corner 1);
+    \draw [-](dreieck.side 1) -- (dreieck.side 2);
+    \draw [-](dreieck.side 2) -- (dreieck.side 3);
+    \draw [-](dreieck.side 3) -- (dreieck.side 1);
+\end{scope}
+\draw  [->] (1,0) --  node [above] {$\varphi$} (2,0);
+\begin{scope}[very thick,xshift=3.5cm,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+
+    \draw (-1,0,1) -- (1,0,1) -- (0,1,0) -- cycle;
+    \draw[dotted](-1,0,1) -- (0,0,0) -- (1,0,1);
+    \draw[dotted](0,0,0) -- (0,1,0);
+    \draw[postaction={decorate},red] (-1,0,1) -- (0,1,0) ;
+    \draw[postaction={decorate},green] (1,0,1) -- (0,1,0) ;
+    \draw[postaction={decorate},dotted,blue] (0,0,0) -- (0,1,0) ;
+  
+\end{scope}
+\end{tikzpicture}

@@ -1,0 +1,10 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\node [regular polygon, regular polygon sides = 4,minimum size = 3cm,name=4eck] at (0,0) {};
+\begin{scope}
+\draw   (0,0) -- (1,1);
+\filldraw [red] (0,0) circle (1pt);
+\filldraw [blue] (1,1) circle (1pt);
+\draw  (0,0) node [anchor=north,red] {$p$}; 
+\draw  (1,1) node [anchor=south,blue] {$q$}; 
+\end{scope}
+\end{tikzpicture}
