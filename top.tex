@@ -10,7 +10,9 @@
 \usepackage{txfonts}
 \renewcommand{\bigsqcap}{\prod}
 \usepackage{tikz}
-\usetikzlibrary{arrows,patterns}
+\usetikzlibrary{arrows,patterns,matrix}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.markings}
 \usepackage{float}
 \usepackage[T1]{fontenc}
 \usepackage{stmaryrd}
@@ -177,7 +179,7 @@ Alle Eigenschaften von metrischen Räumen, ihren Teilmengen oder Abbildung zwisc
 
 Dies führt zu dem folgenden Begriff:
 \begin{df}
-Sei $ X $ eine Menge und $O \in \mathcal P (x)$ eine Menge von Teilmengen von X; $ O $ heißt eine \emph{Topologie} auf $ X $, wenn folgendes gilt:
+Sei $ X $ eine Menge und $O \subset \mathcal P (x)$ eine Menge von Teilmengen von X; $ O $ heißt eine \emph{Topologie} auf $ X $, wenn folgendes gilt:
 \begin{itemize}
 \item[(T1)] Beliebige Vereinigungen von Mengen in $ O $ liegen wieder in $O$.
 \item[(T2)] Die Schnittmenge von je zwei Mengen in $  O  $ liegt wieder in $O$.
@@ -261,7 +263,7 @@ Eine Abbildung, die jede konvergente Folge auf eine gegen das Bild des Limes kon
 Die Axiome eines topologischen Raums sind für sich alleine relativ schwach und lassen sehr viele Beispiele auch mit "`pathologischen"' Eigenschaften zu. Sie sind eher ein äußerer Begriffsrahmen. Um etwa Räume mit den von metrischen Räumen vertrauten Eigenschaften zu erhalten, muss man Zusatzannahmen machen.
 \begin{itemize}
   \item "`Hausdorffeigenschaft"' $\implies$ Eindeutigkeit des Limes
-  \item "`Abzählbarkeitsaxiome"' $\implies$ Äquivalenz von Stetigkeit und Folgendefinition
+  \item "`Abzählbarkeitsaxiome"' $\implies$ Äquivalenz von Stetigkeit und Folgenstetigkeit
 \end{itemize}
 \end{note}
 \subsection{Grundkonstruktionen}
@@ -279,7 +281,7 @@ Der so entstehende topologische Raum $ X+Y $ wird als topologische Summe von X u
 \end{df}
 \begin{note*}
 \begin{enumerate}[(i)]
-\item Analog definert man die Summen von beliebig (auch unendlich) vielen topologischer Räumen $\biguplus_{\alpha \in  A} X_\alpha=\bigsqcup_{\alpha\in A} X_\alpha$, widerum als offene Menge $\{\dot \bigcup_{\alpha\in A} U_\alpha | U_\alpha \text{ offen in } X_\alpha \}$ setzt.
+\item Analog definiert man die Summen von beliebig (auch unendlich) vielen topologischer Räumen $\biguplus_{\alpha \in  A} X_\alpha=\bigsqcup_{\alpha\in A} X_\alpha$, indem man wiederum als offene Mengen $\{\dot \bigcup_{\alpha\in A} U_\alpha | U_\alpha \text{ offen in } X_\alpha \}$ setzt.
 \item Für die disjunkte Verreinigung von Mengen $ X \dotcup Y $ ist auch die Schreibweise $X+Y:= X\times\{0\} \cup Y\times \{1\}$ üblich.  
 \end{enumerate}
 \end{note*}
@@ -333,14 +335,14 @@ ist auf einer Menge $ X $ eine Äquivalenzrelation $\sim$ gegeben, so liegt jede
 \[
  [x]:=\{y\in X|x\sim y\} \subset X
 \]
-und Äquivalenzklassen von zwei verschiedenen Elemente sind entweder disjunkt oder gleich; M zerfällt in die disjunkte Vereinigung der Äquivalenzklassen.  umgekehrt liefert eine Zerlegung einer Menge in disjunkte Teilmengen eine Äquivalenzrelation.
+und Äquivalenzklassen von zwei verschiedenen Elemente sind entweder disjunkt oder gleich; M zerfällt in die disjunkte Vereinigung der Äquivalenzklassen.  Umgekehrt liefert eine Zerlegung einer Menge in disjunkte Teilmengen eine Äquivalenzrelation.
 \end{note*}
 \begin{df}
 Sei X ein topologischer Raum und $\sim$ eine Äquivalenzrelation auf $ X $.  Sei $X/\sim$ die Menge der Äquivalenzklassen 
 \[
 X/\sim=\{[x]|x\in X\}
 \]
-und sei $ q: X\to X/\sim, x\mapsto [x] $ eine Teilmenge $ U $ von $ X/\sim $ ist genau dann offen bezüglich der \emph{Quotiententopologie} auf $ X/\sim $, wenn ihr Urbild $ q^{-1}(U) $ offen in X ist.
+und sei $ q: X\to X/\sim, x\mapsto [x] $. Eine Teilmenge $ U $ von $ X/\sim $ ist genau dann offen bezüglich der \emph{Quotiententopologie} auf $ X/\sim $, wenn ihr Urbild $ q^{-1}(U) $ offen in X ist.
 \end{df}
 
 \begin{ex*}
@@ -352,7 +354,7 @@ Sei $ X $ ein topologischer Raum und $ A\subset X $ ein Teilraum. Dann ist durch
 Sei X ein topologischer Raum. Betrachte $ X\times [0,1] $
 \begin{figure}[H]
 \centering
- \includegraphics[scale=0.6]{fig9.png}
+ \input{fig9}
 \caption{}
 \end{figure}
 Man erhält den Kegel $CX:=X\times[0,1]/X\times\{1\}$
@@ -362,17 +364,17 @@ Man erhält den Kegel $CX:=X\times[0,1]/X\times\{1\}$
 \item .
 \begin{figure}[H]
 \centering
- \includegraphics[scale=0.6]{fig10.png}
+ \input{fig10}
 \caption{}
 \end{figure}
 \item .
 \begin{figure}[H]
 \centering
- \includegraphics[scale=0.6]{fig11.png}
+ \input{fig11}
 \caption{}
 \end{figure}
 \end{enumerate}
-bei (b) handelt es sich nicht um Zusammenschlagen eines Teilraums zu einem Punkt, sondern gegenüberliegend Punkte in den beiden senkrecht "`Radintervalle"' werden identifiziert mit den Äquivalenzrelationen: \fixme[nachschauen]
+Bei (b) handelt es sich nicht um Zusammenschlagen eines Teilraums zu einem Punkt, sondern gegenüberliegende Punkte in den beiden senkrechten "`Randintervallen"' werden identifiziert mit der Äquivalenzrelation: \fixme[nachschauen]
 \[
 (x_1,x_2)\sim (y_1,y_2):\equiv (x_1,x_2)=(y_1,y_2)\lor (x_1,y_1 \in \{0,1\} \land x_2 =y_2)
 \]
@@ -381,7 +383,7 @@ bei (b) handelt es sich nicht um Zusammenschlagen eines Teilraums zu einem Punkt
 Eine weitere Möglichkeit aus gegebenen topologischen Räumen andere zu konstruieren, ist es, Topologien mit Hilfe von Abbildungen zu übertragen.
 \begin{df}\label{thm:2.5}
 \begin{enumerate}[(i)]
-\item Sei $ X $ ein topologischer Raum und $ X $ eine Menge.  Sei $ f: X\to Y$ eine Abbildung.  Dann ist durch:
+\item Sei $ X $ ein topologischer Raum und $ Y $ eine Menge.  Sei $ f: X\to Y$ eine Abbildung.  Dann ist durch:
 \[
 \{U\subset Y|f^{-1}(U) \text{ offen} \}
 \]
@@ -413,12 +415,12 @@ Allgemeiner definieren wir:
 \{U\subset Y|f^{-1}_i(U) \text{ offen in }X_i \text{ \emph{für alle} } i\in I\}
 \]
 $(T1) U_1, U_2\in O$ zeige: $U_1\cup U_2\in O$
-\[f^{-1}(U_1\cup U_2)=\underbrace{f^{-1}_i(U_1)}_{\text{offen in } X_i}\cup \underbrace{f^{-1}_i(U_2)}_{\text{offen in } X_i}\]
+\[f^{-1}_i(U_1\cup U_2)=\underbrace{f^{-1}_i(U_1)}_{\text{offen in } X_i}\cup \underbrace{f^{-1}_i(U_2)}_{\text{offen in } X_i}\]
 \item Seien $ Y_i, i\in I $, topologische Räume und $ X $ eine Menge.  Seien $ f_i: X\to Y_i $ Abbildungen.  Die gröbste Topologie auf $ X $, die alle $f_i$ stetig macht, ist die \emph{initiale Topologie} bezüglich $f_i$. 
 \end{enumerate}
 \end{seg}
 \begin{ex*}
-Die Produkttopologie auf $ X\times Y $ ist initiale Topologie bezüglich der bei den kanonischen Projektionen
+Die Produkttopologie auf $ X\times Y $ ist initiale Topologie bezüglich der beiden kanonischen Projektionen
 \[
 \pi_X:X\times Y \to X, (x,y)\mapsto x \text{ und } \pi_Y: X\times Y\to Y, (x,y)\mapsto y 
 \]
@@ -435,10 +437,10 @@ Die in (iv) definierte Topologie ist also durch
 \mathcal T(\bigcup\limits_{i\in I} \{ {f_i}^{-1}(U)|U \text{ offen in } Y_i\} )
 \]
 gegeben.
-\begin{ex}\label{thm:2.6} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ als die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=R/\sim $ mit der Quotiententopologie versehen. Wir \emph{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, dem Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. 
+\begin{ex}\label{thm:2.6} Sei $ \R $ mit Standardtopologie versehen. Wir definieren eine Äquivalenzklasse $ [x] $ einer reellen Zahl $ x $ als die Menge $x+\Z=\{x+k|k\in \Z\}$. Sei $ X=\R/\sim $ mit der Quotiententopologie versehen. Wir \emph{behaupten}: $ X $ ist homöomorph zu $ Y:=\{v\in \R^2|\, ||v||=1\} $, dem Einheitskreis in $ \R^2 $, mit der Teilraumtopologie versehen. 
 \begin{figure}[H]
 \centering
- \fixme[fig12]
+\input{fig12}
 \caption{}
 \end{figure}
 \begin{proof}
@@ -494,7 +496,7 @@ Ein Raum, der nicht Hausdorffsch ist, scheint mit unserer Intuition unvereinbar 
 Die Gerade mit einem Doppelpunkt. Sei $ X=\R+\R=\R\times \{0\}\cup \R\times \{1\} $. Definiere man $ (x,n)\sim (y,m)\stackrel{\text{def}}{\iff} x=y\neq 0 $. \\
 \begin{figure}[H]
 \centering
- \fixme[fig16]
+ \input{fig16}
 \caption{}
 \end{figure}
 $ \R $ besitzt unter Betrachtung dieser Relation doppelt vorhandene Nullpunkte.
@@ -524,7 +526,6 @@ In einem Hausdorffraum gilt:
 \item Das Komplement einer einelementigen Menge ist offen, denn nach der Hausdorffeigenschaft gibt es um jeden ihrer Punkte eine Umgebung, die insbesondere p nicht enthält.
 \end{enumerate}
 \end{proof}
-\fixme[fig18]
 \begin{note*}
 Dies liefert eine notwendige Bedingung dafür, dass eine Quotiententopologie Hausdorffsch ist.  Alle Äquivalenzklassen müssen abgeschlossen sein.
 \end{note*}
@@ -534,7 +535,7 @@ Ein topologischer Raum heißt \emph{zusammmenhängend}, wenn er sich nicht in zw
 \end{df}
 \begin{figure}[H]
 \centering
- \fixme[fig19]
+  \input{fig19}
 \caption{}
 \end{figure}
 \begin{note*}
@@ -550,7 +551,7 @@ Ein topologischer Raum heißt \emph{zusammmenhängend}, wenn er sich nicht in zw
 \item Die Menge $ \{0,1\} \subset \R$ mit der Teilraumtopologie ist nicht zusammenhängend.
 \item Ein Intervall $ I $ ist zusammenhängend: 
 \begin{proof}
-Angenommen $I=A\dotcup B$, beide $ A $ und $ B $ offen und abgeschlossen (in der Teilraumtopologie, durch $ I\subset \R $ induziert) Seien $ a\in A, b\in B $, wobei $ a<b $ ohne Einschränkung. Defniere $ s:=\inf\{x\in B|a<x\}$. Dann liegt in jeder Umgebung von $ s $ ein Punkt aus $ B $ (nach Definition des Infimums). Es gilt entweder $ s=a $ oder $ s>a $. Im ersten Fall kann $ s $ kein innerer Punkt von $ A $ sein, im zweiten Fall liegt das Intervall $ (a,s) $ ganz in $ A $ und $ s $ kann weder von $ A $ noch von $ B $ ein innerer Punkt sein. Dies führt letztlich zum Widerspruch.
+Angenommen $I=A\dotcup B$, beide $ A $ und $ B $ offen und abgeschlossen (in der Teilraumtopologie, durch $ I\subset \R $ induziert). Seien $ a\in A, b\in B $, wobei $ a<b $ ohne Einschränkung. Definiere $ s:=\inf\{x\in B|a<x\}$. Dann liegt in jeder Umgebung von $ s $ ein Punkt aus $ B $ (nach Definition des Infimums). Es gilt entweder $ s=a $ oder $ s>a $. Im ersten Fall kann $ s $ kein innerer Punkt von $ A $ sein, im zweiten Fall liegt das Intervall $ (a,s) $ ganz in $ A $ und $ s $ kann weder von $ A $ noch von $ B $ ein innerer Punkt sein. Dies führt letztlich zum Widerspruch.
 \end{proof}
 \end{enumerate}
 \end{exs*}
@@ -562,7 +563,7 @@ Ein topologischer Raum heißt \emph{wegzusammenhängend}, wenn es zu je zwei Pun
 $ \R^n $ ist wegzusammenhängend, in der Tat, benutze man zum Beispiel $ c(t)=(1-t)p+tq $.
 \begin{figure}[H]
 \centering
- \fixme[fig20]
+ \input{fig20}
 \caption{}
 \end{figure}
 \end{ex*}
@@ -573,7 +574,7 @@ Ein wegzusammenhängender topologischer Raum ist zusammenhängend.
 Angenommen $ X=A\dotcup B $, wobei $ A $ und $ B $ beide offen und nichtleer.  Sei $ p\in A $ und $ q\in B $ und $ c $ ein Weg zwischen p und q. 
 \begin{figure}[H]
 \centering
- \fixme[fig21]
+ \input{fig21}
 \caption{}
 \end{figure}
 Dann wäre $[0,1]=c^{-1}(A)\dotcup c^{-1}(B)$ eine Zerlegung in zwei disjunkte, nichtleere offene Mengen.
@@ -703,7 +704,7 @@ Die kanonische Projektionenen sind nämlich stetig: Sei $\alpha \in A$. Das Urbi
  \end{itemize}
 \end{note*}
 \begin{df}
- Sei $(X,O)$ ein topologischer Raum. Eine Familie $\mathcal U$ von Umgebungen von $p$ heißt \emph{Umgebungsbasis} von $p$, wenn jede Umgebung von $p$ eine Umgebung aus U enthält.
+ Sei $(X,O)$ ein topologischer Raum. Eine Familie $\mathcal U$ von Umgebungen von $p$ heißt \emph{Umgebungsbasis} von $p$, wenn jede Umgebung von $p$ eine Umgebung aus $\mathcal U$ enthält.
 \begin{figure}[H]
 \centering
  \fixme[fig25]
@@ -729,8 +730,8 @@ Eine Familie von Teilmengen heißt
  \item \emph{Subbasis}, wenn endliche Schnitte eine Basis bilden.
  \item \emph{Abzählbarkeitsaxiome}
  \begin{itemize}
-\item \emph{Erstes Abzählbarkeitsaxiom}: Um jeden Punkt gibt es ein abzählbare \emph{Umgebungsbasis} (Umgebungsbasis von $p\in X$: eine Familie von Umgebungen $U$
-, so dass jede Umgebung von p eine Menge aus $U$ enthält.)
+\item \emph{Erstes Abzählbarkeitsaxiom}: Um jeden Punkt gibt es ein abzählbare \emph{Umgebungsbasis} (Umgebungsbasis von $p\in X$: eine Familie von Umgebungen $\mathcal U$
+, so dass jede Umgebung von p eine Menge aus $\mathcal U$ enthält.)
 \item \emph{Zweites Abzählbarkeitsaxiom}: Der Raum besitzt eine abzählbare Basis
 \end{itemize}
 \end{itemize}
@@ -748,7 +749,7 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
   \item Sei $\mathcal B$ eine abzählbare Basis der Topologie und $p\in X$ ein beliebiger Punkt. Setze $\mathcal U:=\{U\in \mathcal{B} |p\in U\}$. Sei nun $V$ eine Umgebung von $p$, dann enthält $V$ eine offene Menge $Q$ mit $p\in Q$. Aber $Q$ ist eine Vereinigung von Mengen in $\mathcal B$, also gibt es eine Menge $U\in \mathcal U$ mit  $U \subset V$. Damit ist $ \mathcal U $ eine abzählbare Umgebungsbasis von $p$.
 \item \begin{seg}{„$\implies$“} bereits gezeigt in \ref{thm:1.17} \end{seg}
 
-\begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$. Sei $\mathcal U=\{U_1,U_2,U_3,\dotsc  \}$ eine abzählbare Umgebungsbasis von $x$. Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2,\cap U_3,\dotsc  $ Umgebungen von $x$. Nach Annahme gibt es in jeder dieser Mengen $U_1\cap\dotsb \cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
+\begin{seg}{„$\Longleftarrow$“} Sei nun $f:X\to Y$ folgenstetig und gelte in $X$ das erste Abzählbarkeitsaxiom. Angenommen, f wäre \emph{nicht} stetig in einem Punkt $x\in X$. Dann gibt es eine Umgebung $U$ von $f(x)$, zu der es \emph{keine} Umgebung $V$ von $x$ gibt mit $f(V)\subset U$. Sei $\mathcal U=\{U_1,U_2,U_3,\dotsc  \}$ eine abzählbare Umgebungsbasis von $x$. Die Mengen $U_1, U_1\cap U_2$, $U_1\cap U_2 \cap U_3,\dotsc  $ Umgebungen von $x$. Nach Annahme gibt es in jeder dieser Mengen $U_1\cap\dotsb \cap U_k$ einen Punkt $x_n$, so dass $f(x_n)$ außerhalb von U liegt. Die Folge $x_n$ konvergiert gegen $x$, die Folge $f(x_n)$ aber \emph{nicht} gegen f(x).
 \end{seg}
 \end{enumerate}
 \end{proof}
@@ -779,10 +780,10 @@ Der folgende Satz gibt eine Antwort auf die Frage, wie die beiden Abzählbarkeit
  Jede kompakte Teilmenge eines metrischen Raumes ist beschränkt und abgeschlossen (Umkehrung gilt im Allgemeinen nicht).
 \end{st}
 \begin{proof}
- \begin{seg}{Beschränktheit}
+ \begin{seg}{Beschränktheit:}
   Für einen beliebigen Punkt $x$ bildet $B_k(x)\cap A, k \in \N$, eine offene Überdeckung von $A$, da es eine endliche Teilüberdeckung gibt, ist der Abstand von x durch eine natürliche Zahl beschränkt.
  \end{seg}
-\begin{seg}{Abgeschlossen}
+\begin{seg}{Abgeschlossenheit:}
  Sei $A\subset X$ kompakt und sei $x\in X\setminus A$. Es gilt:
 \[
  U_\eps:=(X\setminus\bar{B_\eps(x)})\cap A, \eps>0 := \{ y\in A|d(x,y) > \eps\}
@@ -907,7 +908,7 @@ Denn jedes $x$ liegt in einem $U_\alpha$. Da die $O_n$ eine Basis bilden ist $U_
  Sei $X$ ein Raum mit abzählbarer Basis.
 \begin{enumerate}[(i)]
  \item Sei $X$ kompakt und $x_n$ eine Folge ohne konvergente Teilfolge. Nach \ref{thm:1.6.12} gibt es zu jedem $p\in X$ eine Umgebung $U_p$ mit $x_n\in U_p$ nur für endlich viele Indizes $n$. Die $U_p$ bilden eine Überdeckung. Wegen der Kompaktheit gibt es endlich viele Mengen $U_{p_1}, \dotsc, U_{p_k}$ die $X$ überdecken. Insgesamt ist $x_n\in U_{p_1}\cup \dotsb \cup U_{p_k}=X$ nur für endlich viele Indizes. Dies ergibt den Widerspruch.
- \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, \dotsc  $ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für alle $n \in \N$, dass heißt es gibt $x_n\in X\setminus(U_1\cup\dotsb \cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_n \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
+ \item Sei $X$ folgenkompakt und eine offene Überdeckung vorgegeben. Nach \ref{thm:6.12} enthält sie eine abzählbare Teilüberdeckung, etwa $U_1, U_2, \dotsc  $ Können wir aus dieser keine endliche Teilüberdeckung auswählen, dann gilt $X\neq \bigcup_{k=1}^nU_k$ für alle $n \in \N$, dass heißt es gibt $x_n\in X\setminus(U_1\cup\dotsb \cup U_n)$. Wegen Folgenkompaktheit hat $x_n$ eine konvergente Teilfolge $x_{n_k} \to x$ und $x\in U_m$ für ein $m\in \N$. Dann gilt $x_{n_k}\in U_m$ für alle $k$ ab einer Schranke. Dies ergibt den Widerspruch.
 \end{enumerate}
 \end{seg}
 \begin{note*}
@@ -958,17 +959,17 @@ Mannigfaltigkeiten sind Räume, die im Kleinen dem Euklidischen Raum $\R^n$ ähn
   \item Muss lokal aussehen wie $\R^n$. Keine topologische Mannigfaltigkeit sind.
 \begin{figure}[H]
 \centering
- \fixme[fig32]
+ \input{fig32}
 \caption{}
 \end{figure}
 \item Im Gegensatz zu Untermannigfaltigkeit hat man keine „Glattheitsbedingung“ so ist zum Beispiel ein Quadrat im $\R^2$ eine topologische Mannigfaltigkeit.
  \end{enumerate}
 \end{note*}
 Es gilt: Die Summe zweier n-dimensionaler topologische Mannigfaltigkeiten ist wieder eine $n$-dimensionale topologische Mannigfaltigkeit. Das Produkt einer $n-$dimensionalen und einer $m$-dimensionalen topologischen Mannigfaltigkeit ist eine $(n+m)$-dimensionale topologische Mannigfaltigkeit.  Offene Teilmengen von $n-$dimensionalen topologischen Mannigfaltigkeiten sind $n$-dimensionale topologische Mannigfaltigkeiten. Für Quotienten von topologischen Mannigfaltigkeit ist die Frage, ob sie wieder topologische Mannigfaltigkeiten sind, kompliziert.
-Zum Beispiel Gerade mit Doppelpunkt
+Zum Beispiel:
 \begin{figure}[H]
 \centering
- \fixme[fig33]
+ \input{fig33}
 \caption{}
 \end{figure}
 Ein Summe von zwei $n$-dimensionalen topologischen Mannigfaltigkeiten ist wieder eine $n$-dimensionale topologische Mannigfaltigeit, das Produkt einer $n$-dimensionalen Mannigfaltigkeit mit einer $m$-dimensionalen Mannigfaltigkeit ist eine $(n+ m)$-dimensionale topologische Mannigfaltigkeit und außerdem sind offene Teilmengen von $n$-dimensionalen topologische Mannigfaltigkeiten wieder $n$-dimensionale topologische Mannigfaltigkeiten.  
@@ -1016,7 +1017,7 @@ Noch zu zeigen sind.
  \begin{enumerate}[(i)]
   \item $M=S^n, \Gamma=\{\pm \id_{S^n}\}, -\id_{S^n}: S^n\to S^n, x\mapsto -x$, die Antipodenabbildung. Da $-\id$ keine Fixpunkte 
 auf $S^n$ hat, operiert $\Gamma$ fixpunktfrei auf $S^n$ und $\R P^n := S^n/\{\pm \id\}$ ist eine $n$-dimensionale topologische Mannigfaltigkeit,
- der sogenannte \emph{reell-projektive} Raum der Dimension n. Wir aben bereits gesehen, dass $\R P^1$ homöomorph zu $S^1$ ist, aber für $n \geq 2$ ist $\R P^n$ \emph{nicht} homöomorph zu $S^n$ (Beweis später). Es gibt mehrere Möglichkeiten, den $\R P^n$ (auch $P^n \R, P^n(\R), \dotsc$) zu definieren:
+ der sogenannte \emph{reell-projektive} Raum der Dimension n. Wir haben bereits gesehen, dass $\R P^1$ homöomorph zu $S^1$ ist, aber für $n \geq 2$ ist $\R P^n$ \emph{nicht} homöomorph zu $S^n$ (Beweis später). Es gibt mehrere Möglichkeiten, den $\R P^n$ (auch $P^n \R, P^n(\R), \dotsc$) zu definieren:
 \begin{enumerate}[(i)]
 \item $\R P^n=S^n/\{\pm\id\}$ 
 \item Als Menge der Geraden in $\R^{n+1}$ durch den Ursprung.
@@ -1062,10 +1063,10 @@ Jeder $\eps$-Ball in $\R^n$ ist wegzusammenhängend, also gibt es um jeden Punkt
 \caption{}
 \end{figure}
 \begin{proof}
- Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0)))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup \dotsb \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.
+ Zu jedem Punkt $p\in M$ gibt es einen Homöomorphismus $\phi_p: U_p\to B_2(0) \subset \R^n$ von einer offenen Teilmenge $U_p\ni p$ auf dem offenen $2-$Ball um die Null in $\R^n$. Sei $V_p=\phi_p^{-1}(B_1(0))$. Endlich viele der $V_p$ überdecken $M$, etwa $V_1 \cup \dotsb \cup V_r=M, V_i=V_{p_i}$. Setze $\phi_i:=\phi_{p_i}, U_i=U_{p_i}$. Sei $\lambda:[0,2)\to \R$ eine stetige Funktion mit $\lambda|_{[0,1]}=1$ und $\lambda(x)=0$ für $x>1,5$.
 \begin{figure}[H]
 \centering
- \fixme[fig37]
+ \input{fig37}
 \caption{}
 \end{figure}
 Setze $\tilde \lambda(x)=\lambda(||x||)$ für $x\in B_2(0)$\\
@@ -1086,7 +1087,7 @@ Sei nun
 \[
  \lambda_i: M \to \R, \lambda_i(x):=\begin{cases} \tilde \lambda_i(x)&, x\in U_i\\ 0 &,x \notin U_i \end{cases}
 \]
-(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ stetig ist und $M\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$ offen ist. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$ stetig.  Nun können wir den gesuchten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} , \psi(x)=(\psi_1(x),\dotsc  , \psi_r(x), \lambda_1(x),\dotsc  , \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, dann wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,\dotsc  , r\}$ mit $x\in V_i \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)= \phi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bijektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
+(dass heißt die Forsetzung von $\tilde\lambda_i$ durch $0$ auf ganz $M$). Dann ist $\lambda_i$ stetig, da die Einschränkung von $\lambda_i$ auf die offenen Mengen $U_i$ stetig ist und $M\setminus \underbrace{\phi_i^{-1}(\overline{B_{1,5}(0)})}_{\text{kompakt}}$ offen ist. Definiere $\psi_i: M\to \R^n$ durch $\psi_i(x):= \lambda_i(x)\cdot \phi_i(x)$. Dann ist $\psi_i$ auf ganz $M$ stetig.  Nun können wir den gesuchten Homöomorphismus hinschreiben, definiere $\psi: M\to \R^{r\cdot n+r} , \psi(x)=(\psi_1(x),\dotsc  , \psi_r(x), \lambda_1(x),\dotsc  , \lambda_r(x))$. Die so definierte Abbildung ist offensichtlich stetig, aber auch injektiv, denn wenn $\psi(x)=\psi(y)$ für $x,y\in M$ gibt es $i\in \{1,\dotsc  , r\}$ mit $x\in V_i \implies \lambda_i(x)=1 \implies \lambda_i(y)=1 \implies y \in U_i$. Dann gilt $\phi_i(x)=1\cdot \phi_i(x)=\psi_i(x)=\psi_i(y)=1\cdot \phi_i(y)= \phi_i(y)$, aber $\phi_i$ ist injektiv, also folgt $x=y$. Die Abbildung $\psi$ ist also eine stetige Bijektion von der kompakten Mannigfaltigkeit M auf ihr Bild $\psi(M)$ somit nach Korollar \ref{thm:6.8} ein Homöomorphismus.
 \end{proof}
 \subsection{Homotopie}
 Homotopie ist die Präzisierung der geometrische Idee von der stetigen Deformation einer Abbildung in eine andere.
@@ -1127,7 +1128,7 @@ $\simeq$ ist eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \e
 \end{enumerate}
 \end{exs*}
 \begin{df}
- Eine stetige Abbildung zwischen topologischen Räume heißt \emph{nullhomotop}, wenn sie zu einer konstanten Abbildung homotop ist. 
+ Eine stetige Abbildung zwischen topologischen Räumen heißt \emph{nullhomotop}, wenn sie zu einer konstanten Abbildung homotop ist. 
 \end{df}
 \begin{figure}[H]
 \centering
@@ -1142,21 +1143,21 @@ $\simeq$ ist eine Äquivalenzrelation, die Äquivalenzklassen $[X,Y]$ heißen \e
 \end{st}
 \begin{proof}
  \begin{seg}{"`$\Longleftarrow$"'}
-  Sei $f: \overline{B_1(0)}\to X$ stetig. Definiere die gesuchte Abbildung durch $h(x,t)=f((1-t)x)$.
+  Sei $f: \overline{B_{1}^{n+1}(0)}\to X$ stetig. Definiere die gesuchte Abbildung durch $h(x,t)=f((1-t)x)$.
  \end{seg}
  
 \begin{seg}{"`$\implies$"'}
  Sei $h$ eine Homotopie mit $h(\cdot, 0)=f(\cdot)$, mit $f:S^n \to X$ und $h(\cdot, 1)=\const.$
 \begin{figure}[H]
 \centering
- \fixme[fig42]
+  \input{fig42}
 \caption{}
 \end{figure}
 Wir betrachten $S^n\times[0,1]$ mit der Äquivalenzrelation $(p,t)\sim (q,s) :\iff (p=q \land t=s) \lor t=s=1$. Dann ist $S^n\times[0,1]/\sim$ homöomorph zu $\overline{B_1^{n+1}(0)}$. Sei $\phi ((p,t)):S^n\times[0,1]\to \overline{B_1^{n+1}(0)}$ mit $(p,t)\mapsto (1-t)\cdot p$, dann ist $\bar \phi: S^n \times[0,1]/\sim \to \overline{B_1^{n+1}(0)}, \bar \phi([(p,t)])=\phi((p,t))$ wohldefiniert, bijektiv und stetig. (Denn $\phi$ ist stetig, $S^n\times [0,1]/\sim$ trägt die Quotiententopologie, $\phi=\bar \phi \circ q $, $q$ die Quotientenabbildung\\
 \begin{center}
 \makebox{
 \begin{xy}
- (0,0)*+{S^n\times [0,1]}; (40,0)*+{\overline{B_1(0)}}; (20, -20)*+{S^n\times [0,1]/\sim};
+ (0,0)*+{S^n\times [0,1]}; (40,0)*+{\overline{B_{1}^{n+1}(0)}}; (20, -20)*+{S^n\times [0,1]/\sim};
 {\ar (10,0)*+{}; (30,0)*+{}}?*!/_2mm/{ \phi};
 {\ar (30,-20)*+{}; (40,-1)*+{} }?*!/_2mm/{\bar \phi};
 {\ar (0,-1)*+{}; (10,-20)*+{}}?*!/^6mm/{ q};
@@ -1177,14 +1178,14 @@ Räume heißen \emph{homotopieäquivalent} oder vom gleichen \emph{Homotopietyp}
   \item Eine Teilmenge $K\subset \R^n$ heißt \emph{sternförmig bezüglich} $x_0 \in K$, wenn die Verbindungsstrecke von $x_0$ zu jedem beliebigen Punkt $x\in K$ enthalten ist.\\
 \begin{figure}[H]
 \centering
- \fixme[fig44]
+ \fixme [fig43]
 \caption{}
 \end{figure}
 Sternförmige Mengen sind nullhomotop, denn durch $h: K\times I \to K, (x,t) \mapsto (1-t)x+tx_0$ ist $\id_K$ zu einer konstanten Abbildung homotop. (Allgemein gilt: Ein Raum $X$ ist zusammenziehbar, wenn $\id_X$ nullhomotop ist vgl. 1. )
 \item $S^n$ ist homotopieäquivalent zu $\R^{n+1}\setminus\{0\}$ die Inklusionsabbildung $i: S^n\to \R^{n+1}\setminus\{0\}$ ist eine Homotopieäquivalenz:
 \begin{figure}[H]
 \centering
- \fixme[fig45]
+ \input{fig44}
 \caption{}
 \end{figure}
 Denn $n: \R^{n+1}\setminus\{0\} \to S^n, n(x)=\frac{x}{||x||}$ ist das Homotopieinverse zu $i$, durch $h(x,t):=(1-t)n(x)+tx$ ist eine Homotopie von $i\circ n$ zu $\id_{R^{n+1}\setminus \{0\}}$ gegeben.
@@ -1203,7 +1204,7 @@ Eine Deformationsretraktion, so dass die Homotopie $h$ von $\rho$ nach $\id_X$ m
 \begin{itemize}
  \item \emph{Homotopieäquivalenz} $X\simeq Y: \exists f: X\to Y, g: Y\to X, f\circ g \simeq \id_Y, g\circ f \simeq \id_X$
  \item \emph{(Deformations-)Retrakt}:\\
-$A\subset X$ heißt \emph{Retrakt}: $\exists f: X\to A$ stetig.
+$A\subset X$ heißt \emph{Retrakt}: $\exists f: X\to A, f\vline_A=\id_A$ stetig.
 \begin{itemize}
 \item \emph{Deformationsretrakt}: $\exists f: X\to A$ homotop zu $\id_X$
 \item \emph{starker Deformationsretrakt}: die Homotopie kann so gewählt werden, dass alle Punkte in $A$ während der Deformation fix bleiben.
@@ -1224,7 +1225,6 @@ $A$ und $A'$ sind starke Reformationsretrakte von $X$:
  \item 
 \begin{seg}{Morsetheorie} 
 $M$ differenzierbare Mannigfaltigkeit, $f$ eine differenzierbare Funktion auf $M$. Betrachte Subniveaus $M_a=\{x\in M|f(x)\le a\}$ für $a\in \R$.
-Betrachte Subniveaus $M_a=\{x\in M|f(x)\le a\}$ für $a\in \R$.
  \begin{figure}[H]
 \centering
  \fixme[fig47]
@@ -1271,9 +1271,9 @@ die Menge aller stetigen Wege in $X$ von $x_0$ nach $x_1$.
 \end{figure}
 Die Menge $\Omega(X; x_0):=\Omega(X; x_0, x_0)$ bezeichnen wir als die Menge aller \emph{Schleifen} mit \emph{Basispunkt} $x_0$.
 \end{df}
-\begin{df} Für $\omega\in \Omega(X; x_0, x_1)$ und $\nu\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega*\nu$ definiert durch:
+\begin{df} Für $\omega\in \Omega(X; x_0, x_1)$ und $\eta\in \Omega(X; x_1, x_2)$ sei das \emph{Produkt} $\omega*\eta$ definiert durch:
  \[
-  \omega*\nu(t):=\begin{cases} \omega(2t) &\text{ falls } t\in[0,\frac{1}{2})\\ \nu(2t-1) &\text{ falls } t\in[\frac{1}{2}, 1] \end{cases}
+  \omega*\eta(t):=\begin{cases} \omega(2t) &\text{ falls } t\in[0,\frac{1}{2})\\ \eta(2t-1) &\text{ falls } t\in[\frac{1}{2}, 1] \end{cases}
  \]
 \begin{figure}[H]
 \centering
@@ -1288,18 +1288,18 @@ Wir wollen auf dem Raum der Schleifen $\Omega(X; x_0)$ eine Äquivalenzrelation 
  \fixme[fig50]
 \caption{}
 \end{figure}
- Seien $\omega, \nu \in \Omega(X; x_0, x_1)$. Eine \emph{Homotopie mit festen Endpunkten} von $\omega$ nach $\nu$ ist eine stetige Abbildung
+ Seien $\omega, \eta \in \Omega(X; x_0, x_1)$. Eine \emph{Homotopie mit festen Endpunkten} von $\omega$ nach $\eta$ ist eine stetige Abbildung
 \[
  H: [0,1]\times [0,1] \to X,
 \]
 so dass gilt: 
 \begin{align*}
  H(t,0)=\omega(t)&, H(0,s)=x_0\\
- H(t,1)=\nu(t)&, H(1,s)=x_1
+ H(t,1)=\eta(t)&, H(1,s)=x_1
 \end{align*}
 \end{df}
 \begin{lem}
- Die Relation $\omega\sim \nu:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\nu$) ist eine Äquivalenzrelation.
+ Die Relation $\omega\sim \eta:\iff$ (es gibt eine Homotopie mit festen Endpunkten von $\omega$ nach $\eta$) ist eine Äquivalenzrelation.
 \end{lem}
 \begin{proof}
  Ist derselbe wie für Homotopie von stetigen Abbildung.
@@ -1308,10 +1308,10 @@ so dass gilt:
  Es gilt in $\Omega(X;x_0),$ wobei wir mit $\epsilon$ die \emph{konstante Schleife} 
 $\epsilon(t)=x_0 \forall_{t\in [0,1]}$ bezeichnen.
 \begin{enumerate}[(i)]
- \item $\omega \sim \omega' \land \nu \sim \nu' \implies \omega *\nu \sim \omega'\times \nu'$
+ \item $\omega \sim \omega' \land \eta \sim \eta' \implies \omega *\eta \sim \omega' * \eta'$
   \item $\epsilon * \omega \sim \omega \sim \omega* \epsilon$ 
 \item $\omega * \omega^{-1} \sim \epsilon \sim \omega^{-1}*\omega$
- \item $(\omega * \nu)*\xi \sim \omega*(\nu * \xi)$
+ \item $(\omega * \eta)*\xi \sim \omega*(\eta * \xi)$
 \end{enumerate}
 und wobei wir mit $\omega^{-1}$ den inversen Weg $t\mapsto \omega(1-t)$ bezeichnen.
 \end{lem}
@@ -1346,7 +1346,7 @@ Wir wollen anhand von Skizzen andeuten wie die Homotopien zu wählen sind.
 \end{enumerate}
 \end{proof}
 \begin{note*}[Explizit für (i)]
-Sei $f$ die Homotopie zwischen $\omega$ und $\omega'$ und $g$ die Homotopie zwischen $\nu$ und $ \nu'$. Definiere:
+Sei $f$ die Homotopie zwischen $\omega$ und $\omega'$ und $g$ die Homotopie zwischen $\eta$ und $ \eta'$. Definiere:
 \[
  H:[0,1]\times[0,1]\to X
 \]
@@ -1360,7 +1360,7 @@ Sei $f$ die Homotopie zwischen $\omega$ und $\omega'$ und $g$ die Homotopie zwis
 \end{df}
 Sei:
 \[
- \pi_1(X;x_0):= \Omega(X;X_0)/\sim 
+ \pi_1(X;x_0):= \Omega(X;x_0)/\sim 
 \]
 wobei $\Omega(X;x_0)$ Schleifen mit Basispunkt $x_0$ und $\sim$ die Homotopie mit festen Endpunkten darstellt.\\
 \setcounter{figure}{55} %%% entfernen wenn alle grafiken hochgestellt
@@ -1370,17 +1370,17 @@ wobei $\Omega(X;x_0)$ Schleifen mit Basispunkt $x_0$ und $\sim$ die Homotopie mi
 \caption{}
 \end{figure}
 Sei $\epsilon$ konstante Schleife $[0,1]\to \{x_0\}$.
-Es gilt: $[\omega]=[\omega']$, $[\omega]\neq [\epsilon]$, $[\alpha]\neq [\beta]\neq [\omega], [\alpha]=[\epsilon]$
+Es gilt: $\textcolor {red} {[\omega]}=\textcolor {yellow} {[\omega']}$, $\textcolor {red} {[\omega]}\neq [\epsilon]$, $\textcolor {blue} {[\alpha]}\neq \textcolor {green} {[\beta]}\neq \textcolor {red} {[\omega]}, \textcolor {blue} {[\alpha]}=[\epsilon]$
 \begin{st}
- Das Produkt von Schleifen $(\omega, \nu) \mapsto \omega * \nu$ induziert ein Produkt auf $\pi_1(X;x_0)$. Für 
+ Das Produkt von Schleifen $(\omega, \eta) \mapsto \omega * \eta$ induziert ein Produkt auf $\pi_1(X;x_0)$. Für 
 eine Schleife $\omega \in \Omega(X;x_0)$ bezeichne $[\omega] \in \pi_1(X; x_0)$ ihre Homotopieklasse mit festen Endpunkten. Mit diesem Produkt ist $\pi_1(X;x_0)$ eine Gruppe
 \end{st}
 \begin{proof}
- Seien $\omega, \nu \in \Omega(X; x_0)$. Setze 
+ Seien $\omega, \eta \in \Omega(X; x_0)$. Setze 
 \[
- [\omega] \cdot [\nu]:=[\omega*\nu]
+ [\omega] \cdot [\eta]:=[\omega*\eta]
 \]
-Dies ist wohldefiniert, denn nach Lemma \ref{thm:2.1.5} (i) gilt $\omega \sim \omega' \land \nu \sim \nu' \implies \omega * \nu \sim \omega' * \nu'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich wohldefiniert, denn $\omega \sim \omega' \implies \omega^{-1}\sim (\omega')^{-1}$. Die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm:2.1.5} (ii) (iii): $\omega*\omega^{-1}\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm:2.1.5} liefert die Assoziativität der Verknüpfung. 
+Dies ist wohldefiniert, denn nach Lemma \ref{thm:2.1.5} (i) gilt $\omega \sim \omega' \land \eta \sim \eta' \implies \omega * \eta \sim \omega' * \eta'$. Setze weiter $[\omega]^{-1}:=[\omega^{-1}]$, dies ist offensichtlich wohldefiniert, denn $\omega \sim \omega' \implies \omega^{-1}\sim (\omega')^{-1}$. Die Homotopie zwischen $\omega$ und $\omega'$ und $\omega'$ lässt sofort zu einer zwischen den umgekehrt durchlaufenen Schleifen abwandeln. Weiter gilt nach Lemma \ref{thm:2.1.5} (ii) (iii): $\omega*\omega^{-1}\sim \epsilon \sim \omega^{-1}*\omega$ und $\epsilon*\omega\sim \omega \sim \omega*\epsilon$, dies zeigt auch, dass $[\epsilon]$ ein neutrales Element der Multiplikation ist. Teil (iv) von Lemma \ref{thm:2.1.5} liefert die Assoziativität der Verknüpfung. 
 \end{proof}
 Die so definierte Gruppe $\pi_1(X;x_0)$ ist im Allgemeinen nicht abelsch, wie wir später sehen werden. Die Menge $\Omega(X;x_0)$ bildet \emph{keine} Gruppe mit der Verknüpfung $*$, denn zum Beispiel $\omega*\omega^{-1}\neq \epsilon$, wenn $\omega$ nicht konstant ist.
 \begin{exs*}
@@ -1435,7 +1435,7 @@ Wir werden diesen Beweis später genauer und allgemeiner im Rahmen der Überlage
 \caption{}
 \end{figure}
 \end{proof}
-Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<\dotsb <t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \cdot \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
+Wir wollen $\omega$ zu einer Abbildung $\hat\omega$ "`hochheben"' ("`liften"'). Lokal hat $p: \R  \to S^1$ eine Umkehrung (die Argumentfunktion), die aber nicht auf ganz $S^1$ stetig definierbar ist. Sei nun $\omega: [0,1]\to S^1$ eine Schleife, mit $\omega(0)=\omega(1)=1$. Wegen der gleichmäßigen Stetigkeit gibt es eine Unterteilung $0=t_0<t_1<\dotsb <t_k=1$ von $[0,1]$, so dass sich  die Argumentfunktion auf jeden $\omega([t_i, t_{i+1}])$ stetig definieren lässt. Dies liefert einen \emph{Lift} von $\omega$, dass heißt eine Abbildung $\hat \omega: [0,1]\to \R$ mit $p \circ \hat \omega=\omega$. Dieser Lift ist eindeutig(!) bestimmt bis auf die Wahl des Anfangswerts $\hat \omega(0) \in \Z$. Wähle $\hat \omega(0)=0$, dann liefert diese Konstruktion eine Abbildung: $\Omega(S^1, 1)\to \Z, \omega \mapsto \hat \omega(1)$. Aus Stetigkeitsgründen ist diese Abbildung invariant unter Homotopie mit festen Endpunkten, denn es gilt $\hat \omega_S(1)\in \Z$ für eine Homotopie $H(t,s)=\omega_S(t)$. (Später: Auch die Homotopie hat eindeutigen Lift bis auf die Wahl eines Anfangspunktes.) Man überlegt sich \emph{leicht}, dass die so definierte Abbildung additiv ist, dass heißt dass
 \[
  f(\omega*\eta)=f(\omega)+f(\eta)
 \]
@@ -1460,7 +1460,7 @@ $\pi_1("'\infty"'; p) \homo ?$
  Fundamentalgruppe einer "`Acht"':\\
 \begin{figure}[H]
 \centering
- \fixme[fig63]
+ \input{fig63}
 \caption{}
 \end{figure}
 \end{seg}
@@ -1580,7 +1580,7 @@ Wir definieren eine Abbildung $\tilde \Gamma_\gamma: \Omega(X;x_0)\to \Omega(X;x
 \]
 \end{st}
 \begin{proof}
- Zunächst ist die Wohldefiniertheit der Abbildung $\Gamma_\gamma$ zu zeigen, dass heißt zu zeigen ist, dass $[\Gamma_{\gamma} (\omega)]$ tatsächlich nur von der Äquivalenzklasse $[\omega]$ und nicht von der Wahl von $\omega$ selbst abhängt, aber es ist klar, dass, wenn $H(t,s)=\omega_S(t)$ eine Homotopie zwischen $\omega$ und $\omega'$ ist, dann auch:
+ Zunächst ist die Wohldefiniertheit der Abbildung $\Gamma_\gamma$ zu zeigen, dass heißt zu zeigen ist, dass $\Gamma_{\gamma} ([\omega])$ tatsächlich nur von der Äquivalenzklasse $[\omega]$ und nicht von der Wahl von $\omega$ selbst abhängt, aber es ist klar, dass, wenn $H(t,s)=\omega_S(t)$ eine Homotopie zwischen $\omega$ und $\omega'$ ist, dann auch:
 \[
  (t,s)\mapsto (\gamma*\omega_S)*\gamma^{-1}(x)
 \]
@@ -1609,7 +1609,7 @@ wobei wir bei $(*)$ benutzt haben, dass Lemma \ref{thm:2.1.5} sinngemäß auch f
 \begin{kor}
  Für einen wegzusammenhängenden Raum $X$ hängt die Fundamentalgruppe bis auf Isomorphie nicht von der Wahl des Basispunktes ab.
 
-Deshalb schreibt bei wegzusammenhängendem $X$ auch oft einfach $\pi_1(X)$ für die Isomorphieklasse der Fundamentalgruppe, zum Beispiel $\pi_1(\R P^n)=\Z_2$ für $n\ge 2$ oder $\pi_1(\R^n)=\{1\}$
+Deshalb schreibt man bei wegzusammenhängendem $X$ auch oft einfach $\pi_1(X)$ für die Isomorphieklasse der Fundamentalgruppe, zum Beispiel $\pi_1(\R P^n)=\Z_2$ für $n\ge 2$ oder $\pi_1(\R^n)=\{1\}$
 \end{kor}
 \begin{df}
  Ein topologischer Raum heißt \emph{einfach zusammenhängend}, wenn er wegzusammenhängend ist und eine triviale Fundamentalgruppe hat.
@@ -1710,7 +1710,7 @@ zum Beispiel ist die Abbildung $F:[0,1]\to \R, t\mapsto  5 \cdot t$ eine Hochheb
 
 \begin{figure}[H]
 \centering
- \fixme[fig39]
+ \input{fig72}
 \caption{}
 \end{figure}
 
@@ -1808,7 +1808,7 @@ $G\to G, g\mapsto g^{-1}$ stetig sind.
  \begin{enumerate}[1)]
   \item Jede abstrakte Gruppe mit der diskreten Topologie ist eine topologische Gruppe.
   \item Untergruppen der $GL(n, \R)$ mit der von $\R^{n^2}$ induzierten Teilraumtopologie.  
-  \item Liegruppen und topologischen Gruppen.
+  \item Liegruppen sind topologische Gruppen.
  \end{enumerate}
 \end{exs*}
 \begin{df}\label{thm2:3.2}
@@ -1922,7 +1922,7 @@ bezeichnet. ($X/G=\{G\cdot x|x\in X\}$ wird als \emph{Bahnenraum} der Wirkung be
  Sei $[x]=G\cdot x\in X/G$. Sei $U$ eine Umgebung wie in Definition \ref{thm2:3.4} und sei $V:=\pi(U)$, Dann ist $\pi^{-1}(V)=\bigcup_{g\in G} gU$ eine disjunkte Vereinigung, denn falls $g\neq g'$, folgt $g\cdot U \cap g'\cdot U=g\cdot (U\cap(g^{-1}g') \cdot U =g\cdot(\emptyset)=\emptyset$.
 
 Betrachte nun $\pi|_{g\cdot U}$ für ein $g\in G$, $\pi$ ist stetig, wegen "`blätternd"' ist $\pi|_{g\cdot U}$ injektiv und es gilt $\pi(gU)=V$.
-Da die Quotientabbildung offen ist, folgt, dass  $\pi|_{g\cdot U}$ ein Homöomorphismus ist.
+Da die Quotientenabbildung offen ist, folgt, dass  $\pi|_{g\cdot U}$ ein Homöomorphismus ist.
 \end{proof}
 \begin{figure}[H]
 \centering
@@ -1935,7 +1935,7 @@ Wir wollen eine Wirkung der Fundamentalgruppe $\pi_1(B; b_0)$ auf der Faser $E_{
 \begin{df}
  Sei $\omega:[0,1]\to B$ ein Weg mit Anfangspunkt $b_0=\omega(0)$ und Endpunkt $b_1=\omega(1)$. Es sei
 \[
- \tilde \Lambda_\omega: E_{b_0} \times [0,1]
+ \tilde \Lambda_\omega: E_{b_0} \times [0,1] \to E
 \]
 die nach Korollar \ref{thm2:2.5} eindeutig bestimmte Abbildung mit
 \[
@@ -1947,7 +1947,7 @@ Weiter sei $\Lambda_\omega(e):= \tilde \Lambda_\omega(e,1)$
  Es gilt
 \begin{enumerate}[(i)]
  \item $\Lambda_\omega$ bildet $E_{b_0}$ nach $E_{b_1}$ nach.
- \item $\Lambda_{\omega*\eta}=\Lambda_{\eta} \circ \lambda_\omega$
+ \item $\Lambda_{\omega*\eta}=\Lambda_{\eta} \circ \Lambda_\omega$
  \item Sind $\omega$ und $\eta$ homotop mit festen Endpunkten, dann gilt $\Lambda_\omega=\Lambda_\eta$
  \item $\Lambda_\omega: E_{b_0} \to E_{b_1}$ ist bijektiv
 \end{enumerate}
@@ -2032,13 +2032,13 @@ Es ist $gh\cdot x=g\cdot x$ und $gG_x=ghG_x$ mit $h\in G_x$
 \end{itemize}
 \end{note*}
 \begin{proof}
- Aus Lemma \ref{thm2:3.7}(iii) folgt, dass die Abbildung $([\omega], e)\mapsto \Lambda_\omega(e)$ wohldefiniert ist und dass gilt $(1,e) \mapsto \Lambda_\epsilon(e)=e$. Aus (ii) folgt $(e\cdot [\omega])\cdot [\eta]=\Lambda_{\eta}(\Lambda_\omega(e))=\Lambda_{\eta}\circ \Lambda_{\omega}(e)=\Lambda_{\omega*\eta}(e)=(e\cdot [\omega*\eta])=e\cdot ([\omega][\eta])$. Dies zeigt den ersten Teil der Behauptung. Die Standgruppe von $e_0$ besteht aus den Homotopieklassen von Schleifen, die sich zu geschlossenen Wegen mit Anfangs- und Endpunkt $e_0$ hochheben, also aus dem homomorphen Bild von $\pi_1(E; e_0)$ unter $\pi_1(p)$. Falls $E$ wegzusammenhängend ist, gibt es zu je zwei Punkten $e_0, e_1 \in E_{b_1}$ einen verbindenden Weg $\eta$ in $E$. Dann ist $\omega:= p \circ \eta$ eine Schleife in $B$ mit Anfangs- und Endpunkt $b_0$ und es gilt $\Lambda_{\omega}(e_0)=e_1$
+ Aus Lemma \ref{thm2:3.7}(iii) folgt, dass die Abbildung $([\omega], e)\mapsto \Lambda_\omega(e)$ wohldefiniert ist und dass gilt $(1,e) \mapsto \Lambda_\epsilon(e)=e$. Aus (ii) folgt $(e\cdot [\omega])\cdot [\eta]=\Lambda_{\eta}(\Lambda_\omega(e))=\Lambda_{\eta}\circ \Lambda_{\omega}(e)=\Lambda_{\omega*\eta}(e)=(e\cdot [\omega*\eta])=e\cdot ([\omega][\eta])$. Dies zeigt den ersten Teil der Behauptung. Die Standgruppe von $e_0$ besteht aus den Homotopieklassen von Schleifen, die sich zu geschlossenen Wegen mit Anfangs- und Endpunkt $e_0$ hochheben, also aus dem homomorphen Bild von $\pi_1(E; e_0)$ unter $\pi_1(p)$. Falls $E$ wegzusammenhängend ist, gibt es zu je zwei Punkten $e_0, e_1 \in E_{b_0}$ einen verbindenden Weg $\eta$ in $E$. Dann ist $\omega:= p \circ \eta$ eine Schleife in $B$ mit Anfangs- und Endpunkt $b_0$ und es gilt $\Lambda_{\omega}(e_0)=e_1$
 \end{proof}
 \begin{kor}\label{thm2:3.9}
  $\pi_1(p): \pi_1(E; e_0)\to \pi_1(B, b_0)$ ist injektiv
 \end{kor}
 \begin{proof}
- Folgt aus dem Homotopie-Hochebungssatz \ref{thm2:2.4}. Ist das Bild einer Schleife homotop mit festen Endpunkten zu einer konstanten Schleife, so auch die Hochebung.
+ Folgt aus dem Homotopie-Hochhebungssatz \ref{thm2:2.4}. Ist das Bild einer Schleife homotop mit festen Endpunkten zu einer konstanten Schleife, so auch die Hochhebung.
 \end{proof}
 \begin{df}
  Ein topologischer Raum $X$ heißt \emph{lokal wegzusammenhängend}, wenn es zu jedem Punkt $x\in X$ und jeder Umgebung $U$ von $x$ eine wegzusammenhängende Umgebung von $x$ gibt, die in $U$ enthalten ist. 
@@ -2131,7 +2131,7 @@ Zwei Wege von $x_0$ nach $x$ entspricht einer Schleife von $x_0$ durch $x$. Es m
 Wir wollen Satz \ref{thm2:3.11} verwenden, um zwei verschiedene Überlagerungen über demselben \emph{Basisraum} $B$ zu vergleichen. Wir wollen also folgende Situation betrachten:
 \begin{figure}[H]
 \centering
- \fixme[fig90]
+ \input{fig90}
 \caption{}
 \end{figure}
 Wir wollen die Frage studieren, wann sich die Abbildung $\id_B\circ p:E\to B$ zu einer Abbildung $f:E \to E'$ hochheben lässt. Damit wir den Hochhebungssatz anwenden können, nehmen wir an, dass $B$ wegzusammenhängend und lokal wegzusammenhängend ist. 
@@ -2150,12 +2150,21 @@ Wie man sich leicht überlegt überlegt, gilt in der Situation von Korollar \ref
 \end{df}
 Wir wollen den Hochhebungssatz nun benutzen, um eine Wirkung einer gewissen Untergruppe der Fundamentalgruppe der Basis auf den Totalraum zu definieren. Es handelt sich dabei um die Fortsetzung der in Satz \ref{thm2:3.8} definierten Wirkung auf der Faser $E_b$.
 
-Wir betrachten der Spezialfall $E=E'$ des Korollars. Ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
+Wir betrachten der Spezialfall $E=E'$ des Korollars. 
+\begin{figure}[H]
+\centering
+ \input{fig90b}
+%\caption{}
+\end{figure}
+
+Ist $\tilde \omega$ ein Weg von  $e_0$ nach $e'_0$ in $E$ und $\omega=p\circ \tilde \omega,$ so gilt
 \[
  \pi_1(p)(\pi_1(E;e'_0))=[\omega]^{-1}\cdot \pi_1(p)(\pi_1(E;e_0)\cdot [\omega]
 \]
+
 \begin{figure}[H]
 \centering
+ %\input{fig91}
  \fixme[fig91]
 \caption{}
 \end{figure}
@@ -2284,7 +2293,7 @@ Im folgenden wollen wir einen Satz über die Existenz der universellen Überlage
 Die  Hawaiischen  Ohrringe sind weder lokal einfach zusammenhängend noch semi-lokal einfach zusammenhängend.
  \begin{figure}[H]
 \centering
- \fixme[fig98]
+ \input{fig98}
 \caption{}
 \end{figure}
 \end{ex*}
@@ -2293,7 +2302,7 @@ Die  Hawaiischen  Ohrringe sind weder lokal einfach zusammenhängend noch semi-l
 Beispiel für einen Raum, der semi-lokal einfach zusammenhängend, aber nicht lokal einfach zusammenhängend ist, ist der "`Kegel über den Hawaiischen  Ohrringen"'
 \begin{figure}[H]
 \centering
- \fixme[fig99]
+ \input{fig99}
 \caption{}
 \end{figure}
 \end{ex*}
@@ -2479,14 +2488,14 @@ wobei $N$ der Normalteiler von $\pi_1(U;x_0)*\pi_1(V;x_0)$ ist, der von den Elem
   \item $\pi_1(S^1\vee S^1, x_0)\cong \Z*\Z$
 \begin{figure}[H]
  \centering
-\fixme[fig107]
+\input{fig107}
 \caption{}
 \end{figure}
 
   \item analog: $\R^2\setminus\{2 \text{Punkte}\}\cong \Z*\Z$
 \begin{figure}[H]
  \centering
-\fixme[fig108]
+\input{fig108}
 \caption{}
 \end{figure}
  \end{enumerate}
@@ -2552,7 +2561,7 @@ $H:[0,1]\times[0,1]\to X$, $(s,t)\mapsto H(s,t)$ mit
 \]
 \begin{figure}[H]
  \centering
-\fixme[fig110]
+\input{fig110}
 \caption{}
 \end{figure}
 Mit einem Kompaktheitsargument finden wir $n\in \N$, so dass die Teilquadrate von $[0,1]\times[0,1]$ der Seitenlänge $1/n$ ganz nach $U$ oder ganz nach $V$ abgebildet werden. Wir nehmen an, dass $n$ ein Vielfaches von $2k$ ist.
@@ -2560,32 +2569,32 @@ Mit einem Kompaktheitsargument finden wir $n\in \N$, so dass die Teilquadrate vo
 Die Beweisstragie ist nun, $\omega=H(\cdot, 0)$, in $x_0=H(\cdot, 1)$ schrittweise "`Zeile für Zeile"' überzuführen, wobei die in jedem Schritt verwendeten Wörter dieselbe Nebenklasse in $\pi_1(U;x_0)*\pi_1(V;x_0)/N$ repräsentieren:
 \begin{figure}[H]
  \centering
-\fixme[fig111]
+\input{fig111}
 \caption{}
 \end{figure} 
-wir benötigen folgende Vorbereitung.
+Wir benötigen folgende Vorbereitung.
 
 Sei $f$ eine monoton steigende Funktion $[0,1]\to[0,1]$ die jeweils auf einer Umgebung von $k/n$ konstant ist.
 \begin{figure}[H]
  \centering
-\fixme[fig112]
+\input{fig112}
 \caption{}
 \end{figure}
 und ersetze $H$ durch $(t,s)\mapsto H(f(s), f(t))$. Dann ist $H$ auf einer Kreisschreibe um jeden Gitterpunkt konstant.  Wir erreichen, dass $H$ auf den Gitterpunkten den Wert $x_0$ annimmt (Wähle einen Weg nach $x_0$ und verwende den Radius der Kreisscheibe zum Umparametrisieren). Jetzt wird jede Kante im Gitter auf eine Schleife mit Basispunkt $x_0$ abgebildet.
 \begin{figure}[H]
  \centering
-\fixme[fig113]
+\input{fig113}
 \caption{}
 \end{figure} 
 \end{proof}
 \begin{ex*}
  \begin{figure}[H]
  \centering
-\fixme[fig114]
+\input{fig114}
 \caption{}
 \end{figure}
 \begin{align*}
- [a]_U\cdot [b]_V\cdot [c]_V=[g^{-1}dh]_U\cdot [h^{-1} ek]_V\cdot [k^{-1}f l]_V=[gd]_U\cdot \underbrace{[h]_U[h^{-1}]_V}_{\in N}\cdot [ekk^{-1}fl]_V\stackrel{\text{im Quotienten}}=[g^{-1}]_U[d]_U[e]_V\cdot [f]_V[l]_V 
+ [a]_U\cdot [b]_V\cdot [c]_V=[g^{-1}dh]_U\cdot [h^{-1} ek]_V\cdot [k^{-1}f l]_V=[g^{-1}d]_U\cdot \underbrace{[h]_U[h^{-1}]_V}_{\in N}\cdot [ekk^{-1}fl]_V\stackrel{\text{im Quotienten}}=[g^{-1}]_U[d]_U[e]_V\cdot [f]_V[l]_V 
 \end{align*}
 \end{ex*}
 
@@ -2677,7 +2686,7 @@ dass sich je zwei beteiligte Simplizes nur im einem gemeinsamen Teilsimplex schn
 \end{figure}
 \end{df}
 \begin{df}
- Ein \emph{endliches simpliziales Polyeder} $(K, \mathcal{K})$ besteht aus einem Teilraum $K\subset \R^N$ und einer endlichen Familie $\mathcal K=\bigcup \mathcal K_n$ von Teilmengen $\sigma\in \R^N$, so dass gilt:
+ Ein \emph{endliches simpliziales Polyeder} $(K, \mathcal{K})$ besteht aus einem Teilraum $K\subset \R^N$ und einer endlichen Familie $\mathcal K=\bigcup \mathcal K_n$ von Teilmengen $\sigma\subset \R^N$, so dass gilt:
 \begin{enumerate}[(i)]
  \item Jedes $\sigma\in \mathcal K_n$ ist eine $(n+1)-$elementige affin unabhängige Menge.
  \item Ist $\sigma \in \mathcal K$ und $\tau \subset \sigma$, dann ist auch $\tau \in \mathcal K$. Für $\sigma, \tau \in \mathcal K$, gilt $\Delta(\sigma)\cap \Delta(\tau)=\Delta(\sigma\cap\tau)$
@@ -2750,7 +2759,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
 \end{df}
 \begin{figure}[H]
  \centering
-\fixme[fig129]
+\input{fig129}
 \caption{Unterteilung}
 \end{figure}
 
@@ -2758,7 +2767,7 @@ Die Abbildung heißt \emph{Isomorphismus}, wenn sie eine simpliziale Umkehrabbil
  Eine \emph{Zerschneidung} einer kombinatorischen Fläche  $(X, \mathcal X)$ besteht aus einer kombinatorischen Fläche $(Y,\mathcal Y)$ und einer simplizialen Abbildung. $\phi:(Y, \mathcal Y)\to (X, \mathcal X)$, so dass $\phi\vline\,_{\mathcal Y_2}:\mathcal Y_2 \to \mathcal X_2$ bijektiv ist. (bijektiv auf 2 Simplizes, $0$- und $1$-Simplizes werden eventuell zusammengeklebt.)
 \begin{figure}[H]
  \centering
-\fixme[fig130]
+\input{fig130}
 \caption{}
 \end{figure}
 \end{df}
@@ -2776,7 +2785,7 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
  Der \emph{Rand} einer kombinatorischen Fläche besteht aus allen $1$-Simplizes, die nicht Teilsimplizes in zwei verschiedenen $2$-Simplizes sind. Eine kombinatorische Fläche heißt \emph{n-Eck}, wenn ihr Rand aus genau n $1$-Simplizes besteht und sie zu einem $2$-Simplex homöomorph ist.
 \begin{figure}[H]
  \centering
-\fixme[fig132]
+\input{fig132}
 \caption{}
 \end{figure}
 \end{df}
@@ -2785,9 +2794,10 @@ Statt Zerschneidung betrachten wir später einen etwas allgemeineren Begriff (Po
  Sei $\phi: \mathcal Y\to \mathcal X$ eine Zerschneidung von $\mathcal X$ \emph{entlang eines $1$-Simplex} $e$ (dass heißt $\phi^{-1}(e)$ besteht aus zwei $1-$Simplizes von $\mathcal Y$, alle anderen haben nur ein $1$-Simplex im Urbild. Sei $\mathcal Y$ die disjunkte Vereinigung eines $n$-Ecks und eines $m$-Ecks. Dann ist $\mathcal X$ ein ($m+n-2$)-Eck.
 \end{lem}
 \begin{proof}
+.
  \begin{figure}[H]
  \centering
-\fixme[fig133]
+\input{fig133}
 \caption{}
 \end{figure}
 \end{proof}
@@ -2813,7 +2823,7 @@ Sei $\mathcal k=\{a_1, \dotsc  , a_{2n}\}$ die Menge der Kanten von $\mathcal Y$
 
 \begin{figure}[H]
  \centering
-\fixme[fig135]
+\input{fig135}
 \caption{}
 \end{figure}
 
@@ -2832,7 +2842,7 @@ Wir schreiben $a_i^{-1}$ für die jeweils umgekehrt durchlaufene Kante. Wir setz
   \item \emph{Torus}:
 \begin{figure}[H]
  \centering
-\fixme[fig136]
+\input{fig136}
 \caption{}
 \end{figure}
 \item komplexeres Beispiel:

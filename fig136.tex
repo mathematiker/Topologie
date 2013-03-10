@@ -1,0 +1,41 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\node [regular polygon, regular polygon sides = 4,minimum size = 3cm,name=4eck] at (0,0) {};
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+  
+  \draw [postaction={decorate}](4eck.corner 1) -- (4eck.corner 2);
+  \draw [postaction={decorate}](4eck.corner 2) -- (4eck.corner 3);
+  \draw [postaction={decorate}](4eck.corner 3) -- (4eck.corner 4);
+  \draw [postaction={decorate}](4eck.corner 4) -- (4eck.corner 1);
+ 
+  \node [right] at (4eck.side 4)  {$a_1$};  
+  \node [above] at (4eck.side 1)  {$a_2$};  
+  \node [left] at (4eck.side 2)  {$a_3$};  
+  \node [below] at (4eck.side 3)  {$a_4$}; 
+  \node at (0,-2)  {$a_1 \leftrightarrow a_3^{-1}$ }; 
+  \node at (0,-2.5)  {$a_2 \leftrightarrow a_4^{-1}$ };
+  \node at (0,-3)  {$a_3 \leftrightarrow a_1^{-1}$};
+  \node at (0,-3.5)  {$a_4 \leftrightarrow a_2^{-1}$ }; 
+\end{scope}
+
+\begin{scope}[very thick,xshift=9cm,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+  \node [regular polygon, regular polygon sides = 4,minimum size = 3cm,name=4eck2] at (0,0) {};
+ \node at (0,2)  {Wir beschreiben dies so:}; 
+\node at (0,-2)  {durch das Wort: $aba^{-1}b^{-1}$}; 
+  \draw [postaction={decorate}](4eck2.corner 1) -- (4eck2.corner 2);
+  \draw [postaction={decorate}](4eck2.corner 3) -- (4eck2.corner 2);
+  \draw [postaction={decorate}](4eck2.corner 4) -- (4eck2.corner 3);
+  \draw [postaction={decorate}](4eck2.corner 4) -- (4eck2.corner 1);
+ 
+  \node [right] at (4eck2.side 4)  {$a$};  
+  \node [above] at (4eck2.side 1)  {$b$};  
+  \node [left] at (4eck2.side 2)  {$a$};  
+  \node [below] at (4eck2.side 3)  {$b$};  
+\end{scope}
+\end{tikzpicture}
+

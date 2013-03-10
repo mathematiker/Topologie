@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\begin{scope}[scale=2,y=1cm,x=1cm]
+\draw[step=.5cm,gray,very thin] (-0.2,-0.2) grid (2.2,1.7);
+\draw [-triangle 90] (-0.4,0) -- (2.4,0);
+\draw [-triangle 90] (0,-0.4) -- (0,1.9); 
+\draw (-0.2,1.9) node [anchor=east] {$Y$};
+\draw (2.4,-0.2) node [anchor=north west] {$X$};
+\draw [-] (1,0) -- (1,-0.2);
+\draw  (1,-0.2) node [anchor=north] {$1$};  
+\draw [-] (2,0) -- (2,-0.2);
+\draw  (2,-0.2) node [anchor=north] {$2$};  
+\path [red,draw] (0,1) -- (1,1) -- (1.5,0) -- (2,0);
+\end{scope}
+\end{tikzpicture}
+

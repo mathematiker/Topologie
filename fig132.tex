@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\begin{scope}
+  \node [regular polygon, regular polygon sides = 3,minimum size = 3cm,name=dreieck,draw] at (0,0) {};
+  \node [below] at (dreieck.south)  {3 - eck};  
+\end{scope}
+\begin{scope}[xshift=5cm,yshift=0.5cm]
+  \node [regular polygon, regular polygon sides = 5,minimum size = 3cm,name=fuenfeck,draw] at (0,0) {};
+  \draw [-](fuenfeck.corner 1) -- (fuenfeck.center);
+  \draw [-](fuenfeck.corner 2) -- (fuenfeck.center);
+  \draw [-](fuenfeck.corner 3) -- (fuenfeck.center);
+  \draw [-](fuenfeck.corner 4) -- (fuenfeck.center);
+  \draw [-](fuenfeck.corner 5) -- (fuenfeck.center);
+  \node [below] at (fuenfeck.south)  {5 - eck};  
+\end{scope}
+\end{tikzpicture}
+

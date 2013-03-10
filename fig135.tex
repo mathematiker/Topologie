@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\node [regular polygon, regular polygon sides = 6,minimum size = 3cm,name=6eck,rotate=90] at (0,0) {};
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+  
+  \draw [postaction={decorate}](6eck.corner 1) -- (6eck.corner 2);
+  \draw [postaction={decorate}](6eck.corner 2) -- (6eck.corner 3);
+  \draw [postaction={decorate}](6eck.corner 3) -- (6eck.corner 4);
+  \draw [postaction={decorate}](6eck.corner 4) -- (6eck.corner 5);
+  \draw [postaction={decorate}](6eck.corner 5) -- (6eck.corner 6);
+  \draw [postaction={decorate}](6eck.corner 6) -- (6eck.corner 1);
+  \node [left] at (6eck.side 1)  {$a_4$};  
+  \node [below left] at (6eck.side 2)  {$a_5$};  
+  \node [below right] at (6eck.side 3)  {$a_6$};  
+  \node [right] at (6eck.side 4)  {$a_1$};  
+  \node [above right] at (6eck.side 5)  {$a_2$};  
+  \node [above left] at (6eck.side 6)  {$a_3$};  
+\end{scope}
+\end{tikzpicture}
+

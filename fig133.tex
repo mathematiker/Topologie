@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+\begin{scope}
+  \node [regular polygon, regular polygon sides = 6,minimum size = 3cm,name=6eck,rotate=90] at (0,0) {};
+  \draw [-](6eck.corner 1) -- (6eck.corner 2);
+  \draw [-](6eck.corner 2) -- (6eck.corner 3);
+  \draw [-](6eck.corner 3) -- (6eck.corner 4);
+  \draw [-,red](6eck.corner 4) -- (6eck.corner 5);
+  \draw [-](6eck.corner 5) -- (6eck.corner 6);
+  \draw [-](6eck.corner 6) -- (6eck.corner 1);
+\end{scope}
+\begin{scope}[xshift=2.8cm,yshift=0cm]
+  \node [regular polygon, regular polygon sides = 5,minimum size = 3cm,name=5eck,rotate=-90,scale=5/6] at (0,0) {};
+  \draw [-](5eck.corner 1) -- (5eck.corner 2);
+  \draw [-](5eck.corner 2) -- (5eck.corner 3);
+  \draw [-,red](5eck.corner 3) -- (5eck.corner 4);
+  \draw [-](5eck.corner 4) -- (5eck.corner 5);
+  \draw [-](5eck.corner 5) -- (5eck.corner 1);  
+\end{scope}
+
+\draw [->] (4.5,0) -- node [above] {$\varphi$}(6,0);
+\begin{scope}[xshift=8cm]
+\begin{scope}
+  \node [regular polygon, regular polygon sides = 6,minimum size = 3cm,name=6eck,rotate=90] at (0,0) {};
+  \draw [-](6eck.corner 1) -- (6eck.corner 2);
+  \draw [-](6eck.corner 2) -- (6eck.corner 3);
+  \draw [-](6eck.corner 3) -- (6eck.corner 4);
+  \draw [-](6eck.corner 5) -- (6eck.corner 6);
+  \draw [-](6eck.corner 6) -- (6eck.corner 1);
+\end{scope}
+\begin{scope}[xshift=2.3cm,yshift=0cm]
+  \node [regular polygon, regular polygon sides = 5,minimum size = 3cm,name=5eck,rotate=-90,scale=5/6] at (0,0) {};
+  \draw [-](5eck.corner 1) -- (5eck.corner 2);
+  \draw [-](5eck.corner 2) -- (5eck.corner 3);
+  \draw [-](5eck.corner 4) -- (5eck.corner 5);
+  \draw [-](5eck.corner 5) -- (5eck.corner 1);
+\end{scope}
+\end{scope}
+\end{tikzpicture}

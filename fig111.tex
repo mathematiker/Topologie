@@ -1,0 +1,33 @@
+\begin{tikzpicture}[scale=2, >=triangle 90]
+\begin{scope}[xshift=0cm]
+  \draw[step=.125cm] (0,0) grid (1,1);
+  \draw  (0,0) node [anchor=north east] {$0$}; 
+  \draw  (1,0) node [anchor=north west] {$1$}; 
+  \draw  (0,1) node [anchor=south east] {$1$};
+  \draw [-,red] (0,0) -- (1,0);
+\end{scope}
+\draw [->] (1.2,0.5) -- (1.8,0.5);
+\begin{scope}[xshift=2cm]
+  \draw[step=.125cm] (0,0) grid (1,1);
+  \draw  (0,0) node [anchor=north east] {$0$}; 
+  \draw  (1,0) node [anchor=north west] {$1$}; 
+  \draw  (0,1) node [anchor=south east] {$1$};
+  \draw [-,red] (0,0) -- (0.875,0) -- (0.875,0.125) -- (1,0.125);
+\end{scope}
+\draw [->] (3.2,0.5) -- (3.8,0.5);
+\begin{scope}[xshift=4cm]
+  \draw[step=.125cm] (0,0) grid (1,1);
+  \draw  (0,0) node [anchor=north east] {$0$}; 
+  \draw  (1,0) node [anchor=north west] {$1$}; 
+  \draw  (0,1) node [anchor=south east] {$1$};
+  \draw [-,red] (0,0.125) -- (1,0.125);
+\end{scope}
+\draw [->] (5.2,0.5) -- (5.8,0.5);
+\begin{scope}[xshift=6cm]
+  \draw[step=.125cm] (0,0) grid (1,1);
+  \draw  (0,0) node [anchor=north east] {$0$}; 
+  \draw  (1,0) node [anchor=north west] {$1$}; 
+  \draw  (0,1) node [anchor=south east] {$1$};
+  \draw [-,red] (0,1) -- (1,1);
+\end{scope}
+\end{tikzpicture}

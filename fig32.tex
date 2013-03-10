@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=1, >=triangle 90]
+ \begin {scope}
+  \draw (3,2.5) -- (3,0.55);
+  \draw [densely dashed] (3,0.45) -- (3,0);
+  \draw (3,-0.05) -- (3,-1.5);
+  \draw (0,0) -- (2,1) -- (6,1) -- (4,0) --cycle;
+  \filldraw [red] (3,0.5) circle (1pt);  
+ \end {scope}
+\begin{scope}[xshift=11cm,yshift=-0.5cm]
+  \draw (-1.5,-1.5) -- (2.5,2.5);
+  \draw (-1.5,2.5) -- (2.5,-1.5);
+  \filldraw [red] (0.5,0.5) circle (1pt);  
+\end{scope} 
+\end{tikzpicture}
+
+
